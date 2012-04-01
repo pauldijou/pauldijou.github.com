@@ -1,0 +1,42 @@
+---
+layout: main
+---
+.well
+  %ul.pager.visible-desktop{:style=>"float:right;"}
+    - if page.next_post
+      %li
+        %a{:href=>page.next_post.url} Previous
+    - if page.previous_post
+      %li
+        %a{:href=>page.previous_post.url} Next
+    
+  %h6.post-date
+    %span.label.label-important #{page.date.strftime( '%d %b %Y' )}
+  
+  %h1
+    = page.title
+  
+  ~ content
+  
+  = partial( 'social-share.html.haml' )
+  
+  .comments
+    = page.disqus_comments
+  
+.visible-desktop
+  %ul.pager
+    - if page.next_post
+      %li.previous
+        %a{:href=>page.next_post.url} Previous: #{page.next_post.title}
+    - if page.previous_post
+      %li.next
+        %a{:href=>page.previous_post.url} Next: #{page.previous_post.title}
+
+.hidden-desktop
+  %ul.pager
+    - if page.next_post
+      %li.previous
+        %a{:href=>page.next_post.url} Previous
+    - if page.previous_post
+      %li.next
+        %a{:href=>page.previous_post.url} Next

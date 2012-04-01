@@ -1,0 +1,28 @@
+---
+layout: base
+---
+.row
+  .span9
+    ~ content
+  .span3
+    = partial( 'social-icons.html.haml' )
+    
+    %ul.nav.nav-list.well{:style=>"clear:both;"}
+      - if site.categories && site.categories.size > 0
+        %li.nav-header
+          Categories
+        - for category in site.categories
+          %li
+            %a{:href=>"#{site.blog_prefix}/tags/#{category.tag}/"} #{category.label}
+      %li.divider
+      %li.nav-header
+        Menu
+      %li
+        %a{:href=>"#{site.blog_prefix}/tags/"}
+          Tag cloud
+          
+    :javascript
+      $(function() {
+        var pathname = window.location.pathname;
+        $("body > #container .nav a[href='"+pathname+"']").closest("li").addClass("active");
+      });

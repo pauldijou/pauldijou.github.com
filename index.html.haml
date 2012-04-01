@@ -1,0 +1,7 @@
+---
+layout: base
+---
+- if !site.use_dashboard
+  %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
+- if site.use_dashboard
+  %h1 Dashboard

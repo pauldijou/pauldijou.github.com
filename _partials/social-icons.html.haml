@@ -1,0 +1,7 @@
+- if site.social_links && site.social_links.size > 0
+  %ul.unstyled.icons
+    - for social_link in site.social_links
+      - if social_link.menu
+        %li{"data-original-title"=>"#{social_link.label}", :rel=>"tooltip-bottom"}
+          %a.icon32{:href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank"}
+            %img{:src=>"/images/icons/#{social_link.img}"}

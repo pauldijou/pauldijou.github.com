@@ -1,0 +1,41 @@
+- social_id: twitter
+  label: Twitter
+  url: https://twitter.com/#!/
+  img: twitter_32.png
+  menu: true
+  footer: true
+  
+- social_id: github
+  label: GitHub
+  url: https://github.com/
+  img: github_32.png
+  menu: true
+  footer: true
+  
+- social_id: google_plus
+  label: Google+
+  url: https://plus.google.com/u/0/
+  img: google_plus_32.png
+  menu: true
+  footer: true
+  
+- social_id: klout
+  label: Klout
+  url: http://klout.com/#/
+  img: klout_32.png
+  menu: true
+  footer: true
+  
+- social_id: rss
+  label: RSS
+  url: /blog.atom
+  img: rss_32.png
+  menu: true
+  footer: true
+  
+- social_id: email
+  label: Email
+  url: mailto:paul.dijou.dev@gmail.com
+  img: email_32.png
+  menu: true
+  footer: false

@@ -1,0 +1,10 @@
+- label: Blog
+  url: /blog/
+- label: Resume
+  url: /resume/
+- label: Projects
+  url: /projects/
+- label: About me
+  url: /about/
+- label: Contact
+  url: /contact/

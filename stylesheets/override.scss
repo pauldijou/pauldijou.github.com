@@ -1,0 +1,57 @@
+fieldset {
+	margin-top: 10px;
+}
+
+legend {
+	margin-bottom: 10px;
+}
+
+// Visibility utilities
+
+// For desktops
+@media (min-width: 980px) {
+	.visible-phone     { display: none !important; }
+	.visible-tablet    { display: none !important; }
+	.visible-desktop   { display:inherit; }
+	.hidden-phone      { display:inherit; }
+	.hidden-tablet     { display:inherit; }
+	.hidden-desktop    { display: none !important; }
+}
+
+// Tablets & small desktops only
+@media (min-width: 768px) and (max-width: 979px) {
+	.visible-phone     { display: none !important; }
+	.visible-tablet    { display:inherit; }
+	.visible-desktop   { display: none !important; }
+	.hidden-phone      { display:inherit; }
+	.hidden-tablet     { display: none !important; }
+	.hidden-desktop    { display:inherit; }
+}
+
+// Phones only
+@media (max-width: 767px) {
+	.visible-phone     {  }
+	.visible-tablet    { display: none !important; }
+	.visible-desktop   { display: none !important; }
+	.hidden-phone      { display: none !important; }
+	.hidden-tablet     { display:inherit; }
+	.hidden-desktop    { display:inherit; }
+}
+
+@media (max-width: 767px) {
+	.dl-horizontal dt {
+		float: none;
+		text-align: left;
+		width: auto;
+	}
+	
+	.dl-horizontal dd {
+		margin-left: 9px;
+	}
+}
+
+@media (max-width:1490px) {
+	.github-fork {
+		display: none !important;
+	}
+}

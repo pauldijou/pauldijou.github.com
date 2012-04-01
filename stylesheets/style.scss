@@ -1,0 +1,69 @@
+@import "compass/reset";
+
+body {
+	padding-top: 60px;
+}
+
+p, dd {
+	text-align: justify;
+}
+
+.post-comments {
+	float: right;
+}
+
+a.icon32 {
+	height: 30px;
+}
+
+ul.icons li {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+.social-menu {
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	padding: 10px;
+}
+
+.social-item {
+	float: left;
+	margin-right: 10px;
+}
+
+.social-menu .social-item:last-child {
+	margin-right: 0px;
+}
+
+.social-menu .delicious {
+	text-align: center;
+}
+
+.post-date {
+	margin-bottom: 5px;
+}
+
+.comments {
+	
+}
+
+.project dl.dl-horizontal dt, .project dl.dl-horizontal dd {
+	margin-bottom: 5px;
+}
+
+li.pdf, li.odt {
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	margin-bottom: 5px;
+}
+
+li.pdf {
+	background-image: url('/images/icons/pdf_16.png');
+}
+
+li.odt {
+	background-image: url('/images/icons/odt_16.png');
+}

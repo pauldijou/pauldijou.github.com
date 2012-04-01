@@ -1,0 +1,63 @@
+langs: [en, fr]
+en:
+  title: Resume
+  downloads_label: Downloads
+  sections:
+    - title: "About me"
+      subs:
+        - label: "Name"
+          multi: one
+          value: "Paul Dijou"
+        - label: "Age"
+          multi: one
+          value: "25 years (10/11/1986)"
+        - label: "Email"
+          multi: one
+          value: "paul.dijou.dev@gmail.com"
+    - title: "Skills"
+      subs:
+        - label: "Langages"
+          multi: many
+          vals:
+            - "Java (Java SE, Java EE, JavaFX 2)"
+            - "C, C++, C#"
+            - "CamL, Fortran, MatLab"
+        - label: "Java EE"
+          multi: many
+          vals:
+            - "CDI (Weld, OpenWebBean)"
+            - "DeltaSpike"
+            - "JSF"
+            - "JPA (Hibernate, OpenJPA)"
+            - "EJB 3"
+            - "Seam 2, Seam 3"
+            - "Apache CODI"
+            - "Play! 2"
+            - "Spring"
+        - label: "JSF Libraries"
+          multi: many
+          vals:
+            - "Mojarra"
+            - "MyFaces"
+            - "Facelets"
+            - "Primefaces"
+            - "RichFaces"
+            - "Trinidad"
+        - label: "Internet"
+          multi: many
+          vals:
+            - "Servers (Apache, Tomcat, TomEE, JBoss AS, GlassFish, Resine, Websphere)"
+            - "HTML, XHTML, XML, JSon"
+            - "CSS, LESS, SASS"
+            - "JavaScript"
+            - "PHP"
+        - label: "Databases"
+          multi: many
+          vals:
+            - "PostgreSQL"
+            - "MySQL"
+            - "Oracle"
+            - "HSQLDB"
+fr:
+  title: CV
+  downloads_label: Téléchargements

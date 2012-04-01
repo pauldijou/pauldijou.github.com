@@ -1,0 +1,80 @@
+!!!
+%html
+  %head
+    %meta{ :charset=>'utf-8' }
+    %meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1.0"}
+    %title
+      #{site.title} / #{page.title ? page.title : site.default_page_title}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/style.css', :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap.min.css', :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap-responsive.min.css', :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/override.css', :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/print.css', :media=>'print' }
+    /[if lt IE 8]
+      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/ie.css', :media=>'screen, projection' }
+    %script{ :type=>'text/javascript', :src=>'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
+    %script{ :type=>'text/javascript', :src=>'/javascripts/bootstrap.min.js' }
+    %script{ :type=>'text/javascript', :src=>'/javascripts/main.js' }
+    /[if lt IE 9]
+      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
+  %body{"data-target"=>".spynav", "data-spy"=>"scroll", "data-offset"=>"#{site.scroll_spy_offset}"}
+    %header
+      = partial( 'github-fork.html.haml' )
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{:href=>"#{site.home_url}"}
+              = site.title
+            .nav-collapse
+              %ul.nav
+                - if site.home_label
+                  %li
+                    %a{:href=>"#{site.home_url}"} #{site.home_label}
+                -for nav in site.navbar
+                  - if !site.home_label || site.home_url != nav.url
+                    %li
+                      %a{:href=>"#{nav.url}"} #{nav.label}
+                    
+      :javascript
+        $(document).ready(function() {
+          var indexOfSharp = window.location.pathname.indexOf('#');
+          var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
+          console.log(pathname)
+          $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
+        });
+      
+    #container.container
+      .row
+        .span12
+          ~ content
+    %footer.container
+      .row
+        .visible-desktop
+          .span2
+            %ul.nav.nav-list
+              %li.nav-header
+                Powered with
+              %li
+                %a{:href=>"http://awestruct.org/", :target=>"_blank"} Awestruct
+              %li
+                %a{:href=>"http://twitter.github.com/bootstrap/", :target=>"_blank"} Bootstrap
+              %li
+                %a{:href=>"http://github.com/", :target=>"_blank"} GitHub
+              %li
+                %a{:href=>"http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html", :target=>"_blank"} HAML
+              %li
+                %a{:href=>"http://redcloth.org/textile/", :target=>"_blank"} Textile
+        - if site.social_links && site.social_links.size > 0
+          .span2
+            %ul.nav.nav-list
+              %li.nav-header
+                Always connected!
+              - for social_link in site.social_links
+                - if social_link.footer
+                  %li
+                    %a{:href=>"#{social_link.url}", :target=>"_blank"} #{social_link.label}
+                      
