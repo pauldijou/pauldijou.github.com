@@ -6,6 +6,15 @@ legend {
 	margin-bottom: 10px;
 }
 
+.well > ul.nav {
+  padding: 0px;
+}
+
+dl.dl-horizontal dt h6 {
+  position: relative;
+  top: 1px;
+}
+
 // Visibility utilities
 
 // For desktops
@@ -16,6 +25,26 @@ legend {
 	.hidden-phone      { display:inherit; }
 	.hidden-tablet     { display:inherit; }
 	.hidden-desktop    { display: none !important; }
+	
+	#container {
+	  margin-top: 60px;
+	}
+}
+
+@media (max-width:979px) {
+  .navbar-fixed-top {
+    margin-bottom: 0px;
+  }
+  
+  .title {
+    margin-top: 0px;
+    width: 100%;
+    margin-left: -20px;
+  }
+  
+  #container {
+    margin-top: 20px;
+  }
 }
 
 // Tablets & small desktops only
@@ -47,6 +76,11 @@ legend {
 	
 	.dl-horizontal dd {
 		margin-left: 9px;
+	}
+	
+	.title h1 {
+	  font-size: 50px;
+	  line-height: 55px;
 	}
 }
 

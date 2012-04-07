@@ -1,7 +1,58 @@
 ---
-layout: base
+layout: root
 ---
 - if !site.use_dashboard
   %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
 - if site.use_dashboard
-  %h1 Dashboard
+  %link{ :type=>"text/css", :rel=>"stylesheet", :href=>"http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic"}
+  %header
+    = partial( 'github-fork.html.haml' )
+    = partial( 'navbar.html.haml' )
+  .title
+    %h1 Paul Dijou
+    %h6 Computer Science Engineer
+    .container
+      .row
+        .span4.offset4
+          %pre.prettyprint.linenums.lang-java
+            :preserve
+              while(this.isAlive())
+              {
+                  this.programming();
+              }
+  #container.container{:style=>"margin-top:20px;"}
+    .row
+      .span4
+        .well
+          %ul.nav.nav-list
+            %li.nav-header Last posts
+            - for post in site.posts[0,5]
+              %li
+                %h3
+                  %a{:href=>post.url} #{post.title}
+                Posted on 
+                %span.label.label-important= post.date.strftime( '%b %d, %Y' )
+              %li.divider
+          %a.btn.btn-inverse{:href=>"/blog/"} Read my blog
+      .span4
+        .well
+          %ul.nav.nav-list
+            %li.nav-header Last projects
+            - for project in site.projects[0,5]
+              %li
+                %h3
+                  %a{:href=>project.url} #{project.title}
+                = project.project_technologies.join(", ")
+              %li.divider
+          %a.btn.btn-inverse{:href=>"/projects/"} View my work
+          %a.btn.btn-inverse{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
+      .span4
+        .well
+          %ul.nav.nav-list.twitter-list
+            %li.nav-header Last tweets
+            #twitter_update_list
+          %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", "data-show-count"=>"false", "data-size"=>"large"} Follow me on Twitter
+    :javascript
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
+    %script{ :type=>'text/javascript', :src=>'http://twitter.com/statuses/user_timeline/paul_dijou.json?callback=twitterCallback2&count=5' }

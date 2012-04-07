@@ -1,7 +1,7 @@
 title: Paul Dijou
 default_page_title: Computer Science Engineer
-use_dashboard: false
-home_url: /blog/
+use_dashboard: true
+home_url: /
 home_label: Home
 default_summary_size: 50
 max_url_label_size: 30
@@ -30,11 +30,11 @@ github_fork:
 
 profiles:
   development:
-    base_url: http://localhost:4242/
+    base_url: http://localhost:4242
     disqus: 
     disqus_developer: true
   production:
-    base_url: http://www.pauldijou.fr/
+    base_url: http://www.pauldijou.fr
     some_prop: false
     disqus: paul_dijou
     

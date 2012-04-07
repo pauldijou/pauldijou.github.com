@@ -1,38 +1,46 @@
 langs: [en, fr]
+cols: 2
 en:
   title: Resume
   downloads_label: Downloads
   sections:
     - title: "About me"
+      col: 1
       subs:
         - label: "Name"
           multi: one
           value: "Paul Dijou"
         - label: "Age"
           multi: one
-          value: "25 years (10/11/1986)"
+          value: "25 years old (10/11/1986)"
         - label: "Email"
           multi: one
-          value: "paul.dijou.dev@gmail.com"
+          value: "<a href=\"mailto:paul.dijou.dev@gmail.com\">paul.dijou.dev@gmail.com</a>"
+        - label: "GitHub"
+          multi: one
+          value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"
     - title: "Skills"
+      col: 2
       subs:
         - label: "Langages"
           multi: many
           vals:
-            - "Java (Java SE, Java EE, JavaFX 2)"
-            - "C, C++, C#"
-            - "CamL, Fortran, MatLab"
+            - "Java (Java SE, Java EE, JavaFX)"
+            - "HTML, XHTML, XML, JSon"
+            - "CSS, LESS, SASS"
+            - "JavaScript"
+            - "PHP"
         - label: "Java EE"
           multi: many
           vals:
-            - "CDI (Weld, OpenWebBean)"
+            - "<abbr title=\"Context and Dependency Injection\">CDI</abbr> (Weld, OpenWebBean)"
             - "DeltaSpike"
-            - "JSF"
-            - "JPA (Hibernate, OpenJPA)"
-            - "EJB 3"
-            - "Seam 2, Seam 3"
+            - "<abbr title=\"Java Server Faces\">JSF</abbr>"
+            - "<abbr title=\"Java Persistence API\">JPA</abbr> (Hibernate, OpenJPA)"
+            - "<abbr title=\"Enterpriser Java Bean\">EJB</abbr>"
+            - "Seam"
             - "Apache CODI"
-            - "Play! 2"
+            - "Play! framework"
             - "Spring"
         - label: "JSF Libraries"
           multi: many
@@ -43,14 +51,16 @@ en:
             - "Primefaces"
             - "RichFaces"
             - "Trinidad"
-        - label: "Internet"
+        - label: "Servers"
           multi: many
           vals:
-            - "Servers (Apache, Tomcat, TomEE, JBoss AS, GlassFish, Resine, Websphere)"
-            - "HTML, XHTML, XML, JSon"
-            - "CSS, LESS, SASS"
-            - "JavaScript"
-            - "PHP"
+            - "Apache"
+            - "Tomcat, TomEE"
+            - "JBoss AS"
+            - "GlassFish"
+            - "Resine"
+            - "Websphere"
+            
         - label: "Databases"
           multi: many
           vals:
@@ -58,6 +68,53 @@ en:
             - "MySQL"
             - "Oracle"
             - "HSQLDB"
+        - label: "Tools"
+          multi: many
+          vals:
+            - "Eclipse"
+            - "Maven, Ant, Gradle"
+            - "Git, SVN, Dimension"
+            - "Jenkins, Hudson"
+            - "Sonar"
+    - title: "Experience"
+      col: 1
+      subs:
+        - label: "2010 - 2012"
+          multi: one
+          value: "CELAD"
+        - label: "2009 - 2011"
+          multi: one
+          value: "Startup"
+    - title: "Studies"
+      col: 1
+      subs:
+        - label: "End 2009"
+          multi: one
+          value: "EPM"
+        - label: "2007 - 2010"
+          multi: one
+          value: "ENSEEIHT"
+        - label: "2004 - 2007"
+          multi: one
+          value: "Fermat"
+        - label: "2004"
+          multi: one
+          value: "Bac S"
+    - title: "Langs"
+      col: 1
+      subs:
+        - label: "French"
+          multi: one
+          value: "Good"
+        - label: "English"
+          multi: one
+          value: "Professionnal level (TOEIC : 910 / 990)"
+        - label: "SPANISH"
+          multi: one
+          value: "School level"
+        - label: "Chinese"
+          multi: one
+          value: "School level"
 fr:
   title: CV
   downloads_label: Téléchargements

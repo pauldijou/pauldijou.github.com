@@ -5,6 +5,8 @@ $(document).ready(function() {
 	$("[rel=tooltip-left]").tooltip({placement: 'left'});
 	$("[rel=tooltip-right]").tooltip({placement: 'right'});
 	
+	prettyPrint();
+	
 	$("a.anchorLink[href^=#]").anchorAnimate();
 	$(".toggleHide").toggleHide();
 	

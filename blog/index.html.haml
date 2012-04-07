@@ -1,40 +1,38 @@
 ---
 layout: main
 ---
-
-- for post in page.posts
-  .post.well
-    .post-comments
-      %a{:href=>"#{post.url}#disqus_thread", :rel=>"tooltip-bottom", "data-original-title"=>"Comments"}
-        - if post.disqus && post.disqus_comments_count > 0
-          = post.disqus_comments_count
-        - if !post.disqus
-          0
+.posts
+  - for post in page.posts
+    .post
+      %h2
+        %a{:href=>post.url}
+          = post.title
+        %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+post.url, "data-text"=>"Reading Paul Dijou's blog : "+post.title} Tweet
+      .meta
+        Posted by 
+        %span.label Paul Dijou 
+        on 
+        %span.label.label-important{:style=>"margin-right: 10px;"}= post.date.strftime( '%b %d, %Y' )
+        - if site.disqus
+          | 
+          = page.disqus_comments_link
         
-    %h6.post-date
-      %span.label.label-important #{post.date.strftime( '%d %b %Y' )}
-    %h2
-      %a{:href=>post.url}
-        = post.title
-    .content
-      %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary))
-      - if post.summary >= 0
-        %a.btn Lire la suite...
-      %span
-        %span.hidden-desktop
-          = post.disqus_comments_link
-    %fieldset
-      %legend
-        %h6 Tags
-      - for tag in post.tags
-        - unless tag.nil?
-          %a{:href=>tag.primary_page.url, :style=>"text-decoration: none;"}
-            = tag
-
-:javascript
-  $(function() {
-    $("a[href$='#disqus_thread']").addClass("btn").addClass("btn-inverse");
-  });
+      .content
+        / %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary))
+        ~ post.content
+      .footer
+        %a{:href=>post.url} Permalink
+        | 
+        - if site.disqus
+          = page.disqus_comments_link
+          | 
+        - if post.tags
+          %span.tags
+            %i.icon-tags
+            Tags :
+            - for tag in post.tags
+              - unless tag.nil?
+                %a.tag{:href=>tag.primary_page.url}= tag
 
 - current_page_number = page.posts.current_page_index + 1
 %div.visible-phone
@@ -102,3 +100,7 @@ layout: main
         %a{:href => "#"} Next
       %li.disabled
         %a{:href => "#"} Last
+
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  

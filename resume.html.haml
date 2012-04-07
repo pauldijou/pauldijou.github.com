@@ -17,19 +17,23 @@ title: Resume
         .span9
           .well.clearfix
             %h1 #{cv.title}
-            - for section in cv.sections
-              %h2 #{section.title}
-              %dl.dl-horizontal
-                - for sub in section.subs
-                  %dt
-                    %h6= sub.label
-                  %dd
-                    - if sub.multi == 'one'
-                      = sub.value
-                    - if sub.multi == 'many'
-                      %ul.unstyled
-                        - for value in sub.vals
-                          %li= value
+            .row
+              - (1..2).each do |i|
+                .span4
+                  - for section in cv.sections
+                    - if section.col == i
+                      %h2 #{section.title}
+                      %dl.dl-horizontal
+                        - for sub in section.subs
+                          %dt
+                            %h6= sub.label
+                          %dd
+                            - if sub.multi == 'one'
+                              = sub.value
+                            - if sub.multi == 'many'
+                              %ul.unstyled
+                                - for value in sub.vals
+                                  %li= value
         .span3
           %ul.nav.nav-list.well
             %li.nav-header= cv.downloads_label

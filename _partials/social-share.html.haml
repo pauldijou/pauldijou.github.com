@@ -1,31 +1,29 @@
-.social-menu.clearfix
-  %h6 Did you like it? Please, share it!
-  .social-item.twitter
-    %a{:href=>"https://twitter.com/share", :class=>"twitter-share-button", "data-lang"=>"en", "data-count"=>"vertical"}
-      Tweet
-  .social-item.google-plus
-    .g-plusone{"data-size"=>"tall", "data-annotation"=>"bubble"}
-  .social-item.dzone
-    <script language="javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script>
-  .social-item.delicious
-    %a{:href=>"http://www.delicious.com/save", :style=>"text-align:center;", "onclick"=>"window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"}
-      %img{:src=>"/images/icons/delicious_32.png"}
-      %br/
-      Delicious
-      %br/
-      Bookmark
-
+.social-menu
+  %ul.nav.nav-list
+    %li.nav-header Did you like it? Please, share it!
+    %li.social-item.twitter
+      %a{:href=>"https://twitter.com/share", :class=>"twitter-share-button", "data-size"=>"large"} Tweet
+    %li.social-item.google-plus
+      .g-plusone{"data-annotation"=>"inline", "data-with"=>"200"}
+    %li.social-item.dzone
+      %script{:type=>"text/javascript"}
+        var dzone_url = 'http://google.com';
+        var dzone_title = 'Google';
+        var dzone_blurb = 'Google';
+        var dzone_style = '2';
+      %script{ :type=>'text/javascript', :src=>'http://widgets.dzone.com/links/widgets/zoneit.js' }
+    %li.social-item.reddit
+      %a{:href=>"http://www.reddit.com/submit", :onclick=>"window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"}
+        %img{:src=>"http://www.reddit.com/static/spreddit12.gif", :alt=>"Submit to reddit", :border=>"0"}
+    %li.social-item.delicious
+      %a{:href=>"http://www.delicious.com/save", "onclick"=>"window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"}
+        %img{:src=>"/images/icons/delicious_32.png"}
+        Delicious Bookmark
+        
 :javascript
   var page_url = location.href;
-  console.log(page_url);
   
-  $('.social-menu .twitter a.twitter-share-button').attr('data-url', page_url);
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  
-  var dzone_url = page_url;
-  var dzone_title = '#{page.title}';
-  var dzone_blurb = 'aze';
-  var dzone_style = '1';
   
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

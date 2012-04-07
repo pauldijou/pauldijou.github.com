@@ -1,0 +1,27 @@
+%hr/
+%footer.container
+  .row
+    .visible-desktop
+      .span2
+        %ul.nav.nav-list
+          %li.nav-header
+            Powered with
+          %li
+            %a{:href=>"http://awestruct.org/", :target=>"_blank"} Awestruct
+          %li
+            %a{:href=>"http://twitter.github.com/bootstrap/", :target=>"_blank"} Bootstrap
+          %li
+            %a{:href=>"http://github.com/", :target=>"_blank"} GitHub
+          %li
+            %a{:href=>"http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html", :target=>"_blank"} HAML
+          %li
+            %a{:href=>"http://redcloth.org/textile/", :target=>"_blank"} Textile
+    - if site.social_links && site.social_links.size > 0
+      .span2
+        %ul.nav.nav-list
+          %li.nav-header
+            Always connected!
+          - for social_link in site.social_links
+            - if social_link.footer
+              %li
+                %a{:href=>"#{social_link.url}", :target=>"_blank"} #{social_link.label}

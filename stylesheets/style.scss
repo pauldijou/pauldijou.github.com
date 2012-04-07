@@ -1,15 +1,25 @@
 @import "compass/reset";
-
-body {
-	padding-top: 60px;
-}
+@import "compass/css3/border-radius";
+@import "compass/css3/text-shadow";
 
 p, dd {
 	text-align: justify;
 }
 
+footer {
+  padding-bottom: 30px;
+}
+
+.center {
+  text-align: center !important;
+}
+
 .post-comments {
 	float: right;
+}
+
+.prettyprint {
+  text-align: left !important;
 }
 
 a.icon32 {
@@ -27,19 +37,51 @@ ul.icons li {
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
 	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .social-item {
-	float: left;
-	margin-right: 10px;
 }
 
-.social-menu .social-item:last-child {
-	margin-right: 0px;
+.posts .post {
+  margin-bottom: 40px;
 }
 
-.social-menu .delicious {
-	text-align: center;
+.post {
+  h2 > a {
+    margin-right: 15px;
+  }
+  
+  h2, .content, .footer {
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    padding-bottom: 10px;
+  }
+  
+  h2 a:hover {
+    text-decoration: none;
+  }
+  
+  .meta {
+    margin-bottom: 10px;
+  }
+  
+  a.tag {
+    background-color: #999999;
+    @include border-radius(3px);
+    font-size: 11px;
+    color: white;
+    padding: 2px 4px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  a.tag:hover {
+    background-color: #B94A48;
+  }
 }
 
 .post-date {
@@ -66,4 +108,38 @@ li.pdf {
 
 li.odt {
 	background-image: url('/images/icons/odt_16.png');
+}
+
+.title {
+  background: url('/images/titlebackground.png') repeat scroll 0 0 #474747;
+  border-bottom: 1px solid #DDDDDD;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  line-height: 1;
+}
+
+.title h1 {
+  font-family: Helvetica,Arial,Sans-Serif;
+  font-size: 60px;
+  letter-spacing: -1px;
+  line-height: 65px;
+  color: #999999;
+  @include single-text-shadow(#2A2A2A, 0px, 3px, 8px);
+}
+
+.title h6 {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+ul.twitter-list li {
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+ul.twitter-list li.nav-header {
+  margin-top: 0px;
+  border-bottom: 0px;
 }
