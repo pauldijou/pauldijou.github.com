@@ -1,20 +1,8 @@
 ---
 layout: base
 ---
-.row
-  .span9
-    ~ content
-  .span3
-    = partial( 'social-icons.html.haml' )
-    
-    %ul.nav.nav-list.well{:style=>"clear:both;"}
-      %li.nav-header
-        Tag Cloud
-      %li
-        = site.posts_tag_cloud
-          
-    :javascript
-      $(function() {
-        var pathname = window.location.pathname;
-        $("body > #container .nav a[href='"+pathname+"']").closest("li").addClass("active");
-      });
+#container.container
+  .row
+    .span12
+      ~ content
+= partial( 'footer.html.haml' )

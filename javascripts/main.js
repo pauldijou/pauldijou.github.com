@@ -69,3 +69,15 @@ function getTopOffset() {
 	}
 }
 
+function showProgress() {
+	$('#levels').addClass('show-progress');
+	$('#levels .btn-show-progression .btn-yes').addClass('active');
+	$('#levels .btn-show-progression .btn-no').removeClass('active');
+}
+
+function hideProgress() {
+	$('#levels').removeClass('show-progress');
+	$('#levels .btn-show-progression .btn-yes').removeClass('active');
+	$('#levels .btn-show-progression .btn-no').addClass('active');
+}
+

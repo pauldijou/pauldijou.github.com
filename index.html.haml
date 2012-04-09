@@ -1,13 +1,9 @@
 ---
-layout: root
+layout: page
 ---
 - if !site.use_dashboard
   %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
 - if site.use_dashboard
-  %link{ :type=>"text/css", :rel=>"stylesheet", :href=>"http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic"}
-  %header
-    = partial( 'github-fork.html.haml' )
-    = partial( 'navbar.html.haml' )
   .title
     %h1 Paul Dijou
     %h6 Computer Science Engineer
@@ -20,10 +16,10 @@ layout: root
               {
                   this.programming();
               }
-  #container.container{:style=>"margin-top:20px;"}
+  #container.container.index.no-footer
     .row
       .span4
-        .well.last-posts{:style=>"position:relative;right:3000px"}
+        .well.last-posts
           %ul.nav.nav-list
             %li.nav-header Last posts
             - for post in site.posts[0,5]
@@ -33,9 +29,12 @@ layout: root
                 Posted on 
                 %span.label.label-important= post.date.strftime( '%b %d, %Y' )
               %li.divider
-          %a.btn.btn-inverse{:href=>"/blog/"} Read my blog
+          %a.btn{:href=>"/blog/"} Read my blog
+          %a.btn{:href=>"/blog.atom"}
+            %img{:src=>"/images/icons/rss_16.png"}
+            Subscribe
       .span4
-        .well.last-projects{:style=>"position:relative;top:2000px;"}
+        .well.last-projects
           %ul.nav.nav-list
             %li.nav-header Last projects
             - for project in site.projects[0,5]
@@ -44,14 +43,14 @@ layout: root
                   %a{:href=>project.url} #{project.title}
                 = project.project_technologies.join(", ")
               %li.divider
-          %a.btn.btn-inverse{:href=>"/projects/"} View my work
-          %a.btn.btn-inverse{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
+          %a.btn{:href=>"/projects/"} View my work
+          %a.btn{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
       .span4
-        .well.last-tweets{:style=>"position:relative;left:3000px;"}
+        .well.last-tweets
           %ul.nav.nav-list.twitter-list
             %li.nav-header Last tweets
             #twitter_update_list
-          %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", "data-show-count"=>"false", "data-size"=>"large"} Follow me on Twitter
+          %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", :data=>{"show-count"=>"false", :size=>"large"}} Follow me on Twitter
     :javascript
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
@@ -59,7 +58,7 @@ layout: root
       
     :javascript
       $(document).ready(function() {
-        $('#container .row .span4 .last-posts').animate({right:'0px'}, 1500);
+        $('#container .row .span4 .last-posts').animate({top:'0px'}, 1000);
         $('#container .row .span4 .last-projects').animate({top:'0px'}, 1500);
-        $('#container .row .span4 .last-tweets').animate({left:'0px'}, 1500);
+        $('#container .row .span4 .last-tweets').animate({top:'0px'}, 2000);
       });

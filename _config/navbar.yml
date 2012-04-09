@@ -4,7 +4,9 @@
   url: /resume/
 - label: Projects
   url: /projects/
-- label: About me
+- label: About
   url: /about/
+- label: TODO
+  url: /todo/
 - label: Contact
   url: /contact/

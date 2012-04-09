@@ -2,46 +2,49 @@
 layout: page
 title: Resume
 ---
-
-%ul.nav.nav-tabs.cv
-  - for lang in site.cv.langs
-    %li
-      %a{:href=>"#resume-#{lang}", "data-toggle"=>"tab"} 
-        #{site.langs.method_missing(lang).label}
-   
-.tab-content.cv
-  - for lang in site.cv.langs
-    - cv = site.cv.method_missing(lang)
-    .tab-pane{:id=>"resume-#{lang}"}
-      .row
-        .span9
-          .well.clearfix
-            %h1 #{cv.title}
+.title
+  %h1 Resume
+  .btn-wrapper
+    .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
+      - for lang in site.cv.langs
+        %a.btn{:href=>"#resume-#{lang}", "data-toggle"=>"tab"}= site.langs.method_missing(lang).label
+  .clearfix
+#container.container
+  .row
+    .span12
+      .tab-content.cv
+        - for lang in site.cv.langs
+          - cv = site.cv.method_missing(lang)
+          .tab-pane{:id=>"resume-#{lang}"}
             .row
-              - (1..2).each do |i|
-                .span4
-                  - for section in cv.sections
-                    - if section.col == i
-                      %h2 #{section.title}
-                      %dl.dl-horizontal
-                        - for sub in section.subs
-                          %dt
-                            %h6= sub.label
-                          %dd
-                            - if sub.multi == 'one'
-                              = sub.value
-                            - if sub.multi == 'many'
-                              %ul.unstyled
-                                - for value in sub.vals
-                                  %li= value
-        .span3
-          %ul.nav.nav-list.well
-            %li.nav-header= cv.downloads_label
-            %li.pdf
-              Short
-            %li.odt
-              Short
+              .span9
+                .well.clearfix
+                  .row
+                    - (1..2).each do |i|
+                      .span4
+                        - for section in cv.sections
+                          - if section.col == i
+                            %h2 #{section.title}
+                            %dl.dl-horizontal
+                              - for sub in section.subs
+                                %dt
+                                  %h6= sub.label
+                                %dd
+                                  - if sub.multi == 'one'
+                                    = sub.value
+                                  - if sub.multi == 'many'
+                                    %ul.unstyled
+                                      - for value in sub.vals
+                                        %li= value
+              .span3
+                %ul.nav.nav-list.well
+                  %li.nav-header= cv.downloads_label
+                  %li.pdf
+                    Short
+                  %li.odt
+                    Short
 
 :javascript
   $('ul.cv > li:first').addClass('active');
+  $('.title .btn-group > a:first').addClass('active');
   $('div.cv > .tab-pane:first').addClass('active');

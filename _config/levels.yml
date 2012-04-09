@@ -1,0 +1,55 @@
+- padawan:
+  selector: "padawan"
+  label: "Padawan"
+  classes: ""
+  tasks:
+    - coolwebsite:
+      label: "Having a cool website"
+      status: "inprogress"
+      progress: "60%"
+    - githubpullrequest:
+      label: "Send a successfull GitHub pull request"
+      status: "done"
+      url: "https://github.com/forge/website/pull/1"
+- knight:
+  selector: "knight"
+  label: "Knight"
+  classes: ""
+  tasks:
+    - commiterapache:
+      label: "Become committer on an Apache Fundation project"
+      status: "inprogress"
+      progress: "10%"
+    - conferencejug:
+      label: "Give a conference at a JUG"
+      status: "no"
+- master:
+  selector: "master"
+  label: "Master"
+  classes: ""
+  tasks:
+    - apachementor:
+      label: "Become an Apache Fundation Mentor"
+      status: "no"
+    - conferencejavaone:
+      label: "Give a conference at JavaOne"
+      status: "no"
+    
+- yoda:
+  selector: "yoda"
+  label: "Yoda"
+  classes: "btn-success"
+  tasks:
+    - jvmlanguage:
+      label: "Develop a new JVM compliant language (and make it replace Java)"
+      status: "no"
+    - nobelprize:
+      label: "Get a Nobel prize"
+      status: "no"
+    - saveplanet:
+      label: "Save the planet"
+      status: "no"
+    - gomarstatooine:
+      label: "Go to Mars (or Tatooine)"
+      status: "no"
+

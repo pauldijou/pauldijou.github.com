@@ -84,6 +84,34 @@ ul.icons li {
   }
 }
 
+.todo {
+  a.btn {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .title a.btn:last-child {
+    margin-right: 0px;
+  }
+  
+  #levels {
+    li.task a {
+      white-space:nowrap;
+      display:inline;
+      margin-left: 0px;
+    }
+    
+    .progress {
+      display: none;
+    }
+  }
+  
+  #levels.show-progress .progress {
+    display: block;
+  }
+}
+
 .post-date {
 	margin-bottom: 5px;
 }

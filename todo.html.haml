@@ -1,0 +1,61 @@
+---
+layout: page
+---
+.todo
+  .title
+    %h1 Jedi TODO List
+    %h6 Choose your level
+    %h6 Choose your task
+    %h6 Do... or do not. There is no try.
+    - for level in site.levels
+      %a.btn{:href=>"#"+level.selector, :class=>level.classes, :data=>{:parent=>"#levels", :toggle=>"collapse"}}= level.label
+  #levels
+    #container.container.no-footer
+      .row
+        .span6.offset3
+          - for level in site.levels
+            %div.collapse{:id=>level.selector}
+              %ul.nav.nav-list.well
+                %li.nav-header= level.label
+                %li.divider
+                - for task in level.tasks
+                  %li.task
+                    - if task.status == 'done'
+                      %i.icon-ok-sign
+                    - if task.status == 'inprogress'
+                      %i.icon-repeat
+                    - if task.status == 'fail'
+                      %i.icon-remove-sign
+                    - if task.status != 'done' && task.status != 'inprogress' && task.status != 'fail'
+                      %i.icon-question-sign
+                    = task.label
+                    - if task.url && task.url.length > 0
+                      %a{:href=>task.url, :target=>"_blank"} Learn more...
+                    - if task.status == 'inprogress'
+                      .progress.progress-striped.active
+                        .bar{:style=>"width:#{task.progress};"}
+                  %li.divider
+                .row{:style=>"margin-top:10px;"}
+                  .span2
+                    %ul.nav.nav-list
+                      %li.nav-header Legend
+                      %li
+                        %i.icon-ok-sign
+                        Done
+                      %li
+                        %i.icon-repeat
+                        In progress
+                      %li
+                        %i.icon-question-sign
+                        Not yet try
+                      %li
+                        %i.icon-remove-sign
+                        Fail
+                  .span3
+                    %ul.nav.nav-list
+                      %li.nav-header Show progression
+                      %li
+                        .btn-group.btn-show-progression{"data-toggle"=>"buttons-radio"}
+                          .btn.btn-yes{:onclick=>"showProgress();"} Yes
+                          .btn.btn-no.active{:onclick=>"hideProgress();"} No
+                        

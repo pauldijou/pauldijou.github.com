@@ -2,9 +2,9 @@
 %html
   %head
     %meta{ :charset=>'utf-8' }
-    %meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1.0"}
+    %meta{ :name=>"viewport", :content=>"width=device-width, initial-scale=1.0"}
     %title
-      #{site.title} / #{page.title ? page.title : site.default_page_title}
+      #{site.title} / #{page.title ? page.title : site.default_page_title }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/style.css', :media=>'screen, projection' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap.min.css', :media=>'screen, projection' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap-responsive.min.css', :media=>'screen, projection' }
@@ -21,6 +21,6 @@
       %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
     - if page.javascripts
       - page.javascripts.each do |javascript|
-        %script{:type=>'text/javascript', :src=>javascript}
-  %body{"data-target"=>".spynav", "data-spy"=>"scroll", "data-offset"=>"#{site.scroll_spy_offset}"}
+        %script{ :type=>'text/javascript', :src=>javascript }
+  %body{ :data=>{ :target=>".spynav", :spy=>"scroll", :offset=>"#{site.scroll_spy_offset}" } }
     ~ content

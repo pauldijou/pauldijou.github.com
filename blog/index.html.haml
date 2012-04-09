@@ -1,38 +1,48 @@
 ---
 layout: main
 ---
-.posts
-  - for post in page.posts
-    .post
-      %h2
-        %a{:href=>post.url}
-          = post.title
-        %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+post.url, "data-text"=>"Reading Paul Dijou's blog : "+post.title} Tweet
-      .meta
-        Posted by 
-        %span.label Paul Dijou 
-        on 
-        %span.label.label-important{:style=>"margin-right: 10px;"}= post.date.strftime( '%b %d, %Y' )
-        - if site.disqus
-          | 
-          = page.disqus_comments_link
-        
-      .content
-        / %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary))
-        ~ post.content
-      .footer
-        %a{:href=>post.url} Permalink
-        | 
-        - if site.disqus
-          = page.disqus_comments_link
-          | 
-        - if post.tags
-          %span.tags
-            %i.icon-tags
-            Tags :
-            - for tag in post.tags
-              - unless tag.nil?
-                %a.tag{:href=>tag.primary_page.url}= tag
+.row
+  .span9
+    .posts
+      - for post in page.posts
+        .post
+          %h2
+            %a{:href=>post.url}
+              = post.title
+            %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+post.url, "data-text"=>"Reading Paul Dijou's blog : "+post.title} Tweet
+          .meta
+            Posted by 
+            %span.label Paul Dijou 
+            on 
+            %span.label.label-important{:style=>"margin-right: 10px;"}= post.date.strftime( '%b %d, %Y' )
+            - if site.disqus
+              | 
+              = page.disqus_comments_link
+            
+          .content
+            / %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary))
+            ~ post.content
+          .footer
+            %a{:href=>post.url} Permalink
+            | 
+            - if site.disqus
+              = page.disqus_comments_link
+              | 
+            - if post.tags
+              %span.tags
+                %i.icon-tags
+                Tags :
+                - for tag in post.tags
+                  - unless tag.nil?
+                    %a.tag{:href=>tag.primary_page.url}= tag
+                    
+  .span3
+    = partial( 'social-icons.html.haml' )
+    %ul.nav.nav-list.well{:style=>"clear:both;"}
+      %li.nav-header
+        Tag Cloud
+      %li
+        = site.posts_tag_cloud
 
 - current_page_number = page.posts.current_page_index + 1
 %div.visible-phone

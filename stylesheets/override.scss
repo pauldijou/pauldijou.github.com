@@ -15,6 +15,43 @@ dl.dl-horizontal dt h6 {
   top: 1px;
 }
 
+.page {
+  #container {
+    margin-top:20px;
+    overflow:hidden;
+  }
+  
+  .no-footer {
+    padding-bottom:50px;
+  }
+}
+
+#container.index {
+  .well {
+    position:relative;
+    top:1500px;
+  }
+}
+
+#levels {
+  .task .progress {
+    background-color: white;
+    background-image: none;
+    margin-top: 5px;
+  }
+}
+
+.btn-wrapper {
+  position: relative;
+  left: -50%;
+  float: right;
+  
+  .btn-group {
+    position: relative;
+    left: 50%;
+  }
+}
+
 // Visibility utilities
 
 // For desktops
@@ -55,6 +92,14 @@ dl.dl-horizontal dt h6 {
 	.hidden-phone      { display:inherit; }
 	.hidden-tablet     { display: none !important; }
 	.hidden-desktop    { display:inherit; }
+	
+	#container.index .well a.btn {
+    margin-bottom: 10px;
+  }
+  
+  #container.index .well a.btn:last-child {
+    margin-bottom: 0px;
+  }
 }
 
 // Phones only
