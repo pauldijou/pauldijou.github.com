@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 	$("[rel=tooltip]").tooltip();
 	$("[rel=tooltip-top]").tooltip({placement: 'top'});
 	$("[rel=tooltip-bottom]").tooltip({placement: 'bottom'});

@@ -54,7 +54,7 @@ layout: page
     :javascript
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
-    %script{ :type=>'text/javascript', :src=>'http://twitter.com/statuses/user_timeline/paul_dijou.json?callback=twitterCallback2&count=5' }
+    %script{ :type=>'text/javascript', :src=>'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=paul_dijou&count=5&include_rts=true&callback=twitterCallback2' }
       
     :javascript
       $(document).ready(function() {
