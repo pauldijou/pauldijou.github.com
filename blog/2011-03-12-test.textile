@@ -1,6 +1,6 @@
 ---
 title: "Test 2011-03"
-author: "Paul Dijou"
+authors: [pauldijou]
 layout: post
 summary: 0
 tags: [misc, test, jee]

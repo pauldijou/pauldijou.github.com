@@ -48,8 +48,8 @@ en:
             - "Mojarra"
             - "MyFaces"
             - "Facelets"
-            - "Primefaces"
             - "RichFaces"
+            - "Primefaces"
             - "Trinidad"
         - label: "Servers"
           multi: many
@@ -109,7 +109,7 @@ en:
         - label: "English"
           multi: one
           value: "Professionnal level (TOEIC : 910 / 990)"
-        - label: "SPANISH"
+        - label: "Spanish"
           multi: one
           value: "School level"
         - label: "Chinese"
@@ -118,3 +118,115 @@ en:
 fr:
   title: CV
   downloads_label: Téléchargements
+  sections:
+    - title: "Généralités"
+      col: 1
+      subs:
+        - label: "Nom"
+          multi: one
+          value: "Paul Dijou"
+        - label: "Age"
+          multi: one
+          value: "25 ans (11/10/1986)"
+        - label: "Email"
+          multi: one
+          value: "<a href=\"mailto:paul.dijou.dev@gmail.com\">paul.dijou.dev@gmail.com</a>"
+        - label: "GitHub"
+          multi: one
+          value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"
+    - title: "Compétences"
+      col: 2
+      subs:
+        - label: "Langages"
+          multi: many
+          vals:
+            - "Java (Java SE, Java EE, JavaFX)"
+            - "HTML, XHTML, XML, JSon"
+            - "CSS, LESS, SASS"
+            - "JavaScript"
+            - "PHP"
+        - label: "Java EE"
+          multi: many
+          vals:
+            - "<abbr title=\"Context and Dependency Injection\">CDI</abbr> (Weld, OpenWebBean)"
+            - "DeltaSpike"
+            - "<abbr title=\"Java Server Faces\">JSF</abbr>"
+            - "<abbr title=\"Java Persistence API\">JPA</abbr> (Hibernate, OpenJPA)"
+            - "<abbr title=\"Enterpriser Java Bean\">EJB</abbr>"
+            - "Seam"
+            - "Apache CODI"
+            - "Play! framework"
+            - "Spring"
+        - label: "Librairies JSF"
+          multi: many
+          vals:
+            - "Mojarra"
+            - "MyFaces"
+            - "Facelets"
+            - "RichFaces"
+            - "Primefaces"
+            - "Trinidad"
+        - label: "Serveurs"
+          multi: many
+          vals:
+            - "Apache"
+            - "Tomcat, TomEE"
+            - "JBoss AS"
+            - "GlassFish"
+            - "Resine"
+            - "Websphere"
+            
+        - label: "Bases de données"
+          multi: many
+          vals:
+            - "PostgreSQL"
+            - "MySQL"
+            - "Oracle"
+            - "HSQLDB"
+        - label: "Outils"
+          multi: many
+          vals:
+            - "Eclipse"
+            - "Maven, Ant, Gradle"
+            - "Git, SVN, Dimension"
+            - "Jenkins, Hudson"
+            - "Sonar"
+    - title: "Expérience"
+      col: 1
+      subs:
+        - label: "2010 - 2012"
+          multi: one
+          value: "<a href=\"http://www.celad.com/\">CELAD</a>, Ingénieur d'Etudes sur les applications Java EE de la société <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, filiale de <a href=\"http://www.natixis.com\">Natixis</a>."
+        - label: "2009 - 2011"
+          multi: one
+          value: "Auto-entrepreneur en développement informatique et conception de sites internet."
+    - title: "Etudes"
+      col: 1
+      subs:
+        - label: "Fin 2009"
+          multi: one
+          value: "<a href=\"http://www.polymtl.ca/\"><abbr title=\"Ecole Polytechnique de Montréal\">EPM</abbr></a> (Montréal, Canada), programme d'échange durant un semestre."
+        - label: "2007 - 2010"
+          multi: one
+          value: "<a href=\"http://www.enseeiht.fr/fr/index.html\"><abbr title=\"Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications\">ENSEEIHT</abbr></a> (Toulouse, France), diplôme d'Ingénieur en Mathématiques Appliquées et Informatique."
+        - label: "2004 - 2007"
+          multi: one
+          value: "<a href=\"http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php\">Lycée Pierre de Fermat</a> (Toulouse, France), Classe Préparatoire aux Grandes Ecoles en Mathématiques et Physique, option Informatique."
+        - label: "2004"
+          multi: one
+          value: "Baccalauréat Scientifique, Mention Bien."
+    - title: "Langues"
+      col: 1
+      subs:
+        - label: "Français"
+          multi: one
+          value: "Langue maternelle"
+        - label: "Anglais"
+          multi: one
+          value: "Niveau professionnel (TOEIC : 910 / 990)"
+        - label: "Espagnol"
+          multi: one
+          value: "Niveau scolaire"
+        - label: "Chinois"
+          multi: one
+          value: "Niveau scolaire"

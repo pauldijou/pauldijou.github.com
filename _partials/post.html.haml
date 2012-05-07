@@ -1,0 +1,42 @@
+---
+---
+.post
+  - if page.alone
+    %ul.pager.visible-desktop{:style=>"float:right;"}
+      - if page.post.next_post
+        %li
+          %a{:href=>page.post.next_post.url} Previous
+      - if page.post.previous_post
+        %li
+          %a{:href=>page.post.previous_post.url} Next
+
+  %h2
+    %a{:href=>page.post.url}
+      = page.post.title
+    - if !page.alone
+      %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+page.post.url, "data-text"=>"Reading Paul Dijou's blog : "+page.post.title} Tweet
+  .meta
+    Posted by 
+    %span.authors= ' '.concat(page.post.authors.map{|u| site.identities.method_missing(u).name} * ', ')
+    on 
+    %span.date{:style=>"margin-right: 10px;"}= page.post.date.strftime( '%b %d, %Y' )
+    - if site.disqus
+      | 
+      = page.disqus_comments_link
+    
+  .content
+    / %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary))
+    ~ page.post.content
+  .footer
+    %a{:href=>page.post.url} Permalink
+    | 
+    - if site.disqus
+      = page.disqus_comments_link
+      | 
+    - if page.post.tags
+      %span.tags
+        %i.icon-tags
+        Tags :
+        - for tag in page.post.tags
+          - unless tag.nil?
+            %a.tag{:href=>tag.primary_page.url}= tag

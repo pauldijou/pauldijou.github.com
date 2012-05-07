@@ -21,6 +21,5 @@
   $(document).ready(function() {
     var indexOfSharp = window.location.pathname.indexOf('#');
     var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-    console.log(pathname)
     $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
   });

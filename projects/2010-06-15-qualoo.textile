@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Qdsfs aze aze aze aez aze df"
 author: "Paul Dijou"
 project_date: "June - August 2008 : 2 months"

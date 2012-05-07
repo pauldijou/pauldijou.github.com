@@ -1,6 +1,6 @@
 ---
 title: "Title 2009-03"
-author: "Paul Dijou"
+authors: [pauldijou]
 layout: post
 summary: 0
 tags: [misc, test, java]

@@ -6,7 +6,7 @@
     - coolwebsite:
       label: "Having a cool website"
       status: "inprogress"
-      progress: "60%"
+      progress: "70%"
     - githubpullrequest:
       label: "Send a successfull GitHub pull request"
       status: "done"
@@ -20,9 +20,14 @@
       label: "Become committer on an Apache Fundation project"
       status: "inprogress"
       progress: "10%"
+    - commiterjboss:
+      label: "Become committer on an JBoss project"
+      status: "inprogress"
+      progress: "60%"
     - conferencejug:
       label: "Give a conference at a JUG"
-      status: "no"
+      status: "done"
+      url: "http://toulousejug.org/2012/04/13/soiree-dont-vous-etes-le-heros-le-2604/"
 - master:
   selector: "master"
   label: "Master"

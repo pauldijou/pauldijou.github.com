@@ -4,113 +4,86 @@ layout: main
 .row
   .span9
     .posts
-      - for post in page.posts
-        .post
-          %h2
-            %a{:href=>post.url}
-              = post.title
-            %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+post.url, "data-text"=>"Reading Paul Dijou's blog : "+post.title} Tweet
-          .meta
-            Posted by 
-            %span.label Paul Dijou 
-            on 
-            %span.label.label-important{:style=>"margin-right: 10px;"}= post.date.strftime( '%b %d, %Y' )
-            - if site.disqus
-              | 
-              = page.disqus_comments_link
+      - page.posts.each do |post|
+        = partial('post.html.haml', {'parent'=>page, 'post'=>post, 'alone' => false})
+
+    - current_page_number = page.posts.current_page_index + 1
+    %div.visible-phone
+      %ul.pager
+        - if page.posts.previous_page
+          %li.previous
+            %a{:href => "#{page.posts.previous_page.url}"} Previous
+        - if !page.posts.previous_page
+          %li.previous.disabled
+            %a{:href => "#"} Previous
+        %li.disabled
+          %a{:href => "#"} #{current_page_number} of #{page.posts.pages.size}
+        - if page.posts.next_page
+          %li.next
+            %a{:href => "#{page.posts.next_page.url}"} Next
+        - if !page.posts.next_page
+          %li.next.disabled
+            %a{:href => "#"} Next
             
-          .content
-            / %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary))
-            ~ post.content
-          .footer
-            %a{:href=>post.url} Permalink
-            | 
-            - if site.disqus
-              = page.disqus_comments_link
-              | 
-            - if post.tags
-              %span.tags
-                %i.icon-tags
-                Tags :
-                - for tag in post.tags
-                  - unless tag.nil?
-                    %a.tag{:href=>tag.primary_page.url}= tag
-                    
+    %div.pagination.pagination-centered.hidden-phone
+      %ul
+        - if page.posts.previous_page
+          %li
+            %a{:href => "#{site.blog_prefix}/"} First
+          %li
+            %a{:href => "#{page.posts.previous_page.url}"} Previous
+        - if !page.posts.previous_page
+          %li.disabled
+            %a{:href => "#"} First
+          %li.disabled
+            %a{:href => "#"} Previous
+        - if current_page_number > 3
+          %li.disabled
+            %a{:href => "#"} ...
+          %li
+            %a{:href => "#{site.blog_prefix}/page/#{current_page_number - 2}/"} #{current_page_number - 2}
+        - if current_page_number == 3
+          %li
+            %a{:href => "#{site.blog_prefix}/"} #{current_page_number - 2}
+        - if current_page_number > 2
+          %li
+            %a{:href => "#{site.blog_prefix}/page/#{current_page_number - 1}/"} #{current_page_number - 1}
+        - if current_page_number == 2
+          %li
+            %a{:href => "#{site.blog_prefix}/"}
+              = current_page_number - 1
+        %li.active
+          %a{:href => "#"} #{current_page_number} of #{page.posts.pages.size}
+        - if (page.posts.pages.size - current_page_number) > 0
+          %li
+            %a{:href => "#{site.blog_prefix}/page/#{current_page_number + 1}/"} #{current_page_number + 1}
+        - if (page.posts.pages.size - current_page_number) > 1
+          %li
+            %a{:href => "#{site.blog_prefix}/page/#{current_page_number + 2}/"} #{current_page_number + 2}
+        - if (page.posts.pages.size - current_page_number) > 2
+          %li.disabled
+            %a{:href => "#"} ...
+        - if page.posts.next_page
+          %li
+            %a{:href => "#{page.posts.next_page.url}"} Next
+          %li
+            %a{:href => "#{site.blog_prefix}/page/#{page.posts.pages.size}/"} Last
+        - if !page.posts.next_page
+          %li.disabled
+            %a{:href => "#"} Next
+          %li.disabled
+            %a{:href => "#"} Last
+        
   .span3
-    = partial( 'social-icons.html.haml' )
+    %div{:style=>"margin-bottom:20px;text-align:center;"}
+      = partial( 'subscribe.html.haml' )
+    
     %ul.nav.nav-list.well{:style=>"clear:both;"}
       %li.nav-header
         Tag Cloud
       %li
         = site.posts_tag_cloud
-
-- current_page_number = page.posts.current_page_index + 1
-%div.visible-phone
-  %ul.pager
-    - if page.posts.previous_page
-      %li.previous
-        %a{:href => "#{page.posts.previous_page.url}"} Previous
-    - if !page.posts.previous_page
-      %li.previous.disabled
-        %a{:href => "#"} Previous
-    %li.disabled
-      %a{:href => "#"} #{current_page_number} of #{page.posts.pages.size}
-    - if page.posts.next_page
-      %li.next
-        %a{:href => "#{page.posts.next_page.url}"} Next
-    - if !page.posts.next_page
-      %li.next.disabled
-        %a{:href => "#"} Next
         
-%div.pagination.pagination-centered.hidden-phone
-  %ul
-    - if page.posts.previous_page
-      %li
-        %a{:href => "#{site.blog_prefix}/"} First
-      %li
-        %a{:href => "#{page.posts.previous_page.url}"} Previous
-    - if !page.posts.previous_page
-      %li.disabled
-        %a{:href => "#"} First
-      %li.disabled
-        %a{:href => "#"} Previous
-    - if current_page_number > 3
-      %li.disabled
-        %a{:href => "#"} ...
-      %li
-        %a{:href => "#{site.blog_prefix}/page/#{current_page_number - 2}/"} #{current_page_number - 2}
-    - if current_page_number == 3
-      %li
-        %a{:href => "#{site.blog_prefix}/"} #{current_page_number - 2}
-    - if current_page_number > 2
-      %li
-        %a{:href => "#{site.blog_prefix}/page/#{current_page_number - 1}/"} #{current_page_number - 1}
-    - if current_page_number == 2
-      %li
-        %a{:href => "#{site.blog_prefix}/"}
-          = current_page_number - 1
-    %li.active
-      %a{:href => "#"} #{current_page_number} of #{page.posts.pages.size}
-    - if (page.posts.pages.size - current_page_number) > 0
-      %li
-        %a{:href => "#{site.blog_prefix}/page/#{current_page_number + 1}/"} #{current_page_number + 1}
-    - if (page.posts.pages.size - current_page_number) > 1
-      %li
-        %a{:href => "#{site.blog_prefix}/page/#{current_page_number + 2}/"} #{current_page_number + 2}
-    - if (page.posts.pages.size - current_page_number) > 2
-      %li.disabled
-        %a{:href => "#"} ...
-    - if page.posts.next_page
-      %li
-        %a{:href => "#{page.posts.next_page.url}"} Next
-      %li
-        %a{:href => "#{site.blog_prefix}/page/#{page.posts.pages.size}/"} Last
-    - if !page.posts.next_page
-      %li.disabled
-        %a{:href => "#"} Next
-      %li.disabled
-        %a{:href => "#"} Last
-
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
   

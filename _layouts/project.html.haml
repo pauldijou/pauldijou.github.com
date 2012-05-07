@@ -1,0 +1,25 @@
+---
+layout: main
+---
+.row
+  .span9
+    = partial('project.html.haml', {'parent'=>page, 'project'=>page, 'alone' => true})
+
+    .visible-desktop
+      %ul.pager
+        - if page.next_project
+          %li.previous
+            %a{:href=>page.next_project.url} Previous: #{page.next_project.title}
+        - if page.previous_project
+          %li.next
+            %a{:href=>page.previous_project.url} Next: #{page.previous_project.title}
+    
+    .hidden-desktop
+      %ul.pager
+        - if page.next_project
+          %li.previous
+            %a{:href=>page.next_project.url} Previous
+        - if page.previous_project
+          %li.next
+            %a{:href=>page.previous_project.url} Next
+    

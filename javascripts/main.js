@@ -13,16 +13,19 @@ $(function() {
 	
 	$(function() {
 		var offset = $(".follow-scroll").offset();
-		var speed = 1100;
-		$(window).scroll(function() {
-			if ($(window).scrollTop() > offset.top) {
-				var marginTop = $(window).scrollTop() - offset.top + getTopOffset();
-			} else {
-				var marginTop = 0;
-			};
-			//console.log("Window.scrollTop : "+$(window).scrollTop()+" - offset.top : "+offset.top+" + TopOffset : "+getTopOffset()+" = marginTop : "+marginTop);
-			$(".follow-scroll").stop().animate({marginTop: marginTop}, speed);
-		});
+		if(offset != null)
+		{
+			var speed = 1100;
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > offset.top) {
+					var marginTop = $(window).scrollTop() - offset.top + getTopOffset();
+				} else {
+					var marginTop = 0;
+				};
+				//console.log("Window.scrollTop : "+$(window).scrollTop()+" - offset.top : "+offset.top+" + TopOffset : "+getTopOffset()+" = marginTop : "+marginTop);
+				$(".follow-scroll").stop().animate({marginTop: marginTop}, speed);
+			});
+		}
 	});
 });
 

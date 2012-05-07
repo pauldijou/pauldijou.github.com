@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Azeaze"
 author: "Paul Dijou"
 project_date: "June - August 2008 : 2 months"
