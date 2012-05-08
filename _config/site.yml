@@ -31,11 +31,13 @@ github_fork:
 profiles:
   development:
     base_url: http://localhost:4242
-    disqus: 
+    disqus: pauldijou
+    disqus_generate_id: true
     disqus_developer: true
   production:
     base_url: http://pauldijou.github.com
-    disqus: paul_dijou
+    disqus: pauldijou
+    disqus_generate_id: true
     deploy:
       host: github_pages
       branch: master

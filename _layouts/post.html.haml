@@ -22,16 +22,29 @@ layout: main
         - if page.previous_post
           %li.next
             %a{:href=>page.previous_post.url} Next
-            
-    .comments
-      = page.disqus_comments
-            
-  .span3
-    %aside
-      = partial("social-share.html.haml")
+
+    %aside.visible-phone
       %ul.nav.nav-list.well
         %li.nav-header
           Tag Cloud
         %li
           = site.posts_tag_cloud
-          
+      %div
+        &nbsp;
+      = partial("social-share.html.haml")
+            
+    .comments
+      = page.disqus_comments
+      
+  .span3
+    %aside.hidden-phone
+      %ul.nav.nav-list.well
+        %li.nav-header
+          Tag Cloud
+        %li
+          = site.posts_tag_cloud
+      %div
+        &nbsp;
+      .follow-scroll
+        = partial("social-share.html.haml")
+      

@@ -19,19 +19,18 @@
     Posted by 
     %span.authors= ' '.concat(page.post.authors.map{|u| site.identities.method_missing(u).name} * ', ')
     on 
-    %span.date{:style=>"margin-right: 10px;"}= page.post.date.strftime( '%b %d, %Y' )
+    %span.date= page.post.date.strftime( '%b %d, %Y' )
     - if site.disqus
       | 
-      = page.disqus_comments_link
+      = page.post.disqus_comments_link
     
   .content
-    / %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary))
     ~ page.post.content
   .footer
     %a{:href=>page.post.url} Permalink
     | 
     - if site.disqus
-      = page.disqus_comments_link
+      = page.post.disqus_comments_link
       | 
     - if page.post.tags
       %span.tags

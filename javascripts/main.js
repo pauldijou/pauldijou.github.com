@@ -5,6 +5,7 @@ $(function() {
 	$("[rel=tooltip-left]").tooltip({placement: 'left'});
 	$("[rel=tooltip-right]").tooltip({placement: 'right'});
 	
+	$("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
 	prettyPrint();
 	
 	$("a.anchorLink[href^=#]").anchorAnimate();
