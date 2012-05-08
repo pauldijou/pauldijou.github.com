@@ -1,6 +1,6 @@
 ---
 ---
-.project.well
+%section.project.well
   - if page.alone
     %ul.pager.visible-desktop{:style=>"float:right;"}
       - if page.project.next_project
@@ -13,32 +13,47 @@
   %h2
     %a{:href=>page.project.url}
       = page.project.title
-  %h5.date= page.project.project_date
+  
+  - if page.project.project_date
+    %h5.date= page.project.project_date
 
   %blockquote
     %dl.dl-horizontal
-      %dt
-        %h6 Project type
-      %dd #{page.project.project_type}
+    
+      - if page.project.project_type
+        %dt
+          %h6 Project type
+        %dd= page.project.project_type
 
-      %dt
-        %h6 Url
-      %dd 
-        %a{:href=>"#{page.project.project_url}", :target=>"_blank"}
-          = page.project.project_url.size > site.max_url_label_size ? page.project.project_url[0..site.max_url_label_size].concat("...") : page.project.project_url
+      - if page.project.project_url
+        %dt
+          %h6 Url
+        %dd 
+          %a{:href=>"#{page.project.project_url}", :target=>"_blank"}
+            = page.project.project_url.size > site.max_url_label_size ? page.project.project_url[0..site.max_url_label_size].concat("...") : page.project.project_url
 
-      %dt
-        %h6 Description
-      %dd #{page.project.project_description}
+      - if page.project.project_description
+        %dt
+          %h6 Description
+        %dd= page.project.project_description
 
-      %dt
-        %h6 Technologies
-      %dd #{page.project.project_technologies.join(", ")}
+      - if page.project.project_technologies
+        %dt
+          %h6 Technologies
+        %dd #{page.project.project_technologies.join(", ")}
+      
+      - if page.project.tags
+        %dt
+          %h6 Tags
+        %dd
+          - for tag in page.project.tags
+            - unless tag.nil?
+              %a.tag{:href=>tag.primary_page.url}= tag
 
-  
-  .content
-    - if !page.alone
-      %p
-        %a.btn{:href=>page.project.url} Learn more...
-    - if page.alone
-      ~ page.project.content
+  - if(page.project.has_more)
+    .content
+      - if !page.alone
+        %p
+          %a.btn{:href=>page.project.url} Learn more...
+      - if page.alone
+        ~ page.project.content

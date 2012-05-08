@@ -1,6 +1,7 @@
 - padawan:
   selector: "padawan"
   label: "Padawan"
+  in: true
   classes: ""
   tasks:
     - coolwebsite:
@@ -14,6 +15,7 @@
 - knight:
   selector: "knight"
   label: "Knight"
+  in: false
   classes: ""
   tasks:
     - commiterapache:
@@ -31,6 +33,7 @@
 - master:
   selector: "master"
   label: "Master"
+  in: false
   classes: ""
   tasks:
     - apachementor:
@@ -43,6 +46,7 @@
 - yoda:
   selector: "yoda"
   label: "Yoda"
+  in: false
   classes: "btn-success"
   tasks:
     - jvmlanguage:

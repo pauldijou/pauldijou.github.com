@@ -84,6 +84,22 @@ ul.icons li {
   }
 }
 
+.project {
+  a.tag {
+    background-color: #999999;
+    @include border-radius(3px);
+    font-size: 11px;
+    color: white;
+    padding: 2px 4px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  a.tag:hover {
+    background-color: #B94A48;
+  }
+}
+
 .todo {
   a.btn {
     font-weight: bold;

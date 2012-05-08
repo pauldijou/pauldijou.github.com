@@ -35,8 +35,10 @@ profiles:
     disqus_developer: true
   production:
     base_url: http://pauldijou.github.com
-    some_prop: false
     disqus: paul_dijou
+    deploy:
+      host: github_pages
+      branch: master
     
 github_fork_images:
   red:

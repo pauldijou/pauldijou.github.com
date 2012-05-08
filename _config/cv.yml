@@ -79,27 +79,27 @@ en:
     - title: "Experience"
       col: 1
       subs:
-        - label: "2010 - 2012"
+        - label: "2010 - 2012<br/>(2 years)"
           multi: one
-          value: "CELAD"
-        - label: "2009 - 2011"
+          value: "<a href=\"http://www.celad.com/\">CELAD</a>, computer science engineer working on Java EE web applications of <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, subsidiary of <a href=\"http://www.natixis.com\">Natixis</a> (French bank)."
+        - label: "2009 - 2011<br/>(2 years)"
           multi: one
-          value: "Startup"
+          value: "Self-employed, creating web applications and websites."
     - title: "Studies"
       col: 1
       subs:
         - label: "End 2009"
           multi: one
-          value: "EPM"
+          value: "<a href=\"http://www.polymtl.ca/en/\"><abbr title=\"Ecole Polytechnique de Montréal\">EPM</abbr></a> (Montreal, Canada), exchange program during one semester."
         - label: "2007 - 2010"
           multi: one
-          value: "ENSEEIHT"
+          value: "<a href=\"http://www.enseeiht.fr/en/index.html\"><abbr title=\"Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications\">ENSEEIHT</abbr></a> (Toulouse, France), engineer degree in Mathematics and Computer Science."
         - label: "2004 - 2007"
           multi: one
-          value: "Fermat"
+          value: "<a href=\"http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php\">Lycée Pierre de Fermat</a> (Toulouse, France), two-years highly selective classes to prepare for competitive exams to \"Grandes Ecoles\"."
         - label: "2004"
           multi: one
-          value: "Bac S"
+          value: "Scientific \"Baccalauréat\", with distinction."
     - title: "Langs"
       col: 1
       subs:
@@ -194,10 +194,10 @@ fr:
     - title: "Expérience"
       col: 1
       subs:
-        - label: "2010 - 2012"
+        - label: "2010 - 2012<br/>(2 ans)"
           multi: one
           value: "<a href=\"http://www.celad.com/\">CELAD</a>, Ingénieur d'Etudes sur les applications Java EE de la société <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, filiale de <a href=\"http://www.natixis.com\">Natixis</a>."
-        - label: "2009 - 2011"
+        - label: "2009 - 2011<br/>(2 ans)"
           multi: one
           value: "Auto-entrepreneur en développement informatique et conception de sites internet."
     - title: "Etudes"

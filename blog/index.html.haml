@@ -75,14 +75,24 @@ layout: main
             %a{:href => "#"} Last
         
   .span3
-    %div{:style=>"margin-bottom:20px;text-align:center;"}
-      = partial( 'subscribe.html.haml' )
-    
-    %ul.nav.nav-list.well{:style=>"clear:both;"}
-      %li.nav-header
-        Tag Cloud
-      %li
-        = site.posts_tag_cloud
+    .spynav.follow-scroll.hidden-phone
+      %div{:style=>"margin-bottom:20px;text-align:center;"}
+        = partial( 'subscribe.html.haml' )
+      
+      %ul.nav.nav-list.well{:style=>"clear:both;"}
+        %li.nav-header
+          Tag Cloud
+        %li
+          = site.posts_tag_cloud
+    .visible-phone
+      %div{:style=>"margin-bottom:20px;text-align:center;"}
+        = partial( 'subscribe.html.haml' )
+      
+      %ul.nav.nav-list.well{:style=>"clear:both;"}
+        %li.nav-header
+          Tag Cloud
+        %li
+          = site.posts_tag_cloud
         
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

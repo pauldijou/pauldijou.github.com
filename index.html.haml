@@ -1,68 +1,69 @@
 ---
-layout: page
+layout: base
 ---
 - if !site.use_dashboard
   %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
 - if site.use_dashboard
-  .title
-    %h1 Paul Dijou
-    %h6 Computer Science Engineer
-    .container
+  .page
+    .title
+      %h1 Paul Dijou
+      %h6 Computer Science Engineer
+      .container
+        .row
+          .span4.offset4
+            %pre.prettyprint.linenums.lang-java
+              :preserve
+                while(this.isAlive())
+                {
+                    this.programming();
+                }
+    #container.container.index.no-footer
       .row
-        .span4.offset4
-          %pre.prettyprint.linenums.lang-java
-            :preserve
-              while(this.isAlive())
-              {
-                  this.programming();
-              }
-  #container.container.index.no-footer
-    .row
-      .span12
-        .alert.alert-error.alert-block
-          %a.close{:href=>"#", "data-dismiss"=>"alert"} ×
-          %h4.alert-heading Site under construction
-          %p Sorry for the inconvenience, please be patient. Stay tuned for the final release, it's gonna rock!
-    .row
-      .span4
-        .well.last-posts
-          %ul.nav.nav-list
-            %li.nav-header Last posts
-            - for post in site.posts[0,5]
-              %li
-                %h3
-                  %a{:href=>post.url} #{post.title}
-                Posted on 
-                %span.date= post.date.strftime( '%b %d, %Y' )
-              %li.divider
-          %a.btn{:href=>"/blog/"} Read my blog
-          = partial( 'subscribe.html.haml' )
-      .span4
-        .well.last-projects
-          %ul.nav.nav-list
-            %li.nav-header Last projects
-            - for project in site.projects[0,5]
-              %li
-                %h3
-                  %a{:href=>project.url} #{project.title}
-                = project.project_technologies.join(", ")
-              %li.divider
-          %a.btn{:href=>"/projects/"} View my work
-          %a.btn{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
-      .span4
-        .well.last-tweets
-          %ul.nav.nav-list.twitter-list
-            %li.nav-header Last tweets
-            #twitter_update_list
-          %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", :data=>{"show-count"=>"false", :size=>"large"}} Follow me on Twitter
-    :javascript
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-    %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
-    %script{ :type=>'text/javascript', :src=>'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=paul_dijou&count=5&include_rts=true&callback=twitterCallback2' }
-      
-    :javascript
-      $(document).ready(function() {
-        $('#container .row .span4 .last-posts').animate({top:'0px'}, 1000);
-        $('#container .row .span4 .last-projects').animate({top:'0px'}, 1500);
-        $('#container .row .span4 .last-tweets').animate({top:'0px'}, 2000);
-      });
+        .span12
+          .alert.alert-error.alert-block
+            %a.close{:href=>"#", "data-dismiss"=>"alert"} ×
+            %h4.alert-heading Site under construction
+            %p Sorry for the inconvenience, please be patient. Stay tuned for the final release, it's gonna rock!
+      .row
+        .span4
+          .well.last-posts
+            %ul.nav.nav-list
+              %li.nav-header Last posts
+              - for post in site.posts[0,5]
+                %li
+                  %h3
+                    %a{:href=>post.url} #{post.title}
+                  Posted on 
+                  %span.date= post.date.strftime( '%b %d, %Y' )
+                %li.divider
+            %a.btn{:href=>"/blog/"} Read my blog
+            = partial( 'subscribe.html.haml' )
+        .span4
+          .well.last-projects
+            %ul.nav.nav-list
+              %li.nav-header Last projects
+              - for project in site.projects[0,5]
+                %li
+                  %h3
+                    %a{:href=>project.url} #{project.title}
+                  = project.project_technologies.join(", ")
+                %li.divider
+            %a.btn{:href=>"/projects/"} View my work
+            %a.btn{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
+        .span4
+          .well.last-tweets
+            %ul.nav.nav-list.twitter-list
+              %li.nav-header Last tweets
+              #twitter_update_list
+            %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", :data=>{"show-count"=>"false", :size=>"large"}} Follow me on Twitter
+      :javascript
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+      %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
+      %script{ :type=>'text/javascript', :src=>'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=paul_dijou&count=5&include_rts=true&callback=twitterCallback2' }
+        
+      :javascript
+        $(document).ready(function() {
+          $('#container .row .span4 .last-posts').animate({top:'0px'}, 1000);
+          $('#container .row .span4 .last-projects').animate({top:'0px'}, 1500);
+          $('#container .row .span4 .last-tweets').animate({top:'0px'}, 2000);
+        });

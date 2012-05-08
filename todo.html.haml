@@ -10,11 +10,11 @@ layout: page
     - for level in site.levels
       %a.btn{:href=>"#"+level.selector, :class=>level.classes, :data=>{:parent=>"#levels", :toggle=>"collapse"}}= level.label
   #levels
-    #container.container.no-footer
+    #container.container
       .row
         .span6.offset3
           - for level in site.levels
-            %div.collapse{:id=>level.selector}
+            %div{:id=>level.selector, :class=>level.in ? 'in' : 'collapse'}
               %ul.nav.nav-list.well
                 %li.nav-header= level.label
                 %li.divider

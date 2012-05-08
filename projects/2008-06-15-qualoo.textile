@@ -2,21 +2,11 @@
 layout: project
 title: "Qualoo"
 author: "Paul Dijou"
+has_more: false
 project_date: "June - August 2008 : 2 months"
 project_type: "Internship"
 project_url: "http://stinfoservices.net/index.php?option=com_content&task=view&id=68&Itemid=80"
-project_description: "Développé par la SSII ST Informatique Services, Qualoo est un générateur de code destiné à créer une interface d’administration CRUD à partir d’une base de données. J’y ai rajouté l’autocomplétion dans certains champs."
+project_description: "Developed by <a href=\"http://stinfoservices.net\">ST Informatique Services</a>, Qualoo is a code generator which will create a Java EE application CRUD using reverse engineering from a database. My work was to create a custom autocomplete on some generated input field that display data from the database using ajax."
 project_technologies: [Java, Java EE, JavaScript, AJAX]
-tags: [projects]
+tags: [internship, java, javaee]
 ---
-h2. Test 2012-03
-
-Hell yeah !!
-
-Hell yeah !!
-
-Hell yeah !!
-
-Hell yeah !!
-
-Hell yeah !!

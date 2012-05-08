@@ -7,37 +7,8 @@ title: Projects
 #container.container
   .row    
     .span9
-      - for project in site.projects
-        %section{:id=>"#{project.date.strftime( '%Y-%B-%d' )}", :class=>"#{project.project_type}"}
-          .project.well
-            %h2
-              %a{:href=>project.url}
-                = project.title
-            %h5.date #{project.project_date}
-        
-            %blockquote
-              %dl.dl-horizontal
-                %dt
-                  %h6 Project type
-                %dd #{project.project_type}
-          
-                %dt
-                  %h6 Url
-                %dd 
-                  %a{:href=>"#{project.project_url}", :target=>"_blank"}
-                    = project.project_url.size > site.max_url_label_size ? project.project_url[0..site.max_url_label_size].concat("...") : project.project_url
-          
-                %dt
-                  %h6 Description
-                %dd #{project.project_description}
-        
-                %dt
-                  %h6 Technologies
-                %dd #{project.project_technologies.join(", ")}
-          
-            .content
-              %p
-                %a.btn{:href=>project.url} Learn more...
+      - page.projects.each do |project|
+        = partial('project.html.haml', {'parent'=>page, 'project'=>project, 'alone' => false})
     .span3
       .spynav.follow-scroll.hidden-phone
         %ul.nav.nav-list.well
