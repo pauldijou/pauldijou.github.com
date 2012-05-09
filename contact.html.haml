@@ -5,3 +5,46 @@ title: Contact
 .title
   %h1 Contact
   %h6 Choose your weapon!
+  
+#container.container
+  .row
+    .span4
+      .well
+        %h6.bot10 Email
+        %p
+          paul.dijou.dev at gmail.com
+      .well
+        %h6.bot10 Twitter
+        %p
+          %a.twitter-follow-button{:href=>"https://twitter.com/paul_dijou"} Follow @paul_dijou
+          :javascript
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        %p
+          %a.twitter-mention-button{:href=>"https://twitter.com/intent/tweet?screen_name=paul_dijou", "data-related"=>"paul_dijou"} Tweet to @paul_dijou
+          :javascript
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          
+    .span4
+      .well
+        %h6 IRC
+        %p
+          I'm killing time on 
+          %a{:href=>"http://freenode.net/"} irc.freenode.net 
+          on one of the following channel:
+        %ul.unstyled{:style=>"margin-left:20px;"}
+          %li #richfaces
+          %li #deltaspike
+          %li #jbosstesting
+          %li #forge
+          %li #seam-dev
+        %p
+          If you don't have an IRC client, just click on this link: 
+          %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net
+      
+    .span4
+      .well
+        %h6.bot10 Contact form
+        %p
+          May be one day... In the meantime, you can send me a mail.
+                
+          
