@@ -8,6 +8,66 @@ title: Contact
   
 #container.container
   .row
+    .span8
+      .well
+        %h6.bot10 Contact form
+        %form.form-horizontal{:style=>"margin:0px;"}
+          .control-group
+            .control-label
+              Name 
+              %span.required *
+            .controls
+              %input#contactName.input-xlarge{:type=>"text", :name=>"contactName"}
+          .control-group
+            .control-label
+              Email 
+              %span.required *
+            .controls
+              %input#contactEmail.input-xlarge{:type=>"text", :name=>"contactEmail"}
+          .control-group
+            .control-label
+              Subject 
+              %span.required *
+            .controls
+              %input#contactSubject.input-xlarge{:type=>"text", :name=>"contactSubject"}
+          .control-group
+            .control-label
+              Message  
+              %span.required *
+            .controls
+              %textarea#contactMessage.input-xlarge{:name=>"contactMessage"}
+          .form-actions{:style=>"margin:0px -19px -19px -19px;"}
+            %button.btn.btn-primary{:type=>"button", :onclick=>"submitContact();return false;"}
+              Submit
+            %button.btn{:type=>"reset"}
+              Cancel
+        :javascript
+          $(function() { $('#contactMessage').autogrow(); })
+          
+          function submitContact() {
+            var contactName = $("input#contactName").val();
+            var contactEmail = $("input#contactEmail").val();
+            var contactSubject = $("input#contactSubject").val();
+            var contactMessage = $("textarea#contactMessage").val();
+            
+            var request = $.ajax({
+              type: "POST",
+              url: "http://ptools.pauldijou.fr/contact.php",
+              data: {contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage}
+            });
+            
+            request.done(function(msg) {
+              alert(msg);
+            });
+            
+            request.fail(function(jqXHR, textStatus) {
+              alert( "Request failed: " + textStatus );
+            });
+            
+            return false;
+          }
+          
+    
     .span4
       .well
         %h6.bot10 Email
@@ -24,7 +84,6 @@ title: Contact
           :javascript
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
           
-    .span4
       .well
         %h6 IRC
         %p
@@ -40,11 +99,4 @@ title: Contact
         %p
           If you don't have an IRC client, just click on this link: 
           %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net
-      
-    .span4
-      .well
-        %h6.bot10 Contact form
-        %p
-          May be one day... In the meantime, you can send me a mail.
-                
           

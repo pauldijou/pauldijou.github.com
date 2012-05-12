@@ -15,7 +15,7 @@ en:
           value: "25 years old (10/11/1986)"
         - label: "Email"
           multi: one
-          value: "<a href=\"mailto:paul.dijou.dev@gmail.com\">paul.dijou.dev@gmail.com</a>"
+          value: "paul.dijou.dev at gmail.com"
         - label: "GitHub"
           multi: one
           value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"
@@ -130,7 +130,7 @@ fr:
           value: "25 ans (11/10/1986)"
         - label: "Email"
           multi: one
-          value: "<a href=\"mailto:paul.dijou.dev@gmail.com\">paul.dijou.dev@gmail.com</a>"
+          value: "paul.dijou.dev at gmail.com"
         - label: "GitHub"
           multi: one
           value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"

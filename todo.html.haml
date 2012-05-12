@@ -35,8 +35,8 @@ layout: page
                       .progress.progress-striped.active
                         .bar{:style=>"width:#{task.progress};"}
                   %li.divider
-                .row{:style=>"margin-top:10px;"}
-                  .span2
+                .row-fluid{:style=>"margin-top:10px;"}
+                  .span6
                     %ul.nav.nav-list
                       %li.nav-header Legend
                       %li
@@ -51,7 +51,7 @@ layout: page
                       %li
                         %i.icon-remove-sign
                         Fail
-                  .span3
+                  .span6
                     %ul.nav.nav-list
                       %li.nav-header Show progression
                       %li

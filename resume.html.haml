@@ -19,9 +19,9 @@ title: Resume
             .row
               .span9
                 .well.clearfix
-                  .row
+                  .row-fluid
                     - (1..2).each do |i|
-                      .span4
+                      .span6
                         - for section in cv.sections
                           - if section.col == i
                             %h2 #{section.title}
