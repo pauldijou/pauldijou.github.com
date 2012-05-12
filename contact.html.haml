@@ -11,31 +11,32 @@ title: Contact
     .span8
       .well
         %h6.bot10 Contact form
-        %form.form-horizontal{:style=>"margin:0px;"}
-          .control-group
-            .control-label
+        %div#contactFeedback
+        %form#formContact.form-horizontal{:style=>"margin:0px;"}
+          .control-group.contactName
+            %label.control-label{:for=>"contactName"}
               Name 
               %span.required *
             .controls
-              %input#contactName.input-xlarge{:type=>"text", :name=>"contactName"}
-          .control-group
-            .control-label
+              %input#contactName.span4{:type=>"text", :name=>"contactName"}
+          .control-group.contactEmail
+            %label.control-label{:for=>"contactEmail"}
               Email 
               %span.required *
             .controls
-              %input#contactEmail.input-xlarge{:type=>"text", :name=>"contactEmail"}
-          .control-group
-            .control-label
+              %input#contactEmail.span4{:type=>"text", :name=>"contactEmail"}
+          .control-group.contactSubject{:for=>"contactSubject"}
+            %label.control-label{:for=>"contactSubject"}
               Subject 
               %span.required *
             .controls
-              %input#contactSubject.input-xlarge{:type=>"text", :name=>"contactSubject"}
-          .control-group
-            .control-label
+              %input#contactSubject.span4{:type=>"text", :name=>"contactSubject"}
+          .control-group.contactMessage
+            %label.control-label{:for=>"contactMessage"}
               Message  
               %span.required *
             .controls
-              %textarea#contactMessage.input-xlarge{:name=>"contactMessage"}
+              %textarea#contactMessage.span4{:name=>"contactMessage"}
           .form-actions{:style=>"margin:0px -19px -19px -19px;"}
             %button.btn.btn-primary{:type=>"button", :onclick=>"submitContact();return false;"}
               Submit
@@ -45,26 +46,68 @@ title: Contact
           $(function() { $('#contactMessage').autogrow(); })
           
           function submitContact() {
+            cleanForm("#formContact");
+            
+            var contactTo = "paul.dijou.dev" + "@" + "gmail" + ".com";
             var contactName = $("input#contactName").val();
             var contactEmail = $("input#contactEmail").val();
             var contactSubject = $("input#contactSubject").val();
             var contactMessage = $("textarea#contactMessage").val();
             
-            var request = $.ajax({
-              type: "POST",
-              url: "http://ptools.pauldijou.fr/contact.php",
-              data: {contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage}
-            });
+            var hasErrors = false;
+            var errorMsgRequired="Required field";
             
-            request.done(function(msg) {
-              alert(msg);
-            });
+            if(contactName.length == 0) {
+              hasErrors = true;
+              addErrorMessage("contactName", errorMsgRequired);
+            }
             
-            request.fail(function(jqXHR, textStatus) {
-              alert( "Request failed: " + textStatus );
-            });
+            if(contactEmail.length == 0) {
+              hasErrors = true;
+              addErrorMessage("contactEmail", errorMsgRequired);
+            }
+            
+            if(contactSubject.length == 0) {
+              hasErrors = true;
+              addErrorMessage("contactSubject", errorMsgRequired);
+            }
+            
+            if(contactMessage.length == 0) {
+              hasErrors = true;
+              addErrorMessage("contactMessage", errorMsgRequired);
+            }
+            
+            if(!hasErrors) {
+              var request = $.ajax({
+                type: "POST",
+                url: "http://ptools.pauldijou.fr/?page=contact",
+                dataType: "html",
+                data: {contactTo: contactTo, contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage},
+                success: function(data, textStatus, jqXHR) {
+                  $('#contactFeedback ').html('<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
+                  $("input#contactName").val("");
+                  $("input#contactEmail").val("");
+                  $("input#contactSubject").val("");
+                  $("textarea#contactMessage").val("");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                  $('#contactFeedback ').html('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it\'s persist, send me a mail instead. Really sorry...</div>');
+                }
+              });
+            }
             
             return false;
+          }
+          
+          function cleanForm(selector) {
+            $('#contactFeedback .alert').remove();
+            $(selector + ' .control-group').removeClass('error');
+            $(selector + ' .control-group .help-block').remove();
+          }
+          
+          function addErrorMessage(selector, msg) {
+            $('#formContact .control-group.'+selector).addClass('error');
+            $('#formContact .control-group.'+selector+' .controls').append('<p class="help-block">'+msg+'</p>');
           }
           
     

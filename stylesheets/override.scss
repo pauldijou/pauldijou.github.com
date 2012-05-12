@@ -112,6 +112,14 @@ dl.dl-horizontal dt h6 {
 	.hidden-desktop    { display:inherit; }
 }
 
+@media (max-width: 480px) {
+  .form-horizontal .control-label {
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+}
+
 @media (max-width: 767px) {
 	.dl-horizontal dt {
 		float: none;
