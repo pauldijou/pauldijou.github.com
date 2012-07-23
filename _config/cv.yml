@@ -26,7 +26,7 @@ en:
           multi: many
           vals:
             - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML, JSon"
+            - "HTML, XHTML, XML, JSON"
             - "CSS, LESS, SASS"
             - "JavaScript"
             - "PHP"
@@ -48,7 +48,7 @@ en:
             - "Mojarra"
             - "MyFaces"
             - "Facelets"
-            - "RichFaces"
+            - "RichFaces (committer)"
             - "Primefaces"
             - "Trinidad"
         - label: "Servers"
@@ -71,7 +71,7 @@ en:
         - label: "Tools"
           multi: many
           vals:
-            - "Eclipse"
+            - "Eclipse, Intellij IDEA"
             - "Maven, Ant, Gradle"
             - "Git, SVN, Dimension"
             - "Jenkins, Hudson"
@@ -79,6 +79,9 @@ en:
     - title: "Experience"
       col: 1
       subs:
+        - label: "2012 (2 months)"
+          multi: one
+          value: "Short mission at Amsterdam inside <a href=\"http://www.mipagar.com/\">Mipagar</a> startup through <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
         - label: "2010 - 2012<br/>(2 years)"
           multi: one
           value: "<a href=\"http://www.celad.com/\">CELAD</a>, computer science engineer working on Java EE web applications of <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, subsidiary of <a href=\"http://www.natixis.com\">Natixis</a> (French bank)."
@@ -105,7 +108,7 @@ en:
       subs:
         - label: "French"
           multi: one
-          value: "Good"
+          value: "Native language"
         - label: "English"
           multi: one
           value: "Professionnal level (TOEIC : 910 / 990)"
@@ -141,7 +144,7 @@ fr:
           multi: many
           vals:
             - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML, JSon"
+            - "HTML, XHTML, XML, JSON"
             - "CSS, LESS, SASS"
             - "JavaScript"
             - "PHP"
@@ -163,7 +166,7 @@ fr:
             - "Mojarra"
             - "MyFaces"
             - "Facelets"
-            - "RichFaces"
+            - "RichFaces (contributeur)"
             - "Primefaces"
             - "Trinidad"
         - label: "Serveurs"
@@ -186,7 +189,7 @@ fr:
         - label: "Outils"
           multi: many
           vals:
-            - "Eclipse"
+            - "Eclipse, Intellij IDEA"
             - "Maven, Ant, Gradle"
             - "Git, SVN, Dimension"
             - "Jenkins, Hudson"
@@ -194,6 +197,9 @@ fr:
     - title: "Expérience"
       col: 1
       subs:
+        - label: "2012 (2 mois)"
+          multi: one
+          value: "Courte mission à Amsterdam au sein de la startup <a href=\"http://www.mipagar.com/\">Mipagar</a> dans le cadre du programme <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
         - label: "2010 - 2012<br/>(2 ans)"
           multi: one
           value: "<a href=\"http://www.celad.com/\">CELAD</a>, Ingénieur d'Etudes sur les applications Java EE de la société <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, filiale de <a href=\"http://www.natixis.com\">Natixis</a>."

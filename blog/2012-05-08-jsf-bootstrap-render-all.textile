@@ -3,7 +3,7 @@ title: "JSF, Bootstrap and calling render=@all"
 authors: [pauldijou]
 layout: post
 summary: 0
-tags: [jsf, bootstrap]
+tags: [en, jsf, bootstrap]
 ---
 h3. The problem
 

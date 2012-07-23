@@ -2,6 +2,9 @@
 .buildpath
 .settings/
 .sass-cache/
+.awestruct/
 _site/
 _tmp/
 _deploy/
+.idea/
+*.iml

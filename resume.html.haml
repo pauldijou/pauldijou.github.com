@@ -7,7 +7,7 @@ title: Resume
   .btn-wrapper
     .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
       - for lang in site.cv.langs
-        %a.btn{:href=>"#resume-#{lang}", "data-toggle"=>"tab"}= site.langs.method_missing(lang).label
+        %a{:href=>"#resume-#{lang}", :class=>"btn lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
   .clearfix
 #container.container
   .row
@@ -40,11 +40,19 @@ title: Resume
                 %ul.nav.nav-list.well
                   %li.nav-header= cv.downloads_label
                   %li.pdf
-                    Short
+                    Shortz
                   %li.odt
                     Short
 
 :javascript
   $('ul.cv > li:first').addClass('active');
-  $('.title .btn-group > a:first').addClass('active');
-  $('div.cv > .tab-pane:first').addClass('active');
+
+  var langs = ['en', 'fr'], lang = window.location.hash.substr(1);
+
+  if(langs.indexOf(lang) < 0) {
+    lang = langs[0];
+    window.location.hash = '#'+lang;
+  }
+
+  $('.title .btn-group > a.lang-'+lang).addClass('active');
+  $('#resume-'+lang).addClass('active');

@@ -7,21 +7,21 @@ layout: main
 
     .visible-desktop
       %ul.pager
-        - if page.next_post
-          %li.previous
-            %a{:href=>page.next_post.url} Previous: #{page.next_post.title}
         - if page.previous_post
+          %li.previous
+            %a{:href=>page.previous_post.url} Previous: #{page.previous_post.title}
+        - if page.next_post
           %li.next
-            %a{:href=>page.previous_post.url} Next: #{page.previous_post.title}
+            %a{:href=>page.next_post.url} Next: #{page.next_post.title}
     
     .hidden-desktop
       %ul.pager
-        - if page.next_post
-          %li.previous
-            %a{:href=>page.next_post.url} Previous
         - if page.previous_post
+          %li.previous
+            %a{:href=>page.previous_post.url} Previous
+        - if page.next_post
           %li.next
-            %a{:href=>page.previous_post.url} Next
+            %a{:href=>page.next_post.url} Next
 
     %aside.visible-phone
       %ul.nav.nav-list.well

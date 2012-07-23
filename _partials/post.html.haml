@@ -3,12 +3,12 @@
 .post
   - if page.alone
     %ul.pager.visible-desktop{:style=>"float:right;"}
-      - if page.post.next_post
-        %li
-          %a{:href=>page.post.next_post.url} Previous
       - if page.post.previous_post
         %li
-          %a{:href=>page.post.previous_post.url} Next
+          %a{:href=>page.post.previous_post.url} Previous
+      - if page.post.next_post
+        %li
+          %a{:href=>page.post.next_post.url} Next
 
   %h2
     %a{:href=>page.post.url}
