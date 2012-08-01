@@ -1,0 +1,11 @@
+---
+layout: project
+title: "Intertitres"
+author: "Paul Dijou"
+has_more: false
+project_date: "September 2010 - June 2012 : 2 years"
+project_type: "Professional"
+project_description: "TODO."
+project_technologies: [Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces]
+tags: [professional, java, javaee, spring, seam, jpa, jsf, richfaces]
+---

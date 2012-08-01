@@ -1,4 +1,6 @@
 $(function() {
+    var test = '#{site.default_page_title}';
+    
     $("[rel=tooltip]").tooltip();
     $("[rel=tooltip-top]").tooltip({
         placement : 'top'
@@ -84,7 +86,7 @@ $.fn.toggleHide = function() {
 }
 
 function getTopOffset() {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth > 979) {
         return 55;
     } else {

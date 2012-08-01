@@ -7,6 +7,9 @@ default_summary_size: 50
 max_url_label_size: 30
 blog_prefix: /blog
 scroll_spy_offset: 60
+blog_assets_url: /blog/assets
+projects_assets_url: /projects/assets
+carousel_interval: 4000
 
 social_identities:
   twitter: paul_dijou

@@ -16,4 +16,4 @@ title: Projects
             Projects
           - for project in site.projects
             %li{:class=>"#{project.project_type}"}
-              %a.anchorLink{:href=>"##{project.date.strftime( '%Y-%B-%d' )}"} #{project.title}
+              %a.anchorLink{:href=>"##{File.basename(project.relative_source_path, '.textile')}"} #{project.title}

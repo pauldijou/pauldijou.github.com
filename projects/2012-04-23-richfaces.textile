@@ -1,0 +1,12 @@
+---
+layout: project
+title: "RichFaces"
+author: "Paul Dijou"
+has_more: false
+project_date: "April 2012 - Now"
+project_type: "Open-Source"
+project_url: "http://jboss.org/richfaces/"
+project_description: "RichFaces is an open-source JSF (JavaServer Faces) library developed by JBoss, RedHat. It provided dozen of new components to extend the core ones and useful EL functions. I mostly work on RichFaces Bootstrap, a new subproject providing JSF components based on Twitter Bootstrap and jQuery UI."
+project_technologies: [JSF, RichFaces]
+tags: [oss, jsf, richfaces]
+---

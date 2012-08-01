@@ -1,0 +1,12 @@
+---
+layout: project
+title: "Cahu-En-Fete"
+author: "Paul Dijou"
+has_more: false
+project_date: "May 2009 : 1 week"
+project_type: "Association"
+project_url: "http://cahuenfete.free.fr/"
+project_description: "I was ask by a small association from a small town to help them to make a website to organize events. I was young at that time and, even if it was near some exams, I take a lot of time (like maybe 2 or 3 days) to do it. This project is just to say that yes, I did PHP on the past (and still do it from time to time)"
+project_technologies: [HTML, CSS, PHP]
+tags: [association, html, css, php]
+---

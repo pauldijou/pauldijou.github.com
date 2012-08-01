@@ -1,14 +1,14 @@
 ---
 ---
-%section.project.well
+%section.project.well{:id => "#{File.basename(page.project.relative_source_path, '.textile')}" }
   - if page.alone
     %ul.pager.visible-desktop{:style=>"float:right;"}
-      - if page.project.next_project
-        %li
-          %a{:href=>page.project.next_project.url} Previous
       - if page.project.previous_project
         %li
-          %a{:href=>page.project.previous_project.url} Next
+          %a{:href=>page.project.previous_project.url} Previous
+      - if page.project.next_project
+        %li
+          %a{:href=>page.project.next_project.url} Next
 
   %h2
     %a{:href=>page.project.url}
@@ -30,7 +30,7 @@
           %h6 Url
         %dd 
           %a{:href=>"#{page.project.project_url}", :target=>"_blank"}
-            = page.project.project_url.size > site.max_url_label_size ? page.project.project_url[0..site.max_url_label_size].concat("...") : page.project.project_url
+            = page.project.project_url.size > site.max_url_label_size ? page.project.project_url[0..site.max_url_label_size-1].concat("...") : page.project.project_url
 
       - if page.project.project_description
         %dt

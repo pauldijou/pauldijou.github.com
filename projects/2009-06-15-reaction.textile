@@ -5,7 +5,7 @@ author: "Paul Dijou"
 has_more: false
 project_date: "June - August 2009 : 3 months"
 project_type: "Internship"
-project_description: "Developed by <a href=\"http://fincodi.com/\">Fincodi</a>, REaction is a Java EE application which manage."
-project_technologies: [Java, Java EE, JSF, RichFaces, JPA, Hibernate]
-tags: [internship, java, javaee, jsf, jpa]
+project_description: "Developed by <a href=\"http://fincodi.com/\">Fincodi</a>, REaction is a Java EE application which manage residential property for a real estate company, helping it to handle leases and to generate rent bills."
+project_technologies: [Java, Java EE, JPA, JSF, RichFaces]
+tags: [internship, java, javaee, jpa, jsf, richfaces]
 ---

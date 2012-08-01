@@ -57,14 +57,21 @@ ul.icons li {
     margin-bottom: 10px;
   }
   
-  .footer {
-    padding-bottom: 10px;
-  }
-  
   h2 a:hover {
     text-decoration: none;
   }
   
+  h3 {
+  	padding-top: 20px;
+  }
+  
+  .content {
+  	padding-bottom: 15px;
+  }
+  
+  .footer {
+    padding-bottom: 10px;
+  }
   .meta {
     margin-bottom: 10px;
   }
@@ -202,4 +209,63 @@ ul.twitter-list li.nav-header {
 
 .required {
   color: red;
+}
+
+.carousel {
+  margin: 0px auto;
+}
+
+.carousel .item > img {
+  width: 100%;
+}
+
+.tag-cloud {
+	.tag-0 {
+	    font-size: 1em;
+	    opacity: 0.8;
+	}
+	.tag-1 {
+	    font-size: 1.15em;
+	    opacity: 0.85;
+	}
+	.tag-2 {
+	    font-size: 1.3em;
+	    opacity: 0.9;
+	}
+	.tag-3 {
+	    font-size: 1.45em;
+	    opacity: 0.95;
+	}
+	.tag-4 {
+	    font-size: 1.6em;
+	    opacity: 1;
+	}
+	.tag-5 {
+	    font-size: 1.75em;
+	    opacity: 1;
+	}
+	.tag-6 {
+	    font-size: 1.9em;
+	    opacity: 1;
+	}
+	.tag-7 {
+	    font-size: 2.05em;
+	    opacity: 1;
+	}
+	.tag-8 {
+	    font-size: 2.2em;
+	    opacity: 1;
+	}
+	.tag-9 {
+	    font-size: 2.35em;
+	    opacity: 1;
+	}
+	.tag-10 {
+	    font-size: 2.5em;
+	    opacity: 1;
+	}
+	.tag-11 {
+	    font-size: 2.65em;
+	    opacity: 1;
+	}
 }

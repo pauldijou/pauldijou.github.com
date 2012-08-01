@@ -1,0 +1,61 @@
+---
+layout: project
+title: "Noha"
+author: "Paul Dijou"
+has_more: true
+project_date: "2 months"
+project_type: "Professional"
+project_description: "<a href=\"http://www.banqueprivee1818.com\">Banque Privee 1818</a> is a subsidiary of Natixis dealing with rich clients, stock exchange, and other financial stuff that goes far beyond my head. They ask for a new tool to manage authentification, roles and permissions for all their clients and employes. Noha was born."
+project_technologies: [Java, Java EE, Spring, JPA, GWT]
+tags: [professional, java, javaee, spring, jpa, gwt]
+---
+
+h2. Screenshots
+
+<div id="nohaScreenshots" class="carousel slide" style="max-width: 1008px;">
+  <div class="carousel-inner">
+    <div class="active item">
+      <img src="#{site.projects_assets_url}/noha/abonnes.PNG" alt="User accounts" />
+      <div class="carousel-caption"><h4>User accounts</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/abonneEdition.PNG" alt="User account edition" />
+      <div class="carousel-caption"><h4>User account edition</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/abonneComptes.PNG" alt="Bank accounts" />
+      <div class="carousel-caption"><h4>Bank accounts</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/abonneComptesSearch.PNG" alt="User accounts search panel" />
+      <div class="carousel-caption"><h4>User accounts search panel</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/abonneTiers.PNG" alt="Tiers" />
+      <div class="carousel-caption"><h4>Tiers</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/abonneTiersSearch.PNG" alt="Tiers search panel" />
+      <div class="carousel-caption"><h4>Tiers search panel</h4></div>
+    </div>
+    
+    <div class="item">
+      <img src="#{site.projects_assets_url}/noha/marches.PNG" alt="Markets" />
+      <div class="carousel-caption"><h4>Markets</h4></div>
+    </div>
+  </div>
+  
+  <a class="carousel-control left" href="#nohaScreenshots" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#nohaScreenshots" data-slide="next">&rsaquo;</a>
+</div>
+
+<script type="text/javascript">
+  $('#nohaScreenshots').carousel({
+    interval: #{site.carousel_interval}
+  });
+</script>
