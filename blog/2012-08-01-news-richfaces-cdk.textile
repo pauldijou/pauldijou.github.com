@@ -19,7 +19,7 @@ div(alert alert-info). *Pro tip* Notice that in the signature of the generated J
 
 div(alert). *Warning* Currently, if you want to use a fragment1 inside a fragment2, you need to write fragment1 first in your template so its signature has been parsed before calling it in fragment2. Problem is reported in "JIRA issue 12326":https://issues.jboss.org/browse/RF-12326.
 
-*cc:renderFacet* is a new tag you can use inside a CDK template, adequeate to the same tag from JSF composite component. Its usage is quite straightforward: it will render the facet that you will specify in the <code>name</code> attribute. If you put some content inside the tag, it will be used as default value in case the facet is missing. See "JIRA issue 12260":https://issues.jboss.org/browse/RF-12260 for full description.
+*cc:renderFacet* is a new tag you can use inside a CDK template, equivalent of the same tag from JSF composite component. Its usage is quite straightforward: it will render the facet that you will specify in the <code>name</code> attribute. If you put some content inside the tag, it will be used as default value in case the facet is missing. See "JIRA issue 12260":https://issues.jboss.org/browse/RF-12260 for full description.
 
 *varStatus* is a new attribute for the *c:forEach* CDK tag. It will perform the exact same thing as the one in the original *c:forEach* tag, giving you more tools inside a forEach loop. See "JIRA issue 12232":https://issues.jboss.org/browse/RF-12232.
 
@@ -36,3 +36,27 @@ There are still a few points undone in the "CDK wish-list":https://community.jbo
 In another topic, another post will follow next week to talk about what's new in "RichFaces Bootstrap project":http://bootstrap-richfaces.rhcloud.com.
 
 h3(#news-richfaces-cdk-fr). Les nouvelles fonctionnalités du CDK RichFaces
+
+En même temps que le projet RichFaces Boostrap grandit, le besoin de nouveaux outils pour garder le code propre et lisible se fait sentir. De nouveaux outils signifie un CDK plus puissant et voici les dernières fonctionnalités ajoutées.
+
+*Les fragments* sont de petites portions de code que vous définissez au sein de votre template, à l'extérieur de l'implémentation principale, mais ils peuvent être appelé au sein de celle-ci, ou à l'intérieur d'autres fragments, ou au sein d'eux même ! Dites bonjour à la récursivité dans les templates du CDK RichFaces. Côté Java, les fragments sont purement et simplement des méthodes. Cela signifie que chaque fois que vous écrivez un fragment dans un template, cela aura pour effet de générer une méthode Java dans le renderer final. En sachant cela, il devient relativement aisé de comprendre et maitriser les fragments. N'hésitez pas à lire "JIRA issue 12226":https://issues.jboss.org/browse/RF-12226 pour un exemple détaillé.
+
+div(alert alert-info). *Pro tip* Vous remarquerez que la signature de la méthode Java générée comporte 3 paramètres qui sont toujours présents et que vous n'avez jamais à spécifier dans le template. Il s'agit de ResponserWriter, FacesContext et UIComponent.
+
+div(alert). *Attention* Actuellement, si vous voulez utiliser un fragment1 à l'intérieur d'un fragment2, vous devez écrire fragment1 en premier dans votre template afin que sa signature ait été parsée avant d'être appelée dans fragment2. Le problème a été reporté dans "JIRA issue 12326":https://issues.jboss.org/browse/RF-12326.
+
+*cc:renderFacet* est une nouvelle balise que vous pouvez utiliser dans les templates CDK et qui équivaut à la balise du même nom dans les composants composites de JSF. Son usage est assez évident : elle va générer le facet que vous aurez spécifié via l'attribut <code>name</code>. Si vous spécifiez un contenu dans la balise, celui-ci sera utilisé comme valeur par défaut si jamais le facet était absent. Voyez "JIRA issue 12260":https://issues.jboss.org/browse/RF-12260 pour une description complète.
+
+*varStatus* est un nouvel attribut de la balise *c:forEach* du CDK. Il a les mêmes effets que celui de la balise originale *c:forEach*, vous donnant accès à des nouveaux outils à l'intérieur d'une boucle forEach. Voyez "JIRA issue 12232":https://issues.jboss.org/browse/RF-12232.
+
+*Les "wildcards"* (= astérisques) peuvent désormais être utilisées dans les attributes *cdk:passThrough* et *cdk:passThroughWithExclusions* afin de passer directement tous les attributes commençant avec le même préfixe. Particulièrement utile pour les évènements JavaScript <code>on*</code>. Les wildcards peuvent bien sur être utilisées dans le cadre d'un mapping comme <code>onkey*:oninputkey*</code>. Voyez "JIRA issue 12200":https://issues.jboss.org/browse/RF-12200.
+
+La variable *component* au sein des templates est maintenant automatiquement castée dans le bon type en se basant sur la balise <code>cdk:class</code> du template. Vous n'aurez plus besoin d'écrire explicitement ce cast dans 95% de vos templates. Vous apprécierez ainsi un code moins verbeux. Jetez un oeil à "JIRA issue 12248":https://issues.jboss.org/browse/RF-12248 pour plus de détails.
+
+*De manière générale*, le CDK a été amélioré pour être encore plus type-safe et ainsi pouvoir détecter d'éventuels problèmes à la compilation.
+
+h3. Et ensuite ?
+
+La "liste des souhaits à réaliser":https://community.jboss.org/wiki/CDKWish-List n'a pas encore été intégralement réalisée et j'espère que certains le seront très bientôt. L'un des plus importants est probablement la génération de méthodes dans les renderer ou les composants à partir de nouvelles interfaces qu'ils étendraient. "JIRA issue 12339":https://issues.jboss.org/browse/RF-12339 décrit le concept dans son intégralité.
+
+Dans un autre registre, un autre post suivra la semaine prochaine pour vous parler des nouveautés du projet "RichFaces Bootstrap":http://bootstrap-richfaces.rhcloud.com.

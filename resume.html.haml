@@ -39,10 +39,9 @@ title: Resume
               .span3
                 %ul.nav.nav-list.well
                   %li.nav-header= cv.downloads_label
-                  %li.pdf
-                    Shortz
-                  %li.odt
-                    Short
+                  - for download in cv.downloads
+                    %li{:class=>"resume #{download.file_type}"}
+                      %a{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}= download.title
 
 :javascript
   $('ul.cv > li:first').addClass('active');

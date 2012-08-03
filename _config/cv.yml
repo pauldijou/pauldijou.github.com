@@ -3,6 +3,13 @@ cols: 2
 en:
   title: Resume
   downloads_label: Downloads
+  downloads:
+    - title: "Resume (PDF)"
+      file_name: "Resume_Paul_Dijou"
+      file_type: "pdf"
+    - title: "Resume (ODT)"
+      file_name: "Resume_Paul_Dijou"
+      file_type: "odt"
   sections:
     - title: "About me"
       col: 1
@@ -26,9 +33,9 @@ en:
           multi: many
           vals:
             - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML, JSON"
+            - "HTML, XHTML, XML"
             - "CSS, LESS, SASS"
-            - "JavaScript"
+            - "JavaScript, JSON"
             - "PHP"
         - label: "Java EE"
           multi: many
@@ -38,6 +45,7 @@ en:
             - "<abbr title=\"Java Server Faces\">JSF</abbr>"
             - "<abbr title=\"Java Persistence API\">JPA</abbr> (Hibernate, OpenJPA)"
             - "<abbr title=\"Enterpriser Java Bean\">EJB</abbr>"
+            - "JAX-RS"
             - "Seam"
             - "Apache CODI"
             - "Play! framework"
@@ -121,6 +129,13 @@ en:
 fr:
   title: CV
   downloads_label: Téléchargements
+  downloads:
+    - title: "CV (PDF)"
+      file_name: "CV_Paul_Dijou"
+      file_type: "pdf"
+    - title: "CV (ODT)"
+      file_name: "CV_Paul_Dijou"
+      file_type: "odt"
   sections:
     - title: "Généralités"
       col: 1
@@ -144,9 +159,9 @@ fr:
           multi: many
           vals:
             - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML, JSON"
+            - "HTML, XHTML, XML"
             - "CSS, LESS, SASS"
-            - "JavaScript"
+            - "JavaScript, JSON"
             - "PHP"
         - label: "Java EE"
           multi: many
@@ -156,6 +171,7 @@ fr:
             - "<abbr title=\"Java Server Faces\">JSF</abbr>"
             - "<abbr title=\"Java Persistence API\">JPA</abbr> (Hibernate, OpenJPA)"
             - "<abbr title=\"Enterpriser Java Bean\">EJB</abbr>"
+            - "JAX-RS"
             - "Seam"
             - "Apache CODI"
             - "Play! framework"
