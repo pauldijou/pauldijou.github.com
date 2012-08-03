@@ -38,7 +38,8 @@ profiles:
     disqus_generate_id: true
     disqus_developer: true
   production:
-    base_url: http://pauldijou.github.com
+    base_url: http://pauldijou.fr
+    google_analytics: UA-25058935-1
     disqus: pauldijou
     disqus_generate_id: true
     deploy:
