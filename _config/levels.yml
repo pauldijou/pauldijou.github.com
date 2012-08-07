@@ -6,8 +6,8 @@
   tasks:
     - coolwebsite:
       label: "Having a cool website"
-      status: "inprogress"
-      progress: "70%"
+      status: "done"
+      url: "http://pauldijou.fr"
     - githubpullrequest:
       label: "Send a successfull GitHub pull request"
       status: "done"
@@ -24,8 +24,8 @@
       progress: "10%"
     - commiterjboss:
       label: "Become committer on an JBoss project"
-      status: "inprogress"
-      progress: "60%"
+      status: "done"
+      url: "https://github.com/richfaces/components/graphs/contributors"
     - conferencejug:
       label: "Give a conference at a JUG"
       status: "done"
