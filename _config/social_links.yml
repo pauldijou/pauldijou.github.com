@@ -28,14 +28,14 @@
   
 - social_id: rss
   label: RSS
-  url: /blog.atom
+  url: http://feeds2.feedburner.com/pauldijou
   img: rss_32.png
   menu: true
   footer: true
   
 - social_id: email
   label: Email
-  url: mailto:paul.dijou.dev@gmail.com
+  url: mailto:paul.dijou+dev@gmail.com
   img: email_32.png
   menu: true
   footer: false
