@@ -19,7 +19,7 @@ en:
           value: "Paul Dijou"
         - label: "Age"
           multi: one
-          value: "25 years old (10/11/1986)"
+          value: "26 years old (10/11/1986)"
         - label: "Email"
           multi: one
           value: "paul.dijou.dev at gmail.com"
@@ -87,6 +87,9 @@ en:
     - title: "Experience"
       col: 1
       subs:
+        - label: "2012 - Now"
+          multi: one
+          value: "Open-source committer on the <a href=\"http://www.jboss.org/richfaces\">RichFaces</a> project, a JSF library provided by JBoss, Red Hat."
         - label: "2012 (2 months)"
           multi: one
           value: "Short mission at Amsterdam inside <a href=\"http://www.mipagar.com/\">Mipagar</a> startup through <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
@@ -145,7 +148,7 @@ fr:
           value: "Paul Dijou"
         - label: "Age"
           multi: one
-          value: "25 ans (11/10/1986)"
+          value: "26 ans (11/10/1986)"
         - label: "Email"
           multi: one
           value: "paul.dijou.dev at gmail.com"
@@ -213,6 +216,9 @@ fr:
     - title: "Expérience"
       col: 1
       subs:
+        - label: "2012 - Actuellement"
+          multi: one
+          value: "Contributeur bénévole sur le projet <a href=\"http://www.jboss.org/richfaces\">RichFaces</a>, une librairie JSF dévelopée par JBoss, Red Hat."
         - label: "2012 (2 mois)"
           multi: one
           value: "Courte mission à Amsterdam au sein de la startup <a href=\"http://www.mipagar.com/\">Mipagar</a> dans le cadre du programme <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
