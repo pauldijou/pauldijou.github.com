@@ -17,11 +17,11 @@ title: Resume
           - cv = site.cv.method_missing(lang)
           .tab-pane{:id=>"resume-#{lang}"}
             .row
-              .span9
+              .span10
                 .well.clearfix
                   .row-fluid
                     - (1..2).each do |i|
-                      .span6
+                      %div{:class => "#{i == 1 ? 'span7' : 'span5'}"}
                         - for section in cv.sections
                           - if section.col == i
                             %h2 #{section.title}
@@ -36,7 +36,7 @@ title: Resume
                                     %ul.unstyled
                                       - for value in sub.vals
                                         %li= value
-              .span3
+              .span2
                 %ul.nav.nav-list.well
                   %li.nav-header= cv.downloads_label
                   - for download in cv.downloads

@@ -1,45 +1,43 @@
-$(function() {
-    var test = '#{site.default_page_title}';
-    
-    $("[rel=tooltip]").tooltip();
-    $("[rel=tooltip-top]").tooltip({
+jQuery(function() {
+    jQuery("pre.prettyprint code").removeClass("prettyprint")
+    .removeClass("linenums");
+    prettyPrint();
+
+    jQuery("[rel=tooltip]").tooltip();
+    jQuery("[rel=tooltip-top]").tooltip({
         placement : 'top'
     });
-    $("[rel=tooltip-bottom]").tooltip({
+    jQuery("[rel=tooltip-bottom]").tooltip({
         placement : 'bottom'
     });
-    $("[rel=tooltip-left]").tooltip({
+    jQuery("[rel=tooltip-left]").tooltip({
         placement : 'left'
     });
-    $("[rel=tooltip-right]").tooltip({
+    jQuery("[rel=tooltip-right]").tooltip({
         placement : 'right'
     });
 
-    $("pre.prettyprint code").removeClass("prettyprint")
-            .removeClass("linenums");
-    prettyPrint();
+    jQuery("a.anchorLink[href^=#]").anchorAnimate();
+    jQuery(".toggleHide").toggleHide();
 
-    $("a.anchorLink[href^=#]").anchorAnimate();
-    $(".toggleHide").toggleHide();
-
-    $(function() {
-        var offset = $(".follow-scroll").offset();
+    jQuery(function() {
+        var offset = jQuery(".follow-scroll").offset();
         if (offset != null) {
             var speed = 1100;
-            $(window).scroll(
+            jQuery(window).scroll(
                     function() {
-                        if ($(window).scrollTop() > offset.top) {
-                            var marginTop = $(window).scrollTop() - offset.top
+                        if (jQuery(window).scrollTop() > offset.top) {
+                            var marginTop = jQuery(window).scrollTop() - offset.top
                                     + getTopOffset();
                         } else {
                             var marginTop = 0;
                         }
                         ;
                         // console.log("Window.scrollTop :
-                        // "+$(window).scrollTop()+" - offset.top :
+                        // "+jQuery(window).scrollTop()+" - offset.top :
                         // "+offset.top+" + TopOffset : "+getTopOffset()+" =
                         // marginTop : "+marginTop);
-                        $(".follow-scroll").stop().animate({
+                        jQuery(".follow-scroll").stop().animate({
                             marginTop : marginTop
                         }, speed);
                     });
@@ -47,7 +45,7 @@ $(function() {
     });
 });
 
-$.fn.anchorAnimate = function(settings) {
+jQuery.fn.anchorAnimate = function(settings) {
 
     settings = jQuery.extend({
         speed : 1100
@@ -74,13 +72,13 @@ $.fn.anchorAnimate = function(settings) {
     })
 }
 
-$.fn.toggleHide = function() {
+jQuery.fn.toggleHide = function() {
     return this.each(function() {
         var caller = this
         jQuery(caller).click(function(event) {
             event.preventDefault();
             var selector = jQuery(caller).attr("data-selector");
-            $(selector).toggleClass("hide");
+            jQuery(selector).toggleClass("hide");
         })
     })
 }
@@ -95,41 +93,41 @@ function getTopOffset() {
 }
 
 function showProgress() {
-    $('#levels').addClass('show-progress');
-    $('#levels .btn-show-progression .btn-yes').addClass('active');
-    $('#levels .btn-show-progression .btn-no').removeClass('active');
+    jQuery('#levels').addClass('show-progress');
+    jQuery('#levels .btn-show-progression .btn-yes').addClass('active');
+    jQuery('#levels .btn-show-progression .btn-no').removeClass('active');
 }
 
 function hideProgress() {
-    $('#levels').removeClass('show-progress');
-    $('#levels .btn-show-progression .btn-yes').removeClass('active');
-    $('#levels .btn-show-progression .btn-no').addClass('active');
+    jQuery('#levels').removeClass('show-progress');
+    jQuery('#levels .btn-show-progression .btn-yes').removeClass('active');
+    jQuery('#levels .btn-show-progression .btn-no').addClass('active');
 }
 
-(function($) {
+(function(jQuery) {
     /**
      * Auto-growing textareas; technique ripped from Facebook
      * 
      * http://github.com/jaz303/jquery-grab-bag/tree/master/javascripts/jquery.autogrow-textarea.js
      */
-    $.fn.autogrow = function(options) {
+    jQuery.fn.autogrow = function(options) {
         return this.filter('textarea').each(
                 function() {
                     var self = this;
-                    var $self = $(self);
-                    var minHeight = $self.height();
-                    var noFlickerPad = $self.hasClass('autogrow-short') ? 0
-                            : parseInt($self.css('lineHeight'));
+                    var jQueryself = jQuery(self);
+                    var minHeight = jQueryself.height();
+                    var noFlickerPad = jQueryself.hasClass('autogrow-short') ? 0
+                            : parseInt(jQueryself.css('lineHeight'));
 
-                    var shadow = $('<div></div>').css({
+                    var shadow = jQuery('<div></div>').css({
                         position : 'absolute',
                         top : -10000,
                         left : -10000,
-                        width : $self.width(),
-                        fontSize : $self.css('fontSize'),
-                        fontFamily : $self.css('fontFamily'),
-                        fontWeight : $self.css('fontWeight'),
-                        lineHeight : $self.css('lineHeight'),
+                        width : jQueryself.width(),
+                        fontSize : jQueryself.css('fontSize'),
+                        fontFamily : jQueryself.css('fontFamily'),
+                        fontWeight : jQueryself.css('fontWeight'),
+                        lineHeight : jQueryself.css('lineHeight'),
                         resize : 'none'
                     }).appendTo(document.body);
 
@@ -142,7 +140,7 @@ function hideProgress() {
 
                         var val = self.value.replace(/</g, '&lt;').replace(
                                 />/g, '&gt;').replace(/&/g, '&amp;').replace(
-                                /\n$/, '<br/>&nbsp;').replace(/\n/g, '<br/>')
+                                /\njQuery/, '<br/>&nbsp;').replace(/\n/g, '<br/>')
                                 .replace(
                                         / {2,}/g,
                                         function(space) {
@@ -151,14 +149,14 @@ function hideProgress() {
                                                     + ' '
                                         });
 
-                        shadow.css('width', $self.width());
+                        shadow.css('width', jQueryself.width());
                         shadow.html(val);
-                        $self.css('height', Math.max(shadow.height()
+                        jQueryself.css('height', Math.max(shadow.height()
                                 + noFlickerPad, minHeight));
                     }
 
-                    $self.change(update).keyup(update).keydown(update);
-                    $(window).resize(update);
+                    jQueryself.change(update).keyup(update).keydown(update);
+                    jQuery(window).resize(update);
 
                     update();
                 });

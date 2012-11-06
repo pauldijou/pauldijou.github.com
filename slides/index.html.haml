@@ -1,0 +1,18 @@
+---
+layout: page
+title: Slides
+---
+.title
+  %h1 Slides
+#container.container
+  .row    
+    .span12
+      - page.slides.each do |slide|
+        %h2
+          %a{ :href => "#{slide.url}" }= slide.title
+          (
+          %a{ :href => "#{site.base_url}/shells/onstage/index.html##{slide.url}" } OnStage mode
+          )
+        %iframe{:class=>"frame", :width=>"700", :height=>"600", :src=>"#{site.base_url}/shells/embedder/index.html##{slide.url}"}
+          %a{:href=>"#{slide.url}"}
+            link to the presentation

@@ -32,9 +32,9 @@ en:
         - label: "Langages"
           multi: many
           vals:
-            - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML"
-            - "CSS, LESS, SASS"
+            - "Java (Java SE, Java EE 6, JavaFX 2)"
+            - "HTML5, XHTML, XML"
+            - "CSS3, LESS, SASS"
             - "JavaScript, JSON"
             - "PHP"
         - label: "Java EE"
@@ -87,18 +87,30 @@ en:
     - title: "Experience"
       col: 1
       subs:
-        - label: "2012 - Now"
-          multi: one
-          value: "Open-source committer on the <a href=\"http://www.jboss.org/richfaces\">RichFaces</a> project, a JSF library provided by JBoss, Red Hat."
         - label: "2012 (2 months)"
           multi: one
-          value: "Short mission at Amsterdam inside <a href=\"http://www.mipagar.com/\">Mipagar</a> startup through <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
+          value: "Through <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a> program which aims to help startups beginning their lives, I joined <a href=\"http://www.mipagar.com/\">Mipagar</a> team to help them finishing their user interface based on JSF and RichFaces and their RESTful API using Java EE 6 new features. For the user interface, <strong>RichFaces Bootstrap</strong> has been used with really good feedbacks."
         - label: "2010 - 2012<br/>(2 years)"
           multi: one
-          value: "<a href=\"http://www.celad.com/\">CELAD</a>, computer science engineer working on Java EE web applications of <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, subsidiary of <a href=\"http://www.natixis.com\">Natixis</a> (French bank)."
+          value: "Working at <a href=\"http://www.celad.com/\">CELAD</a>, an IT firm, my first real job was to develop and maintain Java EE applications for <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, a subsidiary of <a href=\"http://www.natixis.com\">Natixis</a>, a french bank, using an internal framework based on Spring, Seam 2 and JSF."
         - label: "2009 - 2011<br/>(2 years)"
           multi: one
-          value: "Self-employed, creating web applications and websites."
+          value: "At the same time I was studying or working, I was also self-employed in order to realize e-commerce projects during my free time, using PHP or Java EE."
+    - title: "Open-source"
+      col: 1
+      subs:
+        - label: "JBoss RichFaces"
+          multi: one
+          value: "After having initiated the <strong>RichFaces Bootstrap</strong> sandbox project which aims to build new JSF components in top of the Bootstrap framework but also jQuery and its plugins, I've developed several components and some brand new concepts (using LESS, semantic components, ...) together with the RichFaces team. The <strong>RichFaces Bootstrap</strong> project will be fully integrated in RichFaces 5, the next major version of <a href=\"http://www.jboss.org/richfaces\">RichFaces</a>."
+        - label: "Agorava"
+          multi: one
+          value: "Committer around the project's website and the demo application named <a href=\"http://socializer.agorava.cloudbees.net/home.jsf\">Socializer</a>."
+        - label: "JBoss Arquillian"
+          multi: one
+          value: "Translator of user guides."
+        - label: "Speaker"
+          multi: one
+          value: "Conference at Toulouse JUG about Bootstrap and Awestruct."
     - title: "Studies"
       col: 1
       subs:
@@ -161,9 +173,9 @@ fr:
         - label: "Langages"
           multi: many
           vals:
-            - "Java (Java SE, Java EE, JavaFX)"
-            - "HTML, XHTML, XML"
-            - "CSS, LESS, SASS"
+            - "Java (Java SE, Java EE 6, JavaFX 2)"
+            - "HTML5, XHTML, XML"
+            - "CSS3, LESS, SASS"
             - "JavaScript, JSON"
             - "PHP"
         - label: "Java EE"
@@ -216,18 +228,30 @@ fr:
     - title: "Expérience"
       col: 1
       subs:
-        - label: "2012 - Actuellement"
-          multi: one
-          value: "Contributeur bénévole sur le projet <a href=\"http://www.jboss.org/richfaces\">RichFaces</a>, une librairie JSF dévelopée par JBoss, Red Hat."
         - label: "2012 (2 mois)"
           multi: one
-          value: "Courte mission à Amsterdam au sein de la startup <a href=\"http://www.mipagar.com/\">Mipagar</a> dans le cadre du programme <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a>."
+          value: "Dans le cadre du programme <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a> ayant pour but d'aider au démarrage de startups européennes, j'ai pu rejoindre l'équipe de <a href=\"http://www.mipagar.com/\">Mipagar</a> à Amsterdam pour les aider à finaliser leur interface JSF – RichFaces et leurs API RESTful utilisant les nouveautés de Java EE 6. Pour la réalisation de l'interface web, c'est directement <strong> RichFaces Bootstrap </strong> qui a été utilisé avec des retours très positifs."
         - label: "2010 - 2012<br/>(2 ans)"
           multi: one
-          value: "<a href=\"http://www.celad.com/\">CELAD</a>, Ingénieur d'Etudes sur les applications Java EE de la société <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, filiale de <a href=\"http://www.natixis.com\">Natixis</a>."
+          value: "Au sein de la SSII <a href=\"http://www.celad.com/\">CELAD</a>, j'ai effectué ma première expérience professionnelle. Il s'agissait de développer et maintenir des applications Java EE pour le compte de la société <a href=\"http://www.intertitres.natixis.com\">Intertitres</a>, filiale de la banque <a href=\"http://www.natixis.com\">Natixis</a>, en utilisant un framework interne basé sur Spring, Seam 2 et JSF."
         - label: "2009 - 2011<br/>(2 ans)"
           multi: one
-          value: "Auto-entrepreneur en développement informatique et conception de sites internet."
+          value: "En parallèle de mes études et de mon début de carrière, j'ai opté pour un régime d'auto-entrepreneur afin de réaliser quelques projets e-commerce, soit en PHP soit en Java EE, sur mon temps libre."
+    - title: "Open-source"
+      col: 1
+      subs:
+        - label: "JBoss RichFaces"
+          multi: one
+          value: "Après avoir initié le projet sandbox <strong>RichFaces Bootstrap</strong> qui a pour but de développer de nouveaux composants JSF en se basant sur le framework Bootstrap, mais également sur jQuery UI et ses plugins, j'y ai développé de nombreux composants ainsi que de nouveaux concepts (utilisation de LESS, composants sémantiques, ...) en partenariat avec l'équipe RichFaces. Le projet <strong>RichFaces Bootstrap</strong> sera intégré en totalité dans RichFaces 5, prochaine version majeure de <a href=\"http://www.jboss.org/richfaces\">RichFaces</a>."
+        - label: "Agorava"
+          multi: one
+          value: "Contributeur autour du site du projet ainsi que de l'application de démonstration <a href=\"http://socializer.agorava.cloudbees.net/home.jsf\">Socializer</a>."
+        - label: "JBoss Arquillian"
+          multi: one
+          value: "Traducteur au niveau des guides utilisateurs."
+        - label: "Speaker"
+          multi: one
+          value: "Conférence au Toulouse JUG au sujet de Bootstrap et Awestruct."
     - title: "Etudes"
       col: 1
       subs:

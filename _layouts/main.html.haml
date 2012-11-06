@@ -1,8 +1,13 @@
 ---
 layout: base
 ---
+%header
+  = partial( 'github-fork.html.haml' )
+  = partial( 'navbar.html.haml' )
+
 #container.container
   .row
     .span12
       ~ content
+
 = partial( 'footer.html.haml' )

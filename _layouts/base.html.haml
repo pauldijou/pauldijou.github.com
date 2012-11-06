@@ -8,27 +8,28 @@
     %meta{ "http-equiv"=>"expires", :content=>"0"}
     %title
       #{site.title} / #{page.title ? page.title : site.default_page_title }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/style.css', :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap.min.css', :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap-responsive.min.css', :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/override.css', :media=>'screen, projection' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/print.css', :media=>'print' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/prettify.css', :media=>'screen, projection' }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/style.css", :media=>"screen, projection" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/bootstrap.min.css", :media=>"screen, projection" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/bootstrap-responsive.min.css", :media=>"screen, projection" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/override.css", :media=>"screen, projection" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/print.css", :media=>"print" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/prettify.css", :media=>"screen, projection" }
     /[if lt IE 8]
-      %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/ie.css', :media=>'screen, projection' }
-    %script{ :type=>'text/javascript', :src=>'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/bootstrap.min.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/prettify.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/main.js' }
+      %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/ie.css", :media=>"screen, projection" }
+    %script{ :type=>"text/javascript", :src=>"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/bootstrap.min.js" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/prettify.js" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/main.js" }
     /[if lt IE 9]
-      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
+      %script{ :type=>"text/javascript", :src=>"//html5shim.googlecode.com/svn/trunk/html5.js" }
+    - if page.stylesheets
+      - page.stylesheets.each do |stylesheets|
+        %link{ :rel=>"stylesheet", :type=>"text/css", :href=>stylesheets, :media=>"screen, projection" }
+  %body{ :data=>{ :target=>".spynav", :spy=>"scroll", :offset=>"#{site.scroll_spy_offset}" } }
+    ~ content
+    
     - if page.javascripts
       - page.javascripts.each do |javascript|
         %script{ :type=>'text/javascript', :src=>javascript }
-  %body{ :data=>{ :target=>".spynav", :spy=>"scroll", :offset=>"#{site.scroll_spy_offset}" } }
-    %header
-      = partial( 'github-fork.html.haml' )
-      = partial( 'navbar.html.haml' )
-    ~ content
     
     = google_analytics_async

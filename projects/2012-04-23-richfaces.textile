@@ -2,11 +2,23 @@
 layout: project
 title: "RichFaces"
 author: "Paul Dijou"
-has_more: false
+has_more: true
 project_date: "April 2012 - Now"
 project_type: "Open-Source"
 project_url: "http://jboss.org/richfaces/"
-project_description: "RichFaces is an open-source JSF (JavaServer Faces) library developed by JBoss, RedHat. It provided dozen of new components to extend the core ones and useful EL functions. I mostly work on RichFaces Bootstrap, a new subproject providing JSF components based on Twitter Bootstrap and jQuery UI."
+project_description: "RichFaces is an open-source JSF (JavaServer Faces) library developed by JBoss, RedHat. It provides dozen of new components to extend the core ones and useful EL functions. I mostly work on RichFaces Bootstrap, a new subproject providing JSF components based on Bootstrap and jQuery UI."
 project_technologies: [JSF, HTML, CSS, JavaScript, Java]
 tags: [oss, jsf, html, css, less, javascript, java]
 ---
+
+h2. RichFaces Bootstrap
+
+I was using RichFaces for two years when I decided to try to contribute to it. I had just discover the *Bootstrap framework* a few weeks before and was a huge fan of it so my idea was to try to make all Bootstrap components available as JSF components, all CSS and JavaScript were already there, it just need a bit of glue to be fully JSF compliant. It started as the *bootstrap* module of the "RichFaces sandbox":https://github.com/richfaces/sandbox. Using the *Richfaces CDK*, building those new components was really easy. For output components (like alert, label or badge), you could build one in only one day since you just need to plug already existing HTML, CSS and JavaScript to the CDK in order to make it JSF compliant. Or at least make a working version because finishing a component is more than that: you would also need to stabilize the API and write some tests.
+
+I think both the concept of using a good tool as Bootstrap and the productivity we could achieve using it started to really interest the RichFaces team. And so we began to work all together in that sandbox project, introducing brand new concepts like semantic components which don't have a renderer by default or using LESS syntax in order to ease CSS development,... Some others are just waiting to be coded like having the possibility to override the default value of an attribute. In the same time, we decided not to limit ourself only to Bootstrap but to fully use all awesome tools from the web, like *jQuery UI* and its plugins (there is too many to cite them). There is now quite a lot of components in RichFaces Bootstrap and you can see all of them on the "demo showcase":http://bootstrap-richfaces.rhcloud.com/.
+
+h2. RichFaces 5
+
+RichFaces 5 will be the next major release of RichFaces. It will mainly include a *new build structure* to ease the development of components and a *new design approach based on LESS and Bootstrap style*. In the same time, when they are fully ready, RichFaces Bootstrap components will be progressively migrated to RichFaces 5, eventually replacing existing ones. That's the future for you!
+
+Working on RichFaces was and still is *an awesome experience*. I've learned a lot from the RichFaces team, in JSF of course, but also about testing, HTML5, CSS3, JavaScript or even project management, team work and communication. I really hope it will continue for a long time and that RichFaces 5 will be as good as we are trying to make it. Stay tuned for the release!

@@ -1,0 +1,264 @@
+---
+title: "RichFaces Bootstrap, RichFaces 5 and beyond"
+authors: [pauldijou]
+layout: slide
+tags: [fr, jsf, richfaces, bootstrap]
+---
+
+%section
+  %h1 RichFaces Bootstrap,<br/>RichFaces 5,<br/>and beyond...
+  
+%section
+  %h2 Le plan
+  .centered{:style => "width: 250px;"}
+    %ul
+      %li Le Bootstrap
+      %li Le cinq
+      %li L'au-delà
+    %img{:src => "/slides/assets/20121108/buzz.png", :style => "width:500px;"}
+    
+%section
+  %h2 A quicky by...
+  %p Paul Dijou
+  %p Juste développeur...
+  %p Totalement sans emploi
+  %p
+    %img{:src => "/slides/assets/20121108/codefood.jpg", :style => "float:right;width:450px;"}
+
+%section
+  %h1 Le Bootstrap
+  
+%section
+  %h2 This is Bootstrap!
+  %img{:src => "/slides/assets/20121108/sparta.jpg", :style => "float:right;"}
+  %p
+    %button.btn Button
+    %button.btn.btn-primary Primary button
+    %button.btn.btn-success Success button
+  %p
+    %button.btn.btn-warning Warning button
+    %button.btn.btn-danger Danger button
+  %p
+    .btn-toolbar
+      .btn-group
+        %button.btn A
+        %button.btn group
+        %button.btn of
+        %button.btn buttons
+      .btn-group
+        %button.btn.btn-primary 1
+        %button.btn.btn-success 2
+        %button.btn.btn-warning 3
+        %button.btn.btn-danger 4
+  %p
+    .btn-toolbar
+      .btn-group
+        %button.btn.btn-info{:href => "#2012-11-08-modal", "data-toggle" => "modal"} Show modal
+    
+      .btn-group
+        %a.btn.btn-inverse.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Dropdown button 
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"} Un lien
+          %li
+            %a{:href => "#"} Un autre lien
+          %li
+            %a{:href => "#"} Encore un lien
+    
+  %p
+    %ul.breadcrumb
+      %li
+        %a{:href => "#"} France
+        %span.divider >
+      %li
+        %a{:href => "#"} Paris
+        %span.divider >
+      %li.active
+        NightHacking with Stephen Chin 
+  %p
+    .alert
+      %button.close{"data-dismiss" => "alert"} ×
+      Attention ! Ceci est une alerte.
+  %p
+    .progress.progress-striped.active
+      .bar{:style => "width: 45%;"}
+    .progress.progress-striped.progress-danger.active
+      .bar{:style => "width: 60%;"}
+      
+  #2012-11-08-modal.modal.hide.fade{"data-backdrop"=>"false"}
+    .modal-header
+      %h3 Titre du modal
+    .modal-body
+      %p You rocks!
+    .modal-footer
+      %button.btn{"data-dismiss"=>"modal"} Close
+      
+%section
+  %h2 RichFaces CDK
+  %ul
+    %li Le composant : Abstract[Nom]
+    %li Son renderer : [Nom]RendererBase
+    %li Son template : [nom].template.xml
+    
+%section
+  %h2 Le composant
+  %pre.prettyprint
+    :preserve
+      @JsfComponent(
+          type = AbstractLabel.COMPONENT_TYPE,
+          family = AbstractLabel.COMPONENT_FAMILY,
+          renderer = @JsfRenderer(type = LabelRendererBase.RENDERER_TYPE),
+          tag = @Tag(name="label"))
+      public abstract class AbstractLabel extends UIOutput implements CoreProps {
+          public static final String COMPONENT_FAMILY = "org.richfaces.bootstrap.Label";
+          public static final String COMPONENT_TYPE = "org.richfaces.bootstrap.Label";
+          
+          @Attribute
+          public abstract String getSeverity(); 
+      }
+      
+%section
+  %h2 Son renderer
+  %pre.prettyprint
+    :preserve
+      @ResourceDependencies({
+        @ResourceDependency(library = "org.richfaces", name = "ajax.reslib"),
+        @ResourceDependency(library = "org.richfaces", name = "base-component.reslib"),
+        @ResourceDependency(library = "org.richfaces", name = "bootstrap-css.reslib")})
+      public abstract class LabelRendererBase extends RendererBase {
+          public static final String RENDERER_TYPE = "org.richfaces.bootstrap.LabelRenderer";
+      }
+      
+%section
+  %h2 Son template
+  %pre.prettyprint
+    :preserve
+      &lt;cc:implementation&gt;
+          &lt;span id=&quot;\#{clientId}&quot;
+              class=&quot;label \#{component.severity != null ? component.severity.labelClass : &#039;&#039;} \#{component.attributes[&#039;styleClass&#039;]}&quot;
+              cdk:passThrough=&quot;style&quot;&gt;
+              &lt;c:if test=&quot;\#{component.value != null and !component.value.equals(&#039;&#039;)}&quot;&gt;\#{component.value}&lt;/c:if&gt;
+              &lt;cdk:body /&gt;
+          &lt;/span&gt;
+      &lt;/cc:implementation&gt;
+      
+%section
+  %h2 Résultat
+  %pre.prettyprint
+    :preserve
+      &lt;b:label severity=&quot;success&quot;&gt;
+        C'est un véritable succès !
+      &lt;/b:label&gt;
+  %p
+    %span.label.label-success C'est un véritable succès !
+    
+%section
+  %h2 Où en est-on ?
+  %ul
+    %li Presque tous les composants Bootstrap ont été portés
+    %li Support des fonctions JavaScript
+    %li Support de LESS
+    %li Nouvelle approche sémantique
+    %li
+      %span.label.label-important Encore en sandbox
+      
+  %img{:src => "/slides/assets/20121108/chantier.jpg", :style => "float:right;"}
+
+%section
+  %h1 Le cinq
+  %div{:style => "text-align:center;margin-top:40px;"}
+    %span.label.label-important Top-secret (et non officiel)
+  
+%section
+  %h2 RichFaces 5.0
+  %ul
+    %li
+      Nouvelle architecture de build
+      %ul
+        %li Plus simple
+        %li Un seul namespace
+        %li Plus rapide
+        %li Juste mieux...
+    %li Support de LESS
+    %li Nouveau skin basé sur Bootstrap
+    
+%section
+  %h2 RichFaces 5.x
+  %ul
+    %li Intégration progressive des composants RichFaces Bootstrap
+    %li Ajout de nouvelles fonctionnalités
+    %li JSF 2.2
+    
+%section
+  %h1 L'au-delà
+  
+%section
+  %h2 jQuery UI & CO. (plugins)
+  %ul
+    %li Nouveaux effets
+    %li Nouvelles fonctionnalités
+    %li
+      Nouveaux composants
+      %ul
+        %li PickList : jQuery UI
+        %li OrderingList : jQuery UI
+        %li Autocomplete: Select2
+        
+%section
+  %h2 Nouvelles fonctionnalités
+  %ul
+    %li Surcharge de la valeur par défaut d'un attribut JSF
+    
+%section
+  %h2 Vers JSF et au-delà
+  %p Composants visuels => standalone widgets
+  %p Peuvent donc être utilisés dans pratiquement n'importe quel projet...
+  %ul
+    %li Play! Framework
+    %li RoR
+    %li PHP
+    %li Celui que vous utilisez en ce moment ?
+    
+%section
+  %h2 Example : PickList
+  %pre.prettyprint
+    :preserve
+      &lt;script&gt;var pluginOptions1 = {header: &quot;List layout&quot;};&lt;/script&gt;
+      
+      &lt;div id=&quot;pickListDemo&quot;&gt;
+          &lt;ol class=&quot;source&quot;&gt;
+              &lt;li data-key=&quot;1&quot; class=&quot;num&quot;&gt;Item 1&lt;/li&gt;
+              &lt;li data-key=&quot;2&quot; class=&quot;num&quot;&gt;Item 2&lt;/li&gt;
+              &lt;li data-key=&quot;3&quot; class=&quot;num&quot;&gt;Item 3&lt;/li&gt;
+              &lt;li data-key=&quot;4&quot; class=&quot;num&quot;&gt;Item 4&lt;/li&gt;
+              &lt;li data-key=&quot;5&quot; class=&quot;num&quot;&gt;Item 5&lt;/li&gt;
+          &lt;/ol&gt;
+          &lt;ol class=&quot;target&quot;&gt;
+              &lt;li data-key=&quot;6&quot; class=&quot;num&quot;&gt;Item 6&lt;/li&gt;
+          &lt;/ol&gt;
+      &lt;/div&gt;
+      
+      &lt;script&gt;$(&quot;#pickListDemo&quot;).pickList(pluginOptions1);&lt;/script&gt;
+    
+%section
+  %h2 Ressources
+  %p
+    %a{:href => "http://www.jboss.org/richfaces/"} RichFaces :
+    http://www.jboss.org/richfaces/
+  %p
+    %a{:href => "http://showcase.richfaces.org/"} RichFaces Showcase :
+    http://showcase.richfaces.org/
+  %p
+    %a{:href => "http://bootstrap-richfaces.rhcloud.com/"} RichFaces Bootstrap Showcase :
+    <br/>http://bootstrap-richfaces.rhcloud.com/
+  %p
+    %a{:href => "http://twitter.github.com/bootstrap/"} Bootstrap :
+    http://twitter.github.com/bootstrap/
+  %p
+    %a{:href => "http://jqueryui.com/"} jQuery UI :
+    http://jqueryui.com/
+  %p
+    %a{:href => "https://github.com/paulrouget/dzslides/"} DZSlides :
+    https://github.com/paulrouget/dzslides/

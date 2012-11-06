@@ -4,6 +4,10 @@ layout: base
 - if !site.use_dashboard
   %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
 - if site.use_dashboard
+  %header
+    = partial( 'github-fork.html.haml' )
+    = partial( 'navbar.html.haml' )
+
   .page
     .title
       %h1 Paul Dijou

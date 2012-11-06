@@ -1,0 +1,275 @@
+body {
+  color: #4A5D75;
+}
+
+p, button, div, span, li, a {
+  font-size: 30px !important;
+  line-height: 40px !important;
+}
+
+pre > span {
+  font-size: 20px !important;
+  line-height: 30px !important;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10%;
+  font-size: 80px;
+  line-height: 100px;
+  text-shadow: 0 1px 0 #CCC, 0 2px 0 #C9C9C9, 0 3px 0 #BBB, 0 4px 0 #B9B9B9, 0 5px 0 #AAA, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.centered {
+  margin: 0px auto;
+}
+
+li {
+  line-height: 40px;
+}
+
+.caret {
+  border-width: 10px !important;
+  margin-top: 15px !important;
+}
+
+ul, ol {
+  margin: 0 0 9px 40px;
+}
+
+ul > li > ul {
+  list-style: square;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* Core CSS */
+/* -------------------------------------------------------------------------------- */
+
+html,.view body {
+  counter-reset: slideidx;
+}
+
+body,.view section {
+  border-radius: 12px
+}
+/* A section is a slide. It's size is 800x600, and this will never change */
+section,.view head>title {
+  font-family: 'Oswald', arial, serif;
+}
+
+.view section:after {
+  counter-increment: slideidx;
+  content: counter(slideidx, decimal-leading-zero);
+  position: absolute;
+  bottom: -80px;
+  right: 100px;
+}
+
+blockquote:before {
+  content: open-quote;
+}
+
+blockquote:after {
+  content: close-quote;
+}
+
+/* Figures are displayed full-page, with the caption
+     on top of the image/video */
+figure {
+  width: 100%;
+  height: 100%;
+}
+
+figure>* {
+  position: absolute;
+}
+
+figure>img,figure>video {
+  width: 100%;
+  height: 100%;
+}
+
+figcaption {
+  margin: 70px;
+  font-size: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px;
+}
+
+/* Transition effect */
+/* Feel free to change the transition effect for original
+     animations. See here:
+     https://developer.mozilla.org/en/CSS/CSS_transitions
+     How to use CSS3 Transitions: */
+section {
+  -moz-transition: left 400ms linear 0s;
+  -webkit-transition: left 400ms linear 0s;
+  -ms-transition: left 400ms linear 0s;
+  transition: left 400ms linear 0s;
+}
+
+.view section {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+
+.view section[aria-selected] {
+  border: 5px red solid;
+}
+
+/* Before */
+section {
+  left: -150%;
+}
+/* Now */
+section[aria-selected] {
+  left: 0;
+}
+/* After */
+section[aria-selected]  ~ section {
+  left: +150%;
+}
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental>* {
+  opacity: 1;
+}
+
+/* The current item */
+.incremental>*[aria-selected] {
+  opacity: 1;
+}
+
+/* The items to-be-selected */
+.incremental>*[aria-selected]  ~ * {
+  opacity: 0;
+}
+
+/* The progressbar, at the bottom of the slides, show the global
+     progress of the presentation. */
+#progress-bar {
+  height: 2px;
+  background: #AAA;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[role="note"] {
+  display: none;
+}
+
+body {
+  width: 800px;
+  height: 600px;
+  margin-left: -400px;
+  margin-top: -300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  display: none;
+}
+
+.view body {
+  position: static;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: visible;
+  overflow-x: hidden;
+  /* undo Dz.onresize */
+  transform: none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+}
+
+.view head,.view head>title {
+  display: block
+}
+
+section {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.view section {
+  pointer-events: auto;
+  position: static;
+  width: 800px;
+  height: 600px;
+  margin: -150px -200px;
+  float: left;
+  transform: scale(.4);
+  -moz-transform: scale(.4);
+  -webkit-transform: scale(.4);
+  -o-transform: scale(.4);
+  -ms-transform: scale(.4);
+}
+
+.view section>* {
+  pointer-events: none;
+}
+
+section[aria-selected] {
+  pointer-events: auto;
+}
+
+html {
+  overflow: hidden;
+}
+
+html.view {
+  overflow: visible;
+}
+
+body.loaded {
+  display: block;
+}
+
+.incremental {
+  visibility: hidden;
+}
+
+.incremental[active] {
+  visibility: visible;
+}
+
+#progress-bar {
+  bottom: 0;
+  position: absolute;
+  -moz-transition: width 400ms linear 0s;
+  -webkit-transition: width 400ms linear 0s;
+  -ms-transition: width 400ms linear 0s;
+  transition: width 400ms linear 0s;
+}
+
+.view #progress-bar {
+  display: none;
+}
