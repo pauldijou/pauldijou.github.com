@@ -5,6 +5,7 @@
 .awestruct/
 _site/
 _tmp/
+_deploy
 _deploy/
 .idea/
 *.iml
