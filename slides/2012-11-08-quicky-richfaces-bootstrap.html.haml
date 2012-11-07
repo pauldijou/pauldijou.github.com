@@ -10,23 +10,23 @@ tags: [fr, jsf, richfaces, bootstrap]
   
 %section
   %h2 Le plan
-  .centered{:style => "width: 250px;"}
+  .centered{:style => "width: 300px;"}
     %ul
-      %li Le Bootstrap
-      %li Le cinq
-      %li L'au-delà
+      %li Bootstrap
+      %li Vers RichFaces 5...
+      %li Et au-delà !
     %img{:src => "/slides/assets/20121108/buzz.png", :style => "width:500px;"}
     
 %section
   %h2 A quicky by...
   %p Paul Dijou
   %p Juste développeur...
-  %p Totalement sans emploi
+  %p Contributeur RichFaces
   %p
     %img{:src => "/slides/assets/20121108/codefood.jpg", :style => "float:right;width:450px;"}
 
 %section
-  %h1 Le Bootstrap
+  %h1 Bootstrap
   
 %section
   %h2 This is Bootstrap!
@@ -97,13 +97,20 @@ tags: [fr, jsf, richfaces, bootstrap]
       
 %section
   %h2 RichFaces CDK
+  %p A partir de :
   %ul
-    %li Le composant : Abstract[Nom]
-    %li Son renderer : [Nom]RendererBase
+    %li L'API du composant : Abstract[Nom]
+    %li Son renderer abstrait : [Nom]RendererBase
     %li Son template : [nom].template.xml
+  %p Va générer :
+  %ul
+    %li Le composant : UI[Nom]
+    %li Son renderer : [Nom]Renderer
+    %li La taglib des composants : [nom].taglib.xml
+    %li Toutes les ressources correctement packagées
     
 %section
-  %h2 Le composant
+  %h2 L'API du composant
   %pre.prettyprint
     :preserve
       @JsfComponent(
@@ -120,7 +127,7 @@ tags: [fr, jsf, richfaces, bootstrap]
       }
       
 %section
-  %h2 Son renderer
+  %h2 Son renderer abstrait
   %pre.prettyprint
     :preserve
       @ResourceDependencies({
@@ -137,7 +144,7 @@ tags: [fr, jsf, richfaces, bootstrap]
     :preserve
       &lt;cc:implementation&gt;
           &lt;span id=&quot;\#{clientId}&quot;
-              class=&quot;label \#{component.severity != null ? component.severity.labelClass : &#039;&#039;} \#{component.attributes[&#039;styleClass&#039;]}&quot;
+              class=&quot;label \#{component.severity != null ? 'label-'.concat(component.severity) : &#039;&#039;} \#{component.attributes[&#039;styleClass&#039;]}&quot;
               cdk:passThrough=&quot;style&quot;&gt;
               &lt;c:if test=&quot;\#{component.value != null and !component.value.equals(&#039;&#039;)}&quot;&gt;\#{component.value}&lt;/c:if&gt;
               &lt;cdk:body /&gt;
@@ -146,11 +153,19 @@ tags: [fr, jsf, richfaces, bootstrap]
       
 %section
   %h2 Résultat
+  %h3 Code JSF
   %pre.prettyprint
     :preserve
       &lt;b:label severity=&quot;success&quot;&gt;
         C'est un véritable succès !
       &lt;/b:label&gt;
+  %h3 Code HTML généré
+  %pre.prettyprint
+    :preserve
+      &lt;span class=&quot;label label-success&quot;&gt;
+        C'est un véritable succès !
+      &lt;/span&gt;
+  %h3 Rendu visuel
   %p
     %span.label.label-success C'est un véritable succès !
     
@@ -158,6 +173,7 @@ tags: [fr, jsf, richfaces, bootstrap]
   %h2 Où en est-on ?
   %ul
     %li Presque tous les composants Bootstrap ont été portés
+    %li Responsive design
     %li Support des fonctions JavaScript
     %li Support de LESS
     %li Nouvelle approche sémantique
@@ -167,7 +183,7 @@ tags: [fr, jsf, richfaces, bootstrap]
   %img{:src => "/slides/assets/20121108/chantier.jpg", :style => "float:right;"}
 
 %section
-  %h1 Le cinq
+  %h1 Vers RichFaces 5...
   %div{:style => "text-align:center;margin-top:40px;"}
     %span.label.label-important Top-secret (et non officiel)
   
@@ -192,27 +208,21 @@ tags: [fr, jsf, richfaces, bootstrap]
     %li JSF 2.2
     
 %section
-  %h1 L'au-delà
+  %h1 Et au-delà !
   
 %section
-  %h2 jQuery UI & CO. (plugins)
+  %h2 En approche...
   %ul
-    %li Nouveaux effets
-    %li Nouvelles fonctionnalités
     %li
-      Nouveaux composants
+      jQuery UI & CO. (plugins)
       %ul
         %li PickList : jQuery UI
         %li OrderingList : jQuery UI
         %li Autocomplete: Select2
+    %li Surcharge de la valeur par défaut d'un attribut JSF
         
 %section
-  %h2 Nouvelles fonctionnalités
-  %ul
-    %li Surcharge de la valeur par défaut d'un attribut JSF
-    
-%section
-  %h2 Vers JSF et au-delà
+  %h2 Vers JSF et au-delà !
   %p Composants visuels => standalone widgets
   %p Peuvent donc être utilisés dans pratiquement n'importe quel projet...
   %ul
@@ -232,11 +242,9 @@ tags: [fr, jsf, richfaces, bootstrap]
               &lt;li data-key=&quot;1&quot; class=&quot;num&quot;&gt;Item 1&lt;/li&gt;
               &lt;li data-key=&quot;2&quot; class=&quot;num&quot;&gt;Item 2&lt;/li&gt;
               &lt;li data-key=&quot;3&quot; class=&quot;num&quot;&gt;Item 3&lt;/li&gt;
-              &lt;li data-key=&quot;4&quot; class=&quot;num&quot;&gt;Item 4&lt;/li&gt;
-              &lt;li data-key=&quot;5&quot; class=&quot;num&quot;&gt;Item 5&lt;/li&gt;
           &lt;/ol&gt;
           &lt;ol class=&quot;target&quot;&gt;
-              &lt;li data-key=&quot;6&quot; class=&quot;num&quot;&gt;Item 6&lt;/li&gt;
+              &lt;li data-key=&quot;4&quot; class=&quot;num&quot;&gt;Item 4&lt;/li&gt;
           &lt;/ol&gt;
       &lt;/div&gt;
       
@@ -262,3 +270,5 @@ tags: [fr, jsf, richfaces, bootstrap]
   %p
     %a{:href => "https://github.com/paulrouget/dzslides/"} DZSlides :
     https://github.com/paulrouget/dzslides/
+    
+  %h2 Questions ?
