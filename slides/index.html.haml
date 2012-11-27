@@ -9,10 +9,14 @@ title: Slides
     .span12
       - page.slides.each do |slide|
         %h2
-          %a{ :href => "#{slide.url}" }= slide.title
+          = slide.title
+        %h4
+          %span.date= slide.date.strftime( '%b %d, %Y' )
           (
+          %a{ :href => "#{slide.url}" } Dedicated window
+          %span -
           %a{ :href => "#{site.base_url}/shells/onstage/index.html##{slide.url}" } OnStage mode
           )
-        %iframe{:class=>"frame", :width=>"700", :height=>"600", :src=>"#{site.base_url}/shells/embedder/index.html##{slide.url}"}
+        %iframe{:class => "frame slides", :src=>"#{site.base_url}/shells/embedder/index.html##{slide.url}", :allowfullscreen => "allowfullscreen", :mozallowfullscreen => "mozallowfullscreen", :webkitallowfullscreen => "webkitallowfullscreen"}
           %a{:href=>"#{slide.url}"}
             link to the presentation

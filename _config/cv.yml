@@ -109,8 +109,10 @@ en:
           multi: one
           value: "Translator of user guides."
         - label: "Speaker"
-          multi: one
-          value: "Conference at Toulouse JUG about Bootstrap and Awestruct."
+          multi: many
+          vals:
+            - "Conference at Toulouse JUG about Bootstrap and Awestruct."
+            - "Quicky at NightHacking Tour 2012 about RichFaces Bootstrap."
     - title: "Studies"
       col: 1
       subs:
@@ -250,8 +252,10 @@ fr:
           multi: one
           value: "Traducteur au niveau des guides utilisateurs."
         - label: "Speaker"
-          multi: one
-          value: "Conférence au Toulouse JUG au sujet de Bootstrap et Awestruct."
+          multi: many
+          vals:
+            - "Conférence au Toulouse JUG au sujet de Bootstrap et Awestruct."
+            - "Quicky au NightHacking Tour 2012 au sujet de RichFaces Bootstrap."
     - title: "Etudes"
       col: 1
       subs:

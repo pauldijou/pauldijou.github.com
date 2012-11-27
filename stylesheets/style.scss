@@ -1,6 +1,9 @@
-@import "compass/reset";
-@import "compass/css3/border-radius";
-@import "compass/css3/text-shadow";
+@import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_responsive";
+@import "ie";
+@import "prettify";
+@import "print";
+@import "override";
 
 p, dd, div.alert {
 	text-align: justify;
@@ -62,7 +65,11 @@ ul.icons li {
   }
   
   h3 {
-  	padding-top: 20px;
+  	padding-top: 5px;
+  }
+  
+  .nav {
+    margin-bottom: 0px;
   }
   
   .content {
@@ -72,6 +79,7 @@ ul.icons li {
   .footer {
     padding-bottom: 10px;
   }
+  
   .meta {
     margin-bottom: 10px;
   }
@@ -269,4 +277,39 @@ ul.twitter-list li.nav-header {
 	    font-size: 2.65em;
 	    opacity: 1;
 	}
+}
+
+iframe.slides {
+  border: 1px solid black;
+  display: block;
+  margin: 5px auto;
+  width: 800px;
+  height: 600px;
+}
+
+@media (min-width: 1200px) {
+  iframe.slides {
+    width: 1000px;
+    height: 750px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  iframe.slides {
+    width: 700px;
+    height: 525px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  iframe.slides {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  iframe.slides {
+    display: none;
+  }
 }

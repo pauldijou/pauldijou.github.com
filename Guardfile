@@ -1,3 +1,3 @@
 guard 'livereload' do
-   watch(%r{_site/.+\.(css|js|html|json|less)})
+   watch(%r{_site/.+\.(css|js|html|json|less|scss)})
 end
