@@ -61,16 +61,11 @@ if [[ `git status -s | wc -l` -gt 0 ]]; then
   exit 1
 fi
 
-if [[ `git diff upstream/develop | wc -l` -gt 0 ]]; then
+if [[ `git diff origin/develop | wc -l` -gt 0 ]]; then
   error "Please push these local changes before publishing:"
-  error `git log upstream/develop..`
+  error `git log origin/develop..`
   exit 1
 fi
-
-# TODO check if github repository has been updated since the contributions file was written, then nuke the contributions file
-#pushdq $GITHUB_DIR
-#rm -f *-contributors.json
-#popdq
 
 if [ $CLEAN -eq 1 ]; then
   pushdq $LANYRD_DIR
