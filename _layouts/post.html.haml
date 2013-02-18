@@ -4,8 +4,7 @@ layout: main
 .row
   .span9
     = partial('post.html.haml', {'parent'=>page, 'post'=>page, 'alone' => true})
-    = page.disqus_comments_count
-
+    
     .visible-desktop
       %ul.pager
         - if page.previous_post
@@ -48,4 +47,6 @@ layout: main
         &nbsp;
       .follow-scroll
         = partial("social-share.html.haml")
+  
+= page.disqus_comments_count
       

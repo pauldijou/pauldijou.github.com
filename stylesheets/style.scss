@@ -46,6 +46,27 @@ ul.icons li {
 .social-item {
 }
 
+.talk {
+  font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
+  text-shadow: 0 1px 0 #fff;
+
+  &.yellow {
+    color: #c09853;
+  }
+
+  &.green {
+    color: #468847;
+  }
+
+  &.red {
+    color: #b94a48;
+  }
+
+  &.blue {
+    color: #3a87ad;
+  }
+}
+
 .posts .post {
   margin-bottom: 40px;
 }
@@ -70,6 +91,10 @@ ul.icons li {
   
   .nav {
     margin-bottom: 0px;
+  }
+
+  .pager.top {
+    margin: 0px;
   }
   
   .content {

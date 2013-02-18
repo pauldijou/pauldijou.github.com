@@ -22,7 +22,7 @@ en:
           value: "26 years old (10/11/1986)"
         - label: "Email"
           multi: one
-          value: "paul.dijou.dev at gmail.com"
+          value: "paul.dijou+dev at gmail.com"
         - label: "GitHub"
           multi: one
           value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"
@@ -68,7 +68,6 @@ en:
             - "GlassFish"
             - "Resine"
             - "Websphere"
-            
         - label: "Databases"
           multi: many
           vals:
@@ -87,6 +86,9 @@ en:
     - title: "Experience"
       col: 1
       subs:
+        - label: "2012 - now<br/>(3 months and couting)"
+          multi: one
+          value: "Working at <a href=\"http://www.zenexity.com/\">Zenexity</a>, enjoying building uber websites using <strong>PlayFramework</strong>, Scala, MongoDB, and, of course, HTML5, CSS3, JavaScript, and all that awesome stuff we call open-source and internet."
         - label: "2012 (2 months)"
           multi: one
           value: "Through <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a> program which aims to help startups beginning their lives, I joined <a href=\"http://www.mipagar.com/\">Mipagar</a> team to help them finishing their user interface based on JSF and RichFaces and their RESTful API using Java EE 6 new features. For the user interface, <strong>RichFaces Bootstrap</strong> has been used with really good feedbacks."
@@ -165,7 +167,7 @@ fr:
           value: "26 ans (11/10/1986)"
         - label: "Email"
           multi: one
-          value: "paul.dijou.dev at gmail.com"
+          value: "paul.dijou+dev at gmail.com"
         - label: "GitHub"
           multi: one
           value: "<a href=\"https://github.com/pauldijou\">pauldijou</a>"
@@ -230,6 +232,9 @@ fr:
     - title: "Expérience"
       col: 1
       subs:
+        - label: "2012 - actuellement<br/>(3 mois)"
+          multi: one
+          value: "Employé chez <a href=\"http://www.zenexity.com/\">Zenexity</a>, je m'amuse à réaliser de bien jolis sites web grâce à des magnifiques technologies comme <strong>PlayFramework</strong>, Scala, MongoDB, et bien entendu HTML5, CSS3, JavaScript et tous ces trucs qu'on appelle open-source et internet."
         - label: "2012 (2 mois)"
           multi: one
           value: "Dans le cadre du programme <a href=\"http://www.startupbootcamp.org/europeans-cities/amsterdam/\">Startup Bootcamp</a> ayant pour but d'aider au démarrage de startups européennes, j'ai pu rejoindre l'équipe de <a href=\"http://www.mipagar.com/\">Mipagar</a> à Amsterdam pour les aider à finaliser leur interface JSF – RichFaces et leurs API RESTful utilisant les nouveautés de Java EE 6. Pour la réalisation de l'interface web, c'est directement <strong> RichFaces Bootstrap </strong> qui a été utilisé avec des retours très positifs."
