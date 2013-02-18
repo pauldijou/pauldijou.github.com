@@ -14,7 +14,7 @@ SASS_CACHE_DIR="$ROOT_DIR/.sass-cache"
 DATACACHE_DIR="$TMP_DIR/datacache"
 GITHUB_DIR="$TMP_DIR/restcache/github"
 LANYRD_DIR="$TMP_DIR/lanyrd"
-DEPLOY_REPO='git@github.com:arquillian/arquillian.github.com.git'
+DEPLOY_REPO='git@github.com:pauldijou/pauldijou.github.com.git'
 
 CLEAN=0
 KEEP=0
