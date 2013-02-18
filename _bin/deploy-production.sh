@@ -4,7 +4,7 @@ set -e
 
 function pushdq() { pushd "$1" > /dev/null; }
 function popdq() { popd > /dev/null; }
-function error() { echo "$1" >&2; }
+function error() { echo "$*" >&2; }
 
 BIN_DIR=$(dirname "$0")
 ROOT_DIR="$BIN_DIR/.."
@@ -14,7 +14,7 @@ SASS_CACHE_DIR="$ROOT_DIR/.sass-cache"
 DATACACHE_DIR="$TMP_DIR/datacache"
 GITHUB_DIR="$TMP_DIR/restcache/github"
 LANYRD_DIR="$TMP_DIR/lanyrd"
-DEPLOY_REPO='git@github.com:pauldijou/pauldijou.github.com.git'
+DEPLOY_REPO='git@github.com:arquillian/arquillian.github.com.git'
 
 CLEAN=0
 KEEP=0
@@ -76,14 +76,14 @@ if [ $CLEAN -eq 1 ]; then
 fi
 
 if [ $KEEP -eq 0 ]; then
-  rm -rf $SITE_DIR
-  rm -rf $SASS_CACHE_DIR
+  awestruct --force -g -P production
+else
+  awestruct -P production -g
 fi
 
-awestruct -P production -g
 
 pushdq $DEPLOY_DIR
-git pull
+git pull origin master
 popdq
 
 rsync -a --delete --exclude='.git' "$SITE_DIR/" "$DEPLOY_DIR/"
