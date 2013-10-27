@@ -7,22 +7,28 @@
     %meta{ "http-equiv"=>"cache-control", :content=>"no-cache"}
     %meta{ "http-equiv"=>"expires", :content=>"0"}
     %title
-      #{site.title} / #{page.title ? page.title : site.default_page_title }
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/style.css", :media=>"screen, projection" }
+      #{site.title}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/main.css", :media=>"screen, projection" }
     /[if lt IE 8]
       %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/ie.css", :media=>"screen, projection" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/jquery.min.js" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/bootstrap.min.js" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/prettify.js" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/main.js" }
-    /[if lt IE 9]
-      %script{ :type=>"text/javascript", :src=>"//html5shim.googlecode.com/svn/trunk/html5.js" }
+
     - if page.stylesheets
       - page.stylesheets.each do |stylesheets|
         %link{ :rel=>"stylesheet", :type=>"text/css", :href=>stylesheets, :media=>"screen, projection" }
-  %body{ :data=>{ :target=>".spynav", :spy=>"scroll", :offset=>"#{site.scroll_spy_offset}" } }
+
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/vendors/modernizr/modernizr.js" }
+
+  %body
     ~ content
-    
+
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/vendors/jquery/jquery.js" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/vendors/lodash/lodash.js" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/main.js" }
+    %script{ :type=>"text/javascript", :src=>"http://localhost:35729/livereload.js?snipver=1" }
+
+    /[if lt IE 9]
+      %script{ :type=>"text/javascript", :src=>"//html5shim.googlecode.com/svn/trunk/html5.js" }
+
     - if page.javascripts
       - page.javascripts.each do |javascript|
         %script{ :type=>'text/javascript', :src=>javascript }

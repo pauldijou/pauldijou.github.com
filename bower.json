@@ -1,0 +1,11 @@
+{
+  "name": "paul.dijou.github.com",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "font-awesome": "~4.0.0",
+    "modernizr": "~2.6.0",
+    "lodash": "~2.2.0",
+    "normalize-css": "~2.1.0"
+  }
+}

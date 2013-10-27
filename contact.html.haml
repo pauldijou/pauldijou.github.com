@@ -1,165 +1,155 @@
 ---
-layout: page
+layout: main
 title: Contact
 ---
-.title
-  %h1 Contact
-  %h6 Choose your weapon!
-  
-#container.container
-  .row
-    .span8
-      .well
-        %h6.bot10 Contact form
-        %div#contactFeedback
-        %form#formContact.form-horizontal{:style=>"margin:0px;"}
-          .control-group.contactName
-            %label.control-label{:for=>"contactName"}
-              Name 
-              %span.required *
-            .controls
-              %input#contactName.span4{:type=>"text", :name=>"contactName"}
-          .control-group.contactEmail
-            %label.control-label{:for=>"contactEmail"}
-              Email 
-              %span.required *
-            .controls
-              %input#contactEmail.span4{:type=>"text", :name=>"contactEmail"}
-          .control-group.contactSubject{:for=>"contactSubject"}
-            %label.control-label{:for=>"contactSubject"}
-              Subject 
-              %span.required *
-            .controls
-              %input#contactSubject.span4{:type=>"text", :name=>"contactSubject"}
-          .control-group.contactMessage
-            %label.control-label{:for=>"contactMessage"}
-              Message  
-              %span.required *
-            .controls
-              %textarea#contactMessage.span4{:name=>"contactMessage", :style => "height: 100px"}
-          .form-actions{:style=>"margin:0px -19px -19px -19px;"}
-            %button.btn.btn-primary{:type=>"button", :onclick=>"submitContact();return false;"}
-              Submit
-            %button.btn{:type=>"reset"}
-              Cancel
-        :javascript
-          $(function() { $('#contactMessage').autogrow(); })
-          
-          function submitContact() {
-            cleanForm("#formContact");
-            
-            var contactTo = "paul.dijou+dev" + "@" + "gmail" + ".com";
-            var contactName = $("input#contactName").val();
-            var contactEmail = $("input#contactEmail").val();
-            var contactSubject = $("input#contactSubject").val();
-            var contactMessage = $("textarea#contactMessage").val();
-            
-            var hasErrors = false;
-            var errorMsgRequired="Required field";
-            
-            var regexMail = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
-                        
-            if(contactName.length == 0) {
-              hasErrors = true;
-              addErrorMessage("contactName", errorMsgRequired);
-            }
-            
-            if(contactEmail.length == 0) {
-              hasErrors = true;
-              addErrorMessage("contactEmail", errorMsgRequired);
-            } else if(!regexMail.test(contactEmail)) {
-              hasErrors = true;
-              addErrorMessage("contactEmail", "Email is not valid");
-            }
-            
-            if(contactSubject.length == 0) {
-              hasErrors = true;
-              addErrorMessage("contactSubject", errorMsgRequired);
-            }
-            
-            if(contactMessage.length == 0) {
-              hasErrors = true;
-              addErrorMessage("contactMessage", errorMsgRequired);
-            }
-            
-            if(!hasErrors) {
-              var request = $.ajax({
-                type: "POST",
-                url: "http://data.pauldijou.fr/sendMail.php",
-                data: {to: contactTo, from: contactName + "<" + contactEmail + ">", subject: contactSubject, content: contactMessage, submit: "doIt"},
-                success: function(data, textStatus, jqXHR) {
-                  $('#contactFeedback ').html('<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
-                  $("input#contactName").val("");
-                  $("input#contactEmail").val("");
-                  $("input#contactSubject").val("");
-                  $("textarea#contactMessage").val("");
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                  $('#contactFeedback ').html('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it persists, send me a mail instead. Really sorry...</div>');
-                }
-              });
-            }
-            
-            return false;
-          }
-          
-          function cleanForm(selector) {
-            $('#contactFeedback .alert').remove();
-            $(selector + ' .control-group').removeClass('error');
-            $(selector + ' .control-group .help-block').remove();
-          }
-          
-          function addErrorMessage(selector, msg) {
-            $('#formContact .control-group.'+selector).addClass('error');
-            $('#formContact .control-group.'+selector+' .controls').append('<p class="help-block">'+msg+'</p>');
-          }
+.row
+  .col.col-lg-12
+    = partial( 'social-icons.html.haml' )
+.row
+  .col.col-lg-8
+    %form#formContact.form-horizontal{:style=>"margin:0px;"}
+      .panel
+        .panel-heading
+          Contact form
 
-          function sendGmail(opts) {
-            var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-              '&to=' + opts.to +
-              '&su=' + opts.subject +
-              '&body=' + opts.message.replace(/\n/g,'%0A') +
-              '&ui=1';
-            location.href = str;
-          }
-          
-    
-    .span4
-      .well
-        %h6.bot10 Email
-        %p
-          paul.dijou+dev at gmail.com
-      .well
-        %h6.bot10 Twitter
-        %p
-          %a.twitter-follow-button{:href=>"https://twitter.com/paul_dijou"} Follow @paul_dijou
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-        %p
-          %a.twitter-mention-button{:href=>"https://twitter.com/intent/tweet?screen_name=paul_dijou", "data-related"=>"paul_dijou"} Tweet to @paul_dijou
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-          
-      .well
-        %h6 IRC
-        %p
-          I'm killing time on 
-          %a{:href=>"http://freenode.net/"} irc.freenode.net 
-          on one of the following channels:
-        .row-fluid
-          .span6
-            %ul.unstyled{:style=>"margin-left:20px;"}
-              %li #richfaces
-              %li #deltaspike
-              %li #agorava
-              %li #jbosstesting
-          .span6
-            %ul.unstyled{:style=>"margin-left:20px;"}
-              %li #forge
-              %li #aerogear
-              %li #awestruct
-              %li #seam-dev
-        %p
-          If you don't have an IRC client, just click on this link: 
-          %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net
+        .control-group.contactName
+          %label.control-label{:for=>"contactName"}
+            Name
+            %span.required *
+          .controls
+            %input#contactName.span4{:type=>"text", :name=>"contactName"}
+        .control-group.contactEmail
+          %label.control-label{:for=>"contactEmail"}
+            Email
+            %span.required *
+          .controls
+            %input#contactEmail.span4{:type=>"text", :name=>"contactEmail"}
+        .control-group.contactSubject{:for=>"contactSubject"}
+          %label.control-label{:for=>"contactSubject"}
+            Subject
+            %span.required *
+          .controls
+            %input#contactSubject.span4{:type=>"text", :name=>"contactSubject"}
+        .control-group.contactMessage
+          %label.control-label{:for=>"contactMessage"}
+            Message
+            %span.required *
+          .controls
+            %textarea#contactMessage.span4{:name=>"contactMessage", :style => "height: 100px"}
+        .panel-footer.clearfix
+          %button.btn.btn-primary.pull-right{:type=>"button", :onclick=>"submitContact();return false;"}
+            Submit
+          %button.btn.pull-right{:type=>"reset", :onclick=>"cleanForm('#formContact');"}
+            Cancel
+
+  .col.col-lg-4
+    .panel
+      .panel-heading
+        IRC
+      %p
+        I'm killing time on
+        %a{:href=>"http://freenode.net/"} irc.freenode.net
+        on one of the following channels:
+      .row
+        .col.col-lg-6
+          %ul.list-unstyled{:style=>"margin-left:20px;"}
+            %li #angularjs
+            %li #richfaces
+            %li #deltaspike
+            %li #agorava
+        .col.col-lg-6
+          %ul.list-unstyled{:style=>"margin-left:20px;"}
+            %li #forge
+            %li #aerogear
+            %li #awestruct
+            %li #jbosstesting
+      %p
+        If you don't have an IRC client, just click on this link:
+        %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net
+
+:javascript
+  $(function() {
+    $('#contactMessage').autogrow();
+  });
+
+  function submitContact() {
+    cleanForm("#formContact");
+
+    var contactTo = "paul.dijou+dev" + "@" + "gmail" + ".com";
+    var contactName = $("input#contactName").val();
+    var contactEmail = $("input#contactEmail").val();
+    var contactSubject = $("input#contactSubject").val();
+    var contactMessage = $("#contactMessage").val();
+
+    var hasErrors = false;
+    var errorMsgRequired="Required field";
+
+    var regexMail = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
+
+    if(contactName.length == 0) {
+      hasErrors = true;
+      addErrorMessage("contactName", errorMsgRequired);
+    }
+
+    if(contactEmail.length == 0) {
+      hasErrors = true;
+      addErrorMessage("contactEmail", errorMsgRequired);
+    } else if(!regexMail.test(contactEmail)) {
+      hasErrors = true;
+      addErrorMessage("contactEmail", "Email is not valid");
+    }
+
+    if(contactSubject.length == 0) {
+      hasErrors = true;
+      addErrorMessage("contactSubject", errorMsgRequired);
+    }
+
+    if(contactMessage.length == 0) {
+      hasErrors = true;
+      addErrorMessage("contactMessage", errorMsgRequired);
+    }
+
+    if(!hasErrors) {
+      var request = $.ajax({
+        type: "POST",
+        url: "http://data.pauldijou.fr/sendMail.php",
+        data: {to: contactTo, from: contactName + "<" + contactEmail + ">", subject: contactSubject, content: contactMessage, submit: "doIt"},
+        success: function(data, textStatus, jqXHR) {
+          $('#formContact ').before('<div class="contact-feedback alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
+          $("input#contactName").val("");
+          $("input#contactEmail").val("");
+          $("input#contactSubject").val("");
+          $("textarea#contactMessage").val("");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('#formContact').before('<div class="contact-feedback alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it persists, send me a mail instead. Really sorry...</div>');
+        }
+      });
+    }
+
+    return false;
+  }
+
+  function cleanForm(selector) {
+    $('.contact-feedback').remove();
+    $(selector).find('.control-group').removeClass('has-error');
+    $(selector).find('input').removeClass('input-with-feedback');
+    $(selector).find('.control-group .help-block').remove();
+  }
+
+  function addErrorMessage(selector, msg) {
+    $('#formContact').find('.control-group.'+ selector).addClass('has-error');
+    $('#formContact').find('.control-group.'+ selector +' input').addClass('input-with-feedback');
+    $('#formContact').find('.control-group.'+ selector +' textarea').addClass('input-with-feedback');
+    $('#formContact').find('.control-group.'+ selector +' .controls').append('<p class="help-block">'+msg+'</p>');
+  }
+
+  function sendGmail(opts) {
+    var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+      '&to=' + opts.to +
+      '&su=' + opts.subject +
+      '&body=' + opts.message.replace(/\n/g,'%0A') +
+      '&ui=1';
+    location.href = str;
+  }
           

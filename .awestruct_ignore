@@ -1,0 +1,7 @@
+Gemfile*
+Rakefile
+.bowerrc
+bower.json
+Gruntfile.js
+node_modules
+bower_components

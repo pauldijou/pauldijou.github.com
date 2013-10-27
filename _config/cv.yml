@@ -7,9 +7,6 @@ en:
     - title: "Resume (PDF)"
       file_name: "Resume_Paul_Dijou"
       file_type: "pdf"
-    - title: "Resume (ODT)"
-      file_name: "Resume_Paul_Dijou"
-      file_type: "odt"
   sections:
     - title: "About me"
       col: 1
@@ -32,14 +29,22 @@ en:
         - label: "Langages"
           multi: many
           vals:
+            - "Scala"
             - "Java (Java SE, Java EE 6, JavaFX 2)"
             - "HTML5, XHTML, XML"
             - "CSS3, LESS, SASS"
             - "JavaScript, JSON"
             - "PHP"
+        - label: "JavaScript"
+          multi: many
+          vals:
+            - "jQuery, Zepto"
+            - "Lodash, Underscore"
+            - "AngularJS"
         - label: "Java EE"
           multi: many
           vals:
+            - "Play! framework"
             - "<abbr title=\"Context and Dependency Injection\">CDI</abbr> (Weld, OpenWebBean)"
             - "DeltaSpike"
             - "<abbr title=\"Java Server Faces\">JSF</abbr>"
@@ -48,7 +53,6 @@ en:
             - "JAX-RS"
             - "Seam"
             - "Apache CODI"
-            - "Play! framework"
             - "Spring"
         - label: "JSF Libraries"
           multi: many
@@ -71,6 +75,7 @@ en:
         - label: "Databases"
           multi: many
           vals:
+            - "MongoDB"
             - "PostgreSQL"
             - "MySQL"
             - "Oracle"
@@ -79,7 +84,7 @@ en:
           multi: many
           vals:
             - "Eclipse, Intellij IDEA"
-            - "Maven, Ant, Gradle"
+            - "Grunt, Bower, Maven, Ant, Gradle"
             - "Git, SVN, Dimension"
             - "Jenkins, Hudson"
             - "Sonar"
@@ -152,9 +157,6 @@ fr:
     - title: "CV (PDF)"
       file_name: "CV_Paul_Dijou"
       file_type: "pdf"
-    - title: "CV (ODT)"
-      file_name: "CV_Paul_Dijou"
-      file_type: "odt"
   sections:
     - title: "Généralités"
       col: 1
@@ -177,14 +179,22 @@ fr:
         - label: "Langages"
           multi: many
           vals:
+            - "Scala"
             - "Java (Java SE, Java EE 6, JavaFX 2)"
             - "HTML5, XHTML, XML"
             - "CSS3, LESS, SASS"
             - "JavaScript, JSON"
             - "PHP"
+        - label: "JavaScript"
+          multi: many
+          vals:
+            - "jQuery, Zepto"
+            - "Lodash, Underscore"
+            - "AngularJS"
         - label: "Java EE"
           multi: many
           vals:
+            - "Play! framework"
             - "<abbr title=\"Context and Dependency Injection\">CDI</abbr> (Weld, OpenWebBean)"
             - "DeltaSpike"
             - "<abbr title=\"Java Server Faces\">JSF</abbr>"
@@ -193,7 +203,6 @@ fr:
             - "JAX-RS"
             - "Seam"
             - "Apache CODI"
-            - "Play! framework"
             - "Spring"
         - label: "Librairies JSF"
           multi: many
@@ -217,6 +226,7 @@ fr:
         - label: "Bases de données"
           multi: many
           vals:
+            - "MongoDB"
             - "PostgreSQL"
             - "MySQL"
             - "Oracle"
@@ -225,7 +235,7 @@ fr:
           multi: many
           vals:
             - "Eclipse, Intellij IDEA"
-            - "Maven, Ant, Gradle"
+            - "Grunt, Bower, Maven, Ant, Gradle"
             - "Git, SVN, Dimension"
             - "Jenkins, Hudson"
             - "Sonar"

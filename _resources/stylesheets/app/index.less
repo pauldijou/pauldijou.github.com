@@ -1,0 +1,178 @@
+.index {
+  .name, .job {
+    font-family: BirthOfAHero;
+    font-weight: 400;
+    color: @blue;
+  }
+
+  .name {
+    font-size: 100px;
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
+
+    &:hover {
+      .letter-u {
+        display: inline-block;
+        .rotate(25deg);
+      }
+    }
+  }
+
+  section {
+    &.centered {
+      text-align: center;
+    }
+
+    &.right {
+      text-align: right;
+    }
+
+    h2 {
+      font-size: 2em;
+
+      .fa {
+        margin: 0 10px;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .description {
+      width: 50%;
+    }
+
+    .last {
+      list-style-type: none;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 10px;
+        margin: 0 -10px;
+        .transition(background-color 0.5s;);
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 0.3em;
+        }
+      }
+    }
+  }
+
+  .job {
+    font-size: 42px;
+    position: relative;
+    top: -30px;
+    opacity: 0;
+    .transition(opacity 0.5s, top 1s;);
+    
+
+    &.visible {
+      top: 0px;
+      opacity: 1;
+    }
+
+    span {
+      display: inline-block;
+      //.transition(all 1s;);
+
+      &:hover {
+        .bounce-horizontal();
+      }
+    }
+  }
+
+  .social {
+    li {
+      opacity: 0;
+    }
+    
+    &.visible {
+      li {
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: block;
+      color: @gray-light-alt;
+      .transition(color 1s, background-color 1s, border-color;);
+      .border-radius(50%);
+      padding: 10px;
+      width: 70px;
+      height: 70px;
+      border: 2px solid #ffffff;
+
+      &:hover {
+        background-color: @gray-light;
+        border-color: @gray-light-alt;
+
+        &.twitter {
+          color: #00ACEE;
+        }
+
+        &.github {
+          color: #555555;
+        }
+
+        &.google_plus {
+          color: #CF3E2C;
+        }
+
+        &.linkedin {
+          color: #3399CC;
+        }
+
+        &.rss {
+          color: #EC8232;
+        }
+
+        &.email {
+          color: @gray-dark;
+        }
+      }
+    }
+  }
+
+  .web, .techno, .blog {
+    color: @gray-light;
+    border-color: @gray-light;
+
+    .button:hover {
+      color: @gray-dark;
+      background-color: @gray-light;
+    }
+  }
+
+  .web {
+    background-color: @red;
+
+    .last {
+      a:hover {
+        background-color: @red-alt;
+      }
+    }
+  }
+
+  .techno {
+    background-color: @gray-dark;
+  }
+
+  .blog {
+    background-color: @blue;
+
+    .last {
+      a:hover {
+        background-color: @blue-alt;
+      }
+    }
+  }
+
+  .contact {
+
+  }
+}

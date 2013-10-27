@@ -1,3 +1,3 @@
 - if site.github_fork && site.github_fork['render']
-  %a{:href=>"#{site.github_fork['url']}", :target=>"_blank", :class=>"github-fork #{site.github_fork['hidden_desktop'] ? 'hidden-desktop' : ''} #{site.github_fork['hidden_tablet'] ? 'hidden-tablet' : ''} #{site.github_fork['hidden_phone'] ? 'hidden-phone' : ''}"}
+  %a{:href=>"#{site.github_fork['url']}", :target=>"_blank", :class=>"github-fork visible-lg"}
     %img{:style=>"position:#{site.github_fork['position']};top:0;#{site.github_fork['align']}:0;border:0;z-index:#{site.github_fork['z_index']}", :src=>"#{site.github_fork['img_prefix']}#{site.github_fork_images[site.github_fork['color']][site.github_fork['align']]}", :alt=>"#{site.github_fork['alt']}"}

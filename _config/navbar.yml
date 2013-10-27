@@ -1,14 +1,15 @@
 - label: Blog
   url: /blog/
+  icon: comments-alt
 - label: Resume
   url: /resume/
+  icon: file-alt
 - label: Projects
   url: /projects/
-- label: Slides
-  url: /slides/
+  icon: terminal
 - label: About
   url: /about/
-- label: TODO
-  url: /todo/
+  icon: user
 - label: Contact
   url: /contact/
+  icon: envelope

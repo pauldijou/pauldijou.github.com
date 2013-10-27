@@ -7,5 +7,9 @@ _site/
 _tmp/
 _deploy
 _deploy/
-.idea/
-*.iml
+
+node_modules
+bower_components
+_resources/stylesheets/vendors
+stylesheets/fonts/vendors
+javascripts/vendors

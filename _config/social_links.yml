@@ -1,7 +1,8 @@
 - social_id: twitter
   label: Twitter
-  url: https://twitter.com/#!/
+  url: https://twitter.com/
   img: twitter_32.png
+  icon: twitter
   menu: true
   footer: true
   
@@ -9,6 +10,7 @@
   label: GitHub
   url: https://github.com/
   img: github_32.png
+  icon: github
   menu: true
   footer: true
   
@@ -16,13 +18,15 @@
   label: Google+
   url: https://plus.google.com/u/0/
   img: google_plus_32.png
+  icon: google-plus
   menu: true
   footer: true
   
-- social_id: klout
-  label: Klout
-  url: http://klout.com/#/
+- social_id: linkedin
+  label: LinkedIn
+  url: http://www.linkedin.com/pub/
   img: klout_32.png
+  icon: linkedin
   menu: true
   footer: true
   
@@ -30,6 +34,7 @@
   label: RSS
   url: http://feeds2.feedburner.com/pauldijou
   img: rss_32.png
+  icon: rss
   menu: true
   footer: true
   
@@ -37,5 +42,6 @@
   label: Email
   url: mailto:paul.dijou+dev@gmail.com
   img: email_32.png
+  icon: envelope
   menu: true
   footer: false

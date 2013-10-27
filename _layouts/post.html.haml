@@ -5,7 +5,7 @@ layout: main
   .span9
     = partial('post.html.haml', {'parent'=>page, 'post'=>page, 'alone' => true})
     
-    .visible-desktop
+    .visible-lg
       %ul.pager
         - if page.previous_post
           %li.previous
@@ -14,7 +14,7 @@ layout: main
           %li.next
             %a{:href=>page.next_post.url} Next: #{page.next_post.title}
     
-    .hidden-desktop
+    .hidden-lg
       %ul.pager
         - if page.previous_post
           %li.previous
@@ -23,7 +23,7 @@ layout: main
           %li.next
             %a{:href=>page.next_post.url} Next
 
-    %aside.visible-phone
+    %aside.visible-sm
       %ul.nav.nav-list.well
         %li.nav-header
           Tag Cloud

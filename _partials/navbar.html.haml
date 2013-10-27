@@ -1,25 +1,26 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.brand{:href=>"#{site.home_url}"}
-        = site.title
-      .nav-collapse
-        %ul.nav
-          - if site.home_label
-            %li
-              %a{:href=>"#{site.home_url}"} #{site.home_label}
-          -for nav in site.navbar
-            - if !site.home_label || site.home_url != nav.url
-              %li
-                %a{:href=>"#{nav.url}"} #{nav.label}
-              
+%nav.navbar.center
+  %ul.nav.navbar-nav
+    - if site.home_label
+      %li
+        %a{ :href=>"#{site.home_url}", :class => "clearfix" }
+          %i.icon-home.icon-2x
+          %span{ :class => "nav-label hidden-sm" }
+            #{site.home_label}
+
+    -for nav in site.navbar
+      - if !site.home_label || site.home_url != nav.url
+        %li
+          %a{ :href=>"#{nav.url}", :class => "clearfix" }
+            - if nav.iconBase.empty?
+              %i{ :class => "icon-#{nav.icon} icon-2x" }
+            - else
+              %span.icon-stack
+                %i{ :class => "icon-#{nav.iconBase} icon-stack-base icon-large" }
+                %i{ :class => "icon-#{nav.icon} icon-2x" }
+            %span{ :class => "nav-label hidden-sm" }
+              #{nav.label}
+
 :javascript
-  $(document).ready(function() {
-    var indexOfSharp = window.location.pathname.indexOf('#');
-    var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-    $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-  });
+  var indexOfSharp = window.location.pathname.indexOf('#');
+  var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
+  $("nav a[href='"+pathname+"']").closest("li").addClass("active");

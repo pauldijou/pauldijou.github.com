@@ -16,6 +16,7 @@ social_identities:
   github: pauldijou
   google_plus: 102994553784447043819
   klout: paul_dijou
+  linkedin: paul-dijou/40/10/883/en
 
 github_fork:
   render: true
@@ -24,7 +25,7 @@ github_fork:
   z_index: 5000
   top: 0
   color: red
-  align: left
+  align: right
   alt: Fork me on GitHub
   img_prefix: https://s3.amazonaws.com/github/ribbons/
   hidden_desktop: false

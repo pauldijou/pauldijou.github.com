@@ -1,47 +1,55 @@
 ---
-layout: page
+layout: main
 title: Resume
 ---
-.title
-  %h1 Resume
-  .btn-wrapper
-    .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
-      - for lang in site.cv.langs
-        %a{:href=>"#resume-#{lang}", :class=>"btn lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
-  .clearfix
-#container.container
-  .row
-    .span12
-      .tab-content.cv
+.row
+  .col.col-lg-6.text-center
+    .hidden-sm
+      .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
         - for lang in site.cv.langs
-          - cv = site.cv.method_missing(lang)
-          .tab-pane{:id=>"resume-#{lang}"}
-            .row
-              .span10
-                .well.clearfix
-                  .row-fluid
-                    - (1..2).each do |i|
-                      %div{:class => "#{i == 1 ? 'span7' : 'span5'}"}
-                        - for section in cv.sections
-                          - if section.col == i
-                            %h2 #{section.title}
-                            %dl.dl-horizontal
-                              - for sub in section.subs
-                                %dt
-                                  %h6= sub.label
-                                %dd
-                                  - if sub.multi == 'one'
-                                    = sub.value
-                                  - if sub.multi == 'many'
-                                    %ul.unstyled
-                                      - for value in sub.vals
-                                        %li= value
-              .span2
-                %ul.nav.nav-list.well
-                  %li.nav-header= cv.downloads_label
-                  - for download in cv.downloads
-                    %li{:class=>"resume #{download.file_type}"}
-                      %a{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}= download.title
+          %a{:href=>"#resume-#{lang}", :class=>"btn btn-default btn-large lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
+    .visible-sm
+      .btn-group-vertical.btn-block{ :data=>{ :toggle=>"buttons-radio" } }
+        - for lang in site.cv.langs
+          %a{:href=>"#resume-#{lang}", :class=>"btn btn-default btn-large btn-block lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
+
+
+.tab-content.resume
+  - for lang in site.cv.langs
+    - cv = site.cv.method_missing(lang)
+    .tab-pane{:id=>"resume-#{lang}"}
+      .row
+        .col.col-lg-6.col-offset-6.text-center
+          .hidden-sm
+            .btn-group
+              - for download in cv.downloads
+                %a.btn.btn-primary.btn-large{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}
+                  %i.fa.fa-download.fa-large
+                  #{download.title}
+          .visible-sm
+            .btn-group.btn-block
+              - for download in cv.downloads
+                %a.btn.btn-primary.btn-large.btn-block{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}
+                  %i.fa.fa-download.fa-large
+                  #{download.title}
+      .row
+        - (1..2).each do |i|
+          %div{:class => "#{i == 1 ? 'col col-lg-6' : 'col col-lg-6'}"}
+            - for section in cv.sections
+              - if section.col == i
+                .panel
+                  .panel-heading
+                    #{section.title}
+                  %dl.dl-horizontal
+                    - for sub in section.subs
+                      %dt= sub.label
+                      %dd
+                        - if sub.multi == 'one'
+                          = sub.value
+                        - if sub.multi == 'many'
+                          %ul.list-unstyled
+                            - for value in sub.vals
+                              %li= value
 
 :javascript
   $('ul.cv > li:first').addClass('active');

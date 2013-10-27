@@ -1,67 +1,62 @@
 ---
 layout: base
 ---
-- if !site.use_dashboard
-  %meta{"http-equiv"=>"refresh", :content=>"0; url=#{site.home_url}"}
-- if site.use_dashboard
-  %header
-    = partial( 'github-fork.html.haml' )
-    = partial( 'navbar.html.haml' )
-
-  .page
-    .title
-      %h1 Paul Dijou
-      %h6 Software Engineer
-      .container
-        .row
-          .span4.offset4
-            %pre.prettyprint.linenums.lang-java
-              :preserve
-                while(this.isAlive())
-                {
-                    this.programming();
-                }
-    #container.container.index.no-footer
-      .row
-        .span4
-          .well.last-posts
-            %ul.nav.nav-list
-              %li.nav-header Last posts
-              - for post in site.posts[0,5]
-                %li
-                  %h3
-                    %a{:href=>post.url} #{post.title}
-                  Posted on 
-                  %span.date= post.date.strftime( '%b %d, %Y' )
-                %li.divider
-            %a.btn{:href=>"/blog/"} Read my blog
-            = partial( 'subscribe.html.haml' )
-        .span4
-          .well.last-projects
-            %ul.nav.nav-list
-              %li.nav-header Last projects
-              - for project in site.projects[0,5]
-                %li
-                  %h3
-                    %a{:href=>project.url} #{project.title}
-                  = project.project_technologies.join(", ")
-                %li.divider
-            %a.btn{:href=>"/projects/"} View my work
-            %a.btn{:href=>"https://github.com/#{site.social_identities['github']}"} My GitHub
-        .span4
-          .well.last-tweets
-            %ul.nav.nav-list.twitter-list
-              %li.nav-header Last tweets
-              #twitter_update_list
-            %a.twitter-follow-button{:href=>"https://twitter.com/#{site.social_identities['twitter']}", :data=>{"show-count"=>"false", :size=>"large"}} Follow me on Twitter
-      :javascript
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-      %script{ :type=>'text/javascript', :src=>'http://twitter.com/javascripts/blogger.js' }
-      %script{ :type=>'text/javascript', :src=>'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=paul_dijou&count=5&include_rts=true&callback=twitterCallback2' }
-        
-      :javascript
-        $(document).ready(function() {
-          $('#container .row .span4 .last-posts').animate({top:'0px'}, 1000);
-          $('#container .row .span4 .last-projects').animate({top:'0px'}, 1500);
-          $('#container .row .span4 .last-tweets').animate({top:'0px'}, 2000);
-        });
+.index
+  %section.centered
+    %h1.name Paul Dijou
+    %h2#job.job
+      %span Web Architect
+    - if site.social_links && site.social_links.size > 0
+      %ul#social.social.list-inline
+        - site.social_links.each_with_index do |social_link, index|
+          %li{ :class => "await-opacity-#{index + 1}" }
+            %a{ :href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank", :class => "#{social_link.social_id}" }
+              %span{ :class => "fa fa-#{social_link.icon} fa-3x fade-in" }
+              
+  %section.web
+    .container
+      %h2
+        I'm making web applications
+        %span.fa.fa-desktop
+      %p.description
+        The web is just awesome, unlimited amount of knowledge and possibilites. I enjoy learning about all that stuff and building nice things from it.
+      %a.button{:href=>"https://github.com/#{site.social_identities['github']}"}
+        %span.fa.fa-github.fa-lg
+        My GitHub
+      %ul.last
+        - for project in site.projects[0,5]
+          %li
+            %a{:href=>project.url}
+              %h3 #{project.title}
+              = project.project_technologies.join(", ")
+  %section.right.techno
+    .container
+      %h2
+        %span.fa.fa-cogs
+        Using awesome technologies
+      %p.description
+        The web is just awesome, unlimited amount of knowledge and possibilites. I enjoy learning about all that stuff and building nice things from it.
+      %a.button{:href=>"/resume/"}
+        %span.fa.fa-code.fa-lg
+        View my resume
+  %section.blog
+    .container
+      %h2
+        And writing about all that stuff
+        %span.fa.fa-pencil-square
+      %a.button{:href=>"/blog/"}
+        %span.fa.fa-coffee.fa-lg
+        Read my blog
+      = partial( 'subscribe.html.haml' )
+      %ul.last
+        - for post in site.posts[0,5]
+          %li
+            %a{:href=>post.url}
+              %h3 #{post.title}
+              Posted on 
+              %span.date= post.date.strftime( '%b %d, %Y' )
+  %section.right.contact
+    .container
+      %h2
+        %span.fa.fa-envelope
+        Feel free to contact me

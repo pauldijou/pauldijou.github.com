@@ -1,164 +1,169 @@
-jQuery(function() {
-    jQuery("pre.prettyprint code").removeClass("prettyprint")
-    .removeClass("linenums");
-    prettyPrint();
+$(function () {
+  setTimeout(function () {
+    $("#job").addClass("visible");
+  }, 200);
 
-    jQuery("[rel=tooltip]").tooltip();
-    jQuery("[rel=tooltip-top]").tooltip({
-        placement : 'top'
-    });
-    jQuery("[rel=tooltip-bottom]").tooltip({
-        placement : 'bottom'
-    });
-    jQuery("[rel=tooltip-left]").tooltip({
-        placement : 'left'
-    });
-    jQuery("[rel=tooltip-right]").tooltip({
-        placement : 'right'
-    });
-
-    jQuery("a.anchorLink[href^=#]").anchorAnimate();
-    jQuery(".toggleHide").toggleHide();
-
-    jQuery(function() {
-        var offset = jQuery(".follow-scroll").offset();
-        if (offset != null) {
-            var speed = 1100;
-            jQuery(window).scroll(
-                    function() {
-                        if (jQuery(window).scrollTop() > offset.top) {
-                            var marginTop = jQuery(window).scrollTop() - offset.top
-                                    + getTopOffset();
-                        } else {
-                            var marginTop = 0;
-                        }
-                        ;
-                        // console.log("Window.scrollTop :
-                        // "+jQuery(window).scrollTop()+" - offset.top :
-                        // "+offset.top+" + TopOffset : "+getTopOffset()+" =
-                        // marginTop : "+marginTop);
-                        jQuery(".follow-scroll").stop().animate({
-                            marginTop : marginTop
-                        }, speed);
-                    });
-        }
-    });
+  setTimeout(function () {
+    $("#social").addClass("visible");
+  }, 700);
 });
 
-jQuery.fn.anchorAnimate = function(settings) {
+// $(function() {
+//   $("pre.prettyprint code").removeClass("prettyprint")
+//   .removeClass("linenums");
+//   prettyPrint();
 
-    settings = jQuery.extend({
-        speed : 1100
-    }, settings);
+//   $("[rel=tooltip]").tooltip();
+//   $("[rel=tooltip-top]").tooltip({
+//       placement : 'top'
+//   });
+//   $("[rel=tooltip-bottom]").tooltip({
+//       placement : 'bottom'
+//   });
+//   $("[rel=tooltip-left]").tooltip({
+//       placement : 'left'
+//   });
+//   $("[rel=tooltip-right]").tooltip({
+//       placement : 'right'
+//   });
 
-    return this.each(function() {
-        var caller = this
-        jQuery(caller).click(
-                function(event) {
-                    event.preventDefault()
-                    var locationHref = window.location.href
-                    var elementClick = jQuery(caller).attr("href")
-                    var topOffset = getTopOffset();
+//   $("a.anchorLink[href^=#]").anchorAnimate();
+//   $(".toggleHide").toggleHide();
 
-                    var destination = jQuery(elementClick).offset().top
-                            - getTopOffset();
-                    // console.log("Link destination : "+destination + " -
-                    // topOffset : "+getTopOffset());
-                    jQuery("html:not(:animated),body:not(:animated)").animate({
-                        scrollTop : destination
-                    }, settings.speed);
-                    return false;
-                })
-    })
-}
+//   $(function() {
+//       var offset = $(".follow-scroll").offset();
+//       if (offset != null) {
+//           var speed = 1100;
+//           $(window).scroll(
+//                   function() {
+//                       if ($(window).scrollTop() > offset.top) {
+//                           var marginTop = $(window).scrollTop() - offset.top
+//                                   + getTopOffset();
+//                       } else {
+//                           var marginTop = 0;
+//                       }
+//                       ;
+//                       // console.log("Window.scrollTop :
+//                       // "+$(window).scrollTop()+" - offset.top :
+//                       // "+offset.top+" + TopOffset : "+getTopOffset()+" =
+//                       // marginTop : "+marginTop);
+//                       $(".follow-scroll").stop().animate({
+//                           marginTop : marginTop
+//                       }, speed);
+//                   });
+//       }
+//   });
+// });
 
-jQuery.fn.toggleHide = function() {
-    return this.each(function() {
-        var caller = this
-        jQuery(caller).click(function(event) {
-            event.preventDefault();
-            var selector = jQuery(caller).attr("data-selector");
-            jQuery(selector).toggleClass("hide");
-        })
-    })
-}
+// $.fn.anchorAnimate = function(settings) {
+//     settings = $.extend({
+//         speed : 1100
+//     }, settings);
 
-function getTopOffset() {
-    // console.log(window.innerWidth);
-    if (window.innerWidth > 979) {
-        return 55;
-    } else {
-        return 5;
-    }
-}
+//     return this.each(function() {
+//         var caller = this
+//         $(caller).click(
+//                 function(event) {
+//                     event.preventDefault()
+//                     var locationHref = window.location.href
+//                     var elementClick = $(caller).attr("href")
+//                     var topOffset = getTopOffset();
 
-function showProgress() {
-    jQuery('#levels').addClass('show-progress');
-    jQuery('#levels .btn-show-progression .btn-yes').addClass('active');
-    jQuery('#levels .btn-show-progression .btn-no').removeClass('active');
-}
+//                     var destination = $(elementClick).offset().top
+//                             - getTopOffset();
+//                     // console.log("Link destination : "+destination + " -
+//                     // topOffset : "+getTopOffset());
+//                     $("html:not(:animated),body:not(:animated)").animate({
+//                         scrollTop : destination
+//                     }, settings.speed);
+//                     return false;
+//                 })
+//     })
+// }
 
-function hideProgress() {
-    jQuery('#levels').removeClass('show-progress');
-    jQuery('#levels .btn-show-progression .btn-yes').removeClass('active');
-    jQuery('#levels .btn-show-progression .btn-no').addClass('active');
-}
+// $.fn.toggleHide = function() {
+//     return this.each(function() {
+//         var caller = this
+//         $(caller).click(function(event) {
+//             event.preventDefault();
+//             var selector = $(caller).attr("data-selector");
+//             $(selector).toggleClass("hide");
+//         })
+//     })
+// }
 
-(function(jQuery) {
-    /**
-     * Auto-growing textareas; technique ripped from Facebook
-     * 
-     * http://github.com/jaz303/jquery-grab-bag/tree/master/javascripts/jquery.autogrow-textarea.js
-     */
-    jQuery.fn.autogrow = function(options) {
-        return this.filter('textarea').each(
-                function() {
-                    var self = this;
-                    var jQueryself = jQuery(self);
-                    var minHeight = jQueryself.height();
-                    var noFlickerPad = jQueryself.hasClass('autogrow-short') ? 0
-                            : parseInt(jQueryself.css('lineHeight'));
+// function getTopOffset() {
+//     // console.log(window.innerWidth);
+//     if (window.innerWidth > 979) {
+//         return 55;
+//     } else {
+//         return 5;
+//     }
+// }
 
-                    var shadow = jQuery('<div></div>').css({
-                        position : 'absolute',
-                        top : -10000,
-                        left : -10000,
-                        width : jQueryself.width(),
-                        fontSize : jQueryself.css('fontSize'),
-                        fontFamily : jQueryself.css('fontFamily'),
-                        fontWeight : jQueryself.css('fontWeight'),
-                        lineHeight : jQueryself.css('lineHeight'),
-                        resize : 'none'
-                    }).appendTo(document.body);
+// function showProgress() {
+//     $('#levels').addClass('show-progress');
+//     $('#levels .btn-show-progression .btn-yes').addClass('active');
+//     $('#levels .btn-show-progression .btn-no').removeClass('active');
+// }
 
-                    var update = function() {
-                        var times = function(string, number) {
-                            for ( var i = 0, r = ''; i < number; i++)
-                                r += string;
-                            return r;
-                        };
+// function hideProgress() {
+//     $('#levels').removeClass('show-progress');
+//     $('#levels .btn-show-progression .btn-yes').removeClass('active');
+//     $('#levels .btn-show-progression .btn-no').addClass('active');
+// }
 
-                        var val = self.value.replace(/</g, '&lt;').replace(
-                                />/g, '&gt;').replace(/&/g, '&amp;').replace(
-                                /\njQuery/, '<br/>&nbsp;').replace(/\n/g, '<br/>')
-                                .replace(
-                                        / {2,}/g,
-                                        function(space) {
-                                            return times('&nbsp;',
-                                                    space.length - 1)
-                                                    + ' '
-                                        });
+// /**
+//  * Auto-growing textareas; technique ripped from Facebook
+//  *
+//  * http://github.com/jaz303/jquery-grab-bag/tree/master/javascripts/jquery.autogrow-textarea.js
+//  */
+// $.fn.autogrow = function(options) {
+//   return this.filter('textarea').each(
+//     function() {
+//       var self = this;
+//       var $self = $(self);
+//       var minHeight = $self.height();
+//       var noFlickerPad = $self.hasClass('autogrow-short') ? 0 : parseInt($self.css('lineHeight'));
 
-                        shadow.css('width', jQueryself.width());
-                        shadow.html(val);
-                        jQueryself.css('height', Math.max(shadow.height()
-                                + noFlickerPad, minHeight));
-                    }
+//       var shadow = $('<div></div>').css({
+//         position : 'absolute',
+//         top : -10000,
+//         left : -10000,
+//         width : $self.width(),
+//         fontSize : $self.css('fontSize'),
+//         fontFamily : $self.css('fontFamily'),
+//         fontWeight : $self.css('fontWeight'),
+//         lineHeight : $self.css('lineHeight'),
+//         resize : 'none'
+//       }).appendTo(document.body);
 
-                    jQueryself.change(update).keyup(update).keydown(update);
-                    jQuery(window).resize(update);
+//       var update = function() {
+//         var times = function(string, number) {
+//           for ( var i = 0, r = ''; i < number; i++)
+//             r += string;
+//           return r;
+//         };
 
-                    update();
-                });
-    };
-})(jQuery);
+//         var val = self.value.replace(/</g, '&lt;')
+//           .replace(/>/g, '&gt;')
+//           .replace(/&/g, '&amp;')
+//           .replace( /\n$/, '<br/>&nbsp;')
+//           .replace(/\n/g, '<br/>')
+//           .replace(/ {2,}/g,
+//             function(space) {
+//                 return times('&nbsp;', space.length - 1)  + ' '
+//             });
+
+//         shadow.css('width', $self.width());
+//         shadow.html(val);
+//         $self.css('height', Math.max(shadow.height()
+//                 + noFlickerPad, minHeight));
+//       }
+
+//       $self.change(update).keyup(update).keydown(update);
+//       $(window).resize(update);
+
+//       update();
+//     });
+// };
