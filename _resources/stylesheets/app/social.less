@@ -1,0 +1,60 @@
+.social {
+  li {
+    opacity: 0;
+    width: 32%;
+  }
+  
+  &.visible {
+    li {
+      opacity: 1;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: @gray-light-alt;
+    .transition(color 1s, background-color 1s, border-color;);
+    border-radius: 50%;
+    padding: 10px 3px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #ffffff;
+
+    &:hover {
+      background-color: @gray-light;
+      border-color: @gray-light-alt;
+
+      &.twitter {
+        color: #00ACEE;
+      }
+
+      &.github {
+        color: #555555;
+      }
+
+      &.google_plus {
+        color: #CF3E2C;
+      }
+
+      &.linkedin {
+        color: #3399CC;
+      }
+
+      &.rss {
+        color: #EC8232;
+      }
+
+      &.email {
+        color: @gray-dark;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm) {
+  .social {
+    li {
+      width: auto;
+    }
+  }
+}

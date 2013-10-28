@@ -1,0 +1,72 @@
+
+
+.post {
+  font-size: 18px;
+  line-height: 1.5;
+
+  h2, h3, h4, .meta, p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .meta {
+    text-align: right;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  a {
+    color: @blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: @blue-alt;
+    }
+  }
+
+  .alert {
+    color: @gray-light;
+    padding: 20px;
+    padding-left: 4em;
+    position: relative;
+
+    &:before {
+      font-family: 'FontAwesome';
+      font-size: 3em;
+      position: absolute;
+      left: 0.25em;
+      top: 10px;
+    }
+
+    a {
+      color: @gray-light;
+
+      &:hover {
+        color: @gray-light-alt;
+      }
+    }
+
+    &.alert-info {
+      background-color: @blue;
+
+      &:before {
+        content: '\f05a';
+      }
+    }
+
+    &.alert-danger {
+      background-color: @red;
+
+      &:before {
+        content: '\f06a';
+      }
+    }
+  }
+}

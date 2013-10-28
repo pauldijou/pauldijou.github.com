@@ -4,15 +4,20 @@
   box-sizing: border-box;
  }
 
-@import "vendors/normalize/normalize";
+@import "bootstrap/less/normalize";
+@import "bootstrap/less/variables";
+@import "bootstrap/less/mixins";
+@import "bootstrap/less/grid";
+@import "bootstrap/less/responsive-utilities";
+@import "bootstrap/less/utilities";
 @import "font-awesome/less/font-awesome";
 
-@import "app/mixins";
 @import "app/animations";
 @import "app/layout";
 @import "app/index";
 @import "app/global";
-// @import "app/blog";
+@import "app/social";
+@import "app/blog";
 // @import "app/resume";
 // @import "app/projects";
 // @import "app/contact";
@@ -34,6 +39,7 @@
 @gray-light-alt: #bdc3c7;
 @gray: #494949;
 @gray-dark: #353535;
+@gray-dark-alt: lighten(@gray-dark, 20%);
 
 @turquoise: #64b4b0;
 

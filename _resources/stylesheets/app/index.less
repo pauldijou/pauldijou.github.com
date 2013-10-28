@@ -19,30 +19,42 @@
   }
 
   section {
+    padding-bottom: 20px;
+
     &.centered {
       text-align: center;
     }
 
-    &.right {
-      text-align: right;
-    }
-
     h2 {
       font-size: 2em;
+
+      @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+        font-size: 1.7em;
+      }
 
       .fa {
         margin: 0 10px;
       }
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+    h3 {
+      border-bottom-width: 5px;
+      border-bottom-style: solid;
+      margin: 1em -10px;
+      padding: 10px;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+
+      +.button {
+        margin-top: 10px;
+      }
     }
 
     .description {
-      width: 50%;
+      text-align: justify;
     }
 
     .last {
@@ -55,7 +67,7 @@
         margin: 0 -10px;
         .transition(background-color 0.5s;);
 
-        h3 {
+        h4 {
           margin-top: 0;
           margin-bottom: 0.3em;
         }
@@ -86,61 +98,12 @@
     }
   }
 
-  .social {
-    li {
-      opacity: 0;
-    }
-    
-    &.visible {
-      li {
-        opacity: 1;
-      }
-    }
-
-    a {
-      display: block;
-      color: @gray-light-alt;
-      .transition(color 1s, background-color 1s, border-color;);
-      .border-radius(50%);
-      padding: 10px;
-      width: 70px;
-      height: 70px;
-      border: 2px solid #ffffff;
-
-      &:hover {
-        background-color: @gray-light;
-        border-color: @gray-light-alt;
-
-        &.twitter {
-          color: #00ACEE;
-        }
-
-        &.github {
-          color: #555555;
-        }
-
-        &.google_plus {
-          color: #CF3E2C;
-        }
-
-        &.linkedin {
-          color: #3399CC;
-        }
-
-        &.rss {
-          color: #EC8232;
-        }
-
-        &.email {
-          color: @gray-dark;
-        }
-      }
-    }
-  }
-
   .web, .techno, .blog {
     color: @gray-light;
-    border-color: @gray-light;
+    
+    h3 {
+      border-color: @gray-light;
+    }
 
     .button:hover {
       color: @gray-dark;
@@ -150,6 +113,10 @@
 
   .web {
     background-color: @red;
+    
+    h3 {
+      border-color: @red-alt;
+    }
 
     .last {
       a:hover {
@@ -160,10 +127,23 @@
 
   .techno {
     background-color: @gray-dark;
+    
+    h3 {
+      border-color: @gray-dark-alt;
+    }
+
+    .row-top {
+      margin-top: 50px;
+    }
   }
+
 
   .blog {
     background-color: @blue;
+    
+    h3 {
+      border-color: @blue-alt;
+    }
 
     .last {
       a:hover {
