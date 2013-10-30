@@ -2,30 +2,7 @@
 layout: base
 ---
 
-%ul.nav.nav-pills.nav-stacked
-  - if site.home_label
-    %li
-      %a{ :href=>"#{site.home_url}", :class => "clearfix" }
-        %i.icon-home.icon-2x
-        %span{ :class => "nav-label" }
-          #{site.home_label}
-
-  -for nav in site.navbar
-    - if !site.home_label || site.home_url != nav.url
-      %li
-        %a{ :href=>"#{nav.url}", :class => "clearfix" }
-          - if nav.iconBase.empty?
-            %i{ :class => "icon-#{nav.icon} icon-2x" }
-          - else
-            %span.icon-stack
-              %i{ :class => "icon-#{nav.iconBase} icon-stack-base icon-large" }
-              %i{ :class => "icon-#{nav.icon} icon-2x" }
-          %span{ :class => "nav-label" }
-            #{nav.label}
-
-
 %header
-  = partial( 'github-fork.html.haml' )
   = partial( 'navbar.html.haml' )
 
 .container

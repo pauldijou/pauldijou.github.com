@@ -1,12 +1,15 @@
+- label: Home
+  url: /
+  icon: home
 - label: Blog
   url: /blog/
-  icon: comments-alt
+  icon: coffee
 - label: Resume
   url: /resume/
-  icon: file-alt
+  icon: code
 - label: Projects
   url: /projects/
-  icon: terminal
+  icon: flask
 - label: About
   url: /about/
   icon: user

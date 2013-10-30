@@ -1,20 +1,9 @@
 ---
 ---
 %article.post
-  - if page.alone
-    %ul.pager.top.visible-desktop{:style=>"float:right;"}
-      - if page.post.previous_post
-        %li
-          %a{:href=>page.post.previous_post.url} Previous
-      - if page.post.next_post
-        %li
-          %a{:href=>page.post.next_post.url} Next
-
   %h2
     %a{:href=>page.post.url}
       = page.post.title
-    - if !page.alone
-      %a.twitter-share-button{:href=>"https://twitter.com/share", "data-url"=>site.base_url+page.post.url, "data-text"=>"Reading Paul Dijou's blog : "+page.post.title} Tweet
   .meta
     Posted by 
     %span.authors= ' '.concat(page.post.authors.map{|u| site.identities.method_missing(u).name} * ', ')
@@ -22,20 +11,24 @@
     %span.date= page.post.date.strftime( '%b %d, %Y' )
     - if site.disqus
       | 
+      %span.fa.fa-comments.fa-fw
       = page.post.disqus_comments_link
     
   .content
     ~ page.post.content
     
   .footer
-    %a{:href=>page.post.url} Permalink
+    %a{:href=>page.post.url}
+      %span.fa.fa-link.fa-fw
+      Permalink
     | 
     - if site.disqus
+      %span.fa.fa-comments.fa-fw
       = page.post.disqus_comments_link
       | 
     - if page.post.tags
       %span.tags
-        %i.icon-tags
+        %span.fa.fa-tags.fa-fw
         Tags :
         - for tag in page.post.tags
           - unless tag.nil?

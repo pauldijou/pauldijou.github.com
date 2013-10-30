@@ -6,14 +6,6 @@ summary: 0
 tags: [en, fr, angular, coffeescript, yeoman]
 ---
 
-<ul class="nav nav-tabs">
-<li class="active"><a href="#2012-11-27-some-pocs-to-share-en" data-toggle="tab">English version</a></li>
-<li><a href="#2012-11-27-some-pocs-to-share-fr" data-toggle="tab">Version Française</a></li>
-</ul>
-
-<div class="tab-content">
-<div class="tab-pane active" id="2012-11-27-some-pocs-to-share-en">
-
 h3. Some POCs
 
 Hi there,
@@ -35,29 +27,3 @@ I've given a small quicky about <code>RichFaces Bootstrap</code> and <code>RichF
 h3. Are you in Paris?
 
 Let's finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.
-
-</div>
-<div class="tab-pane" id="2012-11-27-some-pocs-to-share-fr">
-
-h3. Quelques POCs
-
-J'ai été un peu occupé ces derniers temps mais je suis de retour. Pendant ma recherche d'emploi sur Paris, on m'a demandé de réaliser quelques démos de code sur des sujets plus ou moins funs. Maintenant que c'est fait, je me suis dit que je pourrais les partager, peut être que cela pourrait intéresser quelques personnes de voir du code autour de certaines technologies. Ledit code est loin d'être parfait, il s'agit plus d'expériences que j'ai faites.
-
-*Mowing* est principalement réalisé en *CoffeeScript* et son but est de donner des ordres à des tondeuses automatiques avant de les regarder tondre. L'intérêt était de tester cette nouvelle syntaxe autour de JavaScript et je dois bien avouer que j'ai été relativement séduit. Vous pouvez voir "le résultat":http://pauldijou.fr/mowing/ (n'allez pas tout casser avec des grilles trop larges). Le code source est "ici, sur GitHub":https://github.com/pauldijou/mowing
-
-*Mowing-java* est la version *Java* de *Mowing". Au final, c'est pratiquement la même syntaxe puisque vous pouvez créer des classes en CoffeeScript mais cette version tourne sur la JVM. Vous pouvez "regarder ici":https://github.com/pauldijou/mowing-java/ pour le code source.
-
-Enfin, *GSearch* est une application *AngularJS* organisée grâce à l'outil *Yeoman*. Son but est de se connecter aux API de GitHub afin de vous permettre d'effectuer des recherches sur les répertoires et les utilisateurs ainsi qu'afficher des informations et des statistiques à leur sujet. "C'est ici pour le résultat":http://pauldijou.fr/gsearch/ et "plutôt par là":https://github.com/pauldijou/gsearch/ pour le code source.
-
-Bien entendu, *les retours* sont les bienvenus, qu'il s'agisse de bugs, fonctionnalités, questions, ou n'importe quoi d'autre...
-
-h3. NigthHacking Tour 2012
-
-J'ai eu la chance d'y présenter un petit quicky sur *RichFaces Bootstrap* et *RichFaces 5* sur Paris il y a quelques semaines. Afin de partager cela, ce site possède désormais une "section Slides":http://pauldijou.fr/slides/ qui contient toutes mes dernières présentations (enfin, seulement celle-ci pour le moment... mais en français au moins !).
-
-h3. Du côté de Paris ?
-
-Je vais terminer avec une note personnelle. Il s'avère que je vais vivre sur Paris à partir de maintenant et pour quelques temps. Donc si vous êtes dans le coin ou juste de passage et que vous voulez boire une bière tout en discutant de Java EE, HTML5, RichFaces ou n'importe quel autre sujet sympa, n'hésitez pas à me le faire savoir ! De même, si vous donnez des conférences ou réalisez des dojos ou des katas dans les environs, faites le moi savoir que je puisse venir au prochain. Merci d'avance.
-
-</div>
-</div>

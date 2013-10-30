@@ -19,18 +19,22 @@
   }
 
   section {
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 
     &.centered {
       text-align: center;
     }
 
-    h2 {
-      font-size: 2em;
-
-      @media (min-width: @screen-md) and (max-width: @screen-md-max) {
-        font-size: 1.7em;
+    &.right {
+      @media (min-width: @screen-md) {
+        h2 {
+          text-align: right;
+        }
       }
+    }
+
+    h2 {
+      font-size: 2.2em;
 
       .fa {
         margin: 0 10px;
@@ -98,6 +102,11 @@
     }
   }
 
+  .web, .techno, .blog, .contact {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   .web, .techno, .blog {
     color: @gray-light;
     
@@ -105,9 +114,14 @@
       border-color: @gray-light;
     }
 
-    .button:hover {
-      color: @gray-dark;
-      background-color: @gray-light;
+    .button {
+      color: @gray-light;
+      border-color: @gray-light;
+
+      &:hover {
+        color: @gray-dark;
+        background-color: @gray-light;
+      }
     }
   }
 
@@ -134,6 +148,10 @@
 
     .row-top {
       margin-top: 50px;
+    }
+
+    .play {
+      margin-top: 6%;
     }
   }
 

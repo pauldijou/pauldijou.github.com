@@ -16,7 +16,7 @@ layout: base
   %section.web
     .container
       .row
-        .col-md-6
+        .col-md-5
           %h2
             I'm making web applications
             %span.fa.fa-desktop
@@ -28,7 +28,7 @@ layout: base
           %a.button{:href=>"/projects/"}
             %span.fa.fa-flask.fa-lg
             View my projects
-        .col-md-6
+        .col-md-6.col-md-offset-1
           %h3 Last projects
           %ul.last
             - for project in site.projects[0,5]
@@ -36,10 +36,10 @@ layout: base
                 %a{:href=>project.url}
                   %h4 #{project.title}
                   = project.project_technologies.join(", ")
-  %section.techno
+  %section.right.techno
     .container
       .row
-        .col-md-6.col-md-push-6
+        .col-md-5.col-md-push-7
           %h2
             %span.fa.fa-cogs
             Using awesome technologies
@@ -48,27 +48,23 @@ layout: base
           %a.button{:href=>"/resume/"}
             %span.fa.fa-code.fa-lg
             View my resume
-          .row.row-top
-            %img.col-sm-4.hidden-xs.hidden-sm{:src => "/images/technos/scala.png", :alt => "scala"}
-            %img.col-sm-8.hidden-xs.hidden-sm{:src => "/images/technos/play.svg", :alt => "Play"}
-          .row
-            %img.col-sm-8.hidden-xs.hidden-sm{:src => "/images/technos/mongodb.png", :alt => "MongoDB"}
-            %img.col-sm-4.hidden-xs.hidden-sm{:src => "/images/technos/postgresql.svg", :alt => "PostgreSQL"}
-        .col-md-6.col-md-pull-6
+        .col-md-6.col-md-pull-5
           %h3
             I 
             %span.fa.fa-heart.fa-fw
             these ones
           .row
-            %img.col-xs-6{:src => "/images/technos/html5.svg", :alt => "HTML5"}
-            %img.col-xs-6{:src => "/images/technos/css3.svg", :alt => "CSS3"}
+            %img.col-xs-4{:src => "/images/technos/html5.svg", :alt => "HTML5"}
+            %img.col-xs-4{:src => "/images/technos/css3.svg", :alt => "CSS3"}
+            %img.col-xs-4{:src => "/images/technos/javascript.svg", :alt => "JavaScript"}
           .row.row-top
-            %img.col-xs-6{:src => "/images/technos/javascript.svg", :alt => "JavaScript"}
-            %img.col-xs-6{:src => "/images/technos/angular.png", :alt => "AngularJS"}
+            %img.col-xs-3{:src => "/images/technos/scala.png", :alt => "scala"}
+            %img.play.col-xs-5{:src => "/images/technos/play.svg", :alt => "Play"}
+            %img.col-xs-4{:src => "/images/technos/angular.png", :alt => "AngularJS"}
   %section.blog
     .container
       .row
-        .col-md-6
+        .col-md-5
           %h2
             And writing about all that stuff
             %span.fa.fa-pencil-square
@@ -76,7 +72,7 @@ layout: base
             %span.fa.fa-coffee.fa-lg
             Read my blog
           = partial( 'subscribe.html.haml' )
-        .col-md-6
+        .col-md-6.col-md-offset-1
           %h3 Last posts
           %ul.last
             - for post in site.posts[0,5]
@@ -86,10 +82,10 @@ layout: base
                   Posted on 
                   %span.date= post.date.strftime( '%b %d, %Y' )
 
-  %section.contact
+  %section.right.contact
     .container
       .row
-        .col-md-6.col-md-push-6
+        .col-md-5.col-md-push-7
           %h2
             %span.fa.fa-envelope
             Feel free to contact me
@@ -98,8 +94,7 @@ layout: base
           %a.button{:href=>"/resume/"}
             %span.fa.fa-code.fa-lg
             View my resume
-        .col-md-6.col-md-pull-6
-          %ul.last
-            %li Toto
-            %li Tata
-            %li Titi
+        .col-md-6.col-md-pull-5
+          %a{:href=>"https://twitter.com/paul_dijou", :class=>"twitter-timeline", "data-widget-id"=>"338392594432290816"} Tweets de @paul_dijou
+          %script
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
