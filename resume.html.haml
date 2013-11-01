@@ -2,8 +2,48 @@
 layout: main
 title: Resume
 ---
+.row.resume
+  .col.col-md-6
+    %section.section-red
+      %h2 About me
+      %dl 
+        %dt Name
+        %dd Paul Dijou
+        %dt Age
+        %dd 27 years old (Oct 10, 1986)
+        %dt Email
+        %dd paul.dijou+dev at gmail.com
+        %dt GitHub
+        %dd
+          %a{:href => ""} pauldijou 
+    %section.section-alt
+      %h2 Experience
+    %section.section-red
+      %h2 Studies
+
+  .col.col-md-6
+    %section.section-blue
+      %h2 Skills
+      %dl 
+        %dt Languages
+        %dd 
+          %ul 
+            %li Scala
+            %li Java, Java EE
+            %li HTML5
+            %li CSS3, LESS, SASS
+            %li JavaScript, JSON
+            %li PHP
+        %dt Databases
+        %dd 
+          %ul 
+            %li MongoDB
+            %li PostgreSQL
+            %li MySQL
+            %li Oracle
+
 .row
-  .col.col-lg-6.text-center
+  .col.col-lg-6
     .hidden-sm
       .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
         - for lang in site.cv.langs

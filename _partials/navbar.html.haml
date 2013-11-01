@@ -1,12 +1,8 @@
-.menu.clearfix
-  -for nav in site.navbar
-    .col-xs-2
-      %a{ :href=>"#{nav.url}" }
-        %span{ :class => "fa fa-#{nav.icon} fa-2x fa-fw" }
-        %span.label
-          #{nav.label}
-
-/ :javascript
-/   var indexOfSharp = window.location.pathname.indexOf('#');
-/   var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-/   $("nav a[href='"+pathname+"']").closest("li").addClass("active");
+.menu
+  .menu-content.clearfix
+    -for nav in site.navbar
+      .col-xs-2
+        %a{ :href=>"#{nav.url}" }
+          %span{ :class => "fa fa-#{nav.icon} fa-2x fa-fw" }
+          %span.label
+            #{nav.label}

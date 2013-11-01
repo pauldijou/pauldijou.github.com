@@ -2,18 +2,25 @@
 layout: page
 title: Projects
 ---
-.title
-  %h1 Projects
-#container.container
-  .row    
-    .span9
-      - page.projects.each do |project|
-        = partial('project.html.haml', {'parent'=>page, 'project'=>project, 'alone' => false})
-    .span3
-      .spynav.follow-scroll.hidden-phone
-        %ul.nav.nav-list.well
-          %li.nav-header
-            Projects
-          - for project in site.projects
-            %li{:class=>"#{project.project_type}"}
-              %a.anchorLink{:href=>"##{File.basename(project.relative_source_path, '.textile')}"} #{project.title}
+#projects.container.projects
+  .row
+    - page.projects.each do |project|
+      .col-sm-6.col-lg-4.project{:id => "#{File.basename(project.relative_source_path, '.textile')}" }
+        .content
+          .summary
+            %h2= project.title
+            .date
+              .fa.fa-clock-o.fa-fw
+              = project.project_date
+            .technos
+              .fa.fa-cogs.fa-fw
+              = project.project_technologies.join(", ")
+          %div{:class=> "detail#{project.has_more ? ' has-more' : ''}"}
+            .description
+              = project.project_description
+            - if project.has_more
+              .link-more
+                %a.alt.button{:href=> project.url}
+                  .fa.fa-cogs.fa-fw
+                  Learn more
+

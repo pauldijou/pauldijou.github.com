@@ -18,9 +18,8 @@
     ~ page.post.content
     
   .footer
-    %a{:href=>page.post.url}
-      %span.fa.fa-link.fa-fw
-      Permalink
+    %span.fa.fa-link.fa-fw
+    %a{:href=>page.post.url} Permalink
     | 
     - if site.disqus
       %span.fa.fa-comments.fa-fw

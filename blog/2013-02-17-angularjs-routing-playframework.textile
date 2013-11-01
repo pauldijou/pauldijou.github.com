@@ -72,7 +72,7 @@ h3. First pages
 
 Enough with all the theory, let's do two concrete pages: creating "page1.scala.html" and "page2.scala.html" files with basic content (see source code, I'm using a template to stay DRY about the title and the menu but that's not important), add then as Play routes (with a "/views/" as stated before) and also add them inside our controller:
 
-bc(language-html).. @()
+bc(language-markup).. @()
 
 @template() {
   <h2>Page1</h2>
@@ -134,7 +134,7 @@ bc(language-javascript).. app.controller("AppCtrl", ["$scope", function($scope) 
 
 p. So as we can see, using the <code>$routeParams</code> service, we can retrieve the url params and then load the correct color in the <code>$scope</code>. At the end, it's just a matter of displaying that color in our view using AngularJS data-binding:
 
-bc(language-html).. @()
+bc(language-markup).. @()
 
 @template() {
   <div data-ng-show="msg">
@@ -200,7 +200,7 @@ div(alert alert-info). *Pro tip* Why is there the 9000 port twice? That's becaus
 
 Next, we are creating our resource by extending this apiUrl with our routing "/users/:id". This time, ":id" is a real parameter. We can now use "get" and "query" methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the <code>$scope</code>. We will need two Scala views: one for the list and one for the detail of course.
 
-bc(language-html).. @()
+bc(language-markup).. @()
 
 @template() {
   <h2>Users</h2>
@@ -213,7 +213,7 @@ bc(language-html).. @()
 }
 
 
-bc(language-html).. @()
+bc(language-markup).. @()
 
 @template() {
   <div data-ng-show="msg">

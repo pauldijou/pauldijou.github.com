@@ -1,6 +1,6 @@
 ---
 ---
-%section.project.well{:id => "#{File.basename(page.project.relative_source_path, '.textile')}" }
+%section.project{:id => "#{File.basename(page.project.relative_source_path, '.textile')}" }
   - if page.alone
     %ul.pager.visible-desktop{:style=>"float:right;"}
       - if page.project.previous_project
