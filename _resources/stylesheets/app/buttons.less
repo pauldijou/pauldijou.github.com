@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  color: @gray-dark;
+  background-color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @gray-dark;
+  padding: 15px 20px;
+  .transition(color 0.5s, background-color 0.5s, border-color 0.5s;);
+
+  &:hover {
+    color: @gray-light;
+    background-color: @gray-dark;
+  }
+
+  &.alt {
+    color: @gray-light;
+    border-color: @gray-light;
+
+    &:hover {
+      color: @gray-dark;
+      background-color: @gray-light;
+    }
+  }
+
+  &.block {
+    text-align: center;
+    display: block;
+  }
+
+  &.previous::before, &.next::after {
+    font-family: 'FontAwesome';
+  }
+
+  &.previous::before {
+    content: '\f053';
+    margin-right: 10px;
+  }
+
+  &.next::after {
+    content: '\f054';
+    margin-left: 10px;
+  }
+}

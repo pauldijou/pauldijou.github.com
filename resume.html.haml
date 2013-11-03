@@ -3,10 +3,10 @@ layout: main
 title: Resume
 ---
 .row.resume
-  .col.col-md-6
-    %section.section-red
+  .col.col-md-7
+    %section.section-red.about-me
       %h2 About me
-      %dl 
+      %dl.dl-horizontal.dl-title-100
         %dt Name
         %dd Paul Dijou
         %dt Age
@@ -15,14 +15,46 @@ title: Resume
         %dd paul.dijou+dev at gmail.com
         %dt GitHub
         %dd
-          %a{:href => ""} pauldijou 
-    %section.section-alt
+          %a{:href => ""} pauldijou
+    
+    %section.section-alt.experience
       %h2 Experience
-    %section.section-red
+      %dl 
+        %dt 2012 - now
+        %dd
+          Working at <a href="http://www.zengularity.com/">Zengularity</a> (previously Zenexity), enjoying building uber websites using <a href="http://www.playframework.com/">Play</a>, Scala, MongoDB, and, of course, HTML5, CSS3, JavaScript, and all that awesome stuff we call open-source and internet.
+        %dt 2012 (2 months)
+        %dd
+          Through <a href="http://www.startupbootcamp.org/europeans-cities/amsterdam/">Startup Bootcamp</a> program which aims to help startups beginning their lives, I joined <a href="http://www.mipagar.com/">Mipagar</a> team to help them finishing their user interface based on JSF and RichFaces and their RESTful API using Java EE 6 new features. For the user interface, <strong>RichFaces Bootstrap</strong> has been used with really good feedbacks.
+        %dt 2010 - 2012 (2 years)
+        %dd
+          Working at <a href="http://www.celad.com/">CELAD</a>, an IT firm, my first real job was to develop and maintain Java EE applications for <a href="http://www.intertitres.natixis.com">Intertitres</a>, a subsidiary of <a href="http://www.natixis.com">Natixis</a>, a french bank, using an internal framework based on Spring, Seam 2 and JSF.
+        %dt 2009 - 2011 (2 years)
+        %dd
+          At the same time I was studying or working, I was also self-employed in order to realize e-commerce projects during my free time, using PHP or Java EE."
+    
+    %section.section-red.studies
       %h2 Studies
+      %dd
+        %dt End 2009
+        %dd <a href="http://www.polymtl.ca/en/"><abbr title="Ecole Polytechnique of Montreal">EPM</abbr></a> (Montreal, Canada), exchange program during one semester.
+        %dt 2007 - 2010
+        %dd <a href="http://www.enseeiht.fr/en/index.html"><abbr title="Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications">ENSEEIHT</abbr></a> (Toulouse, France), engineer degree in Mathematics and Computer Science.
+        %dt 2004 - 2007
+        %dd <a href="http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php">Lycée Pierre de Fermat</a> (Toulouse, France), two-years highly selective classes to prepare for competitive exams to "Grandes Ecoles".
+        %dt 2004
+        %dd Scientific "Baccalauréat", with distinction.
 
-  .col.col-md-6
-    %section.section-blue
+    %section.section-alt.langs
+      %h2 Langs
+      %dl.dl-horizontal.dl-title-100
+        %dt French
+        %dd Native speaker
+        %dt English
+        %dd Professionnal (TOEIC: 910 / 990)
+
+  .col.col-md-5
+    %section.section-blue.skills
       %h2 Skills
       %dl 
         %dt Languages
@@ -33,7 +65,22 @@ title: Resume
             %li HTML5
             %li CSS3, LESS, SASS
             %li JavaScript, JSON
-            %li PHP
+        %dt Web
+        %dd
+          %ul
+            %li AngularJS
+            %li Play framework
+            %li Node
+        %dt Java EE
+        %dd
+          %ul
+            %li <abbr title="Context and Dependency Injection">CDI</abbr> (Weld, OpenWebBean)
+            %li DeltaSpike
+            %li <abbr title="Java Server Faces">JSF</abbr>
+            %li <abbr title="Java Persistence API">JPA</abbr> (Hibernate, OpenJPA)
+            %li <abbr title="Enterpriser Java Bean">EJB</abbr>
+            %li JAX-RS
+            %li Spring
         %dt Databases
         %dd 
           %ul 
@@ -41,65 +88,12 @@ title: Resume
             %li PostgreSQL
             %li MySQL
             %li Oracle
-
-.row
-  .col.col-lg-6
-    .hidden-sm
-      .btn-group{ :data=>{ :toggle=>"buttons-radio" } }
-        - for lang in site.cv.langs
-          %a{:href=>"#resume-#{lang}", :class=>"btn btn-default btn-large lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
-    .visible-sm
-      .btn-group-vertical.btn-block{ :data=>{ :toggle=>"buttons-radio" } }
-        - for lang in site.cv.langs
-          %a{:href=>"#resume-#{lang}", :class=>"btn btn-default btn-large btn-block lang-#{lang}", "data-toggle"=>"tab", :onclick=>"window.location.hash='##{lang}'"}= site.langs.method_missing(lang).label
-
-
-.tab-content.resume
-  - for lang in site.cv.langs
-    - cv = site.cv.method_missing(lang)
-    .tab-pane{:id=>"resume-#{lang}"}
-      .row
-        .col.col-lg-6.col-offset-6.text-center
-          .hidden-sm
-            .btn-group
-              - for download in cv.downloads
-                %a.btn.btn-primary.btn-large{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}
-                  %i.fa.fa-download.fa-large
-                  #{download.title}
-          .visible-sm
-            .btn-group.btn-block
-              - for download in cv.downloads
-                %a.btn.btn-primary.btn-large.btn-block{:href=>"/data/#{download.file_name}.#{download.file_type}", :target=>"_blank"}
-                  %i.fa.fa-download.fa-large
-                  #{download.title}
-      .row
-        - (1..2).each do |i|
-          %div{:class => "#{i == 1 ? 'col col-lg-6' : 'col col-lg-6'}"}
-            - for section in cv.sections
-              - if section.col == i
-                .panel
-                  .panel-heading
-                    #{section.title}
-                  %dl.dl-horizontal
-                    - for sub in section.subs
-                      %dt= sub.label
-                      %dd
-                        - if sub.multi == 'one'
-                          = sub.value
-                        - if sub.multi == 'many'
-                          %ul.list-unstyled
-                            - for value in sub.vals
-                              %li= value
-
-:javascript
-  $('ul.cv > li:first').addClass('active');
-
-  var langs = ['en', 'fr'], lang = window.location.hash.substr(1);
-
-  if(langs.indexOf(lang) < 0) {
-    lang = langs[0];
-    window.location.hash = '#'+lang;
-  }
-
-  $('.title .btn-group > a.lang-'+lang).addClass('active');
-  $('#resume-'+lang).addClass('active');
+        %dt Tools
+        %dd
+          %ul
+            %li Sublime Text
+            %li Git, SVN, Dimension
+            %li Grunt, Bower, NPM
+            %li Mavent, Ant, Gradle
+            %li Jenkins, Hudson
+            %li Sonar

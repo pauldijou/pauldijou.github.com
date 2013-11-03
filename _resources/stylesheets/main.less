@@ -16,18 +16,18 @@
 
 @import "app/animations";
 @import "app/layout";
-@import "app/index";
+@import "app/type";
+@import "app/buttons";
+@import "app/alerts";
+@import "app/nav";
 @import "app/global";
 @import "app/social";
+@import "app/index";
 @import "app/blog";
 @import "app/projects";
 @import "app/resume";
-// @import "app/resume";
-// @import "app/projects";
+@import "app/about";
 // @import "app/contact";
-// @import "app/slides";
-// @import "app/utils";
-// @import "app/override";
 
 @fa-font-path:    "fonts/vendors/fontawesome";
 
@@ -42,89 +42,8 @@
 @gray-light: #ecf0f1;
 @gray-light-alt: #bdc3c7;
 @gray: #494949;
+@gray-alt: #5E696F;
 @gray-dark: #353535;
 @gray-dark-alt: lighten(@gray-dark, 20%);
 
 @turquoise: #64b4b0;
-
-// FlatUI palette
-// @turquoise: #1abc9c;
-// @turquoise-alt: #16a085;
-
-// @green: #2ecc71;
-// @green-alt: #27ae60;
-
-// @blue: #3498db;
-// @blue-alt: #2980b9;
-
-// @purple: #9b59b6;
-// @purple-alt: #8e44ad;
-
-// @yellow: #f1c40f;
-// @yellow-alt: #f39c12;
-
-// @orange: #e67e22;
-// @orange-alt: #d35400;
-
-// @red: #e74c3c;
-// @red-alt: #c0392b;
-
-// @gray-light: #ecf0f1;
-// @gray-light-alt: #bdc3c7;
-
-// @gray-dark: #95a5a6;
-// @gray-dark-alt: #7f8c8d;
-
-// @dark: #34495e;
-// @dark-alt: #2c3e50;
-
-
-// @red: #7c1d32;
-// @dark-red: #661d2d;
-// @medium-red: #5a3b45;
-// @light-red: #7c575c;
-
-// @dark-blue: #335467;
-// @medium-blue: #607c89;
-// @light-blue: #8b9a9e;
-
-// @dark-gray: #353535;
-// @medium-gray: #424242;
-// @light-gray: #b4b4b4;
-
-// @white-smoke: #d3d3d3;
-
-
-// @brand-primary:                    @dark-red;
-// @component-offset-horizontal:      140px;
-
-// @nav-bg:                           #eeeeee;
-
-// @navbar-color:                     @dark-gray;
-// @navbar-bg:                        @nav-bg;
-
-// @navbar-link-hover-color:          @white-smoke;
-// @navbar-link-hover-bg:             @nav-bg;
-
-// @navbar-link-active-color:         @white-smoke;
-// @navbar-link-active-bg:            @dark-red;
-
-
-.animation (@args) {
-  -webkit-animation: @args;
-  -moz-animation:    @args;
-  -o-animation:      @args;
-  animation:         @args;
-}
-
-.await-opacity (@index) when (@index > 0) {
-  .await-opacity-@{index} {
-    .transition(opacity 1s (0.5s * @index));
-  }
-
-  .await-opacity(@index - 1);
-}
-
-.await-opacity (0) {}
-
-.await-opacity(10);

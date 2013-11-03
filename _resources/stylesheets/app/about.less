@@ -1,25 +1,23 @@
-.resume {
+.about {
+  text-align: justify;
   background-color: @blue;
-  
+
   section {
     margin: 0 -(@grid-gutter-width / 2);
     padding: (@grid-gutter-width / 2) + 5px;
-
-    &.experience, &.studies {
-      dt {
-        margin-top: 15px;
-      }
-    }
-
-    &.skills {
-      ul {
-        .list-unstyled();
-      }
-    }
   }
 
   h2 {
     border-bottom-width: 3px;
     border-bottom-style: solid;
+  }
+
+  .avatar {
+    margin-top:7px;
+    margin-right:20px;
+  }
+
+  .social a {
+    border-color: @gray-light-alt;
   }
 }

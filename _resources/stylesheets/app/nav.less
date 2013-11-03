@@ -1,0 +1,32 @@
+.menu {
+  background-color: @gray-dark;
+  color: @gray-light;
+  text-align: center;
+
+  a {
+    padding: 15px 10px;
+    margin-left: -(@grid-gutter-width / 2);
+    margin-right: -(@grid-gutter-width / 2);
+    display: block;
+    overflow: visible;
+    white-space: nowrap;
+    .transition(background-color 0.5s;);
+
+    &:hover {
+      background-color: @red;
+    }
+  }
+
+  .label {
+    display: none;
+  }
+
+  @media (min-width: @screen-md) {
+    .label {
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 5px;
+      font-weight: bold;
+    }
+  }
+}

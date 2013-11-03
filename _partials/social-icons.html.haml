@@ -1,8 +1,6 @@
 - if site.social_links && site.social_links.size > 0
-  .social-icons
-    %ul.list-unstyled
-      - for social_link in site.social_links
-        - if social_link.menu
-          %li
-            %a{:href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank", :class => "#{social_link.social_id}" }
-              %i{ :class => "icon-#{social_link.icon} icon-3x" }
+  %ul#social.social.list-inline
+    - site.social_links.each_with_index do |social_link, index|
+      %li{ :class => "await-opacity-#{index + 1}" }
+        %a{ :href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank", :class => "#{social_link.social_id}" }
+          %span{ :class => "fa fa-#{social_link.icon} fa-3x fa-fw" }
