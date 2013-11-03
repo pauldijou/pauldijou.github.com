@@ -19,19 +19,6 @@ $(function () {
   }, 700);
 
   $('#projects').find('.project').each(function (index) {
-    var projectsPerRow;
-
-    if (window.innerWidth >= constants.screenLg) {
-      projectsPerRow = 3;
-    } else if (window.innerWidth < constants.screenS) {
-      projectsPerRow = 1;
-    } else {
-      projectsPerRow = 2;
-    }
-
-    var col = index % projectsPerRow;
-    var row = (index - col) / projectsPerRow;
-    var diag = col + row;
     var clazz;
 
     switch (getRandomInt(1, 4)) {
@@ -45,6 +32,6 @@ $(function () {
 
     setTimeout(function () {
       $(this).addClass('visible');
-    }.bind(this), diag * 500);
+    }.bind(this), index * 500);
   });
 });

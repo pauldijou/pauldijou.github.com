@@ -5,7 +5,7 @@ title: Projects
 #projects.container.projects
   .row
     - page.projects.each do |project|
-      .col-sm-6.col-lg-4.project{:id => "#{File.basename(project.relative_source_path, '.textile')}" }
+      .col-md-6.col-lg-4.project{:id => "#{File.basename(project.relative_source_path, '.textile')}" }
         .content
           .summary
             %h2= project.title
@@ -15,12 +15,12 @@ title: Projects
             .technos
               .fa.fa-cogs.fa-fw
               = project.project_technologies.join(", ")
-          %div{:class=> "detail#{project.has_more ? ' has-more' : ''}"}
+          %div{:class=> "detail#{1 > 2 && project.has_more ? ' has-more' : ''}"}
             .description
               = project.project_description
-            - if project.has_more
+            - if 1 > 2 && project.has_more
               .link-more
                 %a.alt.button{:href=> project.url}
-                  .fa.fa-cogs.fa-fw
+                  .fa.fa-plus-circle.fa-lg.fa-fw
                   Learn more
 

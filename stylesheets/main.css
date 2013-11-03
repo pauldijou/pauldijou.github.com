@@ -3265,6 +3265,7 @@ a:focus {
   border-color: #9a1834;
 }
 .button {
+  display: inline-block;
   color: #353535;
   background-color: inherit;
   text-transform: uppercase;
@@ -3366,12 +3367,8 @@ a:focus {
   text-align: center;
 }
 .menu .menu-content {
-  max-width: 1180px;
+  max-width: 1170px;
   margin: 0 auto;
-}
-.menu .col-xs-2 {
-  padding-left: 5px;
-  padding-right: 5px;
 }
 .menu a {
   padding: 15px 10px;
@@ -3480,8 +3477,12 @@ a:focus {
 .post a:hover {
   color: #60919f;
 }
+.pagination {
+  text-align: center;
+}
 .projects .project {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 1.5s;
@@ -3495,67 +3496,84 @@ a:focus {
   position: relative;
   background-color: #7c1d31;
   color: #ecf0f1;
-  height: 250px;
   padding: 20px;
-  overflow: hidden;
 }
 .projects .project .content .summary .date {
   margin-bottom: 10px;
 }
 .projects .project .content .detail {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  padding: 20px;
-  -webkit-transition: top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;
-  transition: top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;
-  background-color: #325362;
-  opacity: 0;
-}
-.projects .project .content .detail.top {
-  top: -100%;
-  bottom: 100%;
-}
-.projects .project .content .detail.bottom {
-  top: 100%;
-  bottom: -100%;
-}
-.projects .project .content .detail.left {
-  left: -100%;
-  right: 100%;
-}
-.projects .project .content .detail.right {
-  left: 100%;
-  right: -100%;
+  border-top: 5px solid #9a1834;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 .projects .project .content .detail .description {
-  overflow: hidden;
-  text-overflow: ellipsis;
   text-align: justify;
 }
 .projects .project .content .detail .description a {
   text-decoration: underline;
 }
-.projects .project .content .detail.has-more .description {
-  max-height: 140px;
-}
 .projects .project .content .detail .link-more {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  right: 0;
   text-align: center;
+  margin-top: 10px;
 }
-.projects .project .content:hover .detail {
-  opacity: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transition: top 1s, bottom 1s, left 1s, right 1s;
-  transition: top 1s, bottom 1s, left 1s, right 1s;
+@media (min-width: 992px) {
+  .projects .project .content {
+    height: 250px;
+    overflow: hidden;
+  }
+  .projects .project .content .detail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 20px;
+    -webkit-transition: top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;
+    transition: top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;
+    border-top-width: 0;
+    margin-top: 0;
+    background-color: #325362;
+    opacity: 0;
+  }
+  .projects .project .content .detail.top {
+    top: -100%;
+    bottom: 100%;
+  }
+  .projects .project .content .detail.bottom {
+    top: 100%;
+    bottom: -100%;
+  }
+  .projects .project .content .detail.left {
+    left: -100%;
+    right: 100%;
+  }
+  .projects .project .content .detail.right {
+    left: 100%;
+    right: -100%;
+  }
+  .projects .project .content .detail .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .projects .project .content .detail.has-more .description {
+    max-height: 140px;
+  }
+  .projects .project .content .detail .link-more {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+  }
+  .projects .project .content:hover .detail {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transition: top 1s, bottom 1s, left 1s, right 1s;
+    transition: top 1s, bottom 1s, left 1s, right 1s;
+  }
 }
 .resume section {
   margin: 0 -15px;

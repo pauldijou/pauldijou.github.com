@@ -3,7 +3,8 @@
   @project-padding: 20px;
 
   .project {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     opacity: 0;
     visibility: hidden;
     .transition(opacity 1.5s;);
@@ -17,9 +18,7 @@
       position: relative;
       background-color: @red;
       color: @gray-light;
-      height: @project-height;
       padding: @project-padding;
-      overflow: hidden;
 
       .summary {
         .date {
@@ -28,40 +27,11 @@
       }
 
       .detail {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        padding: @project-padding;
-        .transition(top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;);
-        
-        background-color: @blue;
-        opacity: 0;
-
-        &.top {
-          top: -100%;
-          bottom: 100%;
-        }
-
-        &.bottom {
-          top: 100%;
-          bottom: -100%;
-        }
-
-        &.left {
-          left: -100%;
-          right: 100%;
-        }
-
-        &.right {
-          left: 100%;
-          right: -100%;
-        }
+        border-top: 5px solid @red-alt;
+        margin-top: 20px;
+        padding-top: 20px;
 
         .description {
-          overflow: hidden;
-          text-overflow: ellipsis;
           text-align: justify;
 
           a {
@@ -69,26 +39,76 @@
           }
         }
 
-        &.has-more .description {
-          max-height: @project-height - 110px;
-        }
-
         .link-more {
-          position: absolute;
-          bottom: 30px;
-          left: 0;
-          right: 0;
           text-align: center;
+          margin-top: 10px;
         }
       }
 
-      &:hover .detail {
-        opacity: 1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        .transition(top 1s, bottom 1s, left 1s, right 1s;);
+      @media (min-width: @screen-md) {
+        height: @project-height;
+        overflow: hidden;
+
+        .detail {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          padding: @project-padding;
+          .transition(top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;);
+          border-top-width: 0;
+          margin-top: 0;
+          
+          background-color: @blue;
+          opacity: 0;
+
+          &.top {
+            top: -100%;
+            bottom: 100%;
+          }
+
+          &.bottom {
+            top: 100%;
+            bottom: -100%;
+          }
+
+          &.left {
+            left: -100%;
+            right: 100%;
+          }
+
+          &.right {
+            left: 100%;
+            right: -100%;
+          }
+
+          .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          &.has-more .description {
+            max-height: @project-height - 110px;
+          }
+
+          .link-more {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin-top: 0;
+          }
+        }
+
+        &:hover .detail {
+          opacity: 1;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          .transition(top 1s, bottom 1s, left 1s, right 1s;);
+        }
       }
     }
   }
