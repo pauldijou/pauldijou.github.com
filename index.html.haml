@@ -20,8 +20,6 @@ layout: base
           %h2
             I'm making web applications
             %span.fa.fa-desktop
-          %p.description
-            The web is just awesome, unlimited amount of knowledge and possibilites. I enjoy learning about all that stuff and building nice things from it.
           %a.button{:href=>"https://github.com/#{site.social_identities['github']}"}
             %span.fa.fa-github.fa-lg.fa-fw
             My GitHub
@@ -43,11 +41,12 @@ layout: base
           %h2
             %span.fa.fa-cogs
             Using awesome technologies
-          %p.description
-            The web is just awesome, unlimited amount of knowledge and possibilites. I enjoy learning about all that stuff and building nice things from it.
           %a.button{:href=>"/resume/"}
             %span.fa.fa-code.fa-lg.fa-fw
             View my resume
+          %a.button{:href=>"/about/"}
+            %span.fa.fa-user.fa-lg.fa-fw
+            Learn more about me
         .col-md-6.col-md-pull-5
           %h3
             I 
@@ -82,18 +81,19 @@ layout: base
                   Posted on 
                   %span.date= post.date.strftime( '%b %d, %Y' )
 
-  %section.right.contact
+  %section.right.contact-me
     .container
       .row
         .col-md-5.col-md-push-7
           %h2
             %span.fa.fa-envelope
             Feel free to contact me
-          %p.description
-            The web is just awesome, unlimited amount of knowledge and possibilites. I enjoy learning about all that stuff and building nice things from it.
-          %a.button{:href=>"/resume/"}
-            %span.fa.fa-code.fa-lg.fa-fw
-            View my resume
+          %a.button{:href=>"/contact/"}
+            %span.fa.fa-comments.fa-lg.fa-fw
+            Go to contact page
+          %a.button{:href=>"https://twitter.com/paul_dijou"}
+            %span.fa.fa-twitter.fa-lg.fa-fw
+            Follow me
         .col-md-6.col-md-pull-5
           %a{:href=>"https://twitter.com/paul_dijou", :class=>"twitter-timeline", "data-widget-id"=>"338392594432290816"} Tweets de @paul_dijou
           %script

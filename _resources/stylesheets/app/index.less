@@ -18,6 +18,15 @@
     }
   }
 
+  .social a {
+    color: @blue;
+    border-color: #ffffff;
+
+    &:hover {
+      border-color: @gray-light-alt;
+    }
+  }
+
   section {
     padding-bottom: 50px;
 
@@ -51,10 +60,7 @@
     .button {
       display: block;
       text-align: center;
-
-      +.button {
-        margin-top: 10px;
-      }
+      margin-top: 50px;
     }
 
     .description {

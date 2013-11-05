@@ -1,0 +1,53 @@
+.contact {
+  background-color: @blue;
+
+  section {
+    padding: 30px;
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid @gray-dark;
+    border-radius: 5px;
+    vertical-align: middle;
+    line-height: 1.5em;
+
+    &:focus {
+      @color-rgba: rgba(red(@gray-light), green(@gray-light), blue(@gray-light), .6);
+      border-color: @gray-light;
+      outline: 0;
+      .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+    }
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .button {
+    margin-top: 20px;
+
+    &+.button {
+      margin-right: 20px;
+    }
+  }
+
+  .control-group {
+    margin-bottom: 20px;
+
+    &.error {
+      @error-color: lighten(@red, 15%);
+
+      input, textarea {
+        border: 2px solid @error-color;
+      }
+
+      .error-message {
+        color: @error-color;
+        font-weight: bold;
+      }
+    }
+  }
+}

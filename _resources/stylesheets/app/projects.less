@@ -1,114 +1,82 @@
 .projects {
-  @project-height: 250px;
-  @project-padding: 20px;
+  padding: 0;
 
   .project {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: relative;
+    padding: 50px 30px;
     opacity: 0;
     visibility: hidden;
     .transition(opacity 1.5s;);
+
+    h2 {
+      padding-top: 0;
+      margin-top: 0;
+    }
 
     &.visible {
       visibility: visible;
       opacity: 1;
     }
 
-    .content {
-      position: relative;
+    &.alt {
+      background-color: @gray-dark;
+      color: @gray-light;
+
+      .detail {
+        border-color: @gray-dark-alt;
+      }
+    }
+
+    &.blue {
+      background-color: @blue;
+      color: @gray-light;
+
+      .detail {
+        border-color: @blue-alt;
+      }
+    }
+
+    &.red {
       background-color: @red;
       color: @gray-light;
-      padding: @project-padding;
 
-      .summary {
-        .date {
-          margin-bottom: 10px;
+      .detail {
+        border-color: @red-alt;
+      }
+    }
+
+    .summary {
+      .date {
+        margin-bottom: 10px;
+      }
+    }
+
+    .detail {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+      border-top-width: 5px;
+      margin-top: 20px;
+      padding-top: 20px;
+
+      .description {
+        text-align: justify;
+
+        a {
+          text-decoration: underline;
         }
       }
 
-      .detail {
-        border-top: 5px solid @red-alt;
-        margin-top: 20px;
-        padding-top: 20px;
-
-        .description {
-          text-align: justify;
-
-          a {
-            text-decoration: underline;
-          }
-        }
-
-        .link-more {
-          text-align: center;
-          margin-top: 10px;
-        }
+      .link-more {
+        text-align: center;
+        margin-top: 10px;
       }
 
       @media (min-width: @screen-md) {
-        height: @project-height;
-        overflow: hidden;
-
-        .detail {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          padding: @project-padding;
-          .transition(top 1s, bottom 1s, left 1s, right 1s, opacity 0.5s;);
-          border-top-width: 0;
-          margin-top: 0;
-          
-          background-color: @blue;
-          opacity: 0;
-
-          &.top {
-            top: -100%;
-            bottom: 100%;
-          }
-
-          &.bottom {
-            top: 100%;
-            bottom: -100%;
-          }
-
-          &.left {
-            left: -100%;
-            right: 100%;
-          }
-
-          &.right {
-            left: 100%;
-            right: -100%;
-          }
-
-          .description {
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-
-          &.has-more .description {
-            max-height: @project-height - 110px;
-          }
-
-          .link-more {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            margin-top: 0;
-          }
-        }
-
-        &:hover .detail {
-          opacity: 1;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          .transition(top 1s, bottom 1s, left 1s, right 1s;);
-        }
+        border-top-width: 0;
+        border-left-width: 5px;
+        margin-top: 0;
+        padding-top: 0;
       }
     }
   }

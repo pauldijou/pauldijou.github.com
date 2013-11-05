@@ -1,0 +1,12 @@
+---
+layout: project
+title: "Game of Drones"
+author: "Paul Dijou"
+has_more: true
+project_date: "June 2012 - July 2012 (2 months)"
+project_type: "Open-source"
+project_url: "http://mipagar.com/"
+project_description: "Mipagar is an online multi-tenant platform which takes away the issues associated with the management and billing for services based on usage."
+project_technologies: [Go, HTML, LESS, JavaScript, Scala, Play Framework, MongoDB]
+tags: [java, html, css, javascript, richfaces]
+---
