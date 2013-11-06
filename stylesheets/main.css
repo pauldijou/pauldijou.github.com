@@ -3499,7 +3499,7 @@ a:focus {
 .index .web,
 .index .techno,
 .index .blog,
-.index .contact {
+.index .contact-me {
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -3566,7 +3566,8 @@ a:focus {
 .post h4,
 .post .meta,
 .post p,
-.post .footer {
+.post .footer,
+.post .pagination {
   max-width: 830px;
   margin-left: auto;
   margin-right: auto;
@@ -3584,15 +3585,28 @@ a:focus {
 .post p {
   text-align: justify;
 }
-.post a {
+.post .meta a,
+.post .content a,
+.post .footer a {
   color: #325362;
   text-decoration: underline;
 }
-.post a:hover {
+.post .meta a:hover,
+.post .content a:hover,
+.post .footer a:hover {
   color: #60919f;
 }
-.pagination {
+.post .alert a {
+  color: #ecf0f1;
+  text-decoration: underline;
+}
+.post .alert a:hover {
+  color: #bdc3c7;
+}
+.post .pagination {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .projects {
   padding: 0;

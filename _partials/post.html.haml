@@ -32,3 +32,16 @@
         - for tag in page.post.tags
           - unless tag.nil?
             %a.tag{:href=>tag.primary_page.url}= tag
+
+  - if page.alone
+    .pagination
+      .row
+        .col-xs-6
+          - if page.post.previous_post
+            %a.button.block.previous{:href=>page.post.previous_post.url} Previous
+        .col-xs-6
+          - if page.post.next_post
+            %a.button.block.next{:href=>page.post.next_post.url} Next
+            
+    .comments
+      = page.post.disqus_comments

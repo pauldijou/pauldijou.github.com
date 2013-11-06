@@ -3,23 +3,4 @@ layout: main
 ---
 = partial('post.html.haml', {'parent'=>page, 'post'=>page, 'alone' => true})
 
-.row
-  .col-xs-6
-    - if page.previous_post
-      %a.button.block.previous{:href=>page.previous_post.url} Previous
-  .col-xs-6
-    - if page.next_post
-      %a.button.block.next{:href=>page.next_post.url} Next
-
-%aside.visible-sm
-  %ul.nav.nav-list.well
-    %li.nav-header
-      Tag Cloud
-    %li
-      = site.posts_tag_cloud
-  %div
-    &nbsp;
-        
-.comments
-
 = page.disqus_comments_count
