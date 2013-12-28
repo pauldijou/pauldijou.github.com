@@ -8,31 +8,31 @@ layout: main
   = page.disqus_comments_count
 
 - current_page_number = page.posts.current_page_index + 1
-%ul.list-inline.pagination.visible-xs.visible-sm
+%ul.list-inline.pagination.text-center.visible-xs.visible-sm
   - if page.posts.previous_page
-    %li.previous
+    %li
       %a.button{:href => "#{page.posts.previous_page.url}"}
         .fa.fa-angle-left.fa-lg
         Previous
   - if !page.posts.previous_page
-    %li.previous.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         .fa.fa-angle-left.fa-lg
         Previous
   %li.disabled
     %a.button{:href => "#"} #{current_page_number} of #{page.posts.pages.size}
   - if page.posts.next_page
-    %li.next
+    %li
       %a.button{:href => "#{page.posts.next_page.url}"}
         Next
         .fa.fa-angle-right.fa-lg
   - if !page.posts.next_page
-    %li.next.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         Next
         .fa.fa-angle-right.fa-lg
 
-%ul.list-inline.pagination.hidden-xs.hidden-sm
+%ul.list-inline.pagination.text-center.hidden-xs.hidden-sm
   - if page.posts.previous_page
     %li
       %a.button{:href => "#{site.blog_prefix}/"}
@@ -43,17 +43,17 @@ layout: main
         .fa.fa-angle-left.fa-lg
         Previous
   - if !page.posts.previous_page
-    %li.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         .fa.fa-angle-double-left.fa-lg
         First
-    %li.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         .fa.fa-angle-left.fa-lg
         Previous
   - if current_page_number > 3
-    %li.disabled
-      %a.button{:href => "#"} ...
+    %li
+      %a.button.disabled{:href => "#"} ...
     %li
       %a.button{:href => "#{site.blog_prefix}/page/#{current_page_number - 2}/"} #{current_page_number - 2}
   - if current_page_number == 3
@@ -75,8 +75,8 @@ layout: main
     %li
       %a.button{:href => "#{site.blog_prefix}/page/#{current_page_number + 2}/"} #{current_page_number + 2}
   - if (page.posts.pages.size - current_page_number) > 2
-    %li.disabled
-      %a.button{:href => "#"} ...
+    %li
+      %a.button.disabled{:href => "#"} ...
   - if page.posts.next_page
     %li
       %a.button{:href => "#{page.posts.next_page.url}"}
@@ -87,12 +87,12 @@ layout: main
         Last
         .fa.fa-angle-double-right.fa-lg
   - if !page.posts.next_page
-    %li.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         Next
         .fa.fa-angle-right.fa-lg
-    %li.disabled
-      %a.button{:href => "#"}
+    %li
+      %a.button.disabled{:href => "#"}
         Last
         .fa.fa-angle-double-right.fa-lg
 

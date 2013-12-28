@@ -3,10 +3,10 @@ layout: project
 title: "Sally"
 author: "Paul Dijou"
 has_more: true
-project_date: "June 2012 - July 2012 (2 months)"
+project_date: "December 2012 - April 2013 (4 months)"
 project_type: "Professional"
-project_url: "http://mipagar.com/"
-project_description: "Mipagar is an online multi-tenant platform which takes away the issues associated with the management and billing for services based on usage."
+project_url: "https://sally.adisseo.com"
+project_description: ""
 project_technologies: [HTML, CSS, JavaScript, Scala, Play Framework, MongoDB]
-tags: [java, html, css, javascript, richfaces]
+tags: [html, css, javascript, scala, play, mongodb]
 ---

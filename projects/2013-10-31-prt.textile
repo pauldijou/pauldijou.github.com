@@ -1,12 +1,12 @@
 ---
 layout: project
-title: "PRT"
+title: "Pirackers"
 author: "Paul Dijou"
 has_more: true
-project_date: "June 2012 - July 2012 (2 months)"
+project_date: "October 2013 (1 day)"
 project_type: "Open-source"
-project_url: "http://mipagar.com/"
-project_description: "Mipagar is an online multi-tenant platform which takes away the issues associated with the management and billing for services based on usage."
-project_technologies: [Arduino, Scala, Play Framework]
-tags: [java, html, css, javascript, richfaces]
+project_url: "https://github.com/pirackers"
+project_description: "This is a one-day experimental project. Using web audio API, we retrieve vowels from user and then send them using AJAX to our server. Depending on the vowel, the server stream a code through USB to an Arduino in order to turn on a corresponding LED."
+project_technologies: [HTML5, Scala, Java, Arduino]
+tags: [html, scala, java]
 ---

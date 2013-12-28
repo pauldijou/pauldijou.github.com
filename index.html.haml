@@ -6,12 +6,7 @@ layout: base
     %h1.name Paul Dijou
     %h2#job.job
       %span Web Architect
-    - if site.social_links && site.social_links.size > 0
-      %ul#social.social.list-inline
-        - site.social_links.each_with_index do |social_link, index|
-          %li{ :class => "await-opacity-#{index + 1}" }
-            %a{ :href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank", :class => "#{social_link.social_id}" }
-              %span{ :class => "fa fa-#{social_link.icon} fa-3x fa-fw" }
+    = partial("social-icons.html.haml", {'visible' => false})
               
   %section.web
     .container

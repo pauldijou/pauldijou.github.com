@@ -3,10 +3,10 @@ layout: project
 title: "EOL"
 author: "Paul Dijou"
 has_more: true
-project_date: "June 2012 - July 2012 (2 months)"
+project_date: "November 2013 - now (work in progress)"
 project_type: "Professional"
-project_url: "http://mipagar.com/"
-project_description: "Mipagar is an online multi-tenant platform which takes away the issues associated with the management and billing for services based on usage."
-project_technologies: [HTML, LESS, JavaScript, Scala, Play Framework]
-tags: [java, html, css, javascript, richfaces]
+project_url: ""
+project_description: "EOL is a responsive website, package both as a classic site and as hybrid application using Cordova."
+project_technologies: [HTML5, LESS, JavaScript, Scala, Play Framework, Slick]
+tags: [html, css, javascript, scala, play, slick]
 ---

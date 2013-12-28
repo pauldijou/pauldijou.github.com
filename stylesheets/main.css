@@ -3089,6 +3089,9 @@ body {
   font-family: 'BirthOfAHero';
   src: url('fonts/birthofahero/BIRTH_OF_A_HERO.ttf') format('truetype');
 }
+.text-center {
+  text-align: center;
+}
 .list-unstyled {
   padding-left: 0;
   list-style: none;
@@ -3207,6 +3210,14 @@ body {
 .button.next::after {
   content: '\f054';
   margin-left: 10px;
+}
+.button.disabled {
+  cursor: default;
+  color: #ecf0f1;
+  border-color: #ecf0f1;
+}
+.button.disabled:hover {
+  background-color: inherit;
 }
 .alert {
   color: #ecf0f1;

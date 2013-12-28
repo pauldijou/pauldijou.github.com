@@ -37,11 +37,9 @@
     .pagination
       .row
         .col-xs-6
-          - if page.post.previous_post
-            %a.button.block.previous{:href=>page.post.previous_post.url} Previous
+          %a{:href=>"#{page.post.previous_post ? page.post.previous_post.url : '#'}", :class=>"button block previous#{page.post.previous_post ? '' : ' disabled'}"} Previous
         .col-xs-6
-          - if page.post.next_post
-            %a.button.block.next{:href=>page.post.next_post.url} Next
+          %a{:href=>"#{page.post.next_post ? page.post.next_post.url : '#'}", :class=>"button block next#{page.post.next_post ? '' : ' disabled'}"} Next
             
     .comments
       = page.post.disqus_comments
