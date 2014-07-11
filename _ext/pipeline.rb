@@ -12,10 +12,9 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::TagCloud.new( :posts, '/blog/tags/index.html', :layout=>'main' )
   extension Awestruct::Extensions::TagCloud.new( :projects, '/projects/tags/index.html', :layout=>'main' )
   extension Awestruct::Extensions::TagCloud.new( :slides, '/slides/tags/index.html', :layout=>'main' )
-  extension Awestruct::Extensions::Atomizer.new( :posts, '/feed.atom', :num_entries=>20, :feed_title=>'Paul Dijou Blog' )
-  extension Awestruct::Extensions::Atomizer.new( :posts, '/rss.atom', :num_entries=>20, :feed_title=>'Paul Dijou Blog' )
+  # extension Awestruct::Extensions::Atomizer.new( :posts, '/feed.atom', :num_entries=>20, :feed_title=>'Paul Dijou Blog' )
+  # extension Awestruct::Extensions::Atomizer.new( :posts, '/rss.atom', :num_entries=>20, :feed_title=>'Paul Dijou Blog' )
   extension Awestruct::Extensions::Disqus.new()
   extension Awestruct::Extensions::Indexifier.new()
   helper Awestruct::Extensions::Partial
-  helper Awestruct::Extensions::GoogleAnalytics
 end
