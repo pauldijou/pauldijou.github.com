@@ -7,6 +7,8 @@
     opacity: 0;
     visibility: hidden;
     .transition(opacity 1.5s;);
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
 
     h2 {
       padding-top: 0;
@@ -19,30 +21,24 @@
     }
 
     &.alt {
-      background-color: @gray-dark;
-      color: @gray-light;
-
-      .detail {
-        border-color: @gray-dark-alt;
-      }
+      border-color: @green;
+      h2 { color: @green; }
+      .fa { color: @green; }
+      .detail { border-color: @green; }
     }
 
     &.blue {
-      background-color: @blue;
-      color: @gray-light;
-
-      .detail {
-        border-color: @blue-alt;
-      }
+      border-color: @blue;
+      h2 { color: @blue; }
+      .fa { color: @blue; }
+      .detail { border-color: @blue; }
     }
 
     &.red {
-      background-color: @red;
-      color: @gray-light;
-
-      .detail {
-        border-color: @red-alt;
-      }
+      border-color: @red;
+      h2 { color: @red; }
+      .fa { color: @red; }
+      .detail { border-color: @red; }
     }
 
     .summary {
@@ -55,7 +51,6 @@
       border-color: inherit;
       border-style: solid;
       border-width: 0;
-      border-top-width: 5px;
       margin-top: 20px;
       padding-top: 20px;
 
@@ -83,5 +78,5 @@
 }
 
 .project {
-  
+
 }

@@ -33,27 +33,20 @@ module.exports = function (grunt) {
     }
   };
 
-  grunt.registerTask("bowerCopy", [
-    "copy:bowerNormalize",
-    "copy:bowerJQuery",
-    "copy:bowerFontAwesome",
-    "copy:bowerModernizr",
-    "copy:bowerLodash"
-  ]);
-
   grunt.registerTask("default", [
     "build",
     "watch"
   ]);
 
   grunt.registerTask("build", [
-    "bowerCopy",
-    "less:resources"
+    "copy:fontAwesome",
+    "less",
+    "uglify"
   ]);
 
   grunt.registerTask("dist", [
     "build",
-    "less:dist",
+    "less",
     "copy:dist"
   ]);
 
@@ -98,72 +91,30 @@ module.exports = function (grunt) {
           dest: "<%= config.dir.fonts %>"
         }]
       },
-      // Here start the Bower hell: manual copying of all required resources installed with Bower
-      // Prefix them all with "bower"
-      // Be sure to add them to the "bowerCopy" task near the top of the file
-      bowerNormalize: {
-        files: {
-          "<%= config.dir.resources.styles %>/vendors/normalize/normalize.less": "<%= config.dir.components %>/normalize-css/normalize.css"
-        }
-      },
-      bowerJQuery: {
-        files: [{
-          expand: true,
-          cwd: "<%= config.dir.components %>/jquery/",
-          src: ["*.js"],
-          dest: "<%= config.dir.scripts %>/vendors/jquery/"
-        }]
-      },
-      bowerFontAwesome: {
+      fontAwesome: {
         files: [{
           expand: true,
           cwd: "<%= config.dir.components %>/font-awesome/fonts/",
           src: ["*"],
           dest: "<%= config.dir.fonts %>/vendors/fontawesome"
         }]
-      },
-      bowerModernizr: {
-        files: [{
-          expand: true,
-          cwd: "<%= config.dir.components %>/modernizr/",
-          src: ["modernizr.js"],
-          dest: "<%= config.dir.scripts %>/vendors/modernizr/"
-        }]
-      },
-      bowerLodash: {
-        files: [{
-          expand: true,
-          cwd: "<%= config.dir.components %>/lodash/dist/",
-          src: ["lodash.js", "lodash.min.js"],
-          dest: "<%= config.dir.scripts %>/vendors/lodash/"
-        }]
       }
     },
 
     uglify: {
-      dist: {
-        options: {
-          compress: true
-        },
-        files: [{
-          "<%= config.dir.scripts %>main.min.js": [
-            "<%= config.dir.scripts %>/vendors/jquery/jquery.js",
-            "<%= config.dir.scripts %>/vendors/lodash/lodash.js",
-            "<%= config.dir.scripts %>/prettify.js",
-            "<%= config.dir.scripts %>/slides.js",
-            "<%= config.dir.scripts %>/main.js"
-          ]
-        }]
+      resources: {
+        files { 'javascripts/main.min.js': ['<%= config.dir.resources.styles %>/*.js'] }
       }
     },
 
     watch: {
-      options: {
-        livereload: true
-      },
       less: {
         files: ["<%= config.dir.resources.styles %>/**/*.less"],
-        tasks: ["less:resources"]
+        tasks: ["less:resources", "less:dist"]
+      },
+      javascript: {
+        files: ["<%= config.dir.resources.scripts %>/*.js"],
+        tasks: ["uglify"]
       },
       dist: {
         files: [

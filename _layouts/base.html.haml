@@ -9,7 +9,8 @@
     %title
       #{site.title}
     %link{ :rel=>"shortcut icon", :type=>"image/png", :href=>"#{site.base_url}/images/favicon.ico" }
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/main.css", :media=>"screen, projection" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/main.min.css", :media=>"screen, projection" }
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     /[if lt IE 8]
       %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/ie.css", :media=>"screen, projection" }
 
@@ -17,13 +18,19 @@
       - page.stylesheets.each do |stylesheets|
         %link{ :rel=>"stylesheet", :type=>"text/css", :href=>stylesheets, :media=>"screen, projection" }
 
+    %script{ :type=>'text/javascript' }
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
+
   %body
     ~ content
 
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/vendors/jquery/jquery.js" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/prism.js" }
-    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/main.js" }
-    %script{ :type=>"text/javascript", :src=>"http://localhost:35729/livereload.js?snipver=1" }
+    %script{ :type=>"text/javascript", :src=>"#{site.base_url}/javascripts/main.min.js" }
 
     /[if lt IE 9]
       %script{ :type=>"text/javascript", :src=>"//html5shim.googlecode.com/svn/trunk/html5.js" }
@@ -31,5 +38,3 @@
     - if page.javascripts
       - page.javascripts.each do |javascript|
         %script{ :type=>'text/javascript', :src=>javascript }
-    
-    = google_analytics_async

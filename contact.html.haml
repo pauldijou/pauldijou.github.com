@@ -2,140 +2,62 @@
 layout: main
 title: Contact
 ---
-%section.row.section-red
-  = partial('social-icons.html.haml', {'visible' => true})
+.contact
+  .row
+    %section.social
+      = partial('social-icons.html.haml', {'visible' => true})
 
-.contact.row
-  %section.col.col-md-7.section-alt
-    %form#formContact.form-horizontal{:style=>"margin:0px;"}
-      %h2 Contact form
+  .row
+    %section.email.col.col-md-7
+      %form#formContact.form-horizontal{:style=>"margin:0px;"}
+        %h2 Contact form
 
-      .control-group.contactName
-        %label.control-label{:for=>"contactName"}
-          Name
-          %span.required *
-        %input#contactName.span4{:type=>"text", :name=>"contactName", :required=>"required"}
-      .control-group.contactEmail
-        %label.control-label{:for=>"contactEmail"}
-          Email
-          %span.required *
-        %input#contactEmail.span4{:type=>"email", :name=>"contactEmail", :required=>"required"}
-      .control-group.contactSubject{:for=>"contactSubject"}
-        %label.control-label{:for=>"contactSubject"}
-          Subject
-          %span.required *
-        %input#contactSubject.span4{:type=>"text", :name=>"contactSubject", :required=>"required"}
-      .control-group.contactMessage
-        %label.control-label{:for=>"contactMessage"}
-          Message
-          %span.required *
-        %textarea#contactMessage.span4{:name=>"contactMessage", :required=>"required"}
-      %button.button.pull-right{:type=>"button", :onclick=>"submitContact();return false;"}
-        %span.fa.fa-check-circle.fa-lg.fa-fw
-        Send
-      %button.button.pull-right{:type=>"reset", :onclick=>"cleanForm('#formContact');"}
-        %span.fa.fa-times-circle.fa-lg.fa-fw
-        Cancel
+        .control-group.contactName
+          %label.control-label{:for=>"contactName"}
+            Name
+            %span.required *
+          %input#contactName.span4{:type=>"text", :name=>"contactName", :required=>"required"}
+        .control-group.contactEmail
+          %label.control-label{:for=>"contactEmail"}
+            Email
+            %span.required *
+          %input#contactEmail.span4{:type=>"email", :name=>"contactEmail", :required=>"required"}
+        .control-group.contactSubject{:for=>"contactSubject"}
+          %label.control-label{:for=>"contactSubject"}
+            Subject
+            %span.required *
+          %input#contactSubject.span4{:type=>"text", :name=>"contactSubject", :required=>"required"}
+        .control-group.contactMessage
+          %label.control-label{:for=>"contactMessage"}
+            Message
+            %span.required *
+          %textarea#contactMessage.span4{:name=>"contactMessage", :required=>"required"}
+        %button.button.pull-right{:type=>"button", :onclick=>"submitContact();return false;"}
+          %span.fa.fa-check-circle.fa-lg.fa-fw
+          Send
+        %button.button.pull-right{:type=>"reset", :onclick=>"cleanForm('#formContact');"}
+          %span.fa.fa-times-circle.fa-lg.fa-fw
+          Cancel
 
-  %section.col.col-md-5.section-blue
-    %h2 IRC
-    %p
-      I'm killing time on
-      %a{:href=>"http://freenode.net/"} irc.freenode.net
-      on one of the following channels:
-    .row
-      .col.col-md-6
-        %ul.list-unstyled{:style=>"margin-left:20px;"}
-          %li #angularjs
-          %li #richfaces
-          %li #deltaspike
-          %li #agorava
-      .col.col-md-6
-        %ul.list-unstyled{:style=>"margin-left:20px;"}
-          %li #forge
-          %li #aerogear
-          %li #awestruct
-          %li #jbosstesting
-    %p
-      If you don't have an IRC client, just click on this link:
-      %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net
-
-:javascript
-  function submitContact() {
-    cleanForm("#formContact");
-
-    var contactTo = 'paul.dijou+dev' + '@' + 'gmail' + '.com';
-    var contactName = $('#contactName').val();
-    var contactEmail = $('#contactEmail').val();
-    var contactSubject = $('#contactSubject').val();
-    var contactMessage = $('#contactMessage').val();
-
-    var hasErrors = false;
-    var errorMsgRequired='Required field';
-
-    var regexMail = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
-
-    if(contactName.length == 0) {
-      hasErrors = true;
-      addErrorMessage('contactName', errorMsgRequired);
-    }
-
-    if(contactEmail.length == 0) {
-      hasErrors = true;
-      addErrorMessage('contactEmail', errorMsgRequired);
-    } else if(!regexMail.test(contactEmail)) {
-      hasErrors = true;
-      addErrorMessage('contactEmail', 'Email is not valid');
-    }
-
-    if(contactSubject.length == 0) {
-      hasErrors = true;
-      addErrorMessage('contactSubject', errorMsgRequired);
-    }
-
-    if(contactMessage.length == 0) {
-      hasErrors = true;
-      addErrorMessage('contactMessage', errorMsgRequired);
-    }
-
-    if(!hasErrors) {
-      var request = $.ajax({
-        type: 'POST',
-        url: 'http://data.pauldijou.fr/sendMail.php',
-        data: {to: contactTo, from: contactName + '<' + contactEmail + '>', subject: contactSubject, content: contactMessage, submit: 'doIt'},
-        success: function(data, textStatus, jqXHR) {
-          $('#formContact ').before('<div class="contact-feedback alert alert-info"><h3>Congrats!</h3><p>You successfully send your message. I will answer it as soon as possible.</p></div>');
-          $('#contactName').val('');
-          $('#contactEmail').val('');
-          $('#contactSubject').val('');
-          $('#contactMessage').val('');
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          $('#formContact').before('<div class="contact-feedback alert alert-danger"><h3>Dammit!</h3><p>An error has occured. If it persists, send me a mail instead. Really sorry...</p></div>');
-        }
-      });
-    }
-
-    return false;
-  }
-
-  function cleanForm(selector) {
-    $('.contact-feedback').remove();
-    $(selector).find('.control-group').removeClass('error');
-    $(selector).find('.control-group .error-message').remove();
-  }
-
-  function addErrorMessage(selector, msg) {
-    $('#formContact').find('.control-group.'+ selector).addClass('error');
-    $('#formContact').find('.control-group.'+ selector).append('<div class="error-message">'+msg+'</div>');
-  }
-
-  function sendGmail(opts) {
-    var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-      '&to=' + opts.to +
-      '&su=' + opts.subject +
-      '&body=' + opts.message.replace(/\n/g,'%0A') +
-      '&ui=1';
-    location.href = str;
-  }
-          
+    %section.irc.col.col-md-5
+      %h2 IRC
+      %p
+        I'm killing time on
+        %a{:href=>"http://freenode.net/"} irc.freenode.net
+        on one of the following channels:
+      .row
+        .col.col-md-6
+          %ul.list-unstyled{:style=>"margin-left:20px;"}
+            %li #angularjs
+            %li #richfaces
+            %li #deltaspike
+            %li #agorava
+        .col.col-md-6
+          %ul.list-unstyled{:style=>"margin-left:20px;"}
+            %li #forge
+            %li #aerogear
+            %li #awestruct
+            %li #jbosstesting
+      %p
+        If you don't have an IRC client, just click on this link:
+        %a{:href=>"http://webchat.freenode.net/", :target=>"_blank"} webchat.freenode.net

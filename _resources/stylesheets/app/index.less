@@ -1,6 +1,5 @@
 .index {
   .name, .job {
-    font-family: BirthOfAHero;
     font-weight: 400;
     color: @blue;
   }
@@ -17,18 +16,9 @@
       }
     }
   }
-
-  .social a {
-    color: @blue;
-    border-color: #ffffff;
-
-    &:hover {
-      border-color: @gray-light-alt;
-    }
-  }
-
+  
   section {
-    padding-bottom: 50px;
+    padding: 0 30px 50px 30px;
 
     &.centered {
       text-align: center;
@@ -91,7 +81,7 @@
     top: -30px;
     opacity: 0;
     .transition(opacity 0.5s, top 1s;);
-    
+
 
     &.visible {
       top: 0px;
@@ -115,7 +105,7 @@
 
   .web, .techno, .blog {
     color: @gray-light;
-    
+
     h3 {
       border-color: @gray-light;
     }
@@ -133,24 +123,15 @@
 
   .web {
     background-color: @red;
-    
-    h3 {
-      border-color: @red-alt;
-    }
-
+    h3 { border-color: @red-alt; }
     .last {
-      a:hover {
-        background-color: @red-alt;
-      }
+      a:hover { background-color: @red-alt; }
     }
   }
 
   .techno {
-    background-color: @gray-dark;
-    
-    h3 {
-      border-color: @gray-dark-alt;
-    }
+    background-color: @green;
+    h3 { border-color: @green-alt; }
 
     .row-top {
       margin-top: 50px;
@@ -164,19 +145,17 @@
 
   .blog {
     background-color: @blue;
-    
-    h3 {
-      border-color: @blue-alt;
-    }
-
+    h3 { border-color: @blue-alt; }
     .last {
-      a:hover {
-        background-color: @blue-alt;
-      }
+      a:hover { background-color: @blue-alt; }
     }
   }
 
-  .contact {
-
+  .contact-me {
+    .section-twitter {
+      & > iframe {
+        width: 100% !important;
+      }
+    }
   }
 }

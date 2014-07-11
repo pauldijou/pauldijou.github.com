@@ -8,8 +8,8 @@ _tmp/
 _deploy
 _deploy/
 
-node_modules
-bower_components
-_resources/stylesheets/vendors
-stylesheets/fonts/vendors
-javascripts/vendors
+Gemfile.lock
+/node_modules
+/bower_components
+/stylesheets
+/javascripts

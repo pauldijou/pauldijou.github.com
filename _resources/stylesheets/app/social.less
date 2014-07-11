@@ -1,12 +1,12 @@
 .social {
   text-align: center;
-  
+
   li {
     opacity: 0;
     width: 32%;
     margin-bottom: 20px;
   }
-  
+
   &.visible {
     li {
       opacity: 1;
@@ -15,16 +15,15 @@
 
   a {
     display: inline-block;
-    color: @gray-light;
+    color: @blue;
+    border: 2px solid #ffffff;
     .transition(color 1s, background-color 1s, border-color;);
-    border: 2px solid @gray-light;
     border-radius: 50%;
     padding-top: 12px;
-    width: 80px;
+    width: 85px;
     height: 80px;
 
     &:hover {
-      background-color: @gray-light;
       border-color: @gray-light-alt;
 
       &.twitter {
