@@ -5,33 +5,33 @@
     %a{:href=>page.post.url}
       = page.post.title
   .meta
-    Posted by 
+    Posted by
     %span.authors= ' '.concat(page.post.authors.map{|u| site.identities.method_missing(u).name} * ', ')
-    on 
+    on
     %span.date= page.post.date.strftime( '%b %d, %Y' )
     - if site.disqus
-      | 
+      |
       %span.fa.fa-comments.fa-fw
       = page.post.disqus_comments_link
-    
+
   .content
     ~ page.post.content
-    
+
   .footer
     %span.fa.fa-link.fa-fw
     %a{:href=>page.post.url} Permalink
-    | 
+    |
     - if site.disqus
       %span.fa.fa-comments.fa-fw
       = page.post.disqus_comments_link
-      | 
+      |
     - if page.post.tags
       %span.tags
         %span.fa.fa-tags.fa-fw
         Tags :
         - for tag in page.post.tags
           - unless tag.nil?
-            %a.tag{:href=>tag.primary_page.url}= tag
+            %a.tag.label.label-default{:href=>tag.primary_page.url}= tag
 
   - if page.alone
     .pagination
@@ -40,6 +40,6 @@
           %a{:href=>"#{page.post.previous_post ? page.post.previous_post.url : '#'}", :class=>"button block previous#{page.post.previous_post ? '' : ' disabled'}"} Previous
         .col-xs-6
           %a{:href=>"#{page.post.next_post ? page.post.next_post.url : '#'}", :class=>"button block next#{page.post.next_post ? '' : ' disabled'}"} Next
-            
+
     .comments
       = page.post.disqus_comments

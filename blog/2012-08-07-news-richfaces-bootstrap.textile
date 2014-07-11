@@ -3,7 +3,7 @@ title: "News about RichFaces Bootstrap"
 authors: [pauldijou]
 layout: post
 summary: 0
-tags: [en, fr, richfaces, bootstrap, jquery]
+tags: [richfaces, bootstrap, jquery]
 ---
 
 h3. What's new in RichFaces Bootstrap?

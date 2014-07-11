@@ -8,17 +8,10 @@
     font-size: 100px;
     text-transform: uppercase;
     margin-bottom: 0.3em;
-
-    &:hover {
-      .letter-u {
-        display: inline-block;
-        .rotate(25deg);
-      }
-    }
   }
-  
+
   section {
-    padding: 0 30px 50px 30px;
+    padding-bottom: 50px;
 
     &.centered {
       text-align: center;
@@ -33,7 +26,7 @@
     }
 
     h2 {
-      font-size: 2.2em;
+      font-size: 2.1em;
 
       .fa {
         margin: 0 10px;
@@ -155,6 +148,16 @@
     .section-twitter {
       & > iframe {
         width: 100% !important;
+      }
+    }
+
+    div + .section-twitter {
+      margin-top: 50px;
+    }
+
+    @media (min-width: @screen-md) {
+      div + .section-twitter {
+        margin-top: 0px;
       }
     }
   }

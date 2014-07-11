@@ -3,7 +3,7 @@ title: "Some POCs to share"
 authors: [pauldijou]
 layout: post
 summary: 0
-tags: [en, fr, angular, coffeescript, yeoman]
+tags: [angular, coffeescript, yeoman]
 ---
 
 h3. Some POCs

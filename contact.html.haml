@@ -9,7 +9,7 @@ title: Contact
 
   .row
     %section.email.col.col-md-7
-      %form#formContact.form-horizontal{:style=>"margin:0px;"}
+      %form#contactForm.form-horizontal{:style=>"margin:0px;", :novalidate=>"novalidate"}
         %h2 Contact form
 
         .control-group.contactName
@@ -32,10 +32,10 @@ title: Contact
             Message
             %span.required *
           %textarea#contactMessage.span4{:name=>"contactMessage", :required=>"required"}
-        %button.button.pull-right{:type=>"button", :onclick=>"submitContact();return false;"}
+        %button.button.submit.pull-right{:type=>"submit"}
           %span.fa.fa-check-circle.fa-lg.fa-fw
           Send
-        %button.button.pull-right{:type=>"reset", :onclick=>"cleanForm('#formContact');"}
+        %button.button.reset.pull-right{:type=>"reset"}
           %span.fa.fa-times-circle.fa-lg.fa-fw
           Cancel
 

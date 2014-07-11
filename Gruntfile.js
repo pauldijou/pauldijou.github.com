@@ -41,6 +41,7 @@ module.exports = function (grunt) {
   grunt.registerTask("build", [
     "copy:fontAwesome",
     "less",
+    "concat:javascripts",
     "uglify"
   ]);
 
@@ -60,6 +61,12 @@ module.exports = function (grunt) {
 
     clean: {
       dist: {}
+    },
+
+    concat: {
+      javascripts: {
+        files: { '<%= config.dir.scripts %>/main.js': ['<%= config.dir.resources.scripts %>/*.js'] }
+      }
     },
 
     less: {
@@ -103,7 +110,7 @@ module.exports = function (grunt) {
 
     uglify: {
       resources: {
-        files { 'javascripts/main.min.js': ['<%= config.dir.resources.styles %>/*.js'] }
+        files: { '<%= config.dir.scripts %>/main.min.js': ['<%= config.dir.resources.scripts %>/*.js'] }
       }
     },
 

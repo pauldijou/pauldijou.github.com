@@ -3,7 +3,8 @@ layout: base
 ---
 .index
   %section.centered
-    %h1.name Paul Dijou
+    %h1.name
+      Paul Dijou
     %h2#job.job
       %span Web Architect
     = partial("social-icons.html.haml", {'visible' => false})
@@ -26,7 +27,7 @@ layout: base
           %ul.last
             - for project in site.projects[0,5]
               %li
-                %a{:href=>project.url}
+                %a{:href=>"/projects/"}
                   %h4 #{project.title}
                   = project.project_technologies.join(", ")
   %section.right.techno

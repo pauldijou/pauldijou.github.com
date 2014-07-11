@@ -6,21 +6,33 @@
     screenLg: 1200
   };
 
-  var $ = function (selector, context) {
+  function $(selector, context) {
     return (context || document).querySelector(selector);
-  };
+  }
 
-  var $$ = function (selector, context) {
+  function $$(selector, context) {
     return (context || document).querySelectorAll(selector);
-  };
+  }
 
-  var removeElement = function (el) {
-    el.parentNode.removeChild(el);
-  };
+  function removeElement(el) {
+    el && el.parentNode && el.parentNode.removeChild(el);
+  }
 
-  var removeSelector = function (selector, context) {
+  function removeSelector(selector, context) {
     removeElement($(selector, context));
-  };
+  }
+
+  function closest(el, tagName) {
+    tagName = tagName.toUpperCase();
+    while (el && el.parentNode) {
+      if ((el.tagName || el.nodeName) === tagName) {
+        el.parentNode = undefined;
+      } else {
+        el = el.parentNode;
+      }
+    }
+    return el;
+  }
 
 
   // ----------------------------------------------------------------------
@@ -52,8 +64,24 @@
   // CONTACT PAGE
   // ----------------------------------------------------------------------
   var contact = {
+    form: document.getElementById('contactForm'),
+    name: document.getElementById('contactName'),
+    email: document.getElementById('contactEmail'),
+    subject: document.getElementById('contactSubject'),
+    message: document.getElementById('contactMessage'),
     messageSuccess: '<div class="contact-feedback alert alert-info"><h3>Congrats!</h3><p>You successfully send your message. I will answer it as soon as possible.</p></div>',
     messageError: '<div class="contact-feedback alert alert-danger"><h3>Dammit!</h3><p>An error has occured. If it persists, send me a mail instead. Really sorry...</p></div>'
+  }
+
+  if (contact.form) {
+    contact.form.addEventListener('submit', function (ev) {
+      ev.preventDefault && ev.preventDefault();
+      return submitContact();
+    });
+
+    contact.form.addEventListener('reset', function (ev) {
+      cleanForm();
+    });
   }
 
   function onSuccess () {
@@ -69,11 +97,7 @@
   }
 
   function submitContact() {
-    contact.form = document.getElementById('formContact');
-    contact.name = document.getElementById('contactName');
-    contact.email = document.getElementById('contactEmail');
-    contact.subject = document.getElementById('contactSubject');
-    contact.message = document.getElementById('contactMessage');
+    if (!contact.form) return;
 
     cleanForm();
 
@@ -113,6 +137,7 @@
 
     if(!hasErrors) {
       var request = new XMLHttpRequest();
+      request.open('POST', 'http://data.pauldijou.fr/sendMail.php', true);
       request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
       request.onload = function() {
@@ -125,21 +150,22 @@
 
       request.onerror = onError;
 
-      request.open('POST', 'http://data.pauldijou.fr/sendMail.php', true);
-      request.send({to: contactTo, from: contactName + '<' + contactEmail + '>', subject: contactSubject, content: contactMessage, submit: 'doIt'});
+      request.send('submit=doIt&to='+contactTo+'&from='+contactName+'<'+contactEmail+'>'+'&subject='+contactSubject+'&content='+contactMessage);
     }
 
     return false;
   }
 
   function cleanForm() {
+    if (!contact.form) return;
+
     removeSelector('.contact-feedback');
 
-    Array.prototype.forEach.call($$('.control-group', contact.form), function(el){
+    Array.prototype.forEach.call($$('.control-group', contact.form), function(el) {
       el.classList.remove('error');
     });
 
-    Array.prototype.forEach.call($$('.control-group .error-message', contact.form), function(el){
+    Array.prototype.forEach.call($$('.control-group .error-message', contact.form), function(el, i) {
       removeElement(el);
     });
   }
@@ -147,7 +173,7 @@
   function addErrorMessage(selector, msg) {
     var el = $('.control-group.'+ selector, contact.form);
     el.classList.add('error');
-    el.append('<div class="error-message">'+msg+'</div>');
+    el.insertAdjacentHTML('beforeend', '<div class="error-message">' + msg + '</div>');
   }
 
   function sendGmail(opts) {

@@ -3,7 +3,7 @@ title: "News about RichFaces CDK"
 authors: [pauldijou]
 layout: post
 summary: 0
-tags: [en, fr, richfaces, cdk]
+tags: [richfaces, cdk]
 ---
 
 h3(#news-richfaces-cdk-en). RichFaces CDK new features

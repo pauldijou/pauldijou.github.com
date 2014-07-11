@@ -3,7 +3,7 @@ title: "AngularJS HTML5 routing on PlayFramework"
 authors: [pauldijou]
 layout: post
 summary: 0
-tags: [en, fr, angular, play, html5]
+tags: [angular, play, html5]
 ---
 
 h3. The problem
