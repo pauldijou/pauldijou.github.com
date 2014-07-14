@@ -2,10 +2,9 @@ source 'https://rubygems.org'
 
 gem 'awestruct', '0.5.1'
 # gem 'awestruct', :github => 'awestruct'
-gem 'haml', '~> 4.0.0'
+gem 'haml', '~> 4.0.5'
 gem 'RedCloth', '~> 4.2.9'
-gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
-gem 'kramdown', '~> 1.0.1', :platforms => [:jruby]
+gem 'kramdown', '~> 1.4.0'
 gem 'asciidoctor', '~> 0.1.2'
 gem 'erubis', '~> 2.7.0'
 gem 'rb-inotify', '~> 0.9.0', :platforms => [:ruby, :jruby]

@@ -39,31 +39,7 @@
   .animation(bounce-vertical 1.5s infinite)
 }
 
-@-webkit-keyframes bounce-horizontal {
-  0%, 100% {left: 0; }
-  7% {left: -30px; }
-  21% {left: 30px; }
-  35% {left: -30px; }
-  49% {left: 30px; }
-  63% {left: 0px; }
-}
-@-moz-keyframes bounce {
-  0%, 100% {left: 0; }
-  7% {left: -30px; }
-  21% {left: 30px; }
-  35% {left: -30px; }
-  49% {left: 30px; }
-  63% {left: 0px; }
-}
-@-o-keyframes bounce {
-  0%, 100% {left: 0; }
-  7% {left: -30px; }
-  21% {left: 30px; }
-  35% {left: -30px; }
-  49% {left: 30px; }
-  63% {left: 0px; }
-}
-@keyframes bounce {
+.bounce-horizontal-keyframes() {
   0%, 100% {left: 0; }
   7% {left: -30px; }
   21% {left: 30px; }
@@ -72,7 +48,12 @@
   63% {left: 0px; }
 }
 
-.bounce-horizontal {
+@-webkit-keyframes bounce-horizontal { .bounce-horizontal-keyframes() }
+@-moz-keyframes bounce-horizontal { .bounce-horizontal-keyframes() }
+@-o-keyframes bounce-horizontal { .bounce-horizontal-keyframes() }
+@keyframes bounce-horizontal { .bounce-horizontal-keyframes() }
+
+.bounce-horizontal() {
   position: relative;
-  .animation(bounce-horizontal 2s ease infinite)
+  .animation(bounce-horizontal 2s ease infinite);
 }
