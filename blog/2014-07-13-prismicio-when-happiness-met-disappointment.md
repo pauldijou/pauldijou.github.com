@@ -16,7 +16,7 @@ The rest of the article will focus on bashing all those limitations, so there wi
 
 ### Do you remember how happy we were at the beginning?
 
-I will never forget... it all started on this windy saturday... I was looking for a solution to create a new blog about traveling. I didn't want to use an all-in-one tool because I love crafting my UI from scratch, with exactly what I want on it (this point is super important for the rest of the story). I said bybye to Wordpress and all its friends. Some colleagues of mine told me about you... that you might be the future of content management, that I would be free for the UI, sounds like a perfect match, and so our adventure began.
+I will never forget... it all started on this windy saturday... I was looking for a solution to create a new blog about traveling. I didn't want to use an all-in-one tool because I love crafting my UI from scratch, with exactly what I want on it (this point is super important for the rest of the story). I said bybye to Wordpress and all its friends. If I were alone, I would have probably go with raw Markdown or whatever, but I am not... I have other people that travel with me and want to write articles without learning a super complex geek syntax. I will call them... *writers*. Some colleagues of mine told me about you... that you might be the future of content management, that I would be free for the UI, that you had WISIWIG editors and stuff for... *writers*, sounds like a perfect match, and so our adventure began.
 
 I still can't believe how fast it all went... in a couple of hours, we were able to write new articles and display them in a custom website hosted in GitHub pages. Using one of your kits, it was so easy to query your API, retrieve the content as JSON and inject it inside Handlebars templates in order to render the final HTML. Oh man... it was so good.
 
@@ -47,6 +47,12 @@ First problem: I wanted to tag images that should have lightbox with `[data-ligh
 Guess what? Writers didn't really like having to manually write `[caption]`, they wanted a nice UI to do that... but that was just impossible... They throw some tomatoes at me and we tried to move on but we couldn't... Solving one problem to discover a new one: when you define a type `image` in a Document, you can tell that it will have different sizes: one for desktop, one for tablet and one for smartphone for example. And that's awesome because you can fully optimize for mobile, which is super important nowadays. Do you think you can do that with image inside StructuredText? Indeed, the answer is no! Once again, a great idea no fully supported. Is there a workaround? Sadly, no easy one. You can upload the same image several times, one for each size, then find a way to retrieve its generated ID by prismic.io and use the same hack as `[caption]` to specify it and hack a bit more the HTML renderer. I couldn't find the courage to do it... pretty sure tomatoes would have been replaced by rocks from writers. I can only hope my mobile users have 4G now.
 
 Want more? No biggy, I have tons of stories like that. A writer wanted to have blockquotes: a whole paragraph should be displayed in a custom design and have an author. I had to kill him really fast and bury his body deep. Another one wanted semantic distinction between paragraphs, something like: this one should be red and this one blue just because. Thrown him into a bucket full of piranhas. At some point, a writer became a madman and deleted half of documents... no way to find him since the delete operation does not appear in the timeline. But who cares? I mean, the document is gonne anyway. I18N, do you speak it? I hope not because there is [no support for it... yet](https://qa.prismic.io/29/will-multi-lingual-sites-be-supported-in-the-future). Want to put some tables? Could you please [stop joking](https://qa.prismic.io/25/how-do-we-best-support-tables), it hurts me to laugh so much. Want do  [manage hundred of images](https://qa.prismic.io/55/improve-the-media-library) in the media library? Might be less painful to jump from the top of the [Eiffel tower](http://en.wikipedia.org/wiki/Eiffel_Tower). And so on, and so on...
+
+### We didn't fully link anymore
+
+Writers are generally really proud of their work, so they want everybody to know about it. I couldn't just display "Title of the article". If I wanted to stay alive, I needed to display "Title of the article, by an awesome author", and if you would click on the name, you would access to a page saying how incredible the author was. As always, I was like "No biggy dudes, this is gonna be easy". I wasn't bluffing at that point since there is this nice feature that allow you to link documents between them. So every author would now have a dedicated document of type Author, where he could write whatever description he wanted, and each document of type Article would be linked to an Author. So far, so good.
+
+And then the problem: if I get a list of Articles, I only got ids and a link to the Author resources, but I do not actually have the data on the Author document, which means I cannot display the real name of the author. And guess what? There is no aggregation or join possible in the API. You just cannot say that you want the 20 most recent articles with their authors. Solutions are: request all authors and then retrieve the good ones from ids (that's 2 requests, and I did that since I don't have that many authors), or do N+1 request (1 for articles, N for authors, one per author id from articles), or generate dynamically a request for authors using `any` operator (something like `[:d = any(my.author.id, [id1, id2, ...])]`). In any case, you need multiple requests, eventually not running in parallel, and with too much payload... mobile first, right?
 
 ### I never though you would mask it from me...
 
@@ -169,6 +175,23 @@ kit.renderFragment('paragraph', function (json, original) {
   }
 });
 ~~~
+
+As you can see, I like a lot this `renderFragment` method, but I think we can make it even better! Right know, we can only specify / override for all the application. That's super cool but limited... and if you have read carefully until now, you should know that I don't like limitations. This method should be at least at 3 different levels:
+
+* Document instance
+* Document type
+* (Collection?)
+* Application
+
+Here is the idea: when an instance Document want to render some fields (or fragments) as HTML, it will do the following simple procedure:
+
+* Hey, do I have a custom renderer method for this type of field on myself? (yeah, because know each Document instance have the method). If so, use it, if not, continue.
+* I am a Document of type Article, does this type of Document has such a method on it? (yeah, because know you can call this method for just a particular type of Document). Yes, use, no continue.
+* Eventually, does my Collection have the method?
+* Nearly finished, does the method is defined at the application level?
+* If nothing found so far, if it is a native prismic.io field, render it as it should be, otherwise just crash or return empty string, I don't know, it shouldn't happen anyway.
+
+Holy crap... we just created like a "rendering context with awesomeness inheritance" or something like that. Can you imagine all the things you could do with that? Can you ?! I can't... it's too big...
 
 ### Let's break up
 
