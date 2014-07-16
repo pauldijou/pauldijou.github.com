@@ -34,12 +34,8 @@
       content: '\f05a';
     }
 
-    a {
-      color: @gray-light;
-
-      &:hover {
-        color: @gray-light-alt;
-      }
+    code {
+      background-color: @red;
     }
   }
 
@@ -49,13 +45,13 @@
     &:before {
       content: '\f06a';
     }
+  }
 
-    a {
-      color: @gray-light;
+  &.alert-success {
+    background-color: @green;
 
-      &:hover {
-        color: @gray-light-alt;
-      }
+    &:before {
+      content: '\f058';
     }
   }
 }

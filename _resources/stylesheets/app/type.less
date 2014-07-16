@@ -1,6 +1,9 @@
-@font-face {
-  font-family: 'BirthOfAHero';
-  src: url('fonts/birthofahero/BIRTH_OF_A_HERO.ttf') format('truetype');
+::selection {
+  background-color: @green;
+}
+
+::-moz-selection {
+  background-color: @green;
 }
 
 .text-center {
@@ -84,4 +87,18 @@ pre > code {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
+}
+
+.talk {
+  &.red {
+    color: @red;
+  }
+
+  &.blue {
+    color: @blue;
+  }
+
+  &.green {
+    color: @green;
+  }
 }
