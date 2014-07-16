@@ -14,28 +14,36 @@
     %span.authors= ' '.concat(page.post.authors.map{|u| site.identities.method_missing(u).name} * ', ')
     on
     %span.date= page.post.date.strftime( '%b %d, %Y' )
+    %span.separator |
+
     - if site.disqus
-      |
-      %span.fa.fa-comments.fa-fw
+      %span.fa.fa-comments.fa-fw.visible-md-inline.visible-lg-inline
       = page.post.disqus_comments_link
-    |
-    %span.fa.fa-pencil-square-o.fa-fw
-    %a{:href=>githubEdit, :target=>'_blank'} Improve this article
+      %span.separator |
+
+    %span.fa.fa-pencil-square-o.fa-fw.visible-md-inline.visible-lg-inline
+    %a.improve.visible-md-inline.visible-lg-inline{:href=>githubEdit, :target=>'_blank'} Improve this article
 
   .content
     ~ page.post.content
 
   .footer
-    %span.fa.fa-link.fa-fw
-    %a{:href=>page.post.url} Permalink
-    |
+    %span.fa.fa-link.fa-fw.hidden-xs.hidden-sm
+    %a.hidden-xs.hidden-sm{:href=>page.post.url} Permalink
+    %span.separator |
+
     - if site.disqus
-      %span.fa.fa-comments.fa-fw
+      %span.fa.fa-comments.fa-fw.hidden-xs.hidden-sm
       = page.post.disqus_comments_link
-      |
-    %span.fa.fa-pencil-square-o.fa-fw
-    %a{:href=>githubEdit, :target=>'_blank'} Improve this article
-    |
+      %span.separator |
+
+    %span.fa.fa-pencil-square-o.fa-fw.visible-md-inline.visible-lg-inline
+    %a.improve.visible-md-inline.visible-lg-inline{:href=>githubEdit, :target=>'_blank'} Improve this article
+    %a.improve.button.block.hidden-md.hidden-lg{:href=>githubEdit, :target=>'_blank'}
+      %span.fa.fa-pencil-square-o.fa-fw
+      Improve this article
+    %span.separator |
+
     - if page.post.tags
       %span.tags
         %span.fa.fa-tags.fa-fw
@@ -54,3 +62,5 @@
 
     .comments
       = page.post.disqus_comments
+
+    %script{:type=>"text/javascript", :src=>"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f80341f1e319e12"}
