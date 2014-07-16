@@ -26,9 +26,9 @@ As the RichFaces Bootstrap project grows, we need more tools to achieve new goal
 
 *component* variable is now directly casted to the correct class based on `cdk:class` tag in the template. You will no longer need to write explicitly the cast inside 95% of your templates. Enjoy less verbose code and see [JIRA issue 12248](https://issues.jboss.org/browse/RF-12248) for more details.
 
-*In general*, CDK has been improved to be more type-safe which allows to catch more issues at compilte-time.
+In general, CDK has been improved to be more type-safe which allows to catch more issues at compilte-time.
 
-h3. What's next?
+### What's next?
 
 There are still a few points undone in the [CDK wish-list](https://community.jboss.org/wiki/CDKWish-List) and I hope some of them will be realized. One of the most important is probably generating methods from interfaces! See [JIRA issue 12339](https://issues.jboss.org/browse/RF-12339) to fully understand the concept.
 

@@ -1,6 +1,6 @@
 .posts {
   .post {
-    border-bottom: 2px solid @gray-dark;
+    border-bottom: 2px solid @gray-dark-alt;
   }
 }
 
@@ -11,10 +11,8 @@
 
   h2, h3, h4, .meta, p, .footer, .pagination, ul, ol, dl {
     max-width: 830px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 3em auto;
   }
-
 
   @media (min-width: @screen-md-min) {
     pre {
@@ -32,14 +30,16 @@
 
   h3 {
     font-size: 1.5em;
-}
+  }
 
   .meta { text-align: right; }
 
   p {
     text-align: justify;
-    padding-top: 1em;
-    padding-bottom: 1em;
+  }
+
+  pre {
+    font-size: 16px;
   }
 
   .meta, .content, .footer {
@@ -65,6 +65,12 @@
   .separator::before {
     content: "|";
     margin: 0 5px;
+  }
+
+  .footer {
+    .tags {
+      margin-top: 20px;
+    }
   }
 
   .pagination {
@@ -108,7 +114,6 @@
         display: block;
         text-align: center;
         border: 2px solid @gray-dark;
-        margin-top: 20px;
 
         .tag {
           display: block;

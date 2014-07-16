@@ -42,10 +42,9 @@
     %a.improve.button.block.hidden-md.hidden-lg{:href=>githubEdit, :target=>'_blank'}
       %span.fa.fa-pencil-square-o.fa-fw
       Improve this article
-    %span.separator
 
     - if page.post.tags
-      %span.tags
+      .tags
         %span.fa.fa-tags.fa-fw
         Tags :
         - for tag in page.post.tags
