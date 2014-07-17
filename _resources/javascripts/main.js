@@ -50,17 +50,6 @@
 
 
   // ----------------------------------------------------------------------
-  // PROJECT PAGE
-  // ----------------------------------------------------------------------
-  var projects = document.getElementById('projects');
-  projects && Array.prototype.forEach.call($$('.project', projects), function(el, idx){
-    setTimeout(function () {
-      el.classList.add('visible');
-    }, idx * 500);
-  });
-
-
-  // ----------------------------------------------------------------------
   // CONTACT PAGE
   // ----------------------------------------------------------------------
   var contact = {
