@@ -179,7 +179,7 @@ kit.renderFragment('paragraph', function (json, original) {
 });
 ~~~
 
-This feature is for "quick and dirty" hacks if you could say, and allowing you to customize "native" fragments. Because otherwise, you could also have done that with a custom fragments. Rather than having two attributes, a `blockquote` could be a custom fragments grouping a StructuredText for the content and a simple text for the author. It is way more intuitive in the UI and it's easier to create its own `renderFragment`.
+This feature is for "quick and dirty" hacks if you could say, and allowing you to customize "native" fragments. Because otherwise, you could also have done that with a custom fragment. Rather than having two attributes, a `blockquote` could be a custom fragment grouping a StructuredText for the content and a simple text for the author. It is way more intuitive in the UI and it's easier to create its own `renderFragment`.
 
 I like a lot this `renderFragment` method, but I think we can make it even better! Right know, we can only specify / override for all the application. That's super cool but limited... and if you have read carefully until now, you should know that I don't like limitations. This method should be at least at 3 different levels:
 
@@ -188,7 +188,7 @@ I like a lot this `renderFragment` method, but I think we can make it even bette
 * (Collection?)
 * Application
 
-Here is the idea: when an instance Document want to render some fields (or fragments) as HTML, it will do the following simple procedure:
+Here is the idea: when an instance of a Document wants to render some fields (or fragments) as HTML, it will do the following simple procedure:
 
 * Hey, do I have a custom renderer method for this type of field on myself? (yeah, because now each Document instance have the method). If so, use it, if not, continue.
 * I am a Document of type Article, does this type of Document has such a method on it? (yeah, because now you can call this method for just a particular type of Document). Yes, use, no continue.
@@ -202,6 +202,6 @@ Holy crap... we just created a "rendering context with awesomeness inheritance" 
 
 I could say more, but since it's a miracle that you are still reading and it would not be as relevant as what I already said, I will stop here.
 
-My conclusion so far: prismic.io is not ready for the real world and for real websites but there are a lot of work going on by its team so, as they say on half of their responses: stay tuned! It might become super awesome at some point (I hope it will).
+My conclusion so far: prismic.io is not ready for the real world and for real websites but there is a lot of work going on by its team so, as they say on half of their responses: stay tuned! It might become super awesome at some point (I hope it will).
 
 Thanks for reading! See you soon for more hacky coding posts.
