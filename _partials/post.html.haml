@@ -59,7 +59,8 @@
         .col-xs-6
           %a{:href=>"#{page.post.next_post ? page.post.next_post.url : '#'}", :class=>"button block next#{page.post.next_post ? '' : ' disabled'}"} Next
 
-    .comments
-      = page.post.disqus_comments
+    - if site.disqus
+      .comments
+        = page.post.disqus_comments
 
     %script{:type=>"text/javascript", :src=>"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f80341f1e319e12"}

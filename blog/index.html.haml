@@ -5,7 +5,8 @@ layout: main
   - page.posts.each do |post|
     = partial('post.html.haml', {'parent'=>page, 'post'=>post, 'alone' => false})
 
-  = page.disqus_comments_count
+  - if site.disqus
+    = page.disqus_comments_count
 
 - current_page_number = page.posts.current_page_index + 1
 %ul.list-inline.pagination.text-center.visible-xs.visible-sm

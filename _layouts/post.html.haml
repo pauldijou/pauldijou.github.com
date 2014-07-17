@@ -3,4 +3,5 @@ layout: main
 ---
 = partial('post.html.haml', {'parent'=>page, 'post'=>page, 'alone' => true})
 
-= page.disqus_comments_count
+- if site.disqus
+  = page.disqus_comments_count

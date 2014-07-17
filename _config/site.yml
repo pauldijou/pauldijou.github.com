@@ -36,9 +36,9 @@ profiles:
   development:
     root_url: http://localhost:4242
     base_url: http://localhost:4242
-    disqus: pauldijou
-    disqus_generate_id: true
-    disqus_developer: true
+    # disqus: pauldijou
+    # disqus_generate_id: true
+    # disqus_developer: true
   production:
     root_url: http://pauldijou.fr
     base_url: http://pauldijou.fr
