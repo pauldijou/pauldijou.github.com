@@ -79,6 +79,16 @@
     margin-top: 30px;
     margin-bottom: 30px;
 
+    .button {
+      text-transform: initial;
+    }
+
+    @media (min-width: @screen-sm-min) {
+      .button {
+        text-transform: uppercase;
+      }
+    }
+
     @media (min-width: @screen-md-min) {
       font-size: 18px;
     }
