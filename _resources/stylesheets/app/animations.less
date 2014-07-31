@@ -1,3 +1,14 @@
+.await-opacity (@index) when (@index > 0) {
+  .await-opacity-@{index} {
+    .transition(opacity 1s (0.5s * @index));
+  }
+
+  .await-opacity(@index - 1);
+}
+
+.await-opacity (0) {}
+.await-opacity(10);
+
 .animation (@args) {
   -webkit-animation: @args;
      -moz-animation: @args;
