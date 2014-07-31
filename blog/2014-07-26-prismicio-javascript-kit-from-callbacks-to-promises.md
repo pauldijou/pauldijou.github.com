@@ -53,7 +53,7 @@ There are two main callbacks in the kit: when retrieving the API and when making
 ~~~ javascript
 Api('/my/awesome/url', 'my_token_right_here_at_the_start')
   .then(function (api) {
-    Promise.all([
+    return Promise.all([
       api.form('articles').ref(api.master()).submit(),
       api.form('authors').ref(api.master()).submit()
     ]);
