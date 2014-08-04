@@ -12,11 +12,11 @@ Once again, I will not explain what [prismic.io](http://prismic.io) is (but it's
 
 In prismic.io, you are creating Documents which are composed of Fragments. A fragment is data organized in a more or less semantic way. For example, a fragment can be a Number, or a Date, ... Among them, there is the type Image which is really nice because you can not only fully resize / crop your raw picture, but also add smaller images based on the original one for responsive purpose. You can upload your awesome photo of this beautiful sunset, fully sized at 4000 x 3000 pixels, resize it for desktop at 1920 x 1080, and finally add a mobile version at 320 * 480. Note that the last one doesn't respect the ratio at all, but that's the goal: you are creating a subset of your image with the best match possible regarding the targeted screen.
 
-Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WISIWIG editor inside which you will put new fragments (paragraphs, links, titles, images, ...). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.
+Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WYSIWYG editor inside which you will put new fragments (paragraphs, links, titles, images, ...). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.
 
 ### You don't want to do that!
 
-And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WISIWIG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.
+And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WYSIWYG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.
 
 So, what's the idea? The only way to have responsive images is to use a real Image fragment, no choice here. So let's create one, and let's put it inside a Group fragment. This way, you can add and remove as many images as you want and they will all be responsive. Wait, you can't do that inside the StructuredText, right? Indeed, that's why we will do outside of it and then find a way to bring back the images inside of it. Here is the mask for such a group:
 
@@ -62,12 +62,12 @@ As you can see, I added two more fields. One is `name` and we will use it to ref
 
 ### Let's hack some HTML
 
-As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WISIWIG editor but we can do it when rendering the final HTML. We will need two more things here:
+As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WYSIWYG editor but we can do it when rendering the final HTML. We will need two more things here:
 
 * having a placeholder inside the StructuredText to indicate we should insert an image
 * extend the default HTML renderer to support such placeholder
 
-As for the placeholder, I decided to use a simple format like `{image-[name of the image]}`. Meaning that if the content of a paragraph inside my StructuredText is `{image-sunset}`, it will actually render the image named `sunset` from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the gretter good. You could, of course, use another syntax, eventually support attributes, whatever.
+As for the placeholder, I decided to use a simple format like `{image-[name of the image]}`. Meaning that if the content of a paragraph inside my StructuredText is `{image-sunset}`, it will actually render the image named `sunset` from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the greater good. You could, of course, use another syntax, eventually support attributes, whatever.
 
 The final task, and probably the hardest one, is to extend the HTML rendering system. Each primisc fragment has its own way to render as HTML. Unfortunately, there is no way to extend it, you can only, eventually, override it. And the one for StructuredText is by far the most complex one. The easiest way to do that is to copy/paste the default one from the kit you are using (if you are not using any kit, you are free to do whatever you want, so it's fine) and edit it. You will then edit the part responsible for rendering a paragraph, test if its content match our placeholder syntax, if so, render an image, if not, just render the text as it is. Since I'm using the JavaScript kit, here is the [full copy/paste](https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L65-L159) but that's the [important part](https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L105-L117) where we are rendering the image. My `model` is actually a JavaScript class extracted from the original prismic Document, but you could use the raw Document of course.
 
@@ -83,5 +83,5 @@ That's pretty much it. Here is a quick summary of what to do:
 What are the bad points / limitations of the solution?
 
 * writers need to write placeholders rather than having a nice UI to insert images
-* images do not display natively in the WISIWIG editor anymore
+* images do not display natively in the WYSIWYG editor anymore
 * you cannot re-order a Group fragment right now, meaning images will be sorted based on their created date and not on their place inside the StructuredText
