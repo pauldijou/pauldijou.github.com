@@ -18,7 +18,7 @@ Introducing [BrowserSync](http://www.browsersync.io). It provides 2 killers feat
 
 Let me say it again with a concrete example. You are on your computer, one screen with your source code, another one with Chrome opened and a last one with Firefox. You also have an iPad tablet and an Android smartphone connected to your computer. All of those have your application main page opened. Each time your edit your code, they will all reload and display the new result (hot deploy in case of CSS). When you are ready to test interactions, you just go to, let's say, your Chrome browser and start scrolling and clicking. All your screens will start moving and doing the actions everywhere. Talk about increasing productivity!!
 
-What about assets that require compilation? Such as SCSS, LESS, Stylus, CoffeeScript, etc... No biggy bro, we have you covered. In this demo, we will use [Gulp](http://gulpjs.com/) to monitor those resources, compile them, and pass them to BrowserSync for live-reloading (obviously not losing the hot deploy if possible). You can freely use whatever build tool you want, be it Grunt, Broccoli, ...
+What about assets that require compilation? Such as SCSS, LESS, Stylus, CoffeeScript, etc... No biggy bro (or sis), we have you covered. In this demo, we will use [Gulp](http://gulpjs.com/) to monitor those resources, compile them, and pass them to BrowserSync for live-reloading (obviously not losing the hot deploy if possible). You can freely use whatever build tool you want, be it Grunt, Broccoli, ...
 
 ### Magic proxy
 
