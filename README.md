@@ -11,5 +11,5 @@ rake clean preview
 ## Publish
 
 ```shell
-awestruct -P production --deploy
+./_bin/deploy-production.sh
 ```
