@@ -11,5 +11,6 @@ rake clean preview
 ## Publish
 
 ```shell
+grunt dist
 ./_bin/deploy-production.sh
 ```

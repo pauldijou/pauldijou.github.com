@@ -48,7 +48,7 @@ module.exports = function (grunt) {
   grunt.registerTask("dist", [
     "build",
     "less",
-    "copy:dist"
+    "copy:fontAwesome"
   ]);
 
   grunt.registerTask("test", [
