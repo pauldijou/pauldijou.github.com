@@ -12,5 +12,5 @@ rake clean preview
 
 ```shell
 grunt dist
-./_bin/deploy-production.sh
+./_bin/deploy-production.sh -p -m="Update website"
 ```
