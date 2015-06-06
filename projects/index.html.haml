@@ -7,13 +7,30 @@ title: Projects
     %div{:id => "#{File.basename(project.relative_source_path, '.textile')}", :class=>"project #{index % 3 == 0 ? 'red' : (index % 3 == 1 ? 'alt' : 'blue')}" }
       .row
         .col-md-6.summary
-          %h2= project.title
+          %h2
+            = project.title
+            - if project.project_type.downcase == "personal"
+              .fa.fa-user.fa-fw{:alt => "Personal", :title => "Personal"}
+            - if project.project_type.downcase == "oss"
+              .fa.fa-globe.fa-fw{:alt => "Open Source", :title => "Open Source"}
+            - if project.project_type.downcase == "professional" ||  project.project_type.downcase == "internship"
+              .fa.fa-diamond.fa-fw{:alt => "Professional", :title => "Professional"}
           .date
-            .fa.fa-clock-o.fa-fw
+            .fa.fa-clock-o.fa-fw{:alt => "Date", :title => "Date"}
             = project.project_date
           .technos
-            .fa.fa-cogs.fa-fw
+            .fa.fa-cogs.fa-fw{:alt => "Technologies", :title => "Technologies"}
             = project.project_technologies.join(", ")
+          - if project.project_url && project.project_url.length > 0
+            .url
+              .fa.fa-link.fa-fw{:alt => "Link", :title => "Link to project"}
+              %a{:href => project.project_url}
+                = project.project_url.sub(/https:\/\//, "").sub(/http:\/\//, "")
+          - if project.github_url && project.github_url.length > 0
+            .github
+              .fa.fa-github.fa-fw{:alt => "Github", :title => "Github"}
+              %a{:href => "https://github.com/"+project.github_url}
+                = project.github_url
         %div{:class=> "col-md-6 detail#{1 > 2 && project.has_more ? ' has-more' : ''}"}
           .description
             = project.project_description

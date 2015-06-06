@@ -4,8 +4,8 @@ title: "Game of Drones"
 author: "Paul Dijou"
 has_more: true
 project_date: "August 2013 (1 day)"
-project_type: "Open-source"
-project_url: "https://github.com/gameofdrones"
+project_type: "OSS"
+github_url: "gameofdrones"
 project_description: "Game of Drone is composed of two parts: a Go server deployed on a Raspberry Pi piloting an USB missile launcher through a web API and a Play server with a nice interface to remotely control the launcher through the web."
 project_technologies: [Go, HTML, LESS, JavaScript, Scala, Play Framework, MongoDB]
 tags: [html, css, javascript, scala, go]

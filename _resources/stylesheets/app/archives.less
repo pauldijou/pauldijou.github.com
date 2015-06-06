@@ -6,12 +6,11 @@
   .archive {
     padding: 2em 1em;
     display: block;
-    .transition(background-color (2 * @transition-duration), color (2 * @transition-duration););
+    .transition(background-color @transition-duration, color @transition-duration;);
 
     &:hover {
       background-color: @green;
       color: @gray-light;
-      .transition(background-color @transition-duration, color @transition-duration;);
     }
 
     .title, .meta {

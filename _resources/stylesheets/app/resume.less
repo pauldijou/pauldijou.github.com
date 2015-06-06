@@ -14,7 +14,11 @@
 
     &.experience, &.studies {
       dt {
-        margin-top: 15px;
+        margin-top: 30px;
+      }
+
+      a {
+        font-weight: bold;
       }
     }
 
@@ -50,8 +54,15 @@
   }
 
   @media (min-width: @screen-md) {
+    margin-top: 10px;
+
     section.skills {
+      margin-top: 10px;
       border-left: 3px solid @green;
+    }
+
+    section.langs {
+      border-left: 3px solid @blue;
     }
   }
 }
