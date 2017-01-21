@@ -1,6 +1,0 @@
-- if site.social_links && site.social_links.size > 0
-  %ul#social{ :class => "social list-inline#{page.visible ? ' visible' : ''}" }
-    - site.social_links.each_with_index do |social_link, index|
-      %li{ :class => "#{page.visible ? '' : 'await-opacity-' + (index + 1).to_s}" }
-        %a{ :href=>"#{social_link.url}#{site.social_identities[social_link.social_id]}", :target=>"_blank", :class => "#{social_link.social_id}" }
-          %span{ :class => "fa fa-#{social_link.icon} fa-3x fa-fw" }

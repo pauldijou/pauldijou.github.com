@@ -1,0 +1,88 @@
+---
+title: "Intertitres (intership)"
+has_more: true
+project_date: "March - September 2010 : 6 months"
+project_type: "Internship"
+project_description: "During my internship at <a href=\"http://celad.com\">CELAD</a>, I had to develop from scratch a new administration application to manage and monitor other commercial websites. Based on Java EE, Seam 2 and JSF, this project was a perfect opportunity to learn lots of things since I've done everything from the specification redaction to developing and testing the application."
+project_technologies: [Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces]
+tags: [internship, java, javaee, spring, seam, jpa, jsf, richfaces]
+---
+
+h2. The actors
+
+"Intertitres":http://www.intertitres.natixis.com is a subsidiary of "Natixis":http://www.natixis.com (a French bank) specialized in selling securities. They have several websites in order to do that depending on the type of the securities and the size of the clients (bigger clients have better applications with more features).
+
+Those website are mostly developed by "CELAD":http://celad.com, the IT firm in which I was doing my internship. I was working in the headquarters in Balma, near Toulouse (France) inside the team dedicated to Intertitres which was composed of 6 members at that time.
+
+h2. The technologies
+
+Even if Natixis delegates most of development to IT firms, they have their own core development department in order to give global directions and roadmap to everyone. Another task on their todo list is the development and the maintenance of Sphinx.
+
+Sphinx is an internal framework based on Java, Java EE, Spring, Seam 2 and JSF (with RichFaces). Its purpose is to give an abstract layer over all those technologies to ease development and increase productivity but also give a common structure to all Natixis' applications. At that time, it was quite a great stack to work with.
+
+h2. The project
+
+All the previous websites we've been talking about are connected to a central database and manipulate the same tables. With each website growing, the necessity of having a cross-application administration console in order to see and manage all the data without any relation to each website appears.
+
+<div id="backofficeScreenshots" class="carousel slide" style="max-width: 1015px;">
+  <div class="carousel-inner">
+    <div class="active item">
+      <img src="#{site.projects_assets_url}/backoffice/login.PNG" alt="Accounts" />
+      <div class="carousel-caption"><h4>Login</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/histoCommandes.PNG" alt="Commands" />
+      <div class="carousel-caption"><h4>Commands</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/utilisateurs.PNG" alt="Users" />
+      <div class="carousel-caption"><h4>Users</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/editUtilisateur.PNG" alt="User edit" />
+      <div class="carousel-caption"><h4>User edit</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/gestionnaires.PNG" alt="Managers" />
+      <div class="carousel-caption"><h4>Managers</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/editEmail.PNG" alt="User quick email edit" />
+      <div class="carousel-caption"><h4>Manager email edit</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/detailGestionnaire.PNG" alt="Manager detail" />
+      <div class="carousel-caption"><h4>Manager detail</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/addOperation.PNG" alt="Add promotional operation" />
+      <div class="carousel-caption"><h4>Add promotional operation</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/produits.PNG" alt="Products" />
+      <div class="carousel-caption"><h4>Products</h4></div>
+    </div>
+
+    <div class="item">
+      <img src="#{site.projects_assets_url}/backoffice/messages.PNG" alt="Messages" />
+      <div class="carousel-caption"><h4>Messages</h4></div>
+    </div>
+  </div>
+
+  <a class="carousel-control left" href="#backofficeScreenshots" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#backofficeScreenshots" data-slide="next">&rsaquo;</a>
+</div>
+
+<script type="text/javascript">
+  $('#backofficeScreenshots').carousel({
+    interval: #{site.carousel_interval}
+  });
+</script>

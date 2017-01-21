@@ -1,0 +1,65 @@
+{% assign prefix = 'https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/' %}
+{% capture githubEdit %}{{prefix}}{{include.post.date | date: "%Y-%m-%d"}}-{{include.post.slug}}.md{% endcapture %}
+
+<article class="post">
+  <h2>
+    <a href="{{include.post.url | relative_url}}">{{ include.post.title }}</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="authors">Paul Dijou</span>
+    on
+    <span class="date">{{ include.post.date | date: '%b %d, %Y' }}</span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline">{% icon comments fixed %}</span>
+    <a href="{{include.post.url | relative_url}}#disqus_thread" data-disqus-identifier="{{ include.post.id }}">Comments</a>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline">{% icon pencil-square-o fixed %}</span>
+    <a class="improve visible-md-inline visible-lg-inline" href="{{githubEdit}}" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    {{ include.post.content }}
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      {% icon link fixed %}
+      <a href="{{include.post.url}}">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    {% if site.disqus %}
+      <span class="hidden-xs hidden-sm">
+        {% icon link fixed %}
+        <a href="{{include.post.disqus_comments_link}}">Permalink</a>
+      </span>
+      <span class="separator"></span>
+    {% endif %}
+
+    <span class="visible-md-inline visible-lg-inline">{% icon pencil-square-o fixed %}</span>
+    <a href="{{githubEdit}}" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="{{githubEdit}}" target="_blank" class="improve button block hidden-md hidden-lg">
+      {% icon pencil-square fixed %}
+      Improve this article
+    </a>
+
+    {% if include.post.tags %}
+      <div class="tags">
+        {% icon tags fixed %}
+        Tags:
+        {% for tag in include.post.tags %}
+          <a class="tag label label-default" href="/blog/tags/{{ tag }}/">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+
+  {% if include.end %}
+    {{ include.end }}
+  {% endif %}
+</article>

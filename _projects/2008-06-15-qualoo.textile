@@ -1,0 +1,8 @@
+---
+title: "Qualoo (intership)"
+project_date: "June - August 2008 : 2 months"
+project_type: "Internship"
+project_description: "Developed by <a href=\"http://stinfoservices.net\">ST Informatique Services</a>, Qualoo is a code generator which will create a Java EE application CRUD using reverse engineering from a database. My work was to create a custom autocomplete on some generated input field that display data from the database using ajax."
+project_technologies: [Java, Java EE, JavaScript, AJAX]
+tags: [internship, java, javaee, javascript]
+---

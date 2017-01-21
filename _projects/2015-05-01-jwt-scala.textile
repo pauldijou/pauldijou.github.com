@@ -1,0 +1,10 @@
+---
+title: "JWT Scala"
+project_date: "May 2015"
+project_type: "OSS"
+project_url: "http://pauldijou.fr/jwt-scala/"
+github_url: "pauldijou/jwt-scala"
+project_description: "Small Scala lib to support JSON Web Tokens. Optional helpers for Play JSON, Json4s and Play Framework."
+project_technologies: [Scala, JWT, Play Framework]
+tags: [jwt, scala]
+---

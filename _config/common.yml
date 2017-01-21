@@ -1,0 +1,109 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Paul Dijou
+email: paul.dijou@gmail.com
+description: Personnal blog
+twitter_username: paul_dijou
+github_username:  pauldijou
+baseurl: "" # the subpath of your site, e.g. /blog
+permalink: /blog/:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+gems:
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-assets
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - vendor
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  debug: false
+
+autopages:
+  enabled: true
+  tags:
+    enabled: true
+    layouts:
+      - 'tag.html'
+    title: 'Posts tagged with :tag'
+    permalink: '/blog/tags/:tag/'
+  categories:
+    enabled: false
+  collections:
+    enabled: false
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: post
+      summary: 0
+      authors: [pauldijou]
+  -
+    scope:
+      path: ''
+      type: 'projects'
+    values:
+      layout: project
+      author: "Paul Dijou"
+      has_more: false
+
+assets:
+  assets:
+    - "*.jpg"
+    - "*.png"
+    - "*.svg"
+    - "*.pdf"
+    - "*.ico"
+  sources:
+    - "_assets"
+    - "_assets/icons"
+    - "_assets/technos"
+    - "_assets/css"
+    - "_assets/js"
+
+# Custom config
+default_summary_size: 50
+max_url_label_size: 30
+blog_assets_url: /blog/assets
+projects_assets_url: /projects/assets
+carousel_interval: 4000
+
+social_identities:
+  twitter: paul_dijou
+  github: pauldijou
+  google_plus: 102994553784447043819
+  klout: paul_dijou
+  linkedin: paul-dijou/40/10/883/en

@@ -1,23 +1,30 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+ruby RUBY_VERSION
 
-gem 'awestruct', '0.5.1'
-# gem 'awestruct', :github => 'awestruct'
-gem 'haml', '~> 4.0.5'
-gem 'RedCloth', '~> 4.2.9'
-gem 'kramdown', '~> 1.4.0'
-gem 'asciidoctor', '~> 0.1.2'
-gem 'erubis', '~> 2.7.0'
-gem 'rb-inotify', '~> 0.9.0', :platforms => [:ruby, :jruby]
-gem 'yard', '~> 0.7.5'
-gem 'rake', '~> 10.0.0'
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+gem "jekyll", "3.3.1"
+gem "html-proofer"
 
-# required if you want to use the minify extension
-gem 'htmlcompressor', '~> 0.0.5'
-gem 'uglifier', '~> 1.3.0'
-gem 'therubyracer', '~> 0.11.4', :platforms => [:ruby]
-gem 'therubyrhino', '~> 2.0.2', :platforms => [:jruby]
+# This is the default theme for new Jekyll sites. You may change this to anything you like.
+# gem "minima", "~> 2.0"
 
-# Required by cloudbees
-gem 'rdoc', '~> 4.0.1'
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# gem "github-pages", group: :jekyll_plugins
 
-# set EXECJS_RUNTIME=SpiderMonkey as alternative to theruby(racer|rhino)
+# If you have any plugins, put them here!
+group :jekyll_plugins do
+   gem "jekyll-feed", "~> 0.6"
+   gem "jekyll-paginate-v2", "~> 1.6.0"
+   gem "jekyll-assets", "~> 2.2.8"
+end
+
+gem "bootstrap-sass", "~> 3.3.7"
+gem "font-awesome-sass", "~> 4.7.0"

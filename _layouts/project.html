@@ -1,0 +1,54 @@
+---
+layout: main
+---
+<section id="{{ page.id }}">
+  {% if page.alone %}
+    <ul class="pager visible-desktop" style="float:right">
+      <li>
+        <a href="previous">Previous</a>
+        <a href="previous">Next</a>
+      </li>
+    </ul>
+  {% endif %}
+
+  <h2>
+    <a href="{{page.url}}">{{page.title}}</a>
+    {% if page.project_date %}
+      <h5>{{page.project_date}}</h5>
+    {% endif %}
+  </h2>
+
+  <blockquote>
+    <dl class="dl-horizontal">
+      {% if page.project_type %}
+        <dt><h6>Project type</h6></dt>
+        <dd>{{ page.project_type }}</dd>
+      {% endif %}
+
+      {% if page.project_url %}
+        <dt><h6>Url</h6></dt>
+        <dd>
+          <a target="_blank" href="{{page.project_url}}">
+            {{ page.project_url | truncate: site.max_url_label_size }}
+          </a>
+        </dd>
+      {% endif %}
+
+      {% if page.project_technologies %}
+        <dt><h6>Technologies</h6></dt>
+        <dd>{{ page.project_technologies | join: ', ' }}</dd>
+      {% endif %}
+
+      {% if page.tags %}
+        <dt><h6>Tags</h6></dt>
+        <dd>{{ page.tags | join: ', ' }}</dd>
+      {% endif %}
+    </dl>
+  </blockquote>
+
+  {% if page.has_more %}
+    <div class="content">
+      {{ content }}
+    </div>
+  {% endif %}
+</section>

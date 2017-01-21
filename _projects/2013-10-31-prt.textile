@@ -1,0 +1,8 @@
+---
+title: "Pirackers"
+project_date: "October 2013 (1 day)"
+project_type: "OSS"
+project_description: "This is a one-day experimental project. Using web audio API, we retrieve vowels from user and then send them using AJAX to our server. Depending on the vowel, the server stream a code through USB to an Arduino in order to turn on a corresponding LED."
+project_technologies: [HTML5, Scala, Java, Arduino]
+tags: [html, scala, java]
+---

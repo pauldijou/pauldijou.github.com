@@ -1,0 +1,9 @@
+---
+title: "Movio Mevia"
+project_date: "June 2014 - October 2014 (5 months)"
+project_type: "Professional"
+project_url: "https://media.movio.co"
+project_description: "<a href=\"https://movio.co\">Movio</a> is a company focused on email campaigns and data analysis around the movie industry (audience, movie hits, social marketing, ...). That's quite some big data for you. Movio Media product allow users to select a list of movies and see a bunch of stats about them, can be about demographic audience, money spend during those movies, ... Lot of data crawling and charts."
+project_technologies: [HTML5, SASS, JavaScript, Angular, D3, Scala, Spray]
+tags: [html, css, javascript, angular, d3, scala, spray]
+---

@@ -1,9 +1,0 @@
-%header.menu
-  .container
-    .row
-      -for nav in site.navbar
-        .col-xs-2
-          %a{ :href=>"#{nav.url}" }
-            %span{ :class => "fa fa-#{nav.icon} fa-2x fa-fw" }
-            %span.nav-label
-              #{nav.label}

@@ -1,0 +1,9 @@
+---
+title: "Gandi V5"
+project_date: "October 2015 - April 2016 (7 months)"
+project_type: "Professional"
+project_url: "https://beta.gandi.net"
+project_description: "Front-end developer at Gandi, working on their brand new UI using React and Redux."
+project_technologies: [JavaScript, React, Redux]
+tags: [gandi]
+---

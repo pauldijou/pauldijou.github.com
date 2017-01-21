@@ -1,0 +1,18 @@
+body {
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page {
+  padding-bottom: 75px;
+
+  @media (min-width: $nav-switch) {
+    padding-left: ($nav-width + 25px);
+    padding-right: ($nav-width + 25px);
+  }
+}

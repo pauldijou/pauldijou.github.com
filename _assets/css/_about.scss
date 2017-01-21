@@ -1,0 +1,45 @@
+.about {
+  text-align: justify;
+
+  section {
+    margin: 0 (-1 * $grid-gutter-width / 2);
+    padding: ($grid-gutter-width / 2) + 5px;
+
+    &.about-me {
+      h2 {
+        color: $red;
+        border-color: $red;
+      }
+    }
+
+    &.about-website {
+      h2 {
+        color: $green;
+        border-color: $green;
+      }
+    }
+  }
+
+  h2 {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+  }
+
+  .avatar {
+    margin-top:7px;
+    margin-right:20px;
+  }
+
+  a {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-alt;
+    }
+  }
+
+  .social > li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

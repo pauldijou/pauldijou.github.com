@@ -1,0 +1,56 @@
+---
+layout: main
+title: Projects
+---
+<div id="projects" class="projects">
+  {% assign index = 0 %}
+  {% assign projects = site.projects | reverse %}
+  {% for project in projects %}
+    <div class="project {% cycle 'red', 'alt', 'blue' %}">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            {{ project.title }}
+            {% if project.project_type == "Personal" %}
+              <span title="Personal" alt="Personal">{% icon user fixed %}</span>
+            {% elsif project.project_type == "OSS" %}
+              <span title="Open Source" alt="Open Source">{% icon globe fixed %}</span>
+            {% else %}
+              <span title="Professional" alt="Professional">{% icon copyright fixed %}</span>
+            {% endif %}
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date">{% icon clock-o fixed %}</span>
+            {{ project.project_date }}
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies">{% icon cogs fixed %}</span>
+            {{ project.project_technologies | join: ', ' }}
+          </div>
+          {% if project.project_url %}
+            <div class="url">
+              <span title="Link to project" alt="Link">{% icon link fixed %}</span>
+              <a target="_blank" href="{{project.project_url}}">
+                {{ project.project_url | replace_first: 'https://', '' | replace_first: 'http://', '' }}
+              </a>
+            </div>
+          {% endif %}
+          {% if project.github_url %}
+            <div class="github">
+              <span title="GitHub" alt="GitHub">{% icon github fixed %}</span>
+              <a target="_blank" href="https://github.com/{{ project.github_url }}">{{ project.github_url }}</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            {{ project.project_description }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% assign index = index + 1 %}
+  {% endfor %}
+</div>

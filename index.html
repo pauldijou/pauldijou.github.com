@@ -1,0 +1,145 @@
+---
+layout: base
+---
+<div class="index">
+
+  <section class="centered">
+    <h1 class="name">Paul Dijou</h1>
+    <h2 id="job" class="job"><span>Coding stuff</span></h2>
+    {% include social-icons.html site=site visible=false %}
+  </section>
+
+
+  <section class="web">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h2>
+            I craft web applications
+            {% icon desktop %}
+          </h2>
+          <a class="button" href="https://github.com/{{site.social_identities['github']}}">
+            {% icon github large fixed %}
+            My GitHub
+          </a>
+          <a class="button" href="/projects/">
+            {% icon flask large fixed %}
+            My projects
+          </a>
+        </div>
+
+        <div class="col-md-6 col-md-offset-1">
+          <h3>Last projects</h3>
+          <ul class="last">
+            {% assign last_projects = site.projects | reverse  %}
+            {% for project in last_projects limit:5 %}
+              <li>
+                <a href="/projects/">
+                  <h4>{{ project.title }}</h4>
+                  {{ project.project_technologies | join: ", " }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="right techno">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-md-push-7">
+          <h2>
+            {% icon cogs %}
+            Using awesome technologies
+          </h2>
+          <a class="button" href="/resume/">
+            {% icon code large fixed %}
+            View my resume
+          </a>
+          <a class="button" href="/about/">
+            {% icon user large fixed %}
+            Learn more about me
+          </a>
+        </div>
+
+        <div class="col-md-6 col-md-pull-5">
+          <h3>I {% icon heart fixed %} these ones</h3>
+          <div class="row">
+            <img class="col-xs-4" src="{% asset_path technos/html5.svg %}" alt="HTML" title="HTML">
+            <img class="col-xs-4" src="{% asset_path technos/css3.svg %}" alt="CSS3" title="CSS3">
+            <img class="col-xs-4" src="{% asset_path technos/javascript.svg %}" alt="JavaScript" title="JavaScript">
+          </div>
+          <div class="row row-top">
+            <img class="col-xs-4" src="{% asset_path technos/elm.svg %}" alt="Elm" title="Elm">
+            <img class="col-xs-4" src="{% asset_path technos/rust.svg %}" alt="Rust" title="Rust">
+            <img class="col-xs-4" src="{% asset_path technos/scala.svg %}" alt="Scala" title="Scala">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h2>
+            And writing about all that stuff
+            {% icon pencil-square %}
+          </h2>
+          <a class="button" href="/blog/">
+            {% icon coffee large fixed %}
+            Read my blog
+          </a>
+          <a class="button" href="/archives/">
+            {% icon archive large fixed %}
+            Archives
+          </a>
+          {% include subscribe.html %}
+        </div>
+
+        <div class="col-md-6 col-md-offset-1">
+          <h3>Last posts</h3>
+          <ul class="last">
+            {% for post in site.posts limit:5 %}
+              <li>
+                <a href="{{post.url}}">
+                  <h4>{{post.title}}</h4>
+                  Posted on
+                  <span class="date">{{post.date | date: '%b %d, %Y' }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contact-me">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>
+            {% icon envelope %}
+            Feel free to contact me
+          </h2>
+          <a class="button" href="/contact/">
+            {% icon comments large fixed %}
+            Go to contact page
+          </a>
+          <a class="button" href="https://twitter.com/paul_dijou">
+            {% icon twitter large fixed %}
+            Follow me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

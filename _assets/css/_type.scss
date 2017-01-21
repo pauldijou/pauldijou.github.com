@@ -1,0 +1,101 @@
+::selection {
+  background-color: $green;
+}
+
+::-moz-selection {
+  background-color: $green;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+.list-inline {
+  @include list-unstyled;
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@mixin dl-horizontal-title($width) {
+  dt {
+    width: $width - 20px;
+  }
+
+  dd {
+    margin-left: $width;
+  }
+}
+
+.dl-horizontal {
+  dt {
+    float: left;
+    clear: left;
+    @include text-overflow;
+  }
+  dd {
+    @include clearfix; // Clear the floated `dt` if an empty `dd` is present
+  }
+
+  @include dl-horizontal-title(180px);
+
+  &.dl-title-200 {
+    @include dl-horizontal-title(200px);
+  }
+
+  &.dl-title-150 {
+    @include dl-horizontal-title(150px);
+  }
+
+  &.dl-title-100 {
+    @include dl-horizontal-title(100px);
+  }
+
+  &.dl-title-75 {
+    @include dl-horizontal-title(75px);
+  }
+}
+
+.label {
+  color: $gray-light !important;
+}
+
+a.label {
+  text-decoration: none !important;
+}
+
+code {
+  background-color: $blue;
+  color:$gray-light;
+  border-radius: 5px;
+  padding: 2px 5px;
+
+  a {
+    color: inherit !important;
+  }
+}
+
+.talk {
+  &.red {
+    color: $red;
+  }
+
+  &.blue {
+    color: $blue;
+  }
+
+  &.green {
+    color: $green;
+  }
+}

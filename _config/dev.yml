@@ -1,0 +1,8 @@
+
+url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+disqus_shortname: dev-pauldijou
+
+assets:
+  compress:
+    css: false
+    js: false

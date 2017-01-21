@@ -1,0 +1,82 @@
+.contact {
+  h2  {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+  }
+
+  section {
+    padding: 30px;
+
+    &.social {
+      padding-bottom: 0;
+    }
+
+    &.email {
+      h2 { color: $red; border-bottom-color: $red; }
+    }
+
+    &.irc {
+      h2 { color: $green; border-bottom-color: $green; }
+      a {
+        color: $green;
+        text-style: underline;
+
+        &:hover {
+          color: $green-alt;
+        }
+      }
+    }
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid $gray-dark;
+    border-radius: 5px;
+    vertical-align: middle;
+    line-height: 1.5em;
+
+    &:focus {
+      border-color: $green;
+      outline: 0;
+    }
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  @media (min-width: $screen-md) {
+    .button {
+      float: right;
+      width: auto;
+
+      &+.button {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .control-group {
+    margin-bottom: 20px;
+
+    &.error {
+      $error-color: lighten($red, 15%);
+
+      input, textarea {
+        border: 2px solid $error-color;
+      }
+
+      .error-message {
+        color: $error-color;
+        font-weight: bold;
+      }
+    }
+  }
+}

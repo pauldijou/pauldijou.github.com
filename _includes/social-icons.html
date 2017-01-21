@@ -1,0 +1,17 @@
+{% assign ulClass = '' %}
+
+{% if include.visible == true %}
+  {% assign ulClass = ' visible' %}
+{% endif %}
+
+{% if include.site.data.social_links and include.site.data.social_links.size > 0 %}
+  <ul id="social" class="social list-inline{{ ulClass }}">
+    {% for social_link in include.site.data.social_links %}
+      <li title="{{ social_link.label }}" class="{% if include.visible == false %}await-opacity-{% increment index %}{% endif %}">
+        <a class="{{social_link.social_id}}" href="{{social_link.url}}{{include.site.social_identities[social_link.social_id]}}" target="_blank">
+          {% icon {{social_link.icon}} fixed 3x %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

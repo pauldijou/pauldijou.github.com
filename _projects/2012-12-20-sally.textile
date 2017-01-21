@@ -1,0 +1,9 @@
+---
+title: "Sally"
+project_date: "December 2012 - April 2013 (4 months)"
+project_type: "Professional"
+project_url: "https://sally.adisseo.com"
+project_description: "Reporting tool for <a href=\"http://www.adisseo.com/\">Adisseo</a>, display tons of data with big tables and search filters. It's a website but target usage is on tablets and supports full offline mode (before Service Workers!)."
+project_technologies: [HTML, CSS, JavaScript, Scala, Play Framework, MongoDB]
+tags: [html, css, javascript, scala, play, mongodb]
+---

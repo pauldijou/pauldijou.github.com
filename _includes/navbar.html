@@ -1,0 +1,22 @@
+<header id="nav" class="nav">
+  <ul class="list-unstyled">
+    {% for nav in site..data.navbar %}
+      <li>
+        <a href="{{ nav.url | relative_url }}">
+          {% icon nav.icon fixed 2x %}
+          <span class="nav-label">{{nav.label}}</span>
+        </a>
+      </li>
+    {% endfor %}
+    <li class="nav-back">
+      <a href="#">
+        {% icon undo fixed 2x %}
+        <span class="nav-label">Back to page</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="nav-menu">
+  <a href="#nav">Menu</a>
+</div>

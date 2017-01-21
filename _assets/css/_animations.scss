@@ -1,0 +1,40 @@
+.await-opacity-0 {
+  @include transition(opacity 1s 0.5s);
+}
+
+@for $i from 1 through 10 {
+  $opacity: 0.5s * ($i + 1);
+  .await-opacity-#{$i} {
+    @include transition(opacity 1s $opacity);
+  }
+}
+
+@mixin animation ($args) {
+  -webkit-animation: $args;
+     -moz-animation: $args;
+       -o-animation: $args;
+          animation: $args;
+}
+
+@mixin bounce-horizontal-keyframes {
+  0%, 100% {left: 0; }
+  7% {left: -30px; }
+  21% {left: 30px; }
+  35% {left: -30px; }
+  49% {left: 30px; }
+  63% {left: 0px; }
+}
+
+@-webkit-keyframes bounce-horizontal { @include bounce-horizontal-keyframes; }
+@-moz-keyframes bounce-horizontal { @include bounce-horizontal-keyframes; }
+@-o-keyframes bounce-horizontal { @include bounce-horizontal-keyframes; }
+@keyframes bounce-horizontal { @include bounce-horizontal-keyframes; }
+
+@mixin bounce-horizontal {
+  position: relative;
+  @include animation(bounce-horizontal 2s ease infinite);
+}
+
+.bounce-horizontal {
+  @include bounce-horizontal;
+}

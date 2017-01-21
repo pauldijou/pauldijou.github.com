@@ -1,0 +1,78 @@
+.projects {
+  padding: 0;
+
+  .project {
+    position: relative;
+    padding: 50px 30px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+
+    h2 {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    &.alt {
+      border-color: $green;
+      h2 { color: $green; }
+      .fa { color: $green; }
+      .detail { border-color: $green; }
+    }
+
+    &.blue {
+      border-color: $blue;
+      h2 { color: $blue; }
+      .fa { color: $blue; }
+      .detail { border-color: $blue; }
+    }
+
+    &.red {
+      border-color: $red;
+      h2 { color: $red; }
+      .fa { color: $red; }
+      .detail { border-color: $red; }
+    }
+
+    .summary {
+      .date {
+        margin-bottom: 10px;
+      }
+
+      .url, .github {
+        margin-top: 10px;
+      }
+    }
+
+    .detail {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+      margin-top: 20px;
+      padding-top: 20px;
+
+      .description {
+        text-align: justify;
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      .link-more {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      @media (min-width: $screen-md) {
+        border-top-width: 0;
+        border-left-width: 5px;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}

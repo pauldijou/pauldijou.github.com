@@ -1,0 +1,71 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Palette
+$red: #96281B;
+$red-alt: #C0392B;
+
+$blue: #22313F;
+$blue-alt: #34495E;
+
+$green: #049372;
+$green-alt: #00B16A;
+
+$orange: #E67E22;
+$orange-alt: #F89406;
+
+$gray-blue: #87969e;
+$gray-light: #ecf0f1;
+$gray-light-alt: #bdc3c7;
+$gray: #494949;
+$gray-alt: #5E696F;
+$gray-dark: #353535;
+$gray-dark-alt: lighten($gray-dark, 20%);
+
+$turquoise: #64b4b0;
+
+$color-link: $green;
+$color-link-alt: $green-alt;
+
+$label-default-bg: $red;
+
+$transition-duration: 500ms;
+$page-width: 800px;
+$nav-width: 80px;
+
+@import 'bootstrap-sprockets';
+@import "bootstrap/normalize";
+@import "bootstrap/variables";
+
+$nav-switch: $screen-md;
+$container-lg: $container-large-desktop;
+$container-large-desktop: $container-large-desktop + (2 * $nav-width);
+
+@import "bootstrap/mixins";
+@import "bootstrap/grid";
+@import "bootstrap/responsive-utilities";
+@import "bootstrap/utilities";
+@import "bootstrap/labels";
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import "animations";
+@import "layout";
+@import "type";
+@import "buttons";
+@import "alerts";
+@import "nav";
+@import "global";
+@import "index";
+@import "blog";
+@import "projects";
+@import "resume";
+@import "about";
+@import "archives";
+@import "contact";
+@import "social";
+@import "highlight";

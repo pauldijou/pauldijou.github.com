@@ -1,8 +1,0 @@
-{
-  "name": "pauldijou.github.io",
-  "version": "1.0.",
-  "dependencies": {
-    "bootstrap": "~3.2.x",
-    "font-awesome": "~4.3.x"
-  }
-}
