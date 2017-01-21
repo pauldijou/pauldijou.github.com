@@ -1,5 +1,6 @@
 ---
 title: "Elm Native basics"
+description: "Learn the basics of writing Elm Native code"
 tags: [elm]
 ---
 ## Beware
