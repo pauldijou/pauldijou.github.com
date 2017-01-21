@@ -43,7 +43,7 @@ if [ -z `git diff --exit-code` ]; then
 fi
 
 git add -fA
-git commit --allow-empty -m "Publish: ${SHA}"
+git commit --allow-empty -m "Publish"
 git push -f -q $ORIGIN_CREDENTIALS $TARGET_BRANCH
 
 # Move back to previous branch.
