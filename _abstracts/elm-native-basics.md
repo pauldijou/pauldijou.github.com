@@ -106,7 +106,7 @@ init = Utils.add 40 2
 
 ## Let's go crazy
 
-Obviously, you can write code that bends the limitation of Elm. All Elm functions are pure and without any side-effect. Among other things, it means that given the same arguments, a function will always return the same result. That's why `Math.random` is a `Task`, because it isn't pure. Using `Native`, you can make it synchronous. We will see the example just below but never do that in your project, I just want to show you that it is possible.
+Obviously, you can write code that bends the limitations of Elm. All Elm functions are pure and without any side-effect. Among other things, it means that given the same arguments, a function will always return the same result. That's why `Math.random` is a `Task`, because it isn't pure. Using `Native`, you can make it synchronous. We will see the example just below but never do that in your project, I just want to show you that it is possible.
 
 {% highlight javascript %}
 // File: Native/HackMath.js

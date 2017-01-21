@@ -4,6 +4,18 @@
   }
 }
 
+.draft-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: $red;
+  color: $gray-light;
+  text-align: center;
+  padding: 10px 0;
+}
+
 .post {
   padding-bottom: 20px;
   overflow-x: hidden;
