@@ -3,7 +3,7 @@ rvm:
 - 2.3.0
 
 script:
-  - ./script/deploy
+  - ./scripts/deploy
 
 branches:
   only:
