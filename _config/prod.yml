@@ -1,10 +1,6 @@
-url: "http://pauldijou.fr" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://pauldijou.fr"
 google_analytics: UA-25058935-1
 disqus_shortname: pauldijou
-deploy:
-  host: github_pages
-  branch: master
-
 assets:
   compress:
     css: true

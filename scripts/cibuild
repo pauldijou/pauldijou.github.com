@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Exit if any subcommand fails.
-set -e
-
-bundle exec jekyll build --config ./_config/common.yml,./_config/prod.yml
