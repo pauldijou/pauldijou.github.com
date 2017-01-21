@@ -41,6 +41,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  abstracts:
+    output: true
+    permalink: /drafts/:path/
 
 pagination:
   enabled: true
@@ -71,6 +74,14 @@ defaults:
       type: 'posts'
     values:
       layout: post
+      summary: 0
+      authors: [pauldijou]
+  -
+    scope:
+      path: ''
+      type: 'abstracts'
+    values:
+      layout: draft
       summary: 0
       authors: [pauldijou]
   -

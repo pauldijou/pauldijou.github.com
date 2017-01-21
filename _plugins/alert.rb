@@ -7,6 +7,7 @@ module Jekyll
       super
       args = text.split(" ")
       @isDanger = args.include?("danger")
+      @isWarning = args.include?("warning")
       @isInfo = args.include?("info")
     end
 
@@ -15,7 +16,7 @@ module Jekyll
       content = converter.convert(render_block(context))
       content = content.slice(4, content.length - 9)
 
-      "<p class=\"alert#{@isInfo ? ' alert-info' : ''}#{@isDanger ? ' alert-danger' : ''}\">#{ content }</p>"
+      "<p class=\"alert#{@isInfo ? ' alert-info' : ''}#{@isWarning ? ' alert-warning' : ''}#{@isDanger ? ' alert-danger' : ''}\">#{ content }</p>"
     end
   end
 end

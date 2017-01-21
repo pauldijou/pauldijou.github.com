@@ -1,5 +1,21 @@
-{% assign prefix = 'https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/' %}
-{% capture githubEdit %}{{prefix}}{{include.post.date | date: "%Y-%m-%d"}}-{{include.post.slug}}.md{% endcapture %}
+{% assign isDraft = false %}
+{% assign isntDraft = true %}
+
+{% if include.draft %}
+  {% assign isDraft = true %}
+  {% assign isntDraft = false %}
+{% endif %}
+
+
+{% if isDraft %}
+  {% assign prefix = 'https://github.com/pauldijou/pauldijou.github.com/edit/develop/_abstracts/' %}
+  {% assign postDate = '' %}
+{% else %}
+  {% assign prefix = 'https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/' %}
+  {% capture postDate %}{{include.post.date | date: "%Y-%m-%d"}}-{% endcapture %}
+{% endif %}
+
+{% capture githubEdit %}{{ prefix }}{{ postDate }}{{ include.post.slug }}.md{% endcapture %}
 
 <article class="post">
   <h2>
@@ -9,13 +25,19 @@
   <div class="meta">
     Posted by
     <span class="authors">Paul Dijou</span>
-    on
-    <span class="date">{{ include.post.date | date: '%b %d, %Y' }}</span>
+    {% if isDraft %}
+      <span class="date"> (Draft)</span>
+    {% else %}
+      on
+      <span class="date">{{ include.post.date | date: '%b %d, %Y' }}</span>
+    {% endif %}
     <span class="separator"></span>
 
-    <span class="visible-md-inline visible-lg-inline">{% icon comments fixed %}</span>
-    <a href="{{include.post.url | relative_url}}#disqus_thread" data-disqus-identifier="{{ include.post.id }}">Comments</a>
-    <span class="separator"></span>
+    {% if site.disqus_shortname and isntDraft %}
+      <span class="visible-md-inline visible-lg-inline">{% icon comments fixed %}</span>
+      <a href="{{include.post.url | relative_url}}#disqus_thread" data-disqus-identifier="{{ include.post.id }}">Comments</a>
+      <span class="separator"></span>
+    {% endif %}
 
     <span class="visible-md-inline visible-lg-inline">{% icon pencil-square-o fixed %}</span>
     <a class="improve visible-md-inline visible-lg-inline" href="{{githubEdit}}" target="_blank">Improve this article</a>
@@ -28,17 +50,9 @@
   <div class="footer">
     <span class="hidden-xs hidden-sm">
       {% icon link fixed %}
-      <a href="{{include.post.url}}">Permalink</a>
+      <a href="{{include.post.url | absolute_url}}">Permalink</a>
     </span>
     <span class="separator"></span>
-
-    {% if site.disqus %}
-      <span class="hidden-xs hidden-sm">
-        {% icon link fixed %}
-        <a href="{{include.post.disqus_comments_link}}">Permalink</a>
-      </span>
-      <span class="separator"></span>
-    {% endif %}
 
     <span class="visible-md-inline visible-lg-inline">{% icon pencil-square-o fixed %}</span>
     <a href="{{githubEdit}}" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>

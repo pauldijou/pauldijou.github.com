@@ -1,0 +1,15 @@
+---
+layout: main
+title: Drafts
+---
+<div class="posts">
+  <h1>Drafts</h1>
+  <p>Please, <strong>do not share</strong>, this is for review only.</p>
+  <ul>
+    {% for abstract in site.abstracts %}
+      <li>
+        <a href="{{ abstract.url | relative_url }}">{{ abstract.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
