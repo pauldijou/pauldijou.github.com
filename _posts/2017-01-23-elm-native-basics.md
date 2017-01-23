@@ -74,7 +74,7 @@ add =
 This is a 200% danger zone. The Elm compiler is mostly like *"Oh, you are using native? Ok, I will fully trust you on what you are doing but don't complain if the world ends when your program crashes."* It means that the compiler will not perform any checks on types on any native function. For example, we could write:
 
 {% highlight elm %}
-module Utils exposing (add)
+module Utils exposing (addInt, addFloat)
 
 import Native.Utils
 
@@ -123,6 +123,8 @@ var _username$project$Native_HackMath = function () {
 -- File: HackMath.elm
 module HackMath exposing (random)
 
+import Native.HackMath
+
 random: () -> Float
 random =
   Native.HackMath.random
@@ -154,11 +156,9 @@ Remember that Tasks are not only for asynchronous code. Any non-pure function, l
 var _username$project$Native_Utils = function () {
   var scheduler = _elm_lang$core$Native_Scheduler
 
-  function now() {
-    return scheduler.nativeBinding(function (callback) {
-      callback(scheduler.succeed(new Date()))
-    })
-  }
+  var now = scheduler.nativeBinding(function (callback) {
+    callback(scheduler.succeed(new Date()))
+  })
 
   function later(time, value) {
     return scheduler.nativeBinding(function (callback) {
@@ -187,6 +187,7 @@ module Utils exposing (now, later)
 
 import Native.Utils
 import Date exposing (Date)
+import Task exposing (Task)
 
 -- We can use the `Never` type because we are never
 -- calling `scheduler.fail` inside our Native code
@@ -198,6 +199,8 @@ later: Int -> a -> Task String a
 later =
   Native.Utils.later
 {% endhighlight %}
+
+Did you notice that `now` is not a function? You don't have to expose only functions in the returned API from a Native module, you can put whatever you want in it as long as you correctly use it inside your Elm code. Here, we directly create the `Task` which is a wrapper around our actual code. It will be called using `Task.perform` or `Task.attempt` later inside our program.
 
 ## The end
 
