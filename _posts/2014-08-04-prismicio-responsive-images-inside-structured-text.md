@@ -17,33 +17,35 @@ And me neither! I want to have responsive images inside my StructuredText for Go
 
 So, what's the idea? The only way to have responsive images is to use a real Image fragment, no choice here. So let's create one, and let's put it inside a Group fragment. This way, you can add and remove as many images as you want and they will all be responsive. Wait, you can't do that inside the StructuredText, right? Indeed, that's why we will do outside of it and then find a way to bring back the images inside of it. Here is the mask for such a group:
 
-{% highlight javascript %}
-"Images" : {
-  "images" : {
-    "type" : "Group",
-    "fieldset" : "Images",
-    "config" : {
-      "fields" : {
-        "name" : {
-          "type" : "Text",
-          "config" : {
-            "label" : "Name"
-          }
-        },
-        "caption" : {
-          "type" : "Text",
-          "config" : {
-            "label" : "Caption"
-          }
-        },
-        "image" : {
-          "type" : "Image",
-          "config" : {
-            "thumbnails" : [ {
-              "name" : "mobile"
-            }, {
-              "name" : "tablet"
-            } ]
+{% highlight json %}
+{
+  "Images" : {
+    "images" : {
+      "type" : "Group",
+      "fieldset" : "Images",
+      "config" : {
+        "fields" : {
+          "name" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Name"
+            }
+          },
+          "caption" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Caption"
+            }
+          },
+          "image" : {
+            "type" : "Image",
+            "config" : {
+              "thumbnails" : [ {
+                "name" : "mobile"
+              }, {
+                "name" : "tablet"
+              } ]
+            }
           }
         }
       }

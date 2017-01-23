@@ -35,7 +35,7 @@ var _username$project$Native_Utils = function () {
 }()
 {% endhighlight %}
 
-What happened? Our code was so nice and now it's nearly nonsense... Actually, it's not that hard. Nearly all functions and constants in Elm will be assigned to a JavaScript variable in the compiled file. The name syntax is: `_[username]$[project name]$[module name]`. `username` and `project name` are both coming from the `repository` field inside your `elm-package.json`, most the time it will be your GitHub username and the name of your project. If you don't have this field, default values `username` and `project` will be used. So don't forget to edit them to match your project.
+What happened? Our code was so nice and now it's nearly nonsense... Actually, it's not that hard. Nearly all functions and constants in Elm will be assigned to a JavaScript variable in the compiled file. The name syntax is: `_[username]$[project name]$[module name]`. `username` and `project name` are both coming from the `repository` field inside your `elm-package.json`, most of the time it will be your GitHub username and the name of your project. If you don't have this field, default values `username` and `project` will be used. So don't forget to edit them to match your project.
 
 Then we create an IIFE (aka a function that automatically called itself). That's because we want to scope all our variables and functions. The returned value is an object exposing the API of our native module. Right now, we only have one function exposed but we could have way more.
 
@@ -75,6 +75,7 @@ This is a 200% danger zone. The Elm compiler is mostly like *"Oh, you are using 
 
 {% highlight elm %}
 module Utils exposing (add)
+
 import Native.Utils
 
 addInt: Int -> Int -> Int
@@ -96,6 +97,7 @@ That's it! You can now use your `Utils` module inside your Elm project.
 
 {% highlight elm %}
 module Main exposing (..)
+
 import Utils
 
 type alias Model = Int
@@ -129,6 +131,7 @@ random =
 {% highlight elm %}
 -- File: Main.elm
 module Main exposing (..)
+
 import HackMath
 
 type alias Model = Float
@@ -168,7 +171,6 @@ var _username$project$Native_Utils = function () {
           callback(scheduler.succeed(value))
         }, time)
       }
-
     })
   }
 
@@ -182,6 +184,7 @@ var _username$project$Native_Utils = function () {
 {% highlight elm %}
 -- File: Utils.elm
 module Utils exposing (now, later)
+
 import Native.Utils
 import Date exposing (Date)
 

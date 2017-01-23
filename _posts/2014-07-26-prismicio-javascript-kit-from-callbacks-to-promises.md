@@ -89,7 +89,8 @@ function Api(url, accessToken, maybeRequestHandler, maybeApiCache) {
 Overriding the `submit` call is a bit more tricky because it is a prototype function of the `SearchForm` object, which is totally hidden inside Prismic clojure. This is a bit (super) sad but we can deal with it by creating a fake form and not submitting it. The easiest way I found so far is doing it right after getting the Api. Let's add the following code at `Save point 1` (see previous code).
 
 {% highlight javascript %}
-// You might need a polyfill for 'getPrototypeOf' if you support old browser
+// You might need a polyfill for 'getPrototypeOf'
+// if you support old browser
 var SearchFormProto = Object.getPrototypeOf(resolvedApi.forms('everything'));
 // We are saving the original function so we can call it inside our override
 var originalSubmit = SearchFormProto.submit;

@@ -20,7 +20,7 @@ The true solution would be to call the Bootstrap JavaScript function after each 
 
 Just wrapping your whole page in a JSF panel and render it instead of `render="@all"` should be enough in most use case. It is not exactly the same behaviour, but in most case, when calling `render="@all"`, what you really want is just refreshing your whole page using Ajax. For example:
 
-{% highlight markup %}
+{% highlight html %}
 <!DOCTYPE html>
 <html lang="en-US"
       xmlns="http://www.w3.org/1999/xhtml"

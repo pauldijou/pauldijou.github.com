@@ -1,8 +1,11 @@
 .highlight {
+  $radius: 0.3em;
+
   padding: 1em;
   background-color: #002b36;
-  border-radius: 0.3em;
+  border-radius: $radius;
   margin: 1em 0;
+  position: relative;
 
   pre, code, .hll {
     background-color: transparent;
@@ -27,6 +30,20 @@
 
   pre {
     overflow: auto;
+  }
+
+  @media (min-width: $screen-md-min) {
+    code::after {
+      content: attr(data-lang);
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      border-style: solid;
+      border-color: white;
+      border-width: 0 0 2px 2px;
+      border-bottom-left-radius: 2 * $radius;
+    }
   }
 
   .c { color: #586e75 } /* Comment */
