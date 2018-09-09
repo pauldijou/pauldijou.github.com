@@ -1,8 +1,0 @@
-url: "http://pauldijou.fr"
-google_analytics: UA-25058935-1
-disqus_shortname: pauldijou
-assets:
-  digest: true
-  compress:
-    css: true
-    js: true

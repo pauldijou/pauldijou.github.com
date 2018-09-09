@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-jekyll serve --config ./_config/common.yml,./_config/dev.yml --watch

@@ -1,9 +1,0 @@
----
-title: "Nomalab"
-project_date: "May 2016 - Present"
-project_type: "Professional"
-project_url: "https://nomalab.com"
-project_description: "Full stack developer at Nomalab, working on video qualification and building the web platform using the Elm language for both client-side and server-side."
-project_technologies: [Elm, Rust, AWS]
-tags: [nomalab]
----

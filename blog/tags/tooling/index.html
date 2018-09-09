@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <!-- HTML meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="author" content="">
+    <meta name="description" content="" />
+    
+
+    <title>Paul Dijou - Posts tagged with tooling</title>
+
+    <!-- facebook open graph tags http://ogp.me/ -->
+    <meta property="og:site_name" content="Paul Dijou" />
+    <meta property="og:title" content="Posts tagged with tooling" />
+    <meta property="og:url" content="http://pauldijou.fr/blog/tags/tooling/index.html" />
+    <meta property="og:description" content="" />
+    
+      <meta property="og:type" content="website" />
+    
+    
+    
+
+    <!-- twitter card tags https://dev.twitter.com/cards/markup -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@paul_dijou" />
+    
+    <meta name="twitter:title" content="Paul Dijou - Posts tagged with tooling" />
+    <meta name="twitter:description" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon-5b92c61126199f7d62a67cca38b3e33bbdd0f7a7a836dbda27ef0f09ffd3e5eb.ico"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main-e66cbeb83467c4596e317baff024f2f5aafbe0950e29acbcca992eddbcabe00c.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+
+    <!--[if lt IE 8]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    
+
+    
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25058935-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </head>
+  <body>
+    <header id="nav" class="nav">
+  <ul class="list-unstyled">
+    
+      <li>
+        <a href="/">
+          <span class="icon fa fa-home fa-fw fa-2x"></span>
+          <span class="nav-label">Home</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/">
+          <span class="icon fa fa-coffee fa-fw fa-2x"></span>
+          <span class="nav-label">Blog</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/resume/">
+          <span class="icon fa fa-code fa-fw fa-2x"></span>
+          <span class="nav-label">Resume</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/projects/">
+          <span class="icon fa fa-flask fa-fw fa-2x"></span>
+          <span class="nav-label">Projects</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="icon fa fa-user fa-fw fa-2x"></span>
+          <span class="nav-label">About</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/contact/">
+          <span class="icon fa fa-envelope fa-fw fa-2x"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/archives/">
+          <span class="icon fa fa-archive fa-fw fa-2x"></span>
+          <span class="nav-label">Archives</span>
+        </a>
+      </li>
+    
+    <li class="nav-back">
+      <a href="#">
+        <span class="icon fa fa-undo fa-fw fa-2x"></span>
+        <span class="nav-label">Back to page</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="nav-menu">
+  <a href="#nav">Menu</a>
+</div>
+
+<div class="page container">
+  <div class="posts">
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2015/06/07/wtf-npm-update/">WTF npm update?!</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Jun 07, 2015</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2015/06/07/wtf-npm-update/#disqus_thread" data-disqus-identifier="/blog/2015/06/07/wtf-npm-update">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2015-06-07-wtf-npm-update.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="tldr">tl;dr</h3>
+
+<p>Do not use <code class="highlighter-rouge">npm update</code> with any package which use custom dist-tags.</p>
+
+<h3 id="dist-tags">Dist-tags</h3>
+
+<p>This package has officially those 3 last versions: <code class="highlighter-rouge">1.0.0</code>, <code class="highlighter-rouge">1.0.1</code> and <code class="highlighter-rouge">1.0.2</code>. But inside the <code class="highlighter-rouge">dist-tags</code> (<a href="https://docs.npmjs.com/cli/dist-tag">read more</a>), we have two of them: the classic <code class="highlighter-rouge">latest</code> which refers to the latest stable release of the package and a custom one, named <code class="highlighter-rouge">canary</code>, indicating the last non-stable release of the package. If you are wondering if real projects are using such tags, the answer is <strong>yes</strong>, the <code class="highlighter-rouge">npm</code> package is using <code class="highlighter-rouge">latest</code> and <code class="highlighter-rouge">next</code> tags for it’s weekly pre-release (<a href="https://github.com/npm/npm/wiki/Release-Process">read more</a>).</p>
+
+<p>Currently, <code class="highlighter-rouge">latest</code> points to <code class="highlighter-rouge">1.0.1</code> and <code class="highlighter-rouge">canary</code> to <code class="highlighter-rouge">1.0.2</code>. Meaning that if you run <code class="highlighter-rouge">npm view test-npm-update</code>, you will have something like:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-npm-update"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dist-tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"latest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"canary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.2"</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"versions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.0.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.0.2"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.1"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="versions">Versions</h3>
+
+<p>It’s important to realize a few things here. <code class="highlighter-rouge">1.0.2</code> is a released version just as <code class="highlighter-rouge">1.0.0</code> and <code class="highlighter-rouge">1.0.1</code> and we will say it’s the <strong>greatest</strong> one (as in the biggest number according to semver) but not the <strong>latest</strong> one (as in the one tagged with the <code class="highlighter-rouge">latest</code> dist-tag). We need to make such distinction to fully understand what will happen after that.</p>
+
+<p>So, when you run <code class="highlighter-rouge">npm view test-npm-update</code>, it actually runs <code class="highlighter-rouge">npm view test-npm-update@latest</code>, meaning it will grab the informations of the <strong>latest</strong> version. But maybe some other versions have been released with a custom tag after this one. For me, so far, so good. NPM is doing exactly what I would expect. If I want a custom release such as the canary one, I can run <code class="highlighter-rouge">npm view test-npm-update@canary</code> and it will display infos about the <code class="highlighter-rouge">1.0.2</code> version. In fact, but I might be wrong but I except NPM to always use the <strong>latest</strong> version (aka the <code class="highlighter-rouge">latest</code> dist-tag) by default if I don’t specify anything. That’s what you can mostly read all over the NPM documentation.</p>
+
+<p>But remember, <code class="highlighter-rouge">1.0.2</code> is inside the <code class="highlighter-rouge">versions</code> array just like any other version. So first warning, if you use such metadata for whatever stuff you are doing, do not assume that the <strong>greatest</strong> version inside the <code class="highlighter-rouge">versions</code> array is the <strong>latest</strong> one.</p>
+
+<h3 id="install">Install</h3>
+
+<p>Now, what if I run <code class="highlighter-rouge">npm install test-npm-update</code>? What would you expect to be installed? <code class="highlighter-rouge">1.0.1</code> right? And of course it will be this version, the <strong>latest</strong> one. That’s normal, after all, <strong>latest</strong> is the default one. All good here.</p>
+
+<p>What if I clean my folder and then run <code class="highlighter-rouge">npm install test-npm-update@^1.0.0</code>? Guess what, <code class="highlighter-rouge">1.0.1</code> will be installed. And I’m totally ok with that. I asked for the best 1.x.x version and I’m glad to have the <strong>latest</strong> one since it matches.</p>
+
+<h3 id="packagejson">package.json</h3>
+
+<p>But most of the time, you don’t install or update from command line, you have a <code class="highlighter-rouge">package.json</code> file with a range inside it. Let’s say we have the following one:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awesome-project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"test-npm-update"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.0.0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Pretty classic, right? Now, for the purpose of the demo, let’s say we currently have the <code class="highlighter-rouge">1.0.0</code> version of <code class="highlighter-rouge">test-npm-update</code> locally installed. If you want to reproduce, just create an empty folder, then create a <code class="highlighter-rouge">package.json</code> inside it with the previous content and run <code class="highlighter-rouge">npm install test-npm-update@1.0.0</code> to force the install of an old version.</p>
+
+<p>Done? Cool, let’s move forward. NPM has a command to test if you have outdated versions locally installed. Which is our case. Let’s check that by running <code class="highlighter-rouge">npm outdated</code>. You should have something like:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Package          Current  Wanted  Latest  Location
+<span class="nb">test</span>-npm-update  1.0.0    1.0.2   1.0.1</code></pre></figure>
+
+<p>Wait a minute? I’m ok with <em>current</em> (the locally installed) being <code class="highlighter-rouge">1.0.0</code> and <em>latest</em> (matching the dist-tag) being <code class="highlighter-rouge">1.0.1</code> but <em>wanted</em> is supposed to be the best matching version I should install according to <code class="highlighter-rouge">package.json</code>. How can it be greater than <em>latest</em>?</p>
+
+<p>Actually, it’s all ok according to the NPM documentation. After all, the <code class="highlighter-rouge">package.json</code> range is <code class="highlighter-rouge">^1.0.0</code> which means the greatest possible version without changing the first non-zero digit. And among <strong>all</strong> our versions (see the <code class="highlighter-rouge">versions</code> array from <code class="highlighter-rouge">npm view</code>), both <code class="highlighter-rouge">1.0.1</code> and <code class="highlighter-rouge">1.0.2</code> match this range, but since <code class="highlighter-rouge">1.0.2</code> is greater than <code class="highlighter-rouge">1.0.1</code>, the <em>wanted</em> version is <code class="highlighter-rouge">1.0.2</code>.</p>
+
+<p>I didn’t expect that to be honest. That’s not wrong but I can’t help myself finding that strange.</p>
+
+<h3 id="install-again">Install again</h3>
+
+<p>Quick mention to the fact that if I run <code class="highlighter-rouge">npm install</code> with my <code class="highlighter-rouge">package.json</code> in an empty folder (aka without the <code class="highlighter-rouge">1.0.0</code> version already installed), it will still install <code class="highlighter-rouge">1.0.1</code> version. That’s ok according to <strong>latest</strong> being the default one. Back to our outdated <code class="highlighter-rouge">1.0.0</code> version.</p>
+
+<h3 id="update">Update</h3>
+
+<p>Things start to get really ugly now. So, <code class="highlighter-rouge">npm outdated</code> just told me I have an old local version. I should probably update it, and NPM has a command for that. Let’s run <code class="highlighter-rouge">npm update</code>. To be honest, I wasn’t sure anymore what would be installed locally. I mean, I would have normally expected the <code class="highlighter-rouge">1.0.1</code> version. My brain was like “It should be the greatest <strong>stable</strong> version which match the range”, with <strong>stable</strong> meaning lower or equal to the <code class="highlighter-rouge">latest</code> tag, but for NPM, it’s more like “It should be the greatest version which match the range. Period.”. And it makes all the difference. My brain stops at <code class="highlighter-rouge">1.0.1</code> as the latest stable but NPM browse <strong>all</strong> version, including any custom dist-tags, including the <code class="highlighter-rouge">canary</code> version.</p>
+
+<p>At the end, running <code class="highlighter-rouge">npm update</code> will install <code class="highlighter-rouge">1.0.2</code> version. This is <strong>wrong</strong>. According to <a href="https://docs.npmjs.com/cli/update">documentation</a>:</p>
+
+<blockquote>
+  <p>This command will update all the packages listed to the latest version (specified by the tag config), respecting semver.</p>
+</blockquote>
+
+<p>I read that as the <strong>latest</strong> version according to <code class="highlighter-rouge">latest</code> dist-tag. But we just updated to a version beyond this <strong>latest</strong> version. In any case, this is super dangerous! It means you can update to non-stable versions without even noticing it.</p>
+
+<p>What if we didn’t have the <code class="highlighter-rouge">1.0.0</code> already installed? Since <code class="highlighter-rouge">npm update</code> also install missing packages, it will indeed install <code class="highlighter-rouge">test-npm-update</code> according to <code class="highlighter-rouge">package.json</code> and, of course, to the <code class="highlighter-rouge">1.0.2</code> version.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>IMHO, I think this is way too dangerous, <code class="highlighter-rouge">npm update</code> should be capped by the <strong>latest</strong> version, and so should <code class="highlighter-rouge">npm outdated</code>. By default, no command should target versions beyond <code class="highlighter-rouge">latest</code> dist-tag. Also, it seems inconsistent to have <code class="highlighter-rouge">install</code> and <code class="highlighter-rouge">update</code> both capable of installing a missing package from a <code class="highlighter-rouge">package.json</code> file but not to the same version.</p>
+
+<p>I raised an issue on <a href="https://github.com/npm/npm/issues/8476">Github</a>, we will see. Be careful from now on.</p>
+
+<p>Thanks for reading! Spread the word.</p>
+
+<h3 id="personal-ad">Personal ad</h3>
+
+<p>It might be a bit too early to speak about that, but if you need an <code class="highlighter-rouge">outdated</code> command which is actually capped by the <code class="highlighter-rouge">latest</code> tag and also support other package managers (like Bower), please check my <a href="https://github.com/pauldijou/outdated">outdated</a> project. It’s not ready at all yet but it will be in the next few days, promise.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2015/06/07/wtf-npm-update/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2015-06-07-wtf-npm-update.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2015-06-07-wtf-npm-update.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/npm/">npm</a>
+        
+          <a class="tag label label-default" href="/blog/tags/tooling/">tooling</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2014/08/05/browser-sync-play-framework/">BrowserSync proxy in top of a Play Framework server</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Aug 05, 2014</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2014/08/05/browser-sync-play-framework/#disqus_thread" data-disqus-identifier="/blog/2014/08/05/browser-sync-play-framework">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-08-05-browser-sync-play-framework.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="tldr-coz-im-a-h4k3r">TL;DR ‘coz I’m a h4k3r</h3>
+
+<p>Full source code of the demo is <a href="https://github.com/blogsamples/play-browserSync">on GitHub</a> with a nice and simple README on how to bootstrap the project.</p>
+
+<h3 id="what-are-you-talking-about-dude">What are you talking about dude?</h3>
+
+<p><a href="http://www.playframework.com">Play Framework</a> is an HTTP server written in Scala. It is super cool and you should probably give it a try. Let’s say you are using it, you really enjoy how productive it is, only having to refresh your browser to see all your code modifications, but you want to go further, you want live-reloading! There are several tools doing that.</p>
+
+<p>Introducing <a href="http://www.browsersync.io">BrowserSync</a>. It provides 2 killers features. One is live-reloading: it can monitor resources, and when it detects some modifications, it will reload the browser page to load them. Even better, if possible, it will hot deploy them, meaning they will be loaded without reloading the page. That’s the case for CSS files which are loaded and the page repainted to display the new design without any refresh. The second one is to keep synchronized several browsers across devices. And we are not talking about resources only but about all user actions. If you scroll on one browser, it will scroll on all connected browsers, same for clicking on a button, and so on…</p>
+
+<p>Let me say it again with a concrete example. You are on your computer, one screen with your source code, another one with Chrome opened and a last one with Firefox. You also have an iPad tablet and an Android smartphone connected to your computer. All of those have your application main page opened. Each time your edit your code, they will all reload and display the new result (hot deploy in case of CSS). When you are ready to test interactions, you just go to, let’s say, your Chrome browser and start scrolling and clicking. All your screens will start moving and doing the actions everywhere. Talk about increasing productivity!!</p>
+
+<p>What about assets that require compilation? Such as SCSS, LESS, Stylus, CoffeeScript, etc… No biggy bro (or sis), we have you covered. In this demo, we will use <a href="http://gulpjs.com/">Gulp</a> to monitor those resources, compile them, and pass them to BrowserSync for live-reloading (obviously not losing the hot deploy if possible). You can freely use whatever build tool you want, be it Grunt, Broccoli, …</p>
+
+<h3 id="magic-proxy">Magic proxy</h3>
+
+<p>BrowserSync could be used as the web server, that’s the easiest way to use it, and I’m actually doing it when my Play server is only here to provide a REST API. Consider doing that when you don’t need Scala templates or when you cannot use them (for example if you want to embed all your standalone HTML files inside a Cordova / PhoneGap application).</p>
+
+<p>But here, we want to use Play as the web server, meaning it will be responsible to serve all our assets: HTML, CSS and JavaScript. For that, we will need to use the <code class="highlighter-rouge">proxy</code> feature of BrowserSync. Long story short, it will start another web server, on its own port, and will display the exact content from the Play server but adding a bit of JavaScript magic in it so it can enable all its features. It is just like opening your Play application, just on a different port. By default, you would use the port <code class="highlighter-rouge">9000</code> for Play, in this demo, we will set the proxy on port <code class="highlighter-rouge">9001</code> (it would have been around <code class="highlighter-rouge">3000</code> by default, but I didn’t want anyone to freak out so I put it as close as possible to Play default one).</p>
+
+<p>We also want to live-reload some of our resources. I kept it simple for this demo, but you are free to add as many as your want. We will use the <code class="highlighter-rouge">files</code> property of BrowserSync configuration and set and array of files to monitor (it supports wildcards). Here, we are monitoring all CSS files from <code class="highlighter-rouge">public/stylesheets</code>, JavaScript files from <code class="highlighter-rouge">public/javascripts</code> and HTML files from  <code class="highlighter-rouge">app/views</code>. There are two important points to notice here. First, we are referencing files based on their path on the source code, not on their actual url. For example, <code class="highlighter-rouge">public/stylesheets/main.css</code> will be served by Play as <code class="highlighter-rouge">assets/stylesheets/main.css</code>, but BrowserSync only needs to know the real path, after that, you can map it to whatever url you want. Second, we are monitoring Scala templates, and it’s fine because when BrowserSync will detect a modification, it will reload the page, and Play will re-compile the template before serving it, so it will display the new version. It works just fine with both <code class="highlighter-rouge">run</code> and <code class="highlighter-rouge">~run</code> , the latest being faster.</p>
+
+<p>Here is a super small configuration for BrowserSync to enable such a proxy. You can read the <a href="http://www.browsersync.io/docs/options/">online documentation</a> to extend it.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">browserSync</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browser-sync'</span><span class="p">);</span>
+
+<span class="nx">browserSync</span><span class="p">({</span>
+  <span class="c1">// By default, Play is listening on port 9000</span>
+  <span class="na">proxy</span><span class="p">:</span> <span class="s1">'localhost:9000'</span><span class="p">,</span>
+  <span class="c1">// We will set BrowserSync on the port 9001</span>
+  <span class="na">port</span><span class="p">:</span> <span class="mi">9001</span><span class="p">,</span>
+  <span class="c1">// Reload all assets</span>
+  <span class="c1">// Important: you need to specify the path on your source code</span>
+  <span class="c1">// not the path on the url</span>
+  <span class="na">files</span><span class="p">:</span> <span class="p">[</span><span class="s1">'public/stylesheets/*.css'</span><span class="p">,</span> <span class="s1">'public/javascripts/*.js'</span><span class="p">,</span> <span class="s1">'app/views/*.html'</span><span class="p">],</span>
+  <span class="na">open</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span></code></pre></figure>
+
+<h3 id="what-about-compiled-assets">What about compiled assets?</h3>
+
+<p>Right… right… there are assets that you cannot serve directly, you need to preprocess them. The easiest way to do that is using a build tool, just pick one among the best ones (Gulp, Grunt, Broccoli, Brunch, …) and enjoy. There is a really simple separation of concern here: the build tool only manage assets that are not served directly (LESS, CoffeeScript, …) and compile them into assets that are actually handled by BrowserSync (CSS, JavaScript, images, …) which then live-reload them.</p>
+
+<p>It’s so easy that it’s nearly frustrating. In the demo, the <code class="highlighter-rouge">main.css</code> file is generated from <code class="highlighter-rouge">main.less</code>. I have two Gulp task to handle that: one for compilation and one to monitor any modification.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">less</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-less'</span><span class="p">);</span>
+
+<span class="c1">// Registering a 'less' task that just compile our LESS files to CSS</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'less'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./resources/less/main.less'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">less</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./public/stylesheets'</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="c1">// Let's watch our LESS files and compile them at each modification</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'watch'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">([</span><span class="s1">'./resources/less/*.less'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'less'</span><span class="p">]);</span>
+<span class="p">});</span></code></pre></figure>
+
+<h3 id="wait-where-are-sbt-web-and-webjars">Wait, where are sbt-web and webjars?</h3>
+
+<p>Yeaaaaah… so lately, Play has introduced all those stuff on managing assets using SBT, some plugins and webjars. It works just fine but for me, it’s just as strange as if I would install Play from NPM. It’s cool if people want to try to merge two super different worlds (front-end and back-end), be it Node.js or scala.js, but I’m totally not ready for that. As a full stack developer, I want to enjoy each world with its own ecosystem, not trying to bend one into the other.</p>
+
+<p>That’s why in all my projects, front-end assets are handled by front-end tooling (mostly Gulp and NPM lately) and my back-end resources by back-end tools (SBT, Ivy, Maven, …). Not only do I get the best of each, but I do not have some limitations. For example, the other day, I came across a bug on a JavaScript library I was using. No biggy: fork the repo, correct the bug, do a pull request. And while waiting for the author to merge it (which can take some time), I am free to directly use my fork inside my <code class="highlighter-rouge">package.json</code> so it’s not blocking at all. It tooks me less than an hour. I would be curious on how to do that using webjars? Anyway, sorry for not planning any proof of concept using webjars if that’s what you are using.</p>
+
+<p>And that’s it! As I said at the beginning of the article, the demo is <a href="https://github.com/blogsamples/play-browserSync">on GitHub</a>, feel free to clone and play with it. Enjoy and thanks for reading.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2014/08/05/browser-sync-play-framework/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-08-05-browser-sync-play-framework.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-08-05-browser-sync-play-framework.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/play/">play</a>
+        
+          <a class="tag label label-default" href="/blog/tags/browserSync/">browserSync</a>
+        
+          <a class="tag label label-default" href="/blog/tags/gulp/">gulp</a>
+        
+          <a class="tag label label-default" href="/blog/tags/tooling/">tooling</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+</div>
+
+<ul class="list-inline pagination text-center visible-xs visible-sm">
+  <li>
+    
+      <span class="button disabled">
+        <span class="icon fa fa-angle-left fa-lg"></span>
+        Previous
+      </span>
+    
+  </li>
+
+  <li>
+    
+      <span class="button disabled">
+        Next
+        <span class="icon fa fa-angle-right fa-lg"></span>
+      </span>
+    
+  </li>
+</ul>
+
+<ul class="list-inline pagination text-center hidden-xs hidden-sm">
+    
+      <li>
+        <span class="button disabled">
+          <span class="icon fa fa-angle-double-left fa-lg"></span>
+          First
+        </span>
+      </li>
+      <li>
+        <span class="button disabled">
+          <span class="icon fa fa-angle-left fa-lg"></span>
+          Previous
+        </span>
+      </li>
+    
+
+    <li>
+      <span class="button">1 of 1</span>
+    </li>
+
+    
+      <li>
+        <span class="button disabled">
+          Next
+          <span class="icon fa fa-angle-right fa-lg"></span>
+        </span>
+      </li>
+      <li>
+        <span class="button disabled">
+          Last
+          <span class="icon fa fa-angle-double-right fa-lg"></span>
+        </span>
+      </li>
+    
+</ul>
+
+<div style="margin-bottom:20px;text-align:center;">
+  <a class="button" href="http://feeds2.feedburner.com/pauldijou">
+  <span class="icon fa fa-rss fa-lg"></span>
+  Subscribe
+</a>
+
+</div>
+
+<script id="dsq-count-scr" src="https://pauldijou.disqus.com/count.js" async></script>
+
+
+</div>
+
+
+    <script type="text/javascript" src="/assets/js/main-a35bb44a42985a5ff06fe724109076616abccf20668ed9c7419518a3b125015d.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    
+  </body>
+</html>

@@ -1,56 +1,809 @@
----
-layout: main
-title: Projects
----
-<div id="projects" class="projects">
-  {% assign index = 0 %}
-  {% assign projects = site.projects | reverse %}
-  {% for project in projects %}
-    <div class="project {% cycle 'red', 'alt', 'blue' %}">
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <!-- HTML meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="author" content="">
+    <meta name="description" content="" />
+    
+
+    <title>Paul Dijou - Projects</title>
+
+    <!-- facebook open graph tags http://ogp.me/ -->
+    <meta property="og:site_name" content="Paul Dijou" />
+    <meta property="og:title" content="Projects" />
+    <meta property="og:url" content="http://pauldijou.fr/projects/" />
+    <meta property="og:description" content="" />
+    
+      <meta property="og:type" content="website" />
+    
+    
+    
+
+    <!-- twitter card tags https://dev.twitter.com/cards/markup -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@paul_dijou" />
+    
+    <meta name="twitter:title" content="Paul Dijou - Projects" />
+    <meta name="twitter:description" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon-5b92c61126199f7d62a67cca38b3e33bbdd0f7a7a836dbda27ef0f09ffd3e5eb.ico"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main-e66cbeb83467c4596e317baff024f2f5aafbe0950e29acbcca992eddbcabe00c.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+
+    <!--[if lt IE 8]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    
+
+    
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25058935-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </head>
+  <body>
+    <header id="nav" class="nav">
+  <ul class="list-unstyled">
+    
+      <li>
+        <a href="/">
+          <span class="icon fa fa-home fa-fw fa-2x"></span>
+          <span class="nav-label">Home</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/">
+          <span class="icon fa fa-coffee fa-fw fa-2x"></span>
+          <span class="nav-label">Blog</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/resume/">
+          <span class="icon fa fa-code fa-fw fa-2x"></span>
+          <span class="nav-label">Resume</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/projects/">
+          <span class="icon fa fa-flask fa-fw fa-2x"></span>
+          <span class="nav-label">Projects</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="icon fa fa-user fa-fw fa-2x"></span>
+          <span class="nav-label">About</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/contact/">
+          <span class="icon fa fa-envelope fa-fw fa-2x"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/archives/">
+          <span class="icon fa fa-archive fa-fw fa-2x"></span>
+          <span class="nav-label">Archives</span>
+        </a>
+      </li>
+    
+    <li class="nav-back">
+      <a href="#">
+        <span class="icon fa fa-undo fa-fw fa-2x"></span>
+        <span class="nav-label">Back to page</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="nav-menu">
+  <a href="#nav">Menu</a>
+</div>
+
+<div class="page container">
+  <div id="projects" class="projects">
+  
+  
+  
+    <div class="project red">
       <div class="row">
         <div class="col-md-6 summary">
           <h2>
-            {{ project.title }}
-            {% if project.project_type == "Personal" %}
-              <span title="Personal" alt="Personal">{% icon user fixed %}</span>
-            {% elsif project.project_type == "OSS" %}
-              <span title="Open Source" alt="Open Source">{% icon globe fixed %}</span>
-            {% else %}
-              <span title="Professional" alt="Professional">{% icon copyright fixed %}</span>
-            {% endif %}
+            Nomalab
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
           </h2>
           <div class="date">
-            <span title="Date" alt="Date">{% icon clock-o fixed %}</span>
-            {{ project.project_date }}
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            May 2016 - Present
           </div>
           <div class="technos">
-            <span title="Technologies" alt="Technologies">{% icon cogs fixed %}</span>
-            {{ project.project_technologies | join: ', ' }}
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Elm, Rust, AWS
           </div>
-          {% if project.project_url %}
+          
             <div class="url">
-              <span title="Link to project" alt="Link">{% icon link fixed %}</span>
-              <a target="_blank" href="{{project.project_url}}">
-                {{ project.project_url | replace_first: 'https://', '' | replace_first: 'http://', '' }}
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://nomalab.com">
+                nomalab.com
               </a>
             </div>
-          {% endif %}
-          {% if project.github_url %}
-            <div class="github">
-              <span title="GitHub" alt="GitHub">{% icon github fixed %}</span>
-              <a target="_blank" href="https://github.com/{{ project.github_url }}">{{ project.github_url }}</a>
-            </div>
-          {% endif %}
+          
+          
         </div>
 
         <div class="col-md-6 detail">
           <div class="description">
-            {{ project.project_description }}
+            Full stack developer at Nomalab, working on video qualification and building the web platform using the Elm language for both client-side and server-side.
           </div>
         </div>
       </div>
     </div>
 
-    {% assign index = index + 1 %}
-  {% endfor %}
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Gandi V5
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            October 2015 - April 2016 (7 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            JavaScript, React, Redux
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://beta.gandi.net">
+                beta.gandi.net
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Front-end developer at Gandi, working on their brand new UI using React and Redux.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Redux Act
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            August 2015
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            JavaScript, Redux
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/pauldijou/redux-act/">
+                github.com/pauldijou/redux-act/
+              </a>
+            </div>
+          
+          
+            <div class="github">
+              <span title="GitHub" alt="GitHub"><span class="icon fa fa-github fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/pauldijou/redux-act">pauldijou/redux-act</a>
+            </div>
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            An opinionated lib to create actions and reducers for Redux.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project red">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            JWT Scala
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            May 2015
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Scala, JWT, Play Framework
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="http://pauldijou.fr/jwt-scala/">
+                pauldijou.fr/jwt-scala/
+              </a>
+            </div>
+          
+          
+            <div class="github">
+              <span title="GitHub" alt="GitHub"><span class="icon fa fa-github fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/pauldijou/jwt-scala">pauldijou/jwt-scala</a>
+            </div>
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Small Scala lib to support JSON Web Tokens. Optional helpers for Play JSON, Json4s and Play Framework.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Roadtrip
+            
+              <span title="Personal" alt="Personal"><span class="icon fa fa-user fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            October 2014 - April 2015 (7 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Road, Van, Friends, Life
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="http://farewell.pauldijou.fr">
+                farewell.pauldijou.fr
+              </a>
+            </div>
+          
+          
+            <div class="github">
+              <span title="GitHub" alt="GitHub"><span class="icon fa fa-github fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/pauldijou/farewell">pauldijou/farewell</a>
+            </div>
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Enjoying life by living on the road for a few months across New Zealand, meeting awesome people, seeing unbelievable sceneries, going everywhere. Not a web project at all (though I did publish a hand-crafted blog) but no way I don't put that into my project list.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Scala Downunder
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            September 2014 (one week)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML5, SASS, JavaScript, Jekyll
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="http://scaladownunder.org">
+                scaladownunder.org
+              </a>
+            </div>
+          
+          
+            <div class="github">
+              <span title="GitHub" alt="GitHub"><span class="icon fa fa-github fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/scala-downunder/scala-downunder">scala-downunder/scala-downunder</a>
+            </div>
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Creating the static website for the Scala Downunder conference. Then attend it as speaker about Play Framework.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project red">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Movio Mevia
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            June 2014 - October 2014 (5 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML5, SASS, JavaScript, Angular, D3, Scala, Spray
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://media.movio.co">
+                media.movio.co
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            <a href="https://movio.co">Movio</a> is a company focused on email campaigns and data analysis around the movie industry (audience, movie hits, social marketing, ...). That's quite some big data for you. Movio Media product allow users to select a list of movies and see a bunch of stats about them, can be about demographic audience, money spend during those movies, ... Lot of data crawling and charts.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            EOL
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            November 2013 - April 2014 (6 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML5, LESS, JavaScript, Scala, Play Framework, Slick
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://play.google.com/store/apps/details?id=fr.ca_leasingfactoring.eurofactor_online">
+                play.google.com/store/apps/details?id=fr.ca_leasingfactoring.eurofactor_online
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            EOL is a responsive website, packaged both as a classic site and as hybrid application using Cordova (iOS, Android and Windows Phone). It allows users to handle their bank account for the Credit Agricole subsidiary's <a href="http://www.ca-leasingfactoring.com/">Leasing and Factoring</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Pirackers
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            October 2013 (1 day)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML5, Scala, Java, Arduino
+          </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            This is a one-day experimental project. Using web audio API, we retrieve vowels from user and then send them using AJAX to our server. Depending on the vowel, the server stream a code through USB to an Arduino in order to turn on a corresponding LED.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project red">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Game of Drones
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            August 2013 (1 day)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Go, HTML, LESS, JavaScript, Scala, Play Framework, MongoDB
+          </div>
+          
+          
+            <div class="github">
+              <span title="GitHub" alt="GitHub"><span class="icon fa fa-github fa-fw"></span></span>
+              <a target="_blank" href="https://github.com/gameofdrones">gameofdrones</a>
+            </div>
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Game of Drone is composed of two parts: a Go server deployed on a Raspberry Pi piloting an USB missile launcher through a web API and a Play server with a nice interface to remotely control the launcher through the web.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            MNH
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            April 2013 - November 2013 (8 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML, LESS, JavaScript, Angular, Scala, Play Framework, MongoDB, PostgreSQL
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://adherent.mnh.fr">
+                adherent.mnh.fr
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            <a href="https://www.mnh.fr">MNH</a> is a complementary health insurance company. This project was to rebuild the adherent website from scratch, allowing all users to handle their reimbursements, claims and other data. Lots of forms, rules, validation, ...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Sally
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            December 2012 - April 2013 (4 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML, CSS, JavaScript, Scala, Play Framework, MongoDB
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="https://sally.adisseo.com">
+                sally.adisseo.com
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Reporting tool for <a href="http://www.adisseo.com/">Adisseo</a>, display tons of data with big tables and search filters. It's a website but target usage is on tablets and supports full offline mode (before Service Workers!).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project red">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Mipagar
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            June 2012 - July 2012 (2 months)
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            HTML, CSS, Java EE, JSF, RichFaces, PostgreSQL
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="http://mipagar.com">
+                mipagar.com
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Mipagar is an online multi-tenant platform which takes away the issues associated with the management and billing for services based on usage.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            RichFaces
+            
+              <span title="Open Source" alt="Open Source"><span class="icon fa fa-globe fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            April 2012 - Now
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            JSF, HTML, CSS, JavaScript, Java
+          </div>
+          
+            <div class="url">
+              <span title="Link to project" alt="Link"><span class="icon fa fa-link fa-fw"></span></span>
+              <a target="_blank" href="http://richfaces.jboss.org">
+                richfaces.jboss.org
+              </a>
+            </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            RichFaces is an open-source JSF (JavaServer Faces) library developed by JBoss, RedHat. It provides dozen of new components to extend the core ones and useful EL functions. I mostly work on RichFaces Bootstrap, a new subproject providing JSF components based on Bootstrap and jQuery UI.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Intertitres
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            September 2010 - June 2012 : 2 years
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces
+          </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            <a href="http://www.intertitres.natixis.com/">Intertitres</a> is a subsidiary of Natixis which main activity is to sell securities. They have several web applications in order to perform that and my team was developing and maintaining them.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project red">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Noha
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            2 months
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Java, Java EE, Spring, JPA, GWT
+          </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            <a href="http://www.banqueprivee1818.com">Banque Privee 1818</a> is a subsidiary of Natixis dealing with rich clients, stock exchange, and other financial stuff that goes far beyond my head. They ask for a new tool to manage authentification, roles and permissions for all their clients and employes. Noha was born.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project alt">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Intertitres (intership)
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            March - September 2010 : 6 months
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces
+          </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            During my internship at <a href="http://celad.com">CELAD</a>, I had to develop from scratch a new administration application to manage and monitor other commercial websites. Based on Java EE, Seam 2 and JSF, this project was a perfect opportunity to learn lots of things since I've done everything from the specification redaction to developing and testing the application.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
+    <div class="project blue">
+      <div class="row">
+        <div class="col-md-6 summary">
+          <h2>
+            Qualoo (intership)
+            
+              <span title="Professional" alt="Professional"><span class="icon fa fa-copyright fa-fw"></span></span>
+            
+          </h2>
+          <div class="date">
+            <span title="Date" alt="Date"><span class="icon fa fa-clock-o fa-fw"></span></span>
+            June - August 2008 : 2 months
+          </div>
+          <div class="technos">
+            <span title="Technologies" alt="Technologies"><span class="icon fa fa-cogs fa-fw"></span></span>
+            Java, Java EE, JavaScript, AJAX
+          </div>
+          
+          
+        </div>
+
+        <div class="col-md-6 detail">
+          <div class="description">
+            Developed by <a href="http://stinfoservices.net">ST Informatique Services</a>, Qualoo is a code generator which will create a Java EE application CRUD using reverse engineering from a database. My work was to create a custom autocomplete on some generated input field that display data from the database using ajax.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  
 </div>
+
+</div>
+
+
+    <script type="text/javascript" src="/assets/js/main-a35bb44a42985a5ff06fe724109076616abccf20668ed9c7419518a3b125015d.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    
+  </body>
+</html>

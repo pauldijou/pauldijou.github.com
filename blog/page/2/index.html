@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <!-- HTML meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="author" content="">
+    <meta name="description" content="" />
+    
+
+    <title>Paul Dijou - Paul Dijou - page 2</title>
+
+    <!-- facebook open graph tags http://ogp.me/ -->
+    <meta property="og:site_name" content="Paul Dijou" />
+    <meta property="og:title" content="Paul Dijou - page 2" />
+    <meta property="og:url" content="http://pauldijou.fr/blog/page/2/index.html" />
+    <meta property="og:description" content="" />
+    
+      <meta property="og:type" content="website" />
+    
+    
+    
+
+    <!-- twitter card tags https://dev.twitter.com/cards/markup -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@paul_dijou" />
+    
+    <meta name="twitter:title" content="Paul Dijou - Paul Dijou - page 2" />
+    <meta name="twitter:description" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon-5b92c61126199f7d62a67cca38b3e33bbdd0f7a7a836dbda27ef0f09ffd3e5eb.ico"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main-e66cbeb83467c4596e317baff024f2f5aafbe0950e29acbcca992eddbcabe00c.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+
+    <!--[if lt IE 8]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    
+
+    
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25058935-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </head>
+  <body>
+    <header id="nav" class="nav">
+  <ul class="list-unstyled">
+    
+      <li>
+        <a href="/">
+          <span class="icon fa fa-home fa-fw fa-2x"></span>
+          <span class="nav-label">Home</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/">
+          <span class="icon fa fa-coffee fa-fw fa-2x"></span>
+          <span class="nav-label">Blog</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/resume/">
+          <span class="icon fa fa-code fa-fw fa-2x"></span>
+          <span class="nav-label">Resume</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/projects/">
+          <span class="icon fa fa-flask fa-fw fa-2x"></span>
+          <span class="nav-label">Projects</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="icon fa fa-user fa-fw fa-2x"></span>
+          <span class="nav-label">About</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/contact/">
+          <span class="icon fa fa-envelope fa-fw fa-2x"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/archives/">
+          <span class="icon fa fa-archive fa-fw fa-2x"></span>
+          <span class="nav-label">Archives</span>
+        </a>
+      </li>
+    
+    <li class="nav-back">
+      <a href="#">
+        <span class="icon fa fa-undo fa-fw fa-2x"></span>
+        <span class="nav-label">Back to page</span>
+      </a>
+    </li>
+  </ul>
+</header>
+
+<div class="nav-menu">
+  <a href="#nav">Menu</a>
+</div>
+
+<div class="page container">
+  <div class="posts">
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/">Prismic.io JavaScript kit: from callbacks to promises</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Jul 26, 2014</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/#disqus_thread" data-disqus-identifier="/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="holy-cow-callbacks">Holy cow, callbacks!</h3>
+
+<p>For the last (and only) website I did using prismic.io, I didn’t want any back-end, all client-side, pure JavaScript man. This way, I could host it nearly anywhere for pretty much free (GitHub pages FTW). To ease stuff, I decided to use the <a href="https://github.com/prismicio/javascript-kit">JavaScript kit</a> from the prismic.io team.</p>
+
+<p>One choice they made and that I don’t really like is using callbacks in it. For example, you have to write stuff like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Get the current API</span>
+<span class="nx">Prismic</span><span class="p">.</span><span class="nx">Api</span><span class="p">(</span><span class="s1">'/my/awesome/url'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">api</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle error</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Use the API there, retrieving documents</span>
+  <span class="nx">api</span><span class="p">.</span><span class="nx">form</span><span class="p">(</span><span class="s1">'articles'</span><span class="p">).</span><span class="nx">ref</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">master</span><span class="p">()).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">articles</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Also error again</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// But I also need authors...</span>
+    <span class="nx">api</span><span class="p">.</span><span class="nx">form</span><span class="p">(</span><span class="s1">'authors'</span><span class="p">).</span><span class="nx">ref</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">master</span><span class="p">()).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">authors</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// One more time, handle error</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Now I got all my data</span>
+      <span class="c1">// I can finally display it on my page</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">},</span> <span class="s1">'my_token_far_below_at_the_end'</span><span class="p">);</span></code></pre></figure>
+
+<p>Can you see it? This ugly thing JavaScript experts name “callback hell”? And that’s a super simple example. In 2014, the way to do that is using Promises. That’s what’s hype (and readable, and nice, and cool, and swag). But I quite understand why they made this choice. Promises are not native everywhere yet, so going with it mean either writing your own implementation or imposing an existing one. Fair enough to have callbacks in the kit then, but we are hackers here, we can override it to use Promises!</p>
+
+<p class="alert alert-danger">I will use the last spec Promise syntax, native way baby!, but it is really important to keep in mind that it has <a href="http://caniuse.com/#search=promises">a really poor support</a> right now. You should probably be using a Javascript library as Promise implementation. I will link a snippet of code using the <a href="http://documentup.com/kriskowal/q/">Q library</a> at the end of the article. But I wanted this article to be future proof.</p>
+
+<h3 id="omg-promises-o">OMG, promises \o/</h3>
+
+<p>There are two main callbacks in the kit: when retrieving the API and when making a <code class="highlighter-rouge">submit</code>. What I want to write is something like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Api</span><span class="p">(</span><span class="s1">'/my/awesome/url'</span><span class="p">,</span> <span class="s1">'my_token_right_here_at_the_start'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">api</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+      <span class="nx">api</span><span class="p">.</span><span class="nx">form</span><span class="p">(</span><span class="s1">'articles'</span><span class="p">).</span><span class="nx">ref</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">master</span><span class="p">()).</span><span class="nx">submit</span><span class="p">(),</span>
+      <span class="nx">api</span><span class="p">.</span><span class="nx">form</span><span class="p">(</span><span class="s1">'authors'</span><span class="p">).</span><span class="nx">ref</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">master</span><span class="p">()).</span><span class="nx">submit</span><span class="p">()</span>
+    <span class="p">]);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">articles</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">authors</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="c1">// Display the results</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Handle error</span>
+  <span class="p">});</span></code></pre></figure>
+
+<p>Sooooo much more readable and swag… Overriding the Api callback is really simple:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Remove the callback from the function signature</span>
+<span class="kd">function</span> <span class="nx">Api</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">accessToken</span><span class="p">,</span> <span class="nx">maybeRequestHandler</span><span class="p">,</span> <span class="nx">maybeApiCache</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Put a callback that will only resolve/reject the deferred depending</span>
+    <span class="c1">// on the presence of an error or not</span>
+    <span class="nx">Prismic</span><span class="p">.</span><span class="nx">Api</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resolvedApi</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Save point 1 (see below)</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">resolvedApi</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="nx">accessToken</span><span class="p">,</span> <span class="nx">maybeRequestHandler</span><span class="p">,</span> <span class="nx">maybeApiCache</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Overriding the <code class="highlighter-rouge">submit</code> call is a bit more tricky because it is a prototype function of the <code class="highlighter-rouge">SearchForm</code> object, which is totally hidden inside Prismic clojure. This is a bit (super) sad but we can deal with it by creating a fake form and not submitting it. The easiest way I found so far is doing it right after getting the Api. Let’s add the following code at <code class="highlighter-rouge">Save point 1</code> (see previous code).</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// You might need a polyfill for 'getPrototypeOf'</span>
+<span class="c1">// if you support old browser</span>
+<span class="kd">var</span> <span class="nx">SearchFormProto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">resolvedApi</span><span class="p">.</span><span class="nx">forms</span><span class="p">(</span><span class="s1">'everything'</span><span class="p">));</span>
+<span class="c1">// We are saving the original function so we can call it inside our override</span>
+<span class="kd">var</span> <span class="nx">originalSubmit</span> <span class="o">=</span> <span class="nx">SearchFormProto</span><span class="p">.</span><span class="nx">submit</span><span class="p">;</span>
+
+<span class="c1">// Let's override!</span>
+<span class="nx">SearchFormProto</span><span class="p">.</span><span class="nx">submit</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// As before, the callback will only resolve / reject the deferred</span>
+    <span class="c1">// depending on the returned value</span>
+    <span class="nx">originalSubmit</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">docs</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>And after that, you just need to use the new <code class="highlighter-rouge">Api</code> function in place of <code class="highlighter-rouge">Prismic.Api</code>. You can see <a href="https://github.com/pauldijou/farewell/blob/9a744565d7/scripts%2Fapi.js#L8-L32">the full code here</a> using <code class="highlighter-rouge">Q</code> library. This refers to a particular commit to ensure the line highlight is correct but you can freely switch to the master branch to see the most recent code (which shouldn’t be much different… but who knows…).</p>
+
+<p>Thanks for reading. Next time we will talk about responsive images inside StructuredText.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/prismic/">prismic</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2014/07/17/prismicio-when-happiness-met-disappointment/">Prismic.io: when happiness met disappointment</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Jul 17, 2014</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2014/07/17/prismicio-when-happiness-met-disappointment/#disqus_thread" data-disqus-identifier="/blog/2014/07/17/prismicio-when-happiness-met-disappointment">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-17-prismicio-when-happiness-met-disappointment.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <p class="alert alert-danger"><strong>Warning</strong> This article is pretty old. Prismic has evolved a lot since then and most issues have been addressed. <a href="https://prismic.io/docs">Check the last version of the docs</a>.</p>
+
+<h3 id="tldr">TL;DR</h3>
+
+<p>If you don’t know about <a href="https://prismic.io/">prismic.io</a>, it’s a nice tool providing both a super clean web interface to write content and an API to retrieve it. No front-end provided, eventually some kits to help you and some examples, but no more. Which is cool because, if you are a web developer, you can focus on crafting an awesome optimized website and then easily put some content in it… well, that’s the theory…</p>
+
+<p>But for me, after using it for a new website, as good as the idea can be, I have found way too much limitations to consider it production ready. The team behind prismic.io is working on most of them so I really hope the implementation will become as awesome as its concept at some point in the future.</p>
+
+<p>The rest of the article will focus on bashing all those limitations, so there will be way more bad than good, but don’t get me wrong, prismic.io has tons of good stuff, and it’s still in beta, I just want to talk about what I don’t like in this article. And since I’m not all about trolling, I will try to consider how to solve them at the end. I will not explain what prismic.io is exactly, so it might be for the best that you quickly check their website before continuing reading. Enjoy.</p>
+
+<h3 id="do-you-remember-how-happy-we-were-at-the-beginning">Do you remember how happy we were at the beginning?</h3>
+
+<p>I will never forget… it all started on this windy saturday… I was looking for a solution to create a new blog about traveling. I didn’t want to use an all-in-one tool because I love crafting my UI from scratch, with exactly what I want on it (this point is super important for the rest of the story). I said bybye to Wordpress and all its friends. If I were alone, I would have probably go with raw Markdown or whatever, but I am not… I have other people that travel with me and want to write articles without learning a super complex geek syntax. I will call them… <em>writers</em>. Some colleagues of mine told me about you… that you might be the future of content management, that I would be free for the UI, that you had WISIWIG editors and stuff for… <em>writers</em>, sounds like a perfect match, and so our adventure began.</p>
+
+<p>I still can’t believe how fast it all went… in a couple of hours, we were able to write new articles and display them in a custom website hosted in GitHub pages. Using one of your kits, it was so easy to query your API, retrieve the content as JSON and inject it inside Handlebars templates in order to render the final HTML. Oh man… it was so good.</p>
+
+<h3 id="and-then-fictions-appeared">And then fictions appeared</h3>
+
+<p>A few days later, I wanted to go further, moving forward to more crazy stuff. I know that sometimes I try to do complex features just for the fun of the challenge it provides me, but still, how could you do that to me… Remember this conversation?</p>
+
+<ul>
+  <li>Hey prismic.io, I would like to query documents that does not match this predicate</li>
+  <li>Ahahah, you so funny, no way…</li>
+  <li>Thanks! Wait… what? Why not?</li>
+  <li>I don’t have a <code class="highlighter-rouge">NO</code> operator or whatever close to it.</li>
+  <li>Whyyyyyy? You have crazy operators like <code class="highlighter-rouge">similar</code> to retrieve similar documents based on God know which algorithm and you cannot do a simple negation?</li>
+  <li>Nope. Deal with it.</li>
+  <li>Okay… I think I can manage something if the query match this <code class="highlighter-rouge">OR</code> that. That’s fine, right?</li>
+  <li>No.</li>
+  <li>Cool! Wait… what?</li>
+  <li>I only have <code class="highlighter-rouge">AND</code> operators between predicates.</li>
+  <li>You gotta be kidding me…</li>
+</ul>
+
+<p>I was a bit sad, but I could manage it, retrieving too much documents and filtering client-side. Still, that was the starting point were all went wrong.</p>
+
+<h3 id="my-biggest-mistake-using-structuredtext">My biggest mistake: using StructuredText</h3>
+
+<p>All contents in prismic.io must be typed. This is an image, this is a number, etc… A StructuredText is probably the most powerful type since it allows writers to enter complex content through a WISIWIG editor, using paragraphes, images, lists, embedded stuff, … They can style it using bold, italic, and so on. It looks nice, right? So I decided to use it for the main content of my articles. Fair enough. As always, it was so great to have writers doing their own design using the editor, and so easy to render it automatically as HTML (except for some bugs here and there, but that’s what pull requests are for, isn’t it?). At some point, I just wanted to have a lightbox on some images: clicking on them should expand it to its full sized version with a caption. I don’t know for you, but for me, this is a really basic requirement and you should be able to do it in less than 2 hours.</p>
+
+<p>First problem: I wanted to tag images that should have lightbox with <code class="highlighter-rouge">[data-lightbox]</code> HTML attribute, all images didn’t need one. Since I was using the JavaScript kit to render my HTML, I couldn’t do that at all. There is no way to add custom rendering or plugins in the HTML renderer from the kit. Dammit. So I rewrote the full renderer so I could customize it… Wait, how can I indicate which image has a lightbox and which hasn’t inside a StructuredText? Oh, right, I just can’t. Inside a StructuredText, you can only drop raw images and resize them, that’s it. Does that mean I cannot put nor caption or title? Yep, no way to do it. So I started to hack: if after an image, the following paragraph would begin with <code class="highlighter-rouge">[caption]</code>, the image would be a lightbox, the content of the paragraph would be its legend, and the paragraph itself would be removed from the final rendering.</p>
+
+<p>Guess what? Writers didn’t really like having to manually write <code class="highlighter-rouge">[caption]</code>, they wanted a nice UI to do that… but that was just impossible… They throw some tomatoes at me and we tried to move on but we couldn’t… Solving one problem to discover a new one: when you define a type <code class="highlighter-rouge">image</code> in a Document, you can tell that it will have different sizes: one for desktop, one for tablet and one for smartphone for example. And that’s awesome because you can fully optimize for mobile, which is super important nowadays. Do you think you can do that with image inside StructuredText? Indeed, the answer is no! Once again, a great idea not fully supported. Is there a workaround? Sadly, no easy one. You can upload the same image several times, one for each size, then find a way to retrieve its generated ID by prismic.io and use the same hack as <code class="highlighter-rouge">[caption]</code> to specify it and hack a bit more the HTML renderer. I couldn’t find the courage to do it… pretty sure tomatoes would have been replaced by rocks from writers. I can only hope my mobile users have 4G now.</p>
+
+<p>Want more? No biggy, I have tons of stories like that. A writer wanted to have blockquotes: a whole paragraph should be displayed in a custom design and have an author. I had to kill him really fast and bury his body deep. Another one wanted semantic distinction between paragraphs, something like: this one should be red and this one blue just because. Thrown him into a bucket full of piranhas. At some point, a writer became a madman and deleted half of documents… no way to find him since the delete operation does not appear in the timeline. But who cares? I mean, the document are gone anyway. I18N, do you speak it? I hope not because there is <a href="https://qa.prismic.io/29/will-multi-lingual-sites-be-supported-in-the-future">no support for it… yet</a>. Want to put some tables? Could you please <a href="https://qa.prismic.io/25/how-do-we-best-support-tables">stop joking</a>, it hurts me to laugh so much. Want do  <a href="https://qa.prismic.io/55/improve-the-media-library">manage hundred of images</a> in the media library? Might be less painful to jump from the top of the <a href="http://en.wikipedia.org/wiki/Eiffel_Tower">Eiffel tower</a>. And so on, and so on…</p>
+
+<h3 id="we-didnt-fully-link-anymore">We didn’t fully link anymore</h3>
+
+<p>Writers are generally really proud of their work, so they want everybody to know about it. I couldn’t just display “Title of the article”. If I wanted to stay alive, I needed to display “Title of the article, by an awesome author”, and if you would click on the name, you would access to a page saying how incredible the author was. As always, I was like “No biggy dudes, this is gonna be easy”. I wasn’t bluffing at that point since there is this nice feature that allow you to link documents between them. So every author would now have a dedicated document of type Author, where he could write whatever description he wanted, and each document of type Article would be linked to an Author. So far, so good.</p>
+
+<p>And then the problem: if I get a list of Articles, I only got ids and a link to the Author resources, but I do not actually have the data on the Author document, which means I cannot display the real name of the author. And guess what? There is no aggregation or join possible in the API. You just cannot say that you want the 20 most recent articles with their authors. Solutions are: request all authors and then retrieve the good ones from ids (that’s 2 requests, and I did that since I don’t have that many authors), or do N+1 request (1 for articles, N for authors, one per author id from articles), or generate dynamically a request for authors using <code class="highlighter-rouge">any</code> operator (something like <code class="highlighter-rouge">[:d = any(my.author.id, [id1, id2, ...])]</code>). In any case, you need multiple requests, eventually not running in parallel, and with too much payload… mobile first, right?</p>
+
+<h3 id="i-never-though-you-would-mask-it-from-me">I never though you would mask it from me…</h3>
+
+<p>One core concept in prismic.io is Document Mask. Each document must have one and it represents its pattern, how it will be persisted in prismic.io database and how it will be served by the API. So you start creating masks, easy. It directly provides a slick UI for writers to enter content. Nice! And at some point, you realize you could have done better, the mask can be improved. Just don’t do that, keep going with your broken mask, trust me!</p>
+
+<p>Let’s say you don’t trust me (that’s fair enough, you don’t even really know me). If you rename any property of the mask, you are screwed. The new property will be empty since it doesn’t consider it a renaming but the suppression of the previous property and the creation of a new empty one. But you are super courageous, so you migrate all your documents to the new property, yeah! Now you have duplicate a property in your API. Hell yeah! Just check the raw JSON, you will see the new property (thanks God) but also the old one. Properties just keep adding, prismic.io never forget… <strong>never!</strong> Your payload will just increase. And be sure that your front-end developers always only rely on the mask definition, never on the data from the API, because… it doesn’t mean anything anymore.</p>
+
+<h3 id="my-heart-was-so-fragmented">My heart was so fragmented…</h3>
+
+<p>So, let’s summarize what’s the biggest problem with prismic.io: you can only do what the tool allow you to do. And right now, it allows you only super basic features. Which are needed obviously, but when you go to the real world, you know, outside of the matrix, those are just not enough. Imagine being Mario, you need to save the princess but you can only move forward, no jump, no strange mushroom, no yoshi… Good luck! Direct consequence, the killer feature that would make prismic.io really powerful, in my humble opinion, is what I will call “custom fragments”. The idea is to allow developers to create their own type of fragments and plug them both in the UI of the writing room and in the HTML renderer. That might sounds a bit challenging but it isn’t that hard in fact.</p>
+
+<p>So first, how to create a custom fragment? Let’s use the mask system. When defining a document, you are creating a mask saying “this document will have an image and some text as title”. Why not doing the same for custom fragments? Remember the lightbox problem? I would create a custom fragment <code class="highlighter-rouge">lightbox</code> which is composed of an image and some text as its caption. Even better, since I am now using a real <code class="highlighter-rouge">image</code> type, I can specify several sizes for the image. Big win here.</p>
+
+<p>Next, inside the writing room, how to render a custom fragments? Well, you already know how to render all its pieces, just group them together with an indentation or a left border or whatever. The <code class="highlighter-rouge">lightbox</code> fragment would be an image selector and a text input. Of course, you should be able to put a custom fragment both inside a document (like any other fragment) and inside a StructuredText if possible (just like you are allowing <code class="highlighter-rouge">em</code> or <code class="highlighter-rouge">h2</code> inside a StructuredText)</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Let's define our custom fragment for lightbox,</span>
+<span class="c1">// just the same syntax as a Document Mask</span>
+<span class="p">{</span>
+  <span class="s2">"title"</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span> <span class="p">:</span> <span class="s2">"Text"</span><span class="p">,</span>
+    <span class="s2">"fieldset"</span> <span class="p">:</span> <span class="s2">"Title"</span><span class="p">,</span>
+    <span class="s2">"config"</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"placeholder"</span> <span class="p">:</span> <span class="s2">"A short caption for the image"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"image"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"fieldset"</span> <span class="p">:</span> <span class="s2">"Image"</span><span class="p">,</span>
+    <span class="s2">"type"</span> <span class="p">:</span> <span class="s2">"Image"</span><span class="p">,</span>
+    <span class="s2">"config"</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"thumbnails"</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+        <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Icon"</span><span class="p">,</span>
+        <span class="s2">"width"</span> <span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">"height"</span> <span class="p">:</span> <span class="mi">100</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Column"</span><span class="p">,</span>
+        <span class="s2">"width"</span> <span class="p">:</span> <span class="mi">320</span><span class="p">,</span>
+        <span class="s2">"height"</span> <span class="p">:</span> <span class="mi">320</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Wide"</span><span class="p">,</span>
+        <span class="s2">"width"</span> <span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+        <span class="s2">"height"</span> <span class="p">:</span> <span class="mi">300</span>
+      <span class="p">}</span> <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Finally, each kit should have a <code class="highlighter-rouge">renderFragment(type, json =&gt; html)</code> method that allow you, for a specific fragment type (here <code class="highlighter-rouge">lightbox</code>), to pass a function that know how to render the final HTML from its raw JSON.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define how to render your custom fragment</span>
+<span class="c1">// from JSON to HTML (which is a String)</span>
+<span class="nx">kit</span><span class="p">.</span><span class="nx">renderFragment</span><span class="p">(</span><span class="s1">'lightbox'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">'&lt;img src="'</span><span class="p">;</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'" data-lightbox title="'</span><span class="p">;</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'"&gt;'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Hey, we can do even better, let’s add a second argument to the rendering function, this one will be the original rendering function for “native” fragments in prismic.io. This way, you can override just one or two “native” fragments. For example, if you want to render <code class="highlighter-rouge">image</code> with a <code class="highlighter-rouge">&lt;picture&gt;</code> HTML tag because that’s super hype. Just do something like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Override an already existing fragment</span>
+<span class="nx">kit</span><span class="p">.</span><span class="nx">renderFragment</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">,</span> <span class="nx">original</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;picture&gt;'</span><span class="p">;</span>
+  <span class="c1">// Keep it easy, only one source...</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;source src="'</span> <span class="o">+</span> <span class="nx">json</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span>
+  <span class="c1">// Fallback using the default renderer</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="nx">original</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// And the alt text</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;p&gt;'</span> <span class="o">+</span> <span class="nx">json</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">+</span> <span class="s1">'&lt;/p&gt;'</span>
+  <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;/picture&gt;'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>And that’s it! You just solved so many limitations…</p>
+
+<h3 id="i-didnt-understand-your-semantic-anymore">I didn’t understand your semantic anymore…</h3>
+
+<p>Ok, next step. Inside a StructuredText, I need to have semantic distinction between fields of the same type. This paragraph is <em>important</em>, this one is <em>a blockquote</em> and all the rest are <em>normal</em>. Let’s go the easy way: I just need a hash of key -&gt; value, as strings, to reach a limitless world. This way, I could tag one paragraphe <code class="highlighter-rouge">important: true</code>, and another with with both <code class="highlighter-rouge">blockquote: true</code> and <code class="highlighter-rouge">author: Someone</code>. At last but not least, expose it in the API:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Since all fields have a common structure to expose their type</span>
+<span class="c1">// it's easy to have a new key like 'attributes' at this level</span>
+<span class="c1">// to expose the semantic hash</span>
+<span class="c1">// (btw, it would be cool to map to primitives rather than only string for values)</span>
+<span class="p">{</span>
+  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"paragraph"</span><span class="p">,</span>
+  <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"bla bla bla..."</span><span class="p">,</span>
+  <span class="s2">"spans"</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">"attributes"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"blockquote"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Someone"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>I have no idea how to integrate that in the UI of the writing room, but I know its designer, he will figure out something awesome, no doubt.</p>
+
+<p>By adding that, you leverage tons of possibilities for developers to customize the rendering of a StructuredText without any heavy hack. Writers would still need to manually write each key name, but its way better than paragraphs starting with <code class="highlighter-rouge">[caption]</code> or <code class="highlighter-rouge">[author]</code>. Following a snippet on how to render a blockquote, using the previous <code class="highlighter-rouge">renderFragment</code> method of course:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">kit</span><span class="p">.</span><span class="nx">renderFragment</span><span class="p">(</span><span class="s1">'paragraph'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">,</span> <span class="nx">original</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">blockquote</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">'&lt;blockquote&gt;'</span><span class="p">;</span>
+    <span class="c1">// Previously private (at least in the JavaScript kit),</span>
+    <span class="c1">// I hope this method will be available in all kits</span>
+    <span class="c1">// it applies all span styles to the raw text</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="nx">kit</span><span class="p">.</span><span class="nx">insertSpans</span><span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">json</span><span class="p">.</span><span class="nx">spans</span><span class="p">);</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;footer&gt;'</span><span class="p">;</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">author</span><span class="p">;</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;/footer&gt;'</span><span class="p">;</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'&lt;/blockquote&gt;'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">original</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>This feature is for “quick and dirty” hacks if you could say, and allowing you to customize “native” fragments. Because otherwise, you could also have done that with a custom fragment. Rather than having two attributes, a <code class="highlighter-rouge">blockquote</code> could be a custom fragment grouping a StructuredText for the content and a simple text for the author. It is way more intuitive in the UI and it’s easier to create its own <code class="highlighter-rouge">renderFragment</code>.</p>
+
+<p>I like a lot this <code class="highlighter-rouge">renderFragment</code> method, but I think we can make it even better! Right know, we can only specify / override for all the application. That’s super cool but limited… and if you have read carefully until now, you should know that I don’t like limitations. This method should be at least at 3 different levels:</p>
+
+<ul>
+  <li>Document instance</li>
+  <li>Document type</li>
+  <li>(Collection?)</li>
+  <li>Application</li>
+</ul>
+
+<p>Here is the idea: when an instance of a Document wants to render some fields (or fragments) as HTML, it will do the following simple procedure:</p>
+
+<ul>
+  <li>Hey, do I have a custom renderer method for this type of field on myself? (yeah, because now each Document instance have the method). If so, use it, if not, continue.</li>
+  <li>I am a Document of type Article, does this type of Document has such a method on it? (yeah, because now you can call this method for just a particular type of Document). Yes, use, no continue.</li>
+  <li>Eventually, does my Collection have the method?</li>
+  <li>Nearly finished, does the method is defined at the application level?</li>
+  <li>If nothing found so far, if it is a native prismic.io field, render it as it should be, otherwise just crash or return empty string, I don’t know, it shouldn’t happen anyway.</li>
+</ul>
+
+<p>Holy crap… we just created a “rendering context with awesomeness inheritance” or something like that. Can you imagine all the things you could do with that? Can you ?! I can’t… it’s too big…</p>
+
+<h3 id="lets-break-up">Let’s break up</h3>
+
+<p>I could say more, but since it’s a miracle that you are still reading and it would not be as relevant as what I already said, I will stop here.</p>
+
+<p>My conclusion so far: prismic.io is not ready for the real world and for real websites but there is a lot of work going on by its team so, as they say on half of their responses: stay tuned! It might become super awesome at some point (I hope it will).</p>
+
+<p>Thanks for reading! See you soon for more hacky coding posts.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-17-prismicio-when-happiness-met-disappointment.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2014-07-17-prismicio-when-happiness-met-disappointment.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/prismic/">prismic</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2013/02/17/angularjs-routing-playframework/">AngularJS HTML5 routing on PlayFramework</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Feb 17, 2013</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2013/02/17/angularjs-routing-playframework/#disqus_thread" data-disqus-identifier="/blog/2013/02/17/angularjs-routing-playframework">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2013-02-17-angularjs-routing-playframework.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="the-problem">The problem</h3>
+
+<p>AngularJS provides a nice <code class="highlighter-rouge">$location</code> service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html">History API</a>. Since we love bleeding edge technologies, that’s obvious we want to use the History API if possible. Lucky us, it appears it’s quite easy to do so with a Play Framework application. Let’s see how to do that.</p>
+
+<p>The full code of the demo is available <a href="https://github.com/blogsamples/angularjs-play21-html5-routing">on GitHub</a>.</p>
+
+<h3 id="simple-configuration">Simple configuration</h3>
+
+<p>Let’s keep things simple. Creating a new Play Framework application with <code class="highlighter-rouge">play new</code>. We will use a Scala application in this article, but it should as easy with a Java one. Then add AngularJS using CDN (see <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19">main.scala.html#L19</a>). Then we will create an Angular module for our app and enable the HTML5 routing mode which is disable by default.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"ngResource"</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">config</span><span class="p">([</span><span class="s2">"$routeProvider"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$routeProvider</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">$routeProvider</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">templateUrl</span><span class="p">:</span> <span class="s2">"/views/index"</span><span class="p">,</span>
+        <span class="na">controller</span><span class="p">:</span> <span class="s2">"AppCtrl"</span>
+      <span class="p">}).</span><span class="nx">otherwise</span><span class="p">({</span>
+        <span class="na">redirectTo</span><span class="p">:</span> <span class="s2">"/"</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">config</span><span class="p">([</span><span class="s2">"$locationProvider"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$locationProvider</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">$locationProvider</span><span class="p">.</span><span class="nx">html5Mode</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">hashPrefix</span><span class="p">(</span><span class="s2">"!"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">]);</span></code></pre></figure>
+
+<p>Nice. Now we will make some modification to the default views generated by Play. We want a single-page application, which means our root url must map to a main page which will contains all resource dependencies and includes the <code class="highlighter-rouge">ng-view</code> of AngularJS. I’ve done that by editing the <code class="highlighter-rouge">main.scala.html</code> file as you can <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html">see here</a> and add a new Play route:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File routes</span>
+GET     /                           controllers.Application.main<span class="o">(</span>any <span class="o">=</span> <span class="s2">"none"</span><span class="o">)</span></code></pre></figure>
+
+<p>And a new <code class="highlighter-rouge">Action</code> in my Application controller:</p>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">any</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+  <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">main</span><span class="o">())</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Wait. Why is there a String param for the main method? And why do we pass a default <code class="highlighter-rouge">any = "none"</code> value? It seems a bit useless… Fair enough, I will explain it later on the article, don’t mind it for now. So, we have our main page. Let’s add some content for the landing page. As we have specified in the AngularJS routing, our root url, which is defined with <code class="highlighter-rouge">$routeProvider.when("/", ...)</code> is pointing to <code class="highlighter-rouge">/views/index</code>. So we need a Play route for that… but before, let’s talk about all those routes.</p>
+
+<h3 id="routes-routes-routes">Routes, routes, routes…</h3>
+
+<p>As we advance in our coding, we can see that the term “route” is used in different contexts. It’s important to fully understand them all. Play routes, which are defined in the <code class="highlighter-rouge">conf/routes</code> file, are the core of your application. It’s those routes which will answer to the HTTP requests, serving either HTML, JSON, or whatever. But you, as the developer, will be the only one to know about them. Users of your application will only use and see AngularJS routes, which are defined in your main module using the <code class="highlighter-rouge">$routeProvider</code>.</p>
+
+<p>The idea is that when a user land on your site, it should use AngularJS routing which will then use Play routes to load the template (= the content) of the page. So why not using the exact same url for both the AngularJS route and the templateUrl route? Well, in the case of the root, it’s obvious: the Play “/” route is already required for our main page. Ok. But in a more general case, could we do:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$routeProvider</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">"/page"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="s2">"/page"</span><span class="p">,</span>
+  <span class="na">controller</span><span class="p">:</span> <span class="s2">"PageCtrl"</span>
+<span class="p">})</span></code></pre></figure>
+
+<p>Nope, you can’t. Well, that’s a small lie… you could do that, and it would work if your user <strong>always</strong> open your main page first. If he does that, then all AngularJS routing is loaded, and when the user will go to “/page” url, it will be catch by AngularJS which will ask for the “/page” on Play routes which will give him the content of the page. So what’s the problem? If you user <strong>directly</strong> land on the “/page” url, because he arrived for the first time on your application after having clicked on a link somewhere which was pointing at “/page”, then the Play route will be directly called since there is no AngularJS routing initialized at all… And that’s bad, right? The user would have the raw content of the page without any JavaScript or CSS from the main page. It’s a fail.</p>
+
+<p>In order to prevent that, I have chosen to use some conventions. There is nothing official, you can use your own, the only thing to keep in mind is that AngularJS routes and Play routes should <strong>never</strong> be equals. My solution to do that is to prefix all Play routes serving HTML with a “/views/” prefix, all Play routes serving JSON with a “/api/” prefix and, as it is by default, all Play routes serving resources with a “/assets/” prefix. Meaning I can now use all routes I want inside AngularJS routing but never starts them with one of those prefix.</p>
+
+<p>Of course, it will just modify the problem without solving it. Now, if a user land directly on “/page”, he will have a huge orange Play error telling him that the route doesn’t exist. As before, AngularJS routing isn’t loaded, so it’s Play routing which try to handle that and, since there is no longer any “/page” route in Play, it crash.</p>
+
+<p>So what’s the point of having different routes? The next trick is to redirect all unknow routes to our main page. By doing so, if the user land on “/page”, Play will say <em class="talk red">“I don’t know that route, go to the main page”</em>, so the user will indeed go to your main page, but then, all AngularJS routing will be loaded and super awesome AngularJS will say <em class="talk green">“Hey, I do know that route, and I need the /views/page template”</em>, and then Play will respond <em class="talk red">“Oh yeah, I can serve you /views/page, here is the HTML to display”</em>, and your user will see the correct “/page1” content, even if he lands directly on it.</p>
+
+<p>Another question? Why didn’t we use this trick before and then have the same routes for both AngularJS and Play? Because it’s important that the trick apply only to unknow routes. We cannot redirect to the main page an existing Play route because it needs to serve its own content. So by using different routes, we can intercept AngularJS routes inside Play as “unknown routes” and redirect them to the main page so AngularJS can handle them. I hope I’m clear enough here, that might be the hardest part of the article. In order to achieve that, we just need to put a Play route at the end of the route file which intercept all routes and redirect them to the main page:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File routes</span>
+GET     /<span class="k">*</span>any                       controllers.Application.main<span class="o">(</span>any<span class="o">)</span></code></pre></figure>
+
+<p>And now you should understand why we had a <code class="highlighter-rouge">any: String</code> for our main page at the beginning.</p>
+
+<h3 id="first-pages">First pages</h3>
+
+<p>Enough with all the theory, let’s do two concrete pages: creating “page1.scala.html” and “page2.scala.html” files with basic content (see source code, I’m using a template to stay DRY about the title and the menu but that’s not important), add then as Play routes (with a “/views/” as stated before) and also add them inside our controller:</p>
+
+<figure class="highlight"><pre><code class="language-markup" data-lang="markup">@()
+
+@template() {
+  &lt;h2&gt;Page1&lt;/h2&gt;
+}</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File routes</span>
+GET     /views/page1                controllers.Application.page1</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">def</span> <span class="n">page1</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+  <span class="nc">Ok</span><span class="o">(</span><span class="n">views</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">page1</span><span class="o">())</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>And then add the AngularJS routing:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">"/page1"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="s2">"/views/page1"</span>
+<span class="p">})</span></code></pre></figure>
+
+<p>That’s it. We can now create a link, using a <code class="highlighter-rouge">a</code> tag, to point to the url “/page1” and AngularJS will do the rest, loading the “/views/page1” template using Play route which will return the HTML code generated from our Scala template. Nice isn’t it? The url is correct: <a href="http://localhost:9000/page1">http://localhost:9000/page1</a>, you can use the back button to return to the index page, no ugly hashbang, but all in Ajax with a single-page application.</p>
+
+<h3 id="handling-url-parameters">Handling url parameters</h3>
+
+<p>So, we have our url working by using the History API thanks to the HTML5 mode of the AngularJS $routeProvider. But that’s only for raw url. What if we want to have dynamic parameters inside them? Just like REST, having url as “/colors/1” and “/colors/2” if we deal with colors (yeah, why not?). Do you think that’s easy? Well, you could, after all, both AngularJS and Play know how to handle parameters in their url. We could do something like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">"/colors/:id"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="s2">"/views/color/:id"</span><span class="p">,</span>
+  <span class="na">controller</span><span class="p">:</span> <span class="s2">"ColorCtrl"</span>
+<span class="p">})</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File routes</span>
+GET     /views/color/:id             controllers.Application.color<span class="o">(</span>id: String<span class="o">)</span></code></pre></figure>
+
+<p>Nope, we can’t. Why? Because the “templateUrl” cannot handle url parameters. It’s just a template. And of course, using <code class="highlighter-rouge">templateUrl: "/views/color"</code> will not pass any “id” parameter to the Play route. Damn…</p>
+
+<p>That’s not a problem in fact. Just keep to the AngularJS way of doing things: it’s not Play who should handle the data any longuer, it’s AngularJS who rules the world now, so you don’t need any params in your Scala code, just trust AngularJS. Ok, but we need a way to load the correct color depending on the id in the url right? Sure thing. It’s the role of AngularJS controller to that. That’s why there is a “ColorCtrl” along with our template, and guess what, the AngularJS controller know about the url params. Here is the code of the controller:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">"ColorCtrl"</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s2">"$scope"</span><span class="p">,</span>
+  <span class="s2">"$routeParams"</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$routeParams</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Thanks to scope inheritance,</span>
+    <span class="c1">// we can access the "db" from the AppCtrl scope</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">msg</span> <span class="o">=</span> <span class="s2">"There is no color for id "</span><span class="o">+</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">msg</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">])</span></code></pre></figure>
+
+<p>And just for fun, I’ve defined the fake database in the “AppCtrl”:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">"AppCtrl"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"$scope"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="s2">"black"</span><span class="p">,</span>
+      <span class="na">hex</span><span class="p">:</span> <span class="s2">"000000"</span>
+    <span class="p">},</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="s2">"white"</span><span class="p">,</span>
+      <span class="na">hex</span><span class="p">:</span> <span class="s2">"FFFFFF"</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}]);</span></code></pre></figure>
+
+<p>So as we can see, using the <code class="highlighter-rouge">$routeParams</code> service, we can retrieve the url params and then load the correct color in the <code class="highlighter-rouge">$scope</code>. At the end, it’s just a matter of displaying that color in our view using AngularJS data-binding:</p>
+
+<figure class="highlight"><pre><code class="language-markup" data-lang="markup">@()
+
+@template() {
+  &lt;div data-ng-show="msg"&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+  &lt;/div&gt;
+
+  &lt;div data-ng-hide="msg"&gt;
+    &lt;h2&gt;Color : # &lt;/h2&gt;
+  &lt;/div&gt;
+}</code></pre></figure>
+
+<p>And that’s it! you can now display some data depending of params inside your url (and show an error message in case the data doesn’t exist). Cool isn’t it?</p>
+
+<h3 id="want-more">Want more?</h3>
+
+<p>Oh God, you are still reading? You should already be able to do anything you need. But if you want, we can dive in a more complex example, using AngularJS <code class="highlighter-rouge">$resource</code> service and serve JSON from Play like a REST API would do. Sounds good for you? Ok, let’s do that. First, we will create a “Users” controller and it will have two methods: “all()” and “find(id: String)” which will return an Array of Json and a Json object representing our list of users and one particular user based on its id. I will not use a real database, but something like MongoDB would fit really good in there. Here is the code:</p>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">controllers</span>
+
+<span class="k">import</span> <span class="nn">play.api._</span>
+<span class="k">import</span> <span class="nn">play.api.mvc._</span>
+<span class="k">import</span> <span class="nn">play.api.libs.json._</span>
+
+<span class="k">object</span> <span class="nc">Users</span> <span class="k">extends</span> <span class="nc">Controller</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="nc">Json</span><span class="o">.</span><span class="n">arr</span><span class="o">(</span>
+    <span class="nc">Json</span><span class="o">.</span><span class="n">obj</span><span class="o">(</span> <span class="s">"id"</span> <span class="o">-&gt;</span> <span class="s">"1"</span><span class="o">,</span> <span class="s">"name"</span> <span class="o">-&gt;</span> <span class="s">"John"</span> <span class="o">),</span>
+    <span class="nc">Json</span><span class="o">.</span><span class="n">obj</span><span class="o">(</span> <span class="s">"id"</span> <span class="o">-&gt;</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"name"</span> <span class="o">-&gt;</span> <span class="s">"Suzanne"</span> <span class="o">)</span>
+  <span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">all</span><span class="o">()</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+    <span class="nc">Ok</span><span class="o">(</span><span class="n">db</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">find</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=</span> <span class="nc">Action</span> <span class="o">{</span>
+    <span class="nc">Ok</span><span class="o">(</span><span class="n">db</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="n">v</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">v</span> <span class="o">\</span> <span class="s">"id"</span><span class="o">).</span><span class="n">as</span><span class="o">[</span><span class="kt">JsString</span><span class="o">].</span><span class="n">value</span> <span class="o">==</span> <span class="n">id</span><span class="o">).</span><span class="n">headOption</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="k">new</span> <span class="nc">JsUndefined</span><span class="o">(</span><span class="s">""</span><span class="o">)))</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>If you don’t fully understand it, you can check the PlayFramework documentation about handling Json (<a href="http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests">ScalaJsonRequests</a>). I am using the new Json API from Play 2.1 (<a href="http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package">play.api.libs.json.package</a>). Next we need our “UserCtrl” which will use the `$resource&lt;/code&gt; service to retrieve the data:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">"UserCtrl"</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s2">"$scope"</span><span class="p">,</span>
+  <span class="s2">"$routeParams"</span><span class="p">,</span>
+  <span class="s2">"$resource"</span><span class="p">,</span>
+  <span class="s2">"apiUrl"</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$routeParams</span><span class="p">,</span> <span class="nx">$resource</span><span class="p">,</span> <span class="nx">apiUrl</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Users</span> <span class="o">=</span> <span class="nx">$resource</span><span class="p">(</span><span class="nx">apiUrl</span> <span class="o">+</span> <span class="s2">"/users/:id"</span><span class="p">,</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="s2">"@id"</span><span class="p">});</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">user</span> <span class="o">=</span> <span class="nx">Users</span><span class="p">.</span><span class="kd">get</span><span class="p">({</span><span class="na">id</span><span class="p">:</span> <span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">$scope</span><span class="p">.</span><span class="nx">msg</span> <span class="o">=</span> <span class="s2">"There is no user for id "</span><span class="o">+</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">$scope</span><span class="p">.</span><span class="nx">msg</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="nx">Users</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">])</span></code></pre></figure>
+
+<p>To learn more about AngularJS $resource definition, see: <a href="http://docs.angularjs.org/api/ngResource.$resource">ngResource.$resource</a>. What is that “apiUrl” by the way? It’s a constant I’ve defined in my AngularJS app:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"app"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"ngResource"</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">constant</span><span class="p">(</span><span class="s2">"apiUrl"</span><span class="p">,</span> <span class="s2">"http://localhost:9000\:9000/api"</span><span class="p">)</span></code></pre></figure>
+
+<p class="alert alert-info"><strong>Pro tip</strong> Why is there the 9000 port twice? That’s because if we had written <code class="highlighter-rouge">http://localhost:9000/api</code>, AngularJS syntax would have analyzed that as a url with a dynamic parameter named “9000” because it’s placed right after a <code class="highlighter-rouge">:</code> character. So we need that strange syntax to tell AngularJS that this is not a parameter but a real value in our url.</p>
+
+<p>Next, we are creating our resource by extending this apiUrl with our routing “/users/:id”. This time, “:id” is a real parameter. We can now use “get” and “query” methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the <code class="highlighter-rouge">$scope</code>. We will need two Scala views: one for the list and one for the detail of course.</p>
+
+<figure class="highlight"><pre><code class="language-markup" data-lang="markup">@()
+
+@template() {
+  &lt;h2&gt;Users&lt;/h2&gt;
+
+  &lt;ul&gt;
+    &lt;li data-ng-repeat="u in users"&gt;
+      &lt;a data-ng-href="/users/"&gt;User# : &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+}</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-markup" data-lang="markup">@()
+
+@template() {
+  &lt;div data-ng-show="msg"&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+  &lt;/div&gt;
+
+  &lt;div data-ng-hide="msg"&gt;
+    &lt;h2&gt;User#  &lt;/h2&gt;
+  &lt;/div&gt;
+}</code></pre></figure>
+
+<p>And that’s it. We now have a list of users and links to each user detail, and all that data is fetch from a REST API using Json.</p>
+
+<p class="alert alert-info"><strong>Pro tip</strong> By the way, since our Play routes doesn’t clash with AngularJS routes, you can load them directly in your browser. It will works because the Play route handling the redirection to the main page is at the end of the route file, so any real Play route will be loaded before the redirection. If you have the demo running, check <a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a> and <a href="http://localhost:9000/api/users/1">http://localhost:9000/api/users/1</a> to see your REST API working nicely.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I hope this article will help you bootstrap your next awesome application using awesome tools like AngularJS and PlayFramework. Your next step (if that’s not already the case) would be to learn more about the new PlayFramework Json API so you can have typesafe Json (if I can say so). You would also probably need to plug a database on it. One choice could be a <a href="http://www.mongodb.org/">MongDB</a> database since it can store raw Json, and interact with it using a nice driver like <a href="http://reactivemongo.org/">ReactiveMongo</a> if you want to go all the way down to asynchronous application.</p>
+
+<p>It’s up to you!</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2013-02-17-angularjs-routing-playframework.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2013-02-17-angularjs-routing-playframework.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/angular/">angular</a>
+        
+          <a class="tag label label-default" href="/blog/tags/play/">play</a>
+        
+          <a class="tag label label-default" href="/blog/tags/html5/">html5</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2012/11/27/some-pocs-to-share/">Some POCs to share</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Nov 27, 2012</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2012/11/27/some-pocs-to-share/#disqus_thread" data-disqus-identifier="/blog/2012/11/27/some-pocs-to-share">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-11-27-some-pocs-to-share.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="some-pocs">Some POCs</h3>
+
+<p>Hi there,</p>
+
+<p>I’ve been a bit busy lately but I’m back on game. Looking for a job in Paris, I’ve been asked to do some code over more or less funny subjects and now that it’s done, I will share them, maybe it could help people to see some code around some technologies. It’s not at all perfect code, more experiments I’ve done.</p>
+
+<p><strong>Mowing</strong> is mainly a <code class="highlighter-rouge">CoffeeScript</code> project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it’s quite cool. You can see <a href="http://pauldijou.fr/mowing/">the result here</a> (don’t ever do it in large grids). The source code is <a href="https://github.com/pauldijou/mowing/">here on GitHub</a></p>
+
+<p><strong>Mowing-java</strong> is the <code class="highlighter-rouge">Java</code> version of <strong>Mowing</strong>. So in fact, it’s nearly the same syntax since you can create class in CoffeeScript but this one runs on a JVM. <a href="https://github.com/pauldijou/mowing-java">See here</a> for source code.</p>
+
+<p>Finally, <strong>GSearch</strong> is an <code class="highlighter-rouge">AngularJS</code> application built using <code class="highlighter-rouge">Yeoman</code>. Its goal is to plug on GitHub API and allow you to search through repositories and users and display informations and stats about them. <a href="http://pauldijou.fr/gsearch/">Here is the result</a> and <a href="https://github.com/pauldijou/gsearch/">go there</a> for source code.</p>
+
+<p>Of course, <strong>any feedback</strong> is welcome! I can be bugs, features, questions, anything…</p>
+
+<h3 id="nigthhacking-tour-2012">NigthHacking Tour 2012</h3>
+
+<p>I’ve given a small quicky about <code class="highlighter-rouge">RichFaces Bootstrap</code> and <code class="highlighter-rouge">RichFaces 5</code> on Paris a few weeks ago. Just so you know…</p>
+
+<h3 id="are-you-in-paris">Are you in Paris?</h3>
+
+<p>Let’s finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-11-27-some-pocs-to-share.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-11-27-some-pocs-to-share.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/angular/">angular</a>
+        
+          <a class="tag label label-default" href="/blog/tags/coffeescript/">coffeescript</a>
+        
+          <a class="tag label label-default" href="/blog/tags/yeoman/">yeoman</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<article class="post">
+  <h2>
+    <a href="/blog/2012/08/07/news-richfaces-bootstrap/">News about RichFaces Bootstrap</a>
+  </h2>
+
+  <div class="meta">
+    Posted by
+    <span class="author"></span>
+    
+      on
+      <span class="date">Aug 07, 2012</span>
+    
+    <span class="separator"></span>
+
+    
+      <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-comments fa-fw"></span></span>
+      <a href="/blog/2012/08/07/news-richfaces-bootstrap/#disqus_thread" data-disqus-identifier="/blog/2012/08/07/news-richfaces-bootstrap">Comments</a>
+      <span class="separator"></span>
+    
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-08-07-news-richfaces-bootstrap.md" target="_blank">Improve this article</a>
+  </div>
+
+  <div class="content">
+    <h3 id="whats-new-in-richfaces-bootstrap">What’s new in RichFaces Bootstrap?</h3>
+
+<p class="alert alert-danger"><strong>Red Alert!</strong> The RichFaces Bootstrap project is still under heavy development, tag and attribute names can change at any time and if you find something missing or buggy, there is high chance it’s not a bug but just hasn’t been done yet (… or it’s a real bug). So only use it for fun and prototype purposes.</p>
+
+<p><strong>Semantic components</strong> are a brand new concept. I need to present it first so I can use it when talking next about the new components. Most of the time, for one JSF tag, you have one and only one HTML renderer, it’s a oneToOne relation (according to JSF naming convention). It seems logical: for one component, you should always have (nearly) the same generated HTML code. But with HTML5, the web is becoming more semantic and that’s good. Why not have the same with RichFaces? But before we dive into it, what is “semantic”? For a real definition see <a href="http://en.wikipedia.org/wiki/Semantic_Web">Wikipedia</a> but here, we will say it’s when a component serves a global purpose like being a header or a footer but shouldn’t always render in the same way, instead the rendered result should depend on the context (like a table header isn’t the same as a column header).</p>
+
+<p>With RichFaces, a semantic component is a component <strong>with no renderer</strong>! Yeah yeah, if you use a semantic component on its own, it will throw an exception because it doesn’t know how to render itself. The concept is that a semantic component will ask its parent in the JSF tree: “Hey dad, do you know how I can render myself?”, if it knows, the parent will provide the correct renderer to the semantic component which will render it, otherwise, the semantic component will ask one level higher the same question, and so on until the root element. If no one answers yes to the question, it will throw an exception. That means we also have components that accept semantic components in order to provide them the correct renderer.</p>
+
+<p>Let’s take a concrete example. The <strong>modal</strong> component in RichFaces Bootstrap can support 3 semantic components: a header, a body and a footer. You can see that by looking at which interfaces the <code class="highlighter-rouge">AbstractModal</code> implements (see <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L49">GitHub</a>). All interfaces with the syntax <code class="highlighter-rouge">Render{1}Capable</code> are components that support the semantic component <code class="highlighter-rouge">{1}</code>, so here, it’s <strong>headerFacet</strong>, <strong>bodyFacet</strong> and <strong>footerFacet</strong>. And if you look at the rest of the code of the <code class="highlighter-rouge">AbstractModal</code>, you will see methods with the syntax <code class="highlighter-rouge">public String get{1}RendererType()</code> which are the methods giving the right renderer to use by semantic components. Inside a <strong>modal</strong>, the <strong>headerFacet</strong> component will render as a <code class="highlighter-rouge">div class="modal-header"</code> according to <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/templates/org/richfaces/bootstrap/modalHeaderFacet.template.xml">the renderer provided</a> by the <strong>modal</strong>. But inside another component, it could have been totally different HTML code.</p>
+
+<p class="alert alert-info"><strong>Pro tip</strong> If you take a more accurate look to all current semantic components, you will see that they all follow the same syntax: first their purpose (like <strong>header</strong> or <strong>footer</strong>) and then a generic <strong>Facet</strong> suffix. That give us the full list of semantic components: headerFacet, bodyFacet, footerFacet, menuFacet and positionFacet. Why using a suffix? Because we want to keep the no-suffix name for the real HTML tag. The RichFaces <strong>header</strong> tag will always generate the HTML <strong>header</strong> tag like a classic JSF tag (the oneToOne relation) but the <strong>headerFacet</strong> tag is a semantic component so it can generate anything depending of the context. Also, it makes it easier to see if a RichFaces component is a semantic one or not by just looking at its name.</p>
+
+<p class="alert alert-danger"><strong>Warning</strong> Even if the suffix is <strong>Facet</strong> keep in mind that semantic components <strong>are not facets</strong>, they don’t have the same limitations: they have attributes, you can use the same semantic component several time inside the same parent, a semantic component doesn’t have to be a direct child of a component supporting it and a semantic component can have several children.</p>
+
+<p>Now, let’s dive into the new components. <a href="http://bootstrap-richfaces.rhcloud.com/component/input/">input</a> tag is a basic input with all Bootstrap features like prepend and append and several new attributes in order to support new HTML features. By the way, this <strong>input</strong> centralizes and supports all HTML5 input types, you will no longer need one JSF component for each type, just use the <code class="highlighter-rouge">type</code> attribute (default is “text” of course).</p>
+
+<p><a href="http://bootstrap-richfaces.rhcloud.com/component/modal/">modal</a> is like <code class="highlighter-rouge">rich:modalPanel</code> or <code class="highlighter-rouge">rich:popupPanel</code>, it will display a popup layout on top of your page, potentially covering your page with a dark layer to block any action outside of the modal. The default usage of the modal has a header, specified by using <code class="highlighter-rouge">header</code> attribute or <code class="highlighter-rouge">header</code> facet, a footer specified with <code class="highlighter-rouge">footer</code> facet and a <code class="highlighter-rouge">body</code> which will be the code inside the modal component. Concretely, what’s happening is that each part, header - body - footer, will be wrapped inside a <code class="highlighter-rouge">div class="modal-xxx"</code> where “xxx” is the name of the section in order to align with the Bootstrap syntax. Using footer as a facet might be limiting because you cannot have <strong>a form inside the modal</strong> wrapping both body and footer because footer, as a facet, will always be outside. The default usage should be <strong>the modal inside the form</strong> since you will probably not need several forms inside a modal most of the time.</p>
+
+<p>What if that isn’t enough? What if you do want the form inside and not outside? Even if this behavior should be enough in most of use-cases, you can still fully customize your modal the way you want! The moment you use one of the following semantic components, headerFacet - bodyFacet - footerFacet, it considers you are doing a custom modal and it will not generate the <code class="highlighter-rouge">div class="modal-xxx"</code> anymore. I’m talking about the modal itself. Because the semantic components will generate the corresponding <code class="highlighter-rouge">div</code>. However using real components and not facets will allow you to put both bodyFacet and footerFacet inside a form for example.</p>
+
+<p><a href="http://bootstrap-richfaces.rhcloud.com/component/tooltip/">tooltip</a> and <a href="http://bootstrap-richfaces.rhcloud.com/component/popover/">popover</a> are two new ways to display bonus info when the mouse moves over particular content. The first one is for small texts and labels only, the second one can support custom content and a title. Right now, content can only be text but we are planning to improve this.</p>
+
+<p class="alert alert-info"><strong>Pro tip</strong> Even if <strong>popover</strong> content only supports text, you can still put some light HTML in it. You just need to escape chevrons with <code class="highlighter-rouge">&amp;lt;</code> and <code class="highlighter-rouge">&amp;gt;</code>.</p>
+
+<p>Finally, “orderingList”:http://bootstrap-richfaces.rhcloud.com/component/orderingList/ is the new RichFaces ordering list to allow you to re-arrange the order of some items. It already supports single drag-and-drop, multiple selection and “table” layout. Next features will be multiple drag-and-drop, maybe keyboard selection using SHIFT (CTRL is already supported). Thanks to Brian work, it is the first component mixing the power of the jQuery UI widget factory with Bootstrap design. If we can do it once, we can do it for lots of other widgets!</p>
+
+<p>New EL functions are also there. <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L156">jQuery</a> and <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L126">jQuerySelector</a> are part of RichFaces Core but have been created to help RichFaces Bootstrap. They will allow you to retrieve a jQuery object or the jQuery selector from a server-side JSF id.</p>
+
+<p>Next are more <a href="http://bootstrap-richfaces.rhcloud.com/component/el/">specific Bootstrap EL functions</a>. If you have take a look at Bootstrap JavaScript API, you might have noticed that lots of JavaScript components have a set of functions with the following syntax: <code class="highlighter-rouge">$(sel).compName('singleParameter');</code>, like for example: <code class="highlighter-rouge">$('#myModal').modal('show');</code> for a <strong>modal</strong>. The first approach to use it in JSF component was to use the previous <strong>jQuery</strong> function like: <code class="highlighter-rouge">onclick="\#{rich:jQuery( 'myModal' )}.modal('show')"</code>. It works fine but obviously, that wasn’t enough for Lukas since he built a different approach from scratch.</p>
+
+<p>The new concept is that the <code class="highlighter-rouge">compName</code> part of the call is nearly useless if you can retrieve it from the component returned from the jQuery call. In the previous example, if you know that <code class="highlighter-rouge">\#{rich:jQuery('myModal')}</code> is actually a <strong>modal</strong> component, then you also know that you will have to call the <strong>modal</strong> function, only remains with importance the <strong>singleParameter</strong>. So here is the new syntax: <code class="highlighter-rouge">\#{b:singleParameter(sel)}</code>. The previous example becomes: <code class="highlighter-rouge">onclick="\#{b:show('myModal')}"</code>. Much more concise and readable, isn’t it? Right now, RichFaces Bootstrap supports <strong>show</strong>, <strong>hide</strong> and <strong>toggle</strong> functions but others will follow soon.</p>
+
+<p class="alert alert-info"><strong>Pro tip</strong> Want to know how the EL function retrieves the name of the component? Easy. When the selector will be used to find the JSF component, it will find a <strong>UIComponent</strong> (like a <strong>UIModal</strong>) which, according to RichFaces CDK design, will extend an <strong>AbstractComponent</strong> (like <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java">AbstractModal</a>). And if the <strong>AbstractComponent</strong> supports Bootstrap EL functions, it will be annotated with <code class="highlighter-rouge">@BootstrapJSPlugin</code> (like at <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L43">line 43 of AbstractModal</a>) and it’s the <code class="highlighter-rouge">name</code> attribute of that annotation that will give us the <code class="highlighter-rouge">componentName</code>. As I told you, really easy!</p>
+
+<p><strong>LESS support</strong> is no longer a dream (for those who doesn’t know LESS, it’s a more powerful way to write CSS, see the <a href="http://lesscss.org/">project website</a> for more infos). Thanks to Lukas’ awesome work, a first prototype of that feature is already working. You can <a href="http://rik-ansikter.blogspot.fr/2012/08/jsf-meets-skinning-awesomeness-of-less.html">read his post</a> to know more about that. There is still work to do but it’s an incredible starting point.</p>
+
+<h3 id="whats-coming">What’s coming?</h3>
+
+<p>Want more? Great, because we have tons of other plans to improve RichFaces!</p>
+
+<p><strong>New build design</strong> is currently under <a href="https://community.jboss.org/wiki/RichFaces43BuildRedesign">discussion on RichFaces wiki</a> so be sure to take a look and give feedback if you care about the future of RichFaces.</p>
+
+<p><strong>Theming all current components</strong> from RichFaces Core with Bootstrap design is planned so you can use both projects at the same time.</p>
+
+<p>The orderingList is just a beginning. <strong>More jQuery UI widget factory based components</strong> are incoming. Feel free to comment <a href="https://community.jboss.org/thread/200343">here</a> to propose the ones you would like to see supported in RichFaces Bootstrap.</p>
+
+  </div>
+
+  <div class="footer">
+    <span class="hidden-xs hidden-sm">
+      <span class="icon fa fa-link fa-fw"></span>
+      <a href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap/">Permalink</a>
+    </span>
+    <span class="separator"></span>
+
+    <span class="visible-md-inline visible-lg-inline"><span class="icon fa fa-pencil-square-o fa-fw"></span></span>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-08-07-news-richfaces-bootstrap.md" target="_blank" class="improve visible-md-inline visible-lg-inline">Improve this article</a>
+    <a href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/_posts/2012-08-07-news-richfaces-bootstrap.md" target="_blank" class="improve button block hidden-md hidden-lg">
+      <span class="icon fa fa-pencil-square fa-fw"></span>
+      Improve this article
+    </a>
+
+    
+      <div class="tags">
+        <span class="icon fa fa-tags fa-fw"></span>
+        Tags:
+        
+          <a class="tag label label-default" href="/blog/tags/richfaces/">richfaces</a>
+        
+          <a class="tag label label-default" href="/blog/tags/bootstrap/">bootstrap</a>
+        
+          <a class="tag label label-default" href="/blog/tags/jquery/">jquery</a>
+        
+      </div>
+    
+
+  </div>
+
+  
+</article>
+
+  
+</div>
+
+<ul class="list-inline pagination text-center visible-xs visible-sm">
+  <li>
+    
+      <a class="button" href="/blog/">
+        <span class="icon fa fa-angle-left fa-lg"></span>
+        Previous
+      </a>
+    
+  </li>
+
+  <li>
+    
+      <a class="button" href="/blog/page/3/">
+        Next
+        <span class="icon fa fa-angle-right fa-lg"></span>
+      </a>
+    
+  </li>
+</ul>
+
+<ul class="list-inline pagination text-center hidden-xs hidden-sm">
+    
+      <li>
+        <a class="button" href="/blog/">
+          <span class="icon fa fa-angle-double-left fa-lg"></span>
+          First
+        </a>
+      </li>
+      <li>
+        <a class="button" href="/blog/">
+          <span class="icon fa fa-angle-left fa-lg"></span>
+          Previous
+        </a>
+      </li>
+    
+
+    <li>
+      <span class="button">2 of 3</span>
+    </li>
+
+    
+      <li>
+        <a class="button" href="/blog/page/3/">
+          Next
+          <span class="icon fa fa-angle-right fa-lg"></span>
+        </a>
+      </li>
+      <li>
+        <a class="button" href="/blog/page/3/">
+          Last
+          <span class="icon fa fa-angle-double-right fa-lg"></span>
+        </a>
+      </li>
+    
+</ul>
+
+<div style="margin-bottom:20px;text-align:center;">
+  <a class="button" href="http://feeds2.feedburner.com/pauldijou">
+  <span class="icon fa fa-rss fa-lg"></span>
+  Subscribe
+</a>
+
+</div>
+
+<script id="dsq-count-scr" src="https://pauldijou.disqus.com/count.js" async></script>
+
+
+</div>
+
+
+    <script type="text/javascript" src="/assets/js/main-a35bb44a42985a5ff06fe724109076616abccf20668ed9c7419518a3b125015d.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    
+  </body>
+</html>
