@@ -3,6 +3,10 @@ title: "Prismic.io: when happiness met disappointment"
 tags: [prismic]
 ---
 
+{% alert danger %}
+  **Warning** This article is pretty old. Prismic has evolved a lot since then and most issues have been addressed. [Check the last version of the docs](https://prismic.io/docs).
+{% endalert %}
+
 ### TL;DR
 
 If you don't know about [prismic.io](https://prismic.io/), it's a nice tool providing both a super clean web interface to write content and an API to retrieve it. No front-end provided, eventually some kits to help you and some examples, but no more. Which is cool because, if you are a web developer, you can focus on crafting an awesome optimized website and then easily put some content in it... well, that's the theory...
